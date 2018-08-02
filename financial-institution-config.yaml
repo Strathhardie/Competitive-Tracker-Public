@@ -1,0 +1,25 @@
+root: 
+  - financial_institution:
+    name: 'Simplii'
+    url: 'https://www.simplii.com/en/rates.html'
+    accounts:
+      - account:
+        account_name: 'Simplii HISA'
+
+  - financial_institution:
+    name: 'CIBC'
+    url: 'https://www.cibc.com/en/interest-rates/personal-bank-account-rates.html'
+    accounts:
+      - account:
+        account_name: 'CIBC HISA'
+      - account: 
+        account_name: 'CIBC USD'
+
+  - financial_institution:
+    name: 'RBC'
+    url: 'http://www.rbcroyalbank.com/rates/persacct.html'
+    accounts:
+      - account:
+        account_name: 'RBC HISA'
+      - account: 
+        account_name: 'RBC Personal USD'
