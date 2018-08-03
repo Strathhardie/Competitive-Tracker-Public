@@ -5,3 +5,6 @@ __pycache__/
 # PyCharm configurations
 .idea
 venv
+
+# Saved bank html files
+websites
