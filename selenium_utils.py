@@ -8,6 +8,20 @@ import os
 # This class contains all methods to handle selenium logic
 class SeleniumUtils(object):
 
+    # Returns the text given a url and xpath
+    @staticmethod
+    def getSourceXPathText(url, xpath):
+        driver = webdriver.Chrome(os.path.join(os.path.dirname(__file__), 'resources/chromedriver.exe'))
+        driver.get(url)
+        return driver.find_element_by_xpath(xpath).get_attribute("innerHTML")
+
+    # Saves the inner html of element to /websites directory
+    # Sets encoding to utf-8 to avoid UnicodeEncodeError
+    @staticmethod
+    def saveSourceXPathText(url, xpath, pathToFile):
+        with open (pathToFile, 'w', encoding="utf-8") as f:
+            f.write(SeleniumUtils.getSourceXPathText(url, xpath))
+
     # Returns the HTML source
     @staticmethod
     def getSourceHTML(url):

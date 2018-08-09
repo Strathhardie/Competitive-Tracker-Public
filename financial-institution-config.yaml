@@ -2,6 +2,7 @@ root:
   - financial_institution:
     name: 'Simplii'
     url: 'https://www.simplii.com/en/rates.html'
+    xpath: '//*[@id="blq-content"]'
     accounts:
       - account:
         account_name: 'Simplii HISA'
@@ -9,6 +10,7 @@ root:
   - financial_institution:
     name: 'CIBC'
     url: 'https://www.cibc.com/en/interest-rates/personal-bank-account-rates.html'
+    xpath: '/html/body/div'
     accounts:
       - account:
         account_name: 'CIBC HISA'
@@ -18,6 +20,7 @@ root:
   - financial_institution:
     name: 'RBC'
     url: 'http://www.rbcroyalbank.com/rates/persacct.html'
+    xpath: '/html/body/table[1]/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr[4]/td[2]'
     accounts:
       - account:
         account_name: 'RBC HISA'
