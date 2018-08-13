@@ -4,23 +4,22 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import os
 
-
 # This class contains all methods to handle selenium logic
 class SeleniumUtils(object):
 
-    # Returns the text given a url and xpath
+    # Returns the text given an xpath
     @staticmethod
-    def getSourceXPathText(url, xpath):
-        driver = webdriver.Chrome(os.path.join(os.path.dirname(__file__), 'resources/chromedriver.exe'))
-        driver.get(url)
+    def getBankAccountXPathHTML(xpath, driver):
         return driver.find_element_by_xpath(xpath).get_attribute("innerHTML")
 
-    # Saves the inner html of element to /websites directory
-    # Sets encoding to utf-8 to avoid UnicodeEncodeError
+    # Creates the driver, and saves the obtained HTML from the xpath to the given file path
     @staticmethod
-    def saveSourceXPathText(url, xpath, pathToFile):
-        with open (pathToFile, 'w', encoding="utf-8") as f:
-            f.write(SeleniumUtils.getSourceXPathText(url, xpath))
+    def saveBankAccountsXPathHTML(url, bankData):
+        driver = webdriver.Chrome(os.path.join(os.path.dirname(__file__), 'resources/chromedriver.exe'))
+        driver.get(url)
+        for filepath in bankData:
+            with open(filepath, 'w', encoding="utf-8") as f:
+                f.write(SeleniumUtils.getBankAccountXPathHTML(bankData[filepath], driver))
 
     # Returns the HTML source
     @staticmethod
