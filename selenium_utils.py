@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import os
 
+
 # This class contains all methods to handle selenium logic
 class SeleniumUtils(object):
 
