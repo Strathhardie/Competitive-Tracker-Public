@@ -2,27 +2,44 @@ root:
   - financial_institution:
     name: 'Simplii'
     url: 'https://www.simplii.com/en/rates.html'
-    xpath: '//*[@id="blq-content"]'
     accounts:
       - account:
-        account_name: 'Simplii HISA'
+        account_name: 'HISA'
+        xpath: '//*[@id="accounts"]'
 
   - financial_institution:
     name: 'CIBC'
     url: 'https://www.cibc.com/en/interest-rates/personal-bank-account-rates.html'
-    xpath: '/html/body/div'
     accounts:
       - account:
-        account_name: 'CIBC HISA'
+        account_name: 'eAdvantage_Savings'
+        xpath: '//*[@id="blq-content"]/div[5]'
       - account: 
-        account_name: 'CIBC USD'
+        account_name: 'Bonus_Savings'
+        xpath: '//*[@id="blq-content"]/div[6]'
+      - account:
+        account_name: 'Premium_Growth'
+        xpath: '//*[@id="blq-content"]/div[7]'
+      - account:
+        account_name: 'US_Personal'
+        xpath: '//*[@id="blq-content"]/div[10]'
 
   - financial_institution:
     name: 'RBC'
     url: 'http://www.rbcroyalbank.com/rates/persacct.html'
-    xpath: '/html/body/table[1]/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr[4]/td[2]'
     accounts:
       - account:
-        account_name: 'RBC HISA'
+        account_name: 'High_Interest_eSavings'
+        xpath: '/html/body/table[1]/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr[4]/td[2]/table[1]'
       - account: 
-        account_name: 'RBC Personal USD'
+        account_name: 'Enhanced_Savings'
+        xpath: '/html/body/table[1]/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr[4]/td[2]/table[2]'
+      - account:
+        account_name: 'Day_To_Day_Savings'
+        xpath: '/html/body/table[1]/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr[4]/td[2]/table[3]'
+      - account:
+        account_name: 'US_Personal'
+        xpath: '/html/body/table[1]/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr[4]/td[2]/table[12]'
+      - account:
+        account_name: 'US_High_Interest_eSavings'
+        xpath: '/html/body/table[1]/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr[4]/td[2]/table[13]'
