@@ -8,3 +8,9 @@ venv
 
 # Saved bank files (omitted for now, see issues)
 # websites
+
+#Temp Files
+*/~$*.xlsm
+*/~$*.xlsx
+*/~$*.xls
+Excel Scanner/Archive/
