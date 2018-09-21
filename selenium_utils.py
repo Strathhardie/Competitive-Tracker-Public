@@ -2,6 +2,7 @@
 # pip install selenium
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.options import Options
 import os
 
 
@@ -16,7 +17,9 @@ class SeleniumUtils(object):
     # Creates the driver, and saves the obtained HTML from the xpath to the given file path
     @staticmethod
     def saveBankAccountsXPathHTML(url, bankData):
-        driver = webdriver.Chrome(os.path.join(os.path.dirname(__file__), 'resources/chromedriver.exe'))
+        chrome_options = Options()
+        chrome_options.add_argument("--headless")  
+        driver = webdriver.Chrome(os.path.join(os.path.dirname(__file__), 'resources/chromedriver.exe'), chrome_options=chrome_options)
         driver.get(url)
         for filepath in bankData:
             with open(filepath, 'w', encoding="utf-8") as f:
@@ -25,7 +28,9 @@ class SeleniumUtils(object):
     # Returns the HTML source
     @staticmethod
     def getSourceHTML(url):
-        driver = webdriver.Chrome(os.path.join(os.path.dirname(__file__), 'resources/chromedriver.exe'))
+        chrome_options = Options()  
+        chrome_options.add_argument("--headless")
+        driver = webdriver.Chrome(os.path.join(os.path.dirname(__file__), 'resources/chromedriver.exe'), chrome_options=chrome_options)
         driver.get(url)
         return driver.page_source
 
