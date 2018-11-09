@@ -22,6 +22,7 @@ Public Sub ExportSourceFiles()
 End Sub
  
 Private Function ToFileExtension(vbeComponentType As vbext_ComponentType) As String
+    'pick file extension based on filetype
     Select Case vbeComponentType
         Case vbext_ComponentType.vbext_ct_ClassModule
             ToFileExtension = ".cls"
