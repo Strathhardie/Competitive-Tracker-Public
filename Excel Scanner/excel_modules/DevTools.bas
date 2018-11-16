@@ -1,4 +1,4 @@
-Attribute VB_Name = "export_modules"
+Attribute VB_Name = "DevTools"
 Public Sub ExportSourceFiles()
     Dim component As VBComponent
     Dim fdObj As Object
@@ -19,6 +19,34 @@ Public Sub ExportSourceFiles()
     Application.ScreenUpdating = True
     
     MsgBox "Modules exported to './excel_modules'"
+End Sub
+
+Public Sub ImportSourceFiles()
+    Dim file As String
+    Application.ScreenUpdating = False
+    Call RemoveAllModules
+    file = Dir(ActiveWorkbook.Path + "\excel_modules\")
+    While (file <> vbNullString)
+        If Not file = "DevTools.bas" Then
+            Application.VBE.ActiveVBProject.VBComponents.Import sourcePath & file
+        End If
+        file = Dir
+    Wend
+    Application.ScreenUpdating = True
+    
+    MsgBox "Modules imported from './excel_modules'"
+End Sub
+
+Private Sub RemoveAllModules()
+    Dim project As VBProject
+    Set project = Application.VBE.ActiveVBProject
+    
+    Dim comp As VBComponent
+    For Each comp In project.VBComponents
+        If Not comp.Name = "DevTools" And (comp.Type = vbext_ct_ClassModule Or comp.Type = vbext_ct_StdModule) Then
+            project.VBComponents.Remove comp
+        End If
+    Next
 End Sub
  
 Private Function ToFileExtension(vbeComponentType As vbext_ComponentType) As String
