@@ -18,7 +18,7 @@ Public Sub ExportSourceFiles()
     Next
     Application.ScreenUpdating = True
     
-    MsgBox "Modules exported to './excel_modules'"
+    Debug.Print "Modules exported to './excel_modules'"
 End Sub
 
 Public Sub ImportSourceFiles()
@@ -34,7 +34,7 @@ Public Sub ImportSourceFiles()
     Wend
     Application.ScreenUpdating = True
     
-    MsgBox "Modules imported from './excel_modules'"
+    Debug.Print "Modules imported from './excel_modules'"
 End Sub
 
 Private Sub RemoveAllModules()
