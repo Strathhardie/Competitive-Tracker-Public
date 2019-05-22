@@ -21,7 +21,7 @@
    <x:MoveWithCells/>
    <x:SizeWithCells/>
    <x:Anchor>
-    4, 8, 8, 10, 7, 17, 9, 53</x:Anchor>
+    3, 23, 8, 10, 6, 13, 9, 53</x:Anchor>
    <x:AutoFill>False</x:AutoFill>
    <x:Row>9</x:Row>
    <x:Column>5</x:Column>
@@ -40,7 +40,7 @@
    <x:MoveWithCells/>
    <x:SizeWithCells/>
    <x:Anchor>
-    6, 8, 20, 10, 8, 24, 24, 11</x:Anchor>
+    5, 7, 22, 4, 7, 17, 26, 5</x:Anchor>
    <x:AutoFill>False</x:AutoFill>
    <x:Row>21</x:Row>
    <x:Column>7</x:Column>

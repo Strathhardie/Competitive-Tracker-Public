@@ -22,13 +22,14 @@ Public Sub HighlightAllChanges()
     Dim brokerSheetName As String
     Dim brokerFilename As String
     
+    On Error GoTo GenericErrHandler:
     'Define variables
     retailSheetName = "Retail_Report"
-    retailFilename = "Retail Savings - Competitive Review"
+    retailFilename = "Retail Savings - Competitive Tracker"
     usSheetName = "US$_Report"
-    usFilename = "US$ - Competitive Review"
+    usFilename = "US$ - Competitive Tracker"
     brokerSheetName = "Broker_Report"
-    brokerFilename = "Broker HISA - Competitive Review"
+    brokerFilename = "Broker HISA - Competitive Tracker"
 
     ' Clear previous highlighting for all 3 reports
     Call ResetHighlight(retailSheetName)
@@ -39,6 +40,11 @@ Public Sub HighlightAllChanges()
     Call HighlightChange(retailSheetName, retailFilename)
     Call HighlightChange(usSheetName, usFilename)
     Call HighlightChange(brokerSheetName, brokerFilename)
+Exit Sub
+
+GenericErrHandler:
+MsgBox Err.Description
+
 End Sub
 
 ' This function extracts data from the latest archives
@@ -56,7 +62,7 @@ Private Function ExtractArchiveData(SheetName As String, FileName As String) As 
     Dim RangeToExtract As String
     Dim ArchivedBook As Workbook
     
-    
+     On Error GoTo GenericErrHandler:
 ' Set variables and create file system object
     Let RangeToExtract = "A1:DA1000"
     Let FilePath = Application.ThisWorkbook.Path & "\Archive\"
@@ -65,7 +71,7 @@ Private Function ExtractArchiveData(SheetName As String, FileName As String) As 
     Set oFiles = oFolder.Files
     
     
-                Debug.Print FileName
+    Debug.Print FileName
     
 ' For each file in the archive folder
 ' If the file's name is the specified name, and time file was modified was more recent than record
@@ -82,13 +88,21 @@ Private Function ExtractArchiveData(SheetName As String, FileName As String) As 
                 'Debug.Print MostRecentFile
     Next oFile
 
-
+On Error GoTo FileErrHandler:
 ' Opens the latest archive and extract the data
     Set ArchivedBook = Workbooks.Open(MostRecentFile)
     Let ExtractArchiveData = ArchivedBook.Worksheets(SheetName).Range(RangeToExtract)
     
 ' Close workbook
     ArchivedBook.Close Savechanges:=False
+    
+Exit Function
+GenericErrHandler:
+MsgBox Err.Description
+
+Exit Function
+FileErrHandler:
+MsgBox "The files that are necessary to make a comparison with it are not available. Please check if the files has been deleted or moved"
 
 End Function
 Private Sub ResetHighlight(SheetName As String)
@@ -97,8 +111,10 @@ Private Sub ResetHighlight(SheetName As String)
     Dim Cell As Range
     Dim RangeToReset As String
     
+    On Error GoTo FileErrHandler:
     Let RangeToReset = "A1:DA1000"
     
+      
 ' For all the cells in range A1 to DA1000
 ' Set highlighting to None
     For Each Cell In ThisWorkbook.Sheets(SheetName).Range(RangeToReset)
@@ -108,6 +124,9 @@ Private Sub ResetHighlight(SheetName As String)
         End If
     Next Cell
     
+Exit Sub
+FileErrHandler:
+MsgBox Err.Description
 
 End Sub
 
@@ -120,15 +139,19 @@ Private Sub HighlightChange(SheetName As String, FileName As String)
     Dim iRow As Long
     Dim iCol As Long
     
-' Set variables
+    On Error GoTo GenericErrHandler:
+    ' Set variables
     Let RangeToHighlight = "A1:DA1000"
     Let ExtractedData = ExtractArchiveData(SheetName, FileName)
     Let CurrentData = ThisWorkbook.Sheets(SheetName).Range(RangeToHighlight)
     
+      
 ' Function source: https://stackoverflow.com/questions/5387929/vba-macro-to-compare-all-cells-of-two-excel-files#
 ' Compares the 2 varaint arrays and highlight any changes
+   
     For iRow = LBound(CurrentData, 1) To UBound(CurrentData, 1)
         For iCol = LBound(CurrentData, 2) To UBound(CurrentData, 2)
+          On Error GoTo FileErrHandler:
             If CurrentData(iRow, iCol) = ExtractedData(iRow, iCol) Then
                 ' Cells are identical.
                 ' Do nothing.
@@ -140,5 +163,13 @@ Private Sub HighlightChange(SheetName As String, FileName As String)
         Next iCol
     Next iRow
     
+Exit Sub
+GenericErrHandler:
+MsgBox Err.Description
+
+Exit Sub
+FileErrHandler:
+MsgBox "Unable to find files that are stored in archive folder. Please check if the files has been deleted or moved"
+
 End Sub
 

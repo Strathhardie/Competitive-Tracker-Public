@@ -23,6 +23,7 @@ Sub ArchiveSheet(SheetName As String, FileName As String)
     Dim dateTimeStamp As String
     
     ' Set variables
+    On Error GoTo FileErrHandler:
     Set wb = Workbooks.Add
     outputPath = Application.ThisWorkbook.Path & "\Archive"
     dateTimeStamp = GetDateTimeStamp()
@@ -37,6 +38,12 @@ Sub ArchiveSheet(SheetName As String, FileName As String)
     ThisWorkbook.Sheets(SheetName).Copy Before:=wb.Sheets(1)
     wb.SaveAs FilePath
     wb.Close Savechanges:=True
+
+Exit Sub
+
+FileErrHandler:
+ MsgBox Err.Description
+
 End Sub
 
 ' Output date and time
@@ -56,3 +63,4 @@ End Function
 '@REVISION HISTORY
 '|Date          |Change Author      |Summary of change
 '
+

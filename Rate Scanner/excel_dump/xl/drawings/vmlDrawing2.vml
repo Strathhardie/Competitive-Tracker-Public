@@ -8,7 +8,7 @@
   <v:stroke joinstyle="miter"/>
   <v:path gradientshapeok="t" o:connecttype="rect"/>
  </v:shapetype><v:shape id="_x0000_s2050" type="#_x0000_t202" style='position:absolute;
-  margin-left:731.25pt;margin-top:393.75pt;width:108pt;height:60pt;z-index:1;
+  margin-left:583.5pt;margin-top:378.75pt;width:108pt;height:60pt;z-index:1;
   visibility:hidden' fillcolor="infoBackground [80]" strokecolor="none [81]"
   o:insetmode="auto">
   <v:fill color2="infoBackground [80]"/>
@@ -21,9 +21,9 @@
    <x:MoveWithCells/>
    <x:SizeWithCells/>
    <x:Anchor>
-    15, 15, 19, 11, 17, 31, 23, 9</x:Anchor>
+    8, 28, 17, 19, 10, 26, 21, 19</x:Anchor>
    <x:AutoFill>False</x:AutoFill>
-   <x:Row>20</x:Row>
-   <x:Column>14</x:Column>
+   <x:Row>19</x:Row>
+   <x:Column>11</x:Column>
   </x:ClientData>
  </v:shape></xml>

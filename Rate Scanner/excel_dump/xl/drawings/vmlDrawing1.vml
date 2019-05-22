@@ -8,8 +8,8 @@
   <v:stroke joinstyle="miter"/>
   <v:path shadowok="f" o:extrusionok="f" strokeok="f" fillok="f" o:connecttype="rect"/>
   <o:lock v:ext="edit" shapetype="t"/>
- </v:shapetype><v:shape id="_x0000_s23553" type="#_x0000_t201" style='position:absolute;
-  margin-left:73.5pt;margin-top:183pt;width:109.5pt;height:29.25pt;z-index:1;
+ </v:shapetype><v:shape id="_x0000_s23564" type="#_x0000_t201" style='position:absolute;
+  margin-left:56.25pt;margin-top:171pt;width:109.5pt;height:30.75pt;z-index:1;
   mso-wrap-style:tight' o:button="t" fillcolor="buttonFace [67]" strokecolor="windowText [64]"
   o:insetmode="auto">
   <v:fill color2="buttonFace [67]" o:detectmouseclick="t"/>
@@ -20,15 +20,15 @@
   </v:textbox>
   <x:ClientData ObjectType="Button">
    <x:Anchor>
-    1, 34, 8, 22, 1, 180, 8, 61</x:Anchor>
+    1, 11, 10, 10, 1, 157, 12, 11</x:Anchor>
    <x:PrintObject>False</x:PrintObject>
    <x:AutoFill>False</x:AutoFill>
    <x:FmlaMacro>[0]!ArchiveRetail_Click</x:FmlaMacro>
    <x:TextHAlign>Center</x:TextHAlign>
    <x:TextVAlign>Center</x:TextVAlign>
   </x:ClientData>
- </v:shape><v:shape id="_x0000_s23554" type="#_x0000_t201" style='position:absolute;
-  margin-left:205.5pt;margin-top:183pt;width:109.5pt;height:29.25pt;z-index:2;
+ </v:shape><v:shape id="_x0000_s23565" type="#_x0000_t201" style='position:absolute;
+  margin-left:205.5pt;margin-top:171pt;width:109.5pt;height:30.75pt;z-index:2;
   mso-wrap-style:tight' o:button="t" fillcolor="buttonFace [67]" strokecolor="windowText [64]"
   o:insetmode="auto">
   <v:fill color2="buttonFace [67]" o:detectmouseclick="t"/>
@@ -39,15 +39,15 @@
   </v:textbox>
   <x:ClientData ObjectType="Button">
    <x:Anchor>
-    1, 210, 8, 22, 1, 356, 8, 61</x:Anchor>
+    1, 210, 10, 10, 1, 356, 12, 11</x:Anchor>
    <x:PrintObject>False</x:PrintObject>
    <x:AutoFill>False</x:AutoFill>
    <x:FmlaMacro>[0]!ArchiveUS_Click</x:FmlaMacro>
    <x:TextHAlign>Center</x:TextHAlign>
    <x:TextVAlign>Center</x:TextVAlign>
   </x:ClientData>
- </v:shape><v:shape id="_x0000_s23555" type="#_x0000_t201" style='position:absolute;
-  margin-left:336pt;margin-top:183pt;width:109.5pt;height:29.25pt;z-index:3;
+ </v:shape><v:shape id="_x0000_s23566" type="#_x0000_t201" style='position:absolute;
+  margin-left:354pt;margin-top:171.75pt;width:109.5pt;height:30.75pt;z-index:3;
   mso-wrap-style:tight' o:button="t" fillcolor="buttonFace [67]" strokecolor="windowText [64]"
   o:insetmode="auto">
   <v:fill color2="buttonFace [67]" o:detectmouseclick="t"/>
@@ -58,36 +58,17 @@
   </v:textbox>
   <x:ClientData ObjectType="Button">
    <x:Anchor>
-    1, 384, 8, 22, 1, 530, 8, 61</x:Anchor>
+    1, 408, 10, 11, 1, 554, 12, 12</x:Anchor>
    <x:PrintObject>False</x:PrintObject>
    <x:AutoFill>False</x:AutoFill>
    <x:FmlaMacro>[0]!ArchiveBroker_Click</x:FmlaMacro>
    <x:TextHAlign>Center</x:TextHAlign>
    <x:TextVAlign>Center</x:TextVAlign>
   </x:ClientData>
- </v:shape><v:shape id="_x0000_s23556" type="#_x0000_t201" style='position:absolute;
-  margin-left:214.5pt;margin-top:108pt;width:87.75pt;height:22.5pt;z-index:4;
-  mso-wrap-style:tight' o:button="t" fillcolor="buttonFace [67]" strokecolor="windowText [64]"
-  o:insetmode="auto">
-  <v:fill color2="buttonFace [67]" o:detectmouseclick="t"/>
-  <o:lock v:ext="edit" rotation="t"/>
-  <v:textbox style='mso-direction-alt:auto' o:singleclick="f">
-   <div style='text-align:center'><font face="Calibri" size="220"
-   color="#000000">Scans all rates</font></div>
-  </v:textbox>
-  <x:ClientData ObjectType="Button">
-   <x:Anchor>
-    1, 222, 5, 8, 1, 339, 5, 38</x:Anchor>
-   <x:PrintObject>False</x:PrintObject>
-   <x:AutoFill>False</x:AutoFill>
-   <x:FmlaMacro>[0]!RefreshAll_Click</x:FmlaMacro>
-   <x:TextHAlign>Center</x:TextHAlign>
-   <x:TextVAlign>Center</x:TextVAlign>
-  </x:ClientData>
- </v:shape><v:shape id="_x0000_s23557" type="#_x0000_t201" style='position:absolute;
-  margin-left:160.5pt;margin-top:228pt;width:198.75pt;height:30pt;z-index:5;
-  mso-wrap-style:tight' o:button="t" fillcolor="buttonFace [67]" strokecolor="windowText [64]"
-  o:insetmode="auto">
+ </v:shape><v:shape id="_x0000_s23567" type="#_x0000_t201" style='position:absolute;
+  margin-left:164.25pt;margin-top:215.25pt;width:191.25pt;height:29.25pt;
+  z-index:4;mso-wrap-style:tight' o:button="t" fillcolor="buttonFace [67]"
+  strokecolor="windowText [64]" o:insetmode="auto">
   <v:fill color2="buttonFace [67]" o:detectmouseclick="t"/>
   <o:lock v:ext="edit" rotation="t"/>
   <v:textbox style='mso-direction-alt:auto' o:singleclick="f">
@@ -96,15 +77,15 @@
   </v:textbox>
   <x:ClientData ObjectType="Button">
    <x:Anchor>
-    1, 150, 8, 82, 1, 415, 8, 122</x:Anchor>
+    1, 155, 13, 9, 1, 410, 15, 8</x:Anchor>
    <x:PrintObject>False</x:PrintObject>
    <x:AutoFill>False</x:AutoFill>
    <x:FmlaMacro>[0]!ArchiveAll_Click</x:FmlaMacro>
    <x:TextHAlign>Center</x:TextHAlign>
    <x:TextVAlign>Center</x:TextVAlign>
   </x:ClientData>
- </v:shape><v:shape id="_x0000_s23558" type="#_x0000_t201" style='position:absolute;
-  margin-left:160.5pt;margin-top:318.75pt;width:198.75pt;height:48pt;z-index:6;
+ </v:shape><v:shape id="_x0000_s23568" type="#_x0000_t201" style='position:absolute;
+  margin-left:165.75pt;margin-top:295.5pt;width:198.75pt;height:51pt;z-index:5;
   mso-wrap-style:tight' o:button="t" fillcolor="buttonFace [67]" strokecolor="windowText [64]"
   o:insetmode="auto">
   <v:fill color2="buttonFace [67]" o:detectmouseclick="t"/>
@@ -115,10 +96,29 @@
   </v:textbox>
   <x:ClientData ObjectType="Button">
    <x:Anchor>
-    1, 150, 11, 17, 1, 415, 11, 81</x:Anchor>
+    1, 157, 18, 16, 1, 422, 22, 4</x:Anchor>
    <x:PrintObject>False</x:PrintObject>
    <x:AutoFill>False</x:AutoFill>
    <x:FmlaMacro>[0]!RefreshArchive_Click</x:FmlaMacro>
+   <x:TextHAlign>Center</x:TextHAlign>
+   <x:TextVAlign>Center</x:TextVAlign>
+  </x:ClientData>
+ </v:shape><v:shape id="_x0000_s23569" type="#_x0000_t201" style='position:absolute;
+  margin-left:164.25pt;margin-top:96.75pt;width:191.25pt;height:29.25pt;
+  z-index:6;mso-wrap-style:tight' o:button="t" fillcolor="buttonFace [67]"
+  strokecolor="windowText [64]" o:insetmode="auto">
+  <v:fill color2="buttonFace [67]" o:detectmouseclick="t"/>
+  <o:lock v:ext="edit" rotation="t"/>
+  <v:textbox style='mso-direction-alt:auto' o:singleclick="f">
+   <div style='text-align:center'><font face="Calibri" size="220"
+   color="#000000">Scan All Rates</font></div>
+  </v:textbox>
+  <x:ClientData ObjectType="Button">
+   <x:Anchor>
+    1, 155, 5, 11, 1, 410, 7, 10</x:Anchor>
+   <x:PrintObject>False</x:PrintObject>
+   <x:AutoFill>False</x:AutoFill>
+   <x:FmlaMacro>[0]!RefreshAll_Click</x:FmlaMacro>
    <x:TextHAlign>Center</x:TextHAlign>
    <x:TextVAlign>Center</x:TextVAlign>
   </x:ClientData>
