@@ -28,7 +28,8 @@ Public Sub ImportSourceFiles()
     file = Dir(ActiveWorkbook.Path + "\excel_modules\")
     While (file <> vbNullString)
         If Not file = "DevTools.bas" Then
-            Application.VBE.ActiveVBProject.VBComponents.Import sourcePath & file
+            Application.VBE.ActiveVBProject.VBComponents.Import ActiveWorkbook.Path & "\excel_modules\" & file
+            'Application.VBE.ActiveVBProject.VBComponents.Import sourcePath & file
         End If
         file = Dir
     Wend
