@@ -6,5 +6,12 @@ __pycache__/
 .idea
 venv
 
-# Saved bank files (omitted for now, see issues)
-# websites
+# Saved bank files
+websites
+
+#Temp Files
+*/~$*.xlsm
+*/~$*.xlsx
+*/~$*.xls
+Excel Scanner/Archive/
+

@@ -43,3 +43,64 @@ root:
       - account:
         account_name: 'US_High_Interest_eSavings'
         xpath: '/html/body/table[1]/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr[4]/td[2]/table[13]'
+   
+   - financial_instituion:
+     name: 'TDCT'
+     url: 'https://www.tdcanadatrust.com/products-services/banking/accounts/account-rates.jsp'
+     accounts:
+      - account:
+        account_name: 'Everyday Savings Account'
+        xpath: '
+      - account: 
+        account_name: 'High Interest Savings Account'
+        xpath:
+      - account:
+        account_name: 'ePremium Savings Account'
+        xpath:
+        
+   -  financial_institution:
+      name: 'BMO'
+      url: 'https://www.bmo.com/main/personal/bank-accounts/savings/interest-rates/'
+      
+   -  financial_institution:
+      name: 'BNS'
+      url: 'https://www.scotiabank.com/ca/en/personal/rates-prices/savings-account-rates.html'
+      
+   -  financial_institution:
+      name: 'Tangerine'
+      url: 'https://www.tangerine.ca/en/rates/'
+      
+   -  financial_institution:
+      name: 'ICICI'
+      url: 'https://www.icicibank.ca/personalbanking/popup_sav.page'
+      
+   -  financial_institution:
+      name: 'National Bank'
+      ur: 'https://www.nbc.ca/en/rates-and-analysis/interest-rates-and-returns/bank-accounts.html'
+      
+   -  financial_institution:
+      name: 'Manulife'
+      url: 'https://www.manulifebank.ca/current-rates.html'
+      
+   -  financial_institution:
+      name: 'HSBC'
+      url: 'https://www.hsbc.ca/savings-accounts/rates/'
+      
+   -  financial_institution:
+      name: 'CDN TIRE'
+      url: 'https://www.myctfs.com/Rates/'
+      
+   -  financial_institution:
+      name: 'B2B Bank'
+      
+   -  financial_institution:
+      name: 'Scotia iTrade'
+      url: 'https://www.scotiaitrade.com/en/direct-investing-and-online-trading/trading-fees/commissions-and-fees.html'
+      
+   -  financial_institution:
+      name: 'Meridian Credit'
+      url: 'https://www.meridiancu.ca/Personal/Meridian-Rates-Fees.aspx'
+      
+   -  financial_institution:
+      name: 'EQ Bank'
+      url: 'https://www.eqbank.ca/personal-banking/features-rates'
