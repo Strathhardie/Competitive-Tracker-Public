@@ -42,7 +42,7 @@ def unzip():
 def zip():
 	try:
 		print("Zipping excel file...", end=" ")
-		with zipfile.ZipFile(args['modified_workbook_path'], 'w') as zip_ref:
+		with zipfile.ZipFile(args['workbook_path'], 'w') as zip_ref:
 			for root, dirs, files in os.walk(args['dump_path']):
 				for file in files:
 					zip_ref.write(os.path.join(root, file), os.path.join('.' + root[12:], file), zipfile.ZIP_DEFLATED)
