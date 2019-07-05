@@ -50,7 +50,7 @@ root:
      accounts:
       - account:
         account_name: 'Everyday Savings Account'
-        xpath: '
+        xpath: 
       - account: 
         account_name: 'High Interest Savings Account'
         xpath:
@@ -78,10 +78,10 @@ root:
       account_name: 'Scotiabank MomentumPLUS Savings Account'
       xpath: 
       - account:
-      account_name: Money Master Savings Account
+      account_name: 'Money Master Savings Account'
       xpath: 
       - account:
-      account_name: Scotiabank Savings Accelerator Account
+      account_name: 'Scotiabank Savings Accelerator Account'
       xpath: 
       
    -  financial_institution:
@@ -95,13 +95,13 @@ root:
       name: 'ICICI'
       url: 'https://www.icicibank.ca/personalbanking/popup_sav.page'
       - account:
-      account_name: ICICI HiSave Savings Account
+      account_name: 'ICICI HiSave Savings Account'
       xpath: 
       - account:
-      account_name: ICICI Premium Savings Account
+      account_name: 'ICICI Premium Savings Account'
       xpath: 
       - account:
-      account_name: ICICI Young Stars Savings Account
+      account_name: 'ICICI Young Stars Savings Account'
       xpath: 
       
    -  financial_institution:
