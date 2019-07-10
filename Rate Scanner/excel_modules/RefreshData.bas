@@ -1,4 +1,3 @@
-Attribute VB_Name = "RefreshData"
 ' @author: Jude Arokiam
 ' @date: July 30, 2018
 ' @Revision: 3
@@ -31,16 +30,16 @@ Public Sub RefreshQueries()
     'Cells(4, 9) = "Message"
     'Cells(3, 5) = "Query Outcome Summary"
     count = 0
-    Application.Goto Reference:=Worksheets("Menu").Range("E3"), scroll:=True
+    Application.GoTo Reference:=Worksheets("Menu").Range("E3"), scroll:=True
     
     i = 0
     For Each wks In Worksheets
-        If wks.Name <> "Dev Change Log" And _
-           wks.Name <> "Sheet10" And _
-           wks.Name <> "Sheet9" And _
-           wks.Name <> "Sheet8" And _
-           wks.Name <> "Sheet7" And _
-           wks.Name <> "Sheet6" Then
+        If wks.Name <> "Menu" And _
+           wks.Name <> "Retail_Report" And _
+           wks.Name <> "US$_Report" And _
+           wks.Name <> "Broker_Report" And _
+           wks.Name <> "BNS_Rates" And _
+           wks.Name <> "Dev Change Log" Then
            
 '        On Error GoTo RefreshErrHandler:
 '            For Each qt In wks.QueryTables
@@ -48,7 +47,7 @@ Public Sub RefreshQueries()
 '                ' Range("E5").Offset(i, 2) = qt.Name
 '
 '            Next qt
-            
+        
         On Error GoTo RefreshErrHandler:
         
             For Each lo In wks.ListObjects
@@ -125,6 +124,8 @@ End Function
 '|30-07-2018    |Jude Arokiam       |Add Refresh All Queries
 
 '|23-04-2019    |Jacob Bourdeau     |Add logging of query results to menu page
+
+
 
 
 
