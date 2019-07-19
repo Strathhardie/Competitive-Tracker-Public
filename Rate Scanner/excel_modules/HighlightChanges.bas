@@ -121,10 +121,7 @@ Point:
 Exit Function
 GenericErrHandler:
     MsgBox Err.Description
-<<<<<<< HEAD
-=======
     Resume Point:
->>>>>>> efa360a8fc04762431a97390ebc0cbe5d841506d
 End Function
 
 Private Sub ResetHighlight(SheetName As String)
@@ -161,17 +158,10 @@ Private Sub HighlightChange(SheetName As String, FileName As String)
     Dim RangeToHighlight As String
     Dim iRow As Long
     Dim iCol As Long
-<<<<<<< HEAD
-    Dim fso
-    Dim FilePath As String
-    Dim oFolder
-    Dim oFiles
-=======
     Dim fso As Object
     Dim FilePath As String
     Dim oFolder As Object
     Dim oFiles As Object
->>>>>>> efa360a8fc04762431a97390ebc0cbe5d841506d
     
    On Error GoTo GenericErrHandler:
     
@@ -185,7 +175,6 @@ Private Sub HighlightChange(SheetName As String, FileName As String)
     Let ExtractedData = ExtractArchiveData(SheetName, FileName)
     
     If IsEmpty(ExtractedData) Then
-<<<<<<< HEAD
     
     Else
         Let CurrentData = ThisWorkbook.Sheets(SheetName).Range(RangeToHighlight)
@@ -197,19 +186,6 @@ Private Sub HighlightChange(SheetName As String, FileName As String)
             For iCol = LBound(CurrentData, 2) To UBound(CurrentData, 2)
               On Error GoTo FileErrHandler:
     
-=======
-    
-    Else
-        Let CurrentData = ThisWorkbook.Sheets(SheetName).Range(RangeToHighlight)
-     
-    ' Function source: https://stackoverflow.com/questions/5387929/vba-macro-to-compare-all-cells-of-two-excel-files#
-    ' Compares the 2 varaint arrays and highlight any changes
-       
-        For iRow = LBound(CurrentData, 1) To UBound(CurrentData, 1)
-            For iCol = LBound(CurrentData, 2) To UBound(CurrentData, 2)
-              On Error GoTo FileErrHandler:
-    
->>>>>>> efa360a8fc04762431a97390ebc0cbe5d841506d
                 If CStr(CurrentData(iRow, iCol)) = CStr(ExtractedData(iRow, iCol)) Then
                     ' Cells are identical.
                     ' Do nothing.
@@ -222,15 +198,6 @@ Private Sub HighlightChange(SheetName As String, FileName As String)
         Next iRow
     End If
 
-<<<<<<< HEAD
-Exit Sub
-GenericErrHandler:
-    MsgBox Err.Description
-
-Exit Sub
-FileErrHandler:
-    MsgBox "Unable to find files that are stored in archive folder. Please check if the files has been deleted or moved"
-=======
 Point:
     Set fso = Nothing
     Set oFolder = Nothing
@@ -245,7 +212,6 @@ FileErrHandler:
     MsgBox "Unable to find files that are stored in archive folder. Please check if the files has been deleted or moved"
     Resume Point:
     
->>>>>>> efa360a8fc04762431a97390ebc0cbe5d841506d
 End Sub
 
 
