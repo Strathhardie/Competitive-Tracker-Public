@@ -117,6 +117,11 @@ Function TimeDiff(startTime As Date, stopTime As Date)
     TimeDiff = Abs(stopTime - startTime) * 86400
 End Function
 
+Sub SaveCloseReOpen()
+    ThisWorkbook.Save
+    Application.Workbooks.Open (ThisWorkbook.FullName)
+End Sub
+
 '@REVISION HISTORY
 '|Date          |Change Author      |Summary of change
 '
