@@ -72,6 +72,7 @@ Sub RefreshAll_Click()
     Dim execTime As Integer
     execTime = Application.WorksheetFunction.Sum(Range(Worksheets("Menu").Range("H5"), Worksheets("Menu").Range("H5").End(xlDown)))
     MsgBox ("Data refresh completed. Total execution time was " & execTime & " seconds.")
+    ActiveWorkbook.Save
 End Sub
 
 Sub RefreshArchive_Click()

@@ -15,8 +15,8 @@ Public Sub RefreshQueries()
     Dim wks As Worksheet
     Dim qt As QueryTable
     Dim lo As ListObject
-    Dim failed() As Variant
-    Dim success() As Variant
+    'Dim failed() As Variant
+    'Dim success() As Variant
     Dim i As Integer
     Dim count As Integer
     Dim currTime As Date, execTime As Long
@@ -52,7 +52,7 @@ Public Sub RefreshQueries()
         
             For Each lo In wks.ListObjects
                   currTime = Now
-30                lo.QueryTable.Refresh BackgroundQuery:=False
+                  lo.QueryTable.Refresh BackgroundQuery:=False
                   execTime = (Now - currTime) * 86400
                   Range("E5").Offset(i, 0) = i
                   'Range("E5").Offset(i, 0) = lo.QueryTable.Connection
@@ -69,6 +69,7 @@ Point:
     
     Set qt = Nothing
     Set wks = Nothing
+    Set lo = Nothing
     Debug.Print count
     
 Exit Sub
@@ -115,6 +116,11 @@ End Sub
 Function TimeDiff(startTime As Date, stopTime As Date)
     TimeDiff = Abs(stopTime - startTime) * 86400
 End Function
+
+Sub SaveCloseReOpen()
+    ThisWorkbook.Save
+    Application.Workbooks.Open (ThisWorkbook.FullName)
+End Sub
 
 '@REVISION HISTORY
 '|Date          |Change Author      |Summary of change

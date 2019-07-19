@@ -113,9 +113,15 @@ Private Function ExtractArchiveData(SheetName As String, FileName As String) As 
     ArchivedBook.Close Savechanges:=False
     End If
     
+Point:
+    Set oFSO = Nothing
+    Set oFolder = Nothing
+    Set oFiles = Nothing
+    Set oFile = Nothing
 Exit Function
 GenericErrHandler:
     MsgBox Err.Description
+    Resume Point:
 End Function
 
 Private Sub ResetHighlight(SheetName As String)
@@ -137,6 +143,7 @@ Private Sub ResetHighlight(SheetName As String)
         End If
     Next Cell
     
+    Set Cell = Nothing
 Exit Sub
 FileErrHandler:
     MsgBox Err.Description
@@ -151,10 +158,10 @@ Private Sub HighlightChange(SheetName As String, FileName As String)
     Dim RangeToHighlight As String
     Dim iRow As Long
     Dim iCol As Long
-    Dim fso
+    Dim fso As Object
     Dim FilePath As String
-    Dim oFolder
-    Dim oFiles
+    Dim oFolder As Object
+    Dim oFiles As Object
     
    On Error GoTo GenericErrHandler:
     
@@ -191,13 +198,20 @@ Private Sub HighlightChange(SheetName As String, FileName As String)
         Next iRow
     End If
 
-Exit Sub
+Point:
+    Set fso = Nothing
+    Set oFolder = Nothing
+    Set oFiles = Nothing
+    Erase ExtractedData
+    Erase CurrentData
+    Exit Sub
 GenericErrHandler:
     MsgBox Err.Description
-
-Exit Sub
+    Resume Point:
 FileErrHandler:
     MsgBox "Unable to find files that are stored in archive folder. Please check if the files has been deleted or moved"
+    Resume Point:
+    
 End Sub
 
 
