@@ -1,0 +1,7 @@
+_satellite.pushBlockingScript(function(event, target, $variables){
+    function targetPageParams() {
+    return {
+      "at_property": "028430a7-5087-086d-3665-965c635d6fcb"
+    };
+  }
+});

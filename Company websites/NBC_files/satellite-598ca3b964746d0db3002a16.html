@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- saved from url=(0116)https://assets.adobedtm.com/58a1d39ae7dbd9ad6d68fd7a2e33a92917d9261c/scripts/satellite-598ca3b964746d0db3002a16.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head><body>
+    <script>
+      (function(){
+        function escapeForHtml(str){
+          if (!str) return str
+          return str
+            .replace(/\&/g, '&amp;')
+            .replace(/\</g, '&lt;')
+            .replace(/\>/g, '&gt;')
+            .replace(/\"/g, '&quot;')
+            .replace(/\'/g, '&#x27;')
+            .replace(/\//g, '&#x2F;')
+        }
+
+        var regexChars = /[.*+?^${}()|[\]\\]/g;
+        function escapeForRegex(str) {
+          return str.replace(regexChars, "\\$&");
+        }
+
+        function parseQueryString(){
+          var ret = {}, parts = location.search.substring(1).split('&');
+          for (var i = parts.length; i--;) {
+            var vardef = parts[i].split('='), varname = vardef[0], value = vardef[1];
+            ret[varname] = unescape(value);
+          }
+          return ret;
+        }
+
+        var queryParams = parseQueryString();
+
+        var markup = "<img height=\"1\" width=\"1\" style=\"display:none\"\nsrc=\"https://sync-tm.everesttech.net/upi/pid/r7ifn0SL?redir=https://www.facebook.com/fr/b.php?p=1531105787105294&e=${TM_USER_ID}&t=2592000&o=0\">";
+
+        for (var name in queryParams){
+          var regex = new RegExp('%' + escapeForRegex(name) + '%', 'ig');
+          markup = markup.replace(regex, 
+            escapeForHtml(queryParams[name]));
+        }
+
+        document.write(markup)
+      })();
+    </script><img height="1" width="1" style="display:none" src="./r7ifn0SL">
+  
+
+</body></html>

@@ -1,0 +1,691 @@
+(function () {
+    'use strict';
+
+    // magic numbers
+    var MOBILE_BREAKPOINT = 736;
+    var LANDSCAPE_BREAKPOINT = 1023;
+
+    // Pollyfill required for NodeList foreach in IE
+    if (window.NodeList && !NodeList.prototype.forEach) {
+        NodeList.prototype.forEach = Array.prototype.forEach;
+    }
+
+    // Pollyfill required for Object.assign in IE
+    if (typeof Object.assign != 'function') {
+        // Must be writable: true, enumerable: false, configurable: true
+        Object.defineProperty(Object, "assign", {
+            value: function assign(target, varArgs) { // .length of function is 2
+                if (target == null) { // TypeError if undefined or null
+                    throw new TypeError('Cannot convert undefined or null to object');
+                }
+                var to = Object(target);
+                for (var index = 1; index < arguments.length; index++) {
+                    var nextSource = arguments[index];
+                    if (nextSource != null) { // Skip over if undefined or null
+                        for (var nextKey in nextSource) {
+                            // Avoid bugs when hasOwnProperty is shadowed
+                            if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
+                                to[nextKey] = nextSource[nextKey];
+                            }
+                        }
+                    }
+                }
+                return to;
+            },
+            writable: true,
+            configurable: true
+        });
+    }
+
+    var ready = function ready(fn) {
+        if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") main();
+        else document.addEventListener('DOMContentLoaded', main);
+    };
+
+    var addClass = function addClass(el, className) {
+        if (el.classList) el.classList.add(className);
+        else el.className += ' ' + className;
+    };
+
+    var removeClass = function removeClass(el, className) {
+        if (el.classList) el.classList.remove(className);
+        else el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+    };
+
+    var hasClass = function hasClass(el, className) {
+        if (el.classList) return el.classList.contains(className);
+        else return new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
+    };
+
+    var toggleClass = function toggleClass(el, className) {
+        if (hasClass(el, className) === true) removeClass(el, className);
+        else addClass(el, className);
+    };
+
+    var trim = function(s) {
+        return ( s || '' ).replace( /^\s+|\s+$/g, '' );
+    }
+
+    var siblings = function siblings(el) {
+        return Array.prototype.filter.call(el.parentNode.children, function(child) {
+            return child !== el;
+        });
+    };
+
+    var getElementIndex = function getElementIndex(el) {
+        return Array.from(el.parentNode.children).indexOf(el);
+    }; // create a new element with a new tag
+
+
+    var changeTag = function changeTag(el, tag) {
+        var newElement = document.createElement(tag); // get the attributes from the original
+
+        Array.from(el.attributes).forEach(function(attr) {
+            newElement.setAttribute(attr.name, attr.value);
+        }); // get the innerHTML from the original
+
+        newElement.innerHTML = el.innerHTML;
+        return newElement;
+    };
+
+    var isZipCode =  function isZipCode(zipcode) {
+        if (typeof zipcode === 'undefined' || zipcode === null || !(/^[0-9]{5}$/g.test(zipcode))) {
+            return false;
+        }
+        return true;
+    }
+
+    var getBrowserCookie = function getBrowserCookie(name) {
+        try {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+        
+            for(let i=0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+        } catch (error) {}
+        return undefined;
+    }
+
+    var setBrowserCookie = function setBrowserCookie(name, value, opts) {
+        const defaultOptions = {
+            end: 0,
+            domain: "",
+            path: "/",
+            secure: true
+        }
+        const options = Object.assign({}, defaultOptions, opts);
+      
+        let expires = "";
+      
+        if (options.end && isNaN(options.end) === false) {
+            const castedEnd = Number(options.end);
+            expires = (castedEnd === Infinity) ? "; expires=Fri, 31 Dec 9999 23:59:59 GMT" : "; max-age=" + castedEnd;
+        }
+      
+        let cookieStr = '';
+        cookieStr += encodeURIComponent(name) + '=' + encodeURIComponent(value);
+        cookieStr += expires;
+        cookieStr += "; domain=" + options.domain;
+        cookieStr += "; path=" + options.path;
+        cookieStr += (options.secure) ? "; secure" : "";
+      
+        window.document.cookie = cookieStr;
+    }
+
+    var main = function main() {
+        /* PrimaryHeader stuff */
+        var primaryHeader = document.getElementsByClassName("primary-header")[0];
+        var searchForm = primaryHeader.querySelectorAll("#search-form")[0];
+        var searchButton = searchForm.querySelectorAll("a[href='#search-form']")[0];
+        var searchNav = searchForm.querySelectorAll("form")[0];
+        var languageDiv = primaryHeader.querySelectorAll("div.language-toggle__toggle")[0];
+        var languageButton = languageDiv.querySelectorAll("button.language-toggle__toggle")[0];
+        var languageNav = languageDiv.querySelectorAll("div.language-toggle")[0];
+        var signInDiv = primaryHeader.querySelectorAll("div.signin")[0];
+        var signInButton = signInDiv.querySelectorAll("button.signin__toggle")[0];
+        var signInNav = signInDiv.querySelectorAll("nav.signin__nav")[0];
+        var zipCodeDiv = primaryHeader.querySelectorAll("div.zipcode__heading")[0];
+        var zipCodeButton, zipCodeNav, zipCodeSpan;
+
+        // Language toggle functionality (Mobile and Desktop)
+        if (window.alternatePages) {
+            window.alternatePages = JSON.parse(window.alternatePages.replace(/u&#39;/g, '"').replace(/&#39;/g, '"'));
+            // BMO Harris page
+            if (zipCodeDiv) {
+                var altLinksEn = document.querySelectorAll("a[href='{{ alternatePages.en }}']") || [];
+                altLinksEn.forEach(function(altLinkEn) {
+                    altLinkEn.href = 'https://www.bmo.com/main/personal';
+                });
+                var altLinksFr = document.querySelectorAll("a[href='{{ alternatePages.fr }}']") || [];
+                altLinksFr.forEach(function(altLinkFr) {
+                    altLinkFr.href = 'https://www.bmo.com/principal/particuliers';
+                });
+            } else {
+                // BMO page
+                var lang = document.documentElement.lang;
+                var curPageLang = document.querySelectorAll("a[href='{{ alternatePages." + lang + " }}']");
+                curPageLang.forEach(function (curPageLangLink) {
+                    curPageLangLink.href = window.location.href || document.URL;
+                });
+                window.alternatePages.forEach(function (altPage) {
+                    if (altPage.lang === 'en'){
+                        var altPagesEn = document.querySelectorAll("a[href='{{ alternatePages.en }}']") || [];
+                        altPagesEn.forEach(function (altPageEn) {
+                            altPageEn.href = altPage.url;
+                        });
+                    } else if (altPage.lang === 'fr') {
+                        var altPagesFr = document.querySelectorAll("a[href='{{ alternatePages.fr }}']") || [];
+                        altPagesFr.forEach(function (altPageFr) {
+                            altPageFr.href = altPage.url;
+                        });
+                    }
+                });
+            }
+        }
+
+        if (zipCodeDiv) {
+            zipCodeButton = zipCodeDiv.querySelectorAll("a.search-form__toggle")[0];
+            zipCodeNav = zipCodeDiv.querySelectorAll("div.zipcode__form")[0];
+            zipCodeSpan = zipCodeButton.querySelectorAll("span")[0];
+        }
+
+        var setZipCodeErrorMessage = function setZipCodeErrorMessage(ev) {
+            document.querySelectorAll('div.zipcode__form').forEach(function (zipCodeNav) {
+                var zipCodeInput = zipCodeNav.querySelectorAll("#zipcode-megamenu")[0];
+                zipCodeInput.value = ev.target.value;
+
+                var zipCodeErrorMessage = zipCodeNav.querySelectorAll('.zipcode-error-msg')[0];
+                if (isZipCode(ev.target.value) === false) {
+                    addClass(zipCodeErrorMessage, 'block')
+                } else {
+                    removeClass(zipCodeErrorMessage, 'block')
+                }
+            });
+        };
+        
+        var saveZipCode = function saveZipCode(ev) {
+            var zipCodeInput = document.querySelectorAll("#zipcode-megamenu")[0];
+            var zipCodeRemember = document.querySelectorAll('#remember-megamenu-zip')[0];
+
+            if (isZipCode(zipCodeInput.value) === false) return false;
+
+            var zipCookies = [
+                "zip_code",
+                "zipcodecookie",
+                "sessionzip"
+            ];
+            
+            var cookieOptions = {
+                "domain": window.location.hostname,
+                "secure": (window.location.hostname.indexOf('bmoharris') >= 0)
+            };
+            
+            zipCookies.forEach(function(zipCookie) {
+                cookieOptions.end = (zipCodeRemember.checked && zipCookie !== "sessionzip") ? Infinity : 0;
+                setBrowserCookie(zipCookie, zipCodeInput.value, cookieOptions);
+            });
+
+            location.reload();
+        };
+
+        var setZipCodeRemember = function setZipCodeRemember(ev) {
+            document.querySelectorAll('#remember-megamenu-zip').forEach(function (zipCodeRemember) {
+                zipCodeRemember.checked = ev.target.checked;
+            });
+        }
+
+        document.querySelectorAll('div.zipcode__form').forEach(function (zipCodeNav) {
+            var zipCodeInput = zipCodeNav.querySelectorAll("#zipcode-megamenu")[0];
+            var zipCodeSubmitButton = zipCodeNav.querySelectorAll("#zipcode")[0];
+            var zipCodeRemember = zipCodeNav.querySelectorAll('#remember-megamenu-zip')[0];
+
+            zipCodeInput.addEventListener('change', setZipCodeErrorMessage);
+            zipCodeSubmitButton.addEventListener('click', saveZipCode);
+            zipCodeRemember = zipCodeRemember.addEventListener('change', setZipCodeRemember);
+
+            var existingZipCode = getBrowserCookie('zip_code');
+            if (existingZipCode) {
+                zipCodeInput.value = existingZipCode;
+                zipCodeSpan.textContent = 'US - ' + existingZipCode;
+            }
+        });
+
+        var collapseAllPrimaryHeaderButtons = function collapseAllPrimaryHeaderButtons(ev) {
+            collapseSearch();
+            collapseLanguage();
+            collapseSignIn();
+            collapseChooseSite();
+
+            if (zipCodeDiv) {
+                collapseZipCode();
+            }
+        };
+
+        var setPrimaryHeaderMarginBottom = function setPrimaryHeaderMarginBottom(element) {
+            primaryHeader.style.marginBottom = "".concat(element.offsetHeight, "px");
+        };
+
+        var expandSearch = function expandSearch() {
+            var wasOpen = hasClass(searchForm, 'is-open');
+            collapseAllPrimaryHeaderButtons();
+            if (wasOpen === true) return;
+            addClass(searchForm, 'is-open');
+            removeClass(searchNav, 'hide');
+            addClass(searchNav, 'show');
+            setPrimaryHeaderMarginBottom(searchNav);
+            window.addEventListener('resize', function() {
+                setPrimaryHeaderMarginBottom(searchNav);
+            });
+        };
+
+        var collapseSearch = function collapseSearch() {
+            removeClass(searchForm, 'is-open');
+            addClass(searchNav, 'hide');
+            removeClass(searchNav, 'show');
+            primaryHeader.style.marginBottom = '0px';
+        };
+
+        var expandLanguage = function expandLanguage() {
+            var wasOpen = hasClass(languageDiv, 'is-open');
+            collapseAllPrimaryHeaderButtons();
+            if (wasOpen === true) return;
+            addClass(languageDiv, 'is-open');
+            removeClass(languageNav, 'hide');
+            addClass(languageNav, 'show');
+            setPrimaryHeaderMarginBottom(languageNav);
+            window.addEventListener('resize', function() {
+                setPrimaryHeaderMarginBottom(languageNav);
+            });
+        };
+
+        var collapseLanguage = function collapseLanguage() {
+            removeClass(languageDiv, 'is-open');
+            addClass(languageNav, 'hide');
+            removeClass(languageNav, 'show');
+            primaryHeader.style.marginBottom = '0px';
+        };
+
+        var expandSignIn = function expandSignIn() {
+            var wasOpen = hasClass(signInDiv, 'is-open');
+            collapseAllPrimaryHeaderButtons();
+            if (wasOpen === true) return;
+            addClass(signInDiv, 'is-open');
+            removeClass(signInNav, 'hide');
+            addClass(signInNav, 'show');
+        };
+
+        var collapseSignIn = function collapseSignIn() {
+            removeClass(signInDiv, 'is-open');
+            addClass(signInNav, 'hide');
+            removeClass(signInNav, 'show');
+        };
+
+        var expandZipCode = function expandZipCode() {
+            var wasOpen = hasClass(zipCodeDiv, 'is-open');
+            collapseAllPrimaryHeaderButtons();
+            if (wasOpen === true) return;
+            addClass(zipCodeDiv, 'is-open');
+            removeClass(zipCodeNav, 'hide');
+            addClass(zipCodeNav, 'show');
+            setPrimaryHeaderMarginBottom(zipCodeNav);
+            window.addEventListener('resize', function() {
+                setPrimaryHeaderMarginBottom(zipCodeNav);
+            });
+        };
+
+        var collapseZipCode = function collapseZipCode() {
+            removeClass(zipCodeDiv, 'is-open');
+            addClass(zipCodeNav, 'hide');
+            removeClass(zipCodeNav, 'show');
+            primaryHeader.style.marginBottom = '0px';
+        };
+
+        searchButton.addEventListener('click', expandSearch);
+        languageButton.addEventListener('click', expandLanguage);
+        signInButton.addEventListener('click', expandSignIn);
+
+        if (zipCodeDiv) {
+            zipCodeButton.addEventListener('click', expandZipCode);
+        }
+
+        var toggleMobileList = function toggleMobileList(ev, mobileListDiv) {
+            toggleClass(mobileListDiv, 'hide-for-small-only');
+        }; // Primary Header Mobile
+
+
+        var mobileSignInButtons = primaryHeader.querySelectorAll(".signin--nested__heading");
+        mobileSignInButtons.forEach(function(button) {
+            // if it has a .mobile-list sibling
+            var mobileListDiv = button.parentNode.querySelectorAll(".mobile-list")[0];
+            if (mobileListDiv === undefined) return;
+            removeClass(mobileListDiv, 'block');
+            addClass(mobileListDiv, 'hide-for-small-only');
+            button.addEventListener('click', function(ev) {
+                return toggleMobileList(ev, mobileListDiv);
+            });
+        });
+        /* Tablet ChooseSite stuff */
+
+        var chooseSiteButton = primaryHeader.querySelectorAll('.choose-site')[0];
+        var chooseSiteNav = chooseSiteButton.querySelectorAll('.choose-site__nav')[0];
+        var chooseSiteSpan = chooseSiteButton.querySelectorAll('span')[0];
+
+        var expandChooseSite = function expandChooseSite() {
+            var wasOpen = hasClass(chooseSiteNav, 'is-open');
+            collapseAllPrimaryHeaderButtons();
+            if (wasOpen === true || window.innerWidth >= LANDSCAPE_BREAKPOINT) return;
+            addClass(chooseSiteNav, 'is-open');
+            addClass(chooseSiteSpan, 'primary-header__toggle--flip-chevron');
+            setPrimaryHeaderMarginBottom(chooseSiteNav);
+        };
+
+        var collapseChooseSite = function collapseChooseSite() {
+            removeClass(chooseSiteNav, 'is-open');
+            removeClass(chooseSiteSpan, 'primary-header__toggle--flip-chevron');
+            primaryHeader.style.marginBottom = '0px';
+        };
+
+        chooseSiteButton.addEventListener('click', expandChooseSite);
+        /* SecondaryHeader stuff */
+
+        var secondaryHeader = document.getElementsByClassName("secondary-header")[0];
+        var mainNavDesktop = secondaryHeader.querySelectorAll('div.main-nav')[0];
+        var desktopLobs = mainNavDesktop.querySelectorAll('li.lob-nav__lob');
+        var internationalButton = secondaryHeader.querySelectorAll('button[data-ana="international"]')[0];
+        if (internationalButton) {
+            var internationalModalContent = document.querySelectorAll('div[data-meta="international-modal"]')[0];
+            var internationalCloseButton = internationalModalContent.querySelectorAll('button[class="close-button"]')[0];
+        }
+
+        var stopAllEvents = function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+        };
+
+        var showInternationalModal = function() {
+            // Display email modal
+            addClass(document.body, 'is-reveal-open');
+            addClass(internationalModalContent, 'reveal-show');
+            addClass(internationalModalContent.parentElement, 'reveal-show');
+            // Set focus to email modal
+            internationalModalContent.focus();
+        }
+
+        var hideInternationalModal = function() {
+            // Hide email modal
+            removeClass(document.body, 'is-reveal-open');
+            removeClass(internationalModalContent, 'reveal-show');
+            removeClass(internationalModalContent.parentElement, 'reveal-show');
+            // Set focus to international element link
+            internationalButton.focus();
+        }
+
+        if (internationalCloseButton) {
+            internationalCloseButton.addEventListener('click', function() {
+                hideInternationalModal();
+            });
+    
+            internationalCloseButton.addEventListener('blur', function(e) {
+                internationalModalContent.focus();
+                stopAllEvents(e);
+            });
+        
+            internationalCloseButton.addEventListener('keydown', function(e) {
+                // Tab
+                if (e.keyCode === 9) {
+                    internationalModalContent.focus();
+                }
+                // Enter button
+                if (e.keyCode === 13) {
+                    hideInternationalModal();
+                }
+                stopAllEvents(e);
+            });
+        }
+
+        if (internationalButton) {
+            internationalButton.addEventListener('click', function() {
+                showInternationalModal();
+            });
+        }
+
+        window.addEventListener('click', function(e) {
+            if (internationalModalContent && e.target === internationalModalContent.parentElement) {
+                hideInternationalModal();
+            }
+        });
+
+        window.addEventListener('keyup', function(e) {
+            if (e.keyCode === 27) {
+                if (internationalModalContent && hasClass(internationalModalContent, 'reveal-show')) {
+                    hideInternationalModal();
+                }
+            }
+        });
+
+        var collapseAllLobs = function collapseAllLobs(ev) {
+            if (window.innerWidth < MOBILE_BREAKPOINT) return;
+            desktopLobs.forEach(function(lob) {
+                var lobNav = lob.querySelectorAll('div.lob-nav__section')[0];
+                if (lobNav === undefined) return;
+                addClass(lob, 'hide-for-small-only');
+                addClass(lobNav, 'hide-for-small-only');
+                removeClass(lobNav, 'is-open');
+            });
+        };
+
+        var isCurrentLobLink = function (lobButton) {
+            var ana = trim(lobButton.dataset.ana).replace(/ /g, '-').toLowerCase();
+            var bu_id_map = {
+                'prets-hyp': 'prets-hypothecaires',
+                'placements': 'investissements',
+                'plans-accounts': 'accounts',
+                'programmes-et-comptes': 'comptes',
+                'business-accounts': 'credit-debit-cards'
+            }
+            var itemLoc = window.location.href.split('/')[3] === 'privatebanking' ? 4 : 5;
+            return (bu_id_map[ana] || ana)  === window.location.href.split('/')[itemLoc];
+        }
+
+        desktopLobs.forEach(function(lob) {
+            var lobButton = lob.querySelectorAll('button.lob-nav__tab')[0];
+            var lobNav = lob.querySelectorAll('div.lob-nav__section')[0];
+            if (lobButton === undefined || lobNav === undefined) return;
+
+            // Bold the current LOB section
+            if (isCurrentLobLink(lobButton)) {
+                addClass(lobButton, 'is-current');
+            }
+
+            var expandLob = function expandLob() {
+                var wasOpen = hasClass(lobNav, 'is-open');
+                collapseAllLobs();
+                if (wasOpen === true) return;
+                removeClass(lob, 'hide-for-small-only');
+                removeClass(lobNav, 'hide-for-small-only');
+                addClass(lobNav, 'is-open');
+            };
+
+            lobButton.addEventListener('click', expandLob);
+            secondaryHeader.addEventListener('mouseleave', collapseAllLobs);
+        });
+        /* Mobile SecondaryHeader stuff */
+
+        var secondaryHeaderWrapper = secondaryHeader.querySelectorAll('.secondary-header__wrapper')[0];
+        var secondaryHeaderToggle = secondaryHeader.querySelectorAll('.secondary-header__toggle')[0];
+        var secondaryHeaderMainNav = secondaryHeader.querySelectorAll('.main-nav')[0];
+        var secondaryHeaderMainNavList = secondaryHeaderMainNav.querySelectorAll('ul')[0];
+        var secondaryHeaderMainNavBackButton = secondaryHeaderMainNav.querySelectorAll('.main-nav__back')[0];
+        var level1Buttons = secondaryHeaderMainNav.querySelectorAll('.main-nav__link--site--follow-through');
+        var level2Buttons = secondaryHeaderMainNav.querySelectorAll('.lob-nav__tab');
+
+        var expandSideNav = function expandSideNav() {
+            if (hasClass(secondaryHeaderWrapper, 'open')) {
+                collapseSideNav();
+                return;
+            }
+
+            level2Buttons.forEach(function(button) {
+                if (isCurrentLobLink(button)) {
+                    button.click();
+                }
+            });
+
+            addClass(secondaryHeaderWrapper, 'open');
+            removeClass(secondaryHeaderMainNav, 'hide-for-small-only');
+        };
+
+        var sideNavIsOpen = function sideNavIsOpen() {
+            return hasClass(secondaryHeaderWrapper, 'open');
+        };
+
+        var collapseSideNav = function collapseSideNav() {
+            removeClass(secondaryHeaderWrapper, 'open');
+            addClass(secondaryHeaderMainNav, 'hide-for-small-only'); // reset navigation
+
+            navigationPosition = JSON.parse(JSON.stringify(originalNavigationPosition));
+            setNavigationDisplay();
+        };
+
+        secondaryHeaderToggle.addEventListener('click', expandSideNav); // get the initial navigation position
+
+        var originalNavigationPosition = [getElementIndex(secondaryHeaderMainNav.querySelectorAll('li.is-current')[0])];
+        var navigationPosition = JSON.parse(JSON.stringify(originalNavigationPosition)); // reset entire display from root level every time we navigate
+
+        var resetNavigationDisplay = function resetNavigationDisplay() {
+            secondaryHeaderMainNav.querySelectorAll('li.is-current').forEach(function(level1List) {
+                removeClass(level1List, 'is-current');
+                addClass(level1List, 'main-nav__site-item');
+                addClass(level1List, 'main-nav__mobile_position');
+            }); // swap tag & href for level 1 button
+
+            level1Buttons.forEach(function(level1Button, index) {
+                var newLevel1Button = changeTag(level1Button, 'button');
+                newLevel1Button.setAttribute('href', '');
+                newLevel1Button.addEventListener('click', function(ev) {
+                    return navigateToNextLevel(ev, index);
+                });
+                level1Button.parentElement.replaceChild(newLevel1Button, level1Button);
+            });
+            level1Buttons = secondaryHeaderMainNav.querySelectorAll('.main-nav__link--site--follow-through');
+            secondaryHeaderMainNav.querySelectorAll('li.lob-nav__lob').forEach(function(level2List) {
+                addClass(level2List, 'hide-for-small-only');
+            });
+            secondaryHeaderMainNav.querySelectorAll('div.lob-nav__section').forEach(function(level3List) {
+                removeClass(level3List, 'is-open');
+            });
+        };
+
+        var setBackButtonDisplay = function setBackButtonDisplay() {
+            if (navigationPosition.length === 0) addClass(secondaryHeaderMainNavBackButton, 'hide-for-small-only');
+            else removeClass(secondaryHeaderMainNavBackButton, 'hide-for-small-only');
+        };
+
+        var setNavigationDisplay = function setNavigationDisplay() {
+            setBackButtonDisplay();
+            resetNavigationDisplay();
+
+            if (navigationPosition.length === 0) {
+                secondaryHeaderMainNav.querySelectorAll('li.main-nav__site-item').forEach(function(level1List) {
+                    addClass(level1List, 'is-current');
+                    removeClass(level1List, 'main-nav__site-item');
+                    removeClass(level1List, 'main-nav__mobile_position');
+                });
+            } else if (navigationPosition.length === 1) {
+                var level1List = secondaryHeaderMainNav.querySelectorAll('li.main-nav__site-item')[navigationPosition[0]];
+                addClass(level1List, 'is-current');
+                removeClass(level1List, 'main-nav__site-item');
+                removeClass(level1List, 'main-nav__mobile_position'); // swap tag & href for level 1 button
+
+                var level1Button = level1List.querySelectorAll('button')[0];
+
+                if (level1Button) {
+                    var newLevel1Button = changeTag(level1Button, 'a'); // get the href from choosesite
+
+                    newLevel1Button.setAttribute('href', chooseSiteNav.querySelectorAll("[data-ana='".concat(level1Button.getAttribute('data-ana'), "']"))[0].getAttribute('href'));
+                    level1Button.parentElement.replaceChild(newLevel1Button, level1Button);
+                }
+
+                level1Buttons = secondaryHeaderMainNav.querySelectorAll('.main-nav__link--site--follow-through');
+                level1Buttons.forEach(function(level1Button) {
+                    removeClass(level1Button, 'hide-for-small-only');
+                });
+                level2Buttons.forEach(function(level1Button) {
+                    removeClass(level1Button, 'hide-for-small-only');
+                });
+                level1List.querySelectorAll('li.lob-nav__lob').forEach(function(level2List) {
+                    removeClass(level2List, 'hide-for-small-only');
+                });
+            } else if (navigationPosition.length === 2) {
+                var _level1List = secondaryHeaderMainNav.querySelectorAll('li.main-nav__site-item')[navigationPosition[0]];
+                addClass(_level1List, 'is-current');
+                removeClass(_level1List, 'main-nav__site-item');
+                removeClass(_level1List, 'main-nav__mobile_position');
+                var level2List = secondaryHeaderMainNav.querySelectorAll('li.lob-nav__lob')[navigationPosition[1]];
+                removeClass(level2List, 'hide-for-small-only');
+                level1Buttons.forEach(function(level1Button) {
+                    addClass(level1Button, 'hide-for-small-only');
+                });
+                level2Buttons.forEach(function(level1Button) {
+                    addClass(level1Button, 'hide-for-small-only');
+                });
+                level2List.querySelectorAll('div.lob-nav__section').forEach(function(level2List) {
+                    addClass(level2List, 'is-open');
+                });
+            } // now set it to the appropriate level
+
+        };
+
+        var navigateBackOneLevel = function navigateBackOneLevel() {
+            navigationPosition.pop();
+            setNavigationDisplay();
+        };
+
+        var navigateToNextLevel = function navigateToNextLevel(ev, index) {
+            if (navigationPosition.length == 2) return;
+            navigationPosition.push(index);
+            setNavigationDisplay();
+        };
+
+        level1Buttons.forEach(function(level1Button, index) {
+            level1Button.addEventListener('click', function(ev) {
+                return navigateToNextLevel(ev, index);
+            });
+        });
+        level2Buttons.forEach(function(level2Button, index) {
+            level2Button.addEventListener('click', function(ev) {
+                return navigateToNextLevel(ev, index);
+            });
+        });
+        secondaryHeaderMainNavBackButton.addEventListener('click', navigateBackOneLevel);
+        /* Window stuff */
+
+        window.addEventListener('resize', function() {
+            var previousWidth = currentWidth;
+            currentWidth = window.innerWidth; // if switch from tablet mobile
+
+            if (previousWidth >= MOBILE_BREAKPOINT && currentWidth < MOBILE_BREAKPOINT) {
+                collapseSideNav();
+                collapseChooseSite();
+                collapseAllPrimaryHeaderButtons();
+            }
+
+            if (previousWidth < MOBILE_BREAKPOINT && currentWidth >= MOBILE_BREAKPOINT) {
+                collapseSideNav();
+            }
+
+            if (previousWidth < LANDSCAPE_BREAKPOINT && currentWidth >= LANDSCAPE_BREAKPOINT) {
+                collapseChooseSite();
+            }
+        });
+        
+        var currentWidth = window.innerWidth;
+    };
+
+    ready();
+})();
+

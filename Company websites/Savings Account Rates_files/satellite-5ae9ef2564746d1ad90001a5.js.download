@@ -1,0 +1,17 @@
+_satellite.pushAsyncScript(function(event, target, $variables){
+  // Movable script add May 2, 2018 to run till Dec 31, 2018
+
+/* Exclusively for Scotiabank */
+(function(m,o,v,a,b,l,e) {
+  if (typeof m['MovableInkTrack'] !== 'undefined') { return; }
+  m['MovableInkTrack'] = b;
+  l = o.createElement(v);
+  e = o.getElementsByTagName(v)[0];
+  l.type = 'text/javascript'; l.async = true;
+  l.src = '//' + a + '/p/js/1.js';
+  m[b] = m[b] || function() { (m[b].q=m[b].q||[]).push(arguments); };
+  e.parentNode.insertBefore(l, e);
+})
+
+(window, document, 'script', 'tk64ucru.micpn.com', 'mitr');
+});

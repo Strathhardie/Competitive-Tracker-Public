@@ -1,0 +1,62 @@
+
+$(document).ready(function () {
+
+  /* ===== common */
+
+  /* remove ch and us from language toggle */
+  setTimeout(function () { $('#side-menu-location ul li:nth-child(3), #side-menu-location ul li:nth-child(4), .language ul li:nth-child(3), .language li:nth-child(4)').remove(); }, 250);
+  $('#secondary-menu-location').text('Language');
+
+  /* offscreen text for target blanks */
+  $('a[target="_blank"]').append('<span class="offscreen"> (link opens in new window)</span>');
+
+  /* ===== persacct.html - strip every .obj file to its bare table */
+
+  // $('.table-morph').each(function() { 
+  //   $(this).html($(this).contents().find('table.outlines').wrap('<table><tbody></tbody</table>'));
+  // });  
+
+  /* style tables after html stripping */
+  // setTimeout(function styleTables() {
+
+  //   $('table.outlines').each(function () {
+
+  //     /* converting to html5 tables */
+
+  //     $(this).removeAttributes().addClass('table-striped').addClass('w-full');
+  //     $(this).find('tr').removeAttributes();
+  //     $(this).find('td').removeAttributes();
+
+  //     // take the first heading row of tbody up to thead
+  //     var th = $(this).find('tbody tr:first td').map(function (i, e) {
+  //       return $('<th>').append(e.textContent).get(0);
+  //     });
+  //     $(this).prepend($('<thead>').append(th)).find('tr:first').remove();
+
+  //     // English copy quirk
+  //     $(this).find('th:first-child').html('If Balance is');
+
+  //   });
+  // }, 500);
+
+  /* remove attributes from any dom element (via https://stackoverflow.com/questions/1870441/remove-all-attributes) */
+  $.fn.removeAttributes = function () {
+
+    return this.each(function () {
+
+      var attributes = $.map(this.attributes, function (item) {
+        return item.name;
+      });
+
+      var element = $(this);
+
+      $.each(attributes, function (i, item) {
+        if (item !== "class")
+          element.removeAttr(item);
+      });
+
+    });
+
+  }
+
+});

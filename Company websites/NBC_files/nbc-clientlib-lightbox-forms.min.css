@@ -1,0 +1,18 @@
+.lightbox-opened{overflow:hidden}
+.guide-modal.lightboxforms{background-color:rgba(0,0,0,0.8)}
+@media(max-width:991px){.guide-modal.lightboxforms .guide-modal-dialog{margin:0}
+}
+@media(min-width:991px){.guide-modal.lightboxforms{text-align:center;padding:0!important}
+.guide-modal.lightboxforms .guide-modal-dialog{width:600px;margin:0 auto}
+.guide-modal.lightboxforms:before{content:'';display:inline-block;height:100%;vertical-align:middle;margin-right:-4px}
+}
+.guide-modal.lightboxforms #lightbox-iframe{border:0;display:block}
+.guide-modal.lightboxforms .guide-modal-dialog{background-color:rgba(0,0,0,0.8);display:inline-block;text-align:left;vertical-align:middle}
+.guide-modal.lightboxforms .guide-modal-dialog .panel div{background-color:rgba(0,0,0,0.8)}
+.guide-modal.lightboxforms .guide-modal-dialog .guide-modal-content{-webkit-box-shadow:none;box-shadow:none;border:0;border-radius:0}
+.guide-modal.lightboxforms .guide-modal-dialog .guide-modal-content .guide-modal-header{background-color:white;padding:5px;border-bottom:0;height:30px}
+.guide-modal.lightboxforms .guide-modal-dialog .guide-modal-content .guide-modal-header .guide-close{margin-top:0;margin-right:0;float:right;font-size:12px;font-weight:normal;line-height:inherit;opacity:1;color:transparent;text-shadow:0 0 0 transparent}
+.guide-modal.lightboxforms .guide-modal-dialog .guide-modal-content .guide-modal-header .guide-close:hover{color:transparent;text-shadow:0 0 0 transparent}
+.guide-modal.lightboxforms .guide-modal-dialog .guide-modal-content .guide-modal-header .guide-close .guide-close-icon{background:no-repeat url('nbc-clientlib-lightbox-forms/images/close_intercept_off.png')!important;font-size:15px;float:left}
+.guide-modal.lightboxforms .guide-modal-dialog .guide-modal-content .guide-modal-header .guide-close .guide-close-icon:hover{background:no-repeat url('nbc-clientlib-lightbox-forms/images/close_intercept_on.png')!important;font-size:15px;float:left}
+.guide-modal.lightboxforms .guide-modal-dialog .guide-modal-content .guide-modal-body{padding:0}

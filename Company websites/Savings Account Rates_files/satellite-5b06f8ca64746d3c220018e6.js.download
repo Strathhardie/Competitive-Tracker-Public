@@ -1,0 +1,58 @@
+_satellite.pushAsyncScript(function(event, target, $variables){
+  var cid = getParameterByName("cid");
+if (cid) {
+  Cookies.set("bnsCID", cid, {expires: 30,path: '/'});
+}
+var bnsCID = Cookies.get("bnsCID");
+if (bnsCID || cid) {
+  $("[href*='appls.scotiabank.com']").each(function() {
+    console.log('dtm - appls');
+    var element = this;
+    updateUrlWithUppercaseTid(element);
+  });
+  $("[href*='appsd2d.scotiabank.com']").each(function() {
+    console.log('dtm - appd2d');
+    var element = this;
+    updateUrlWithTid(element);
+  });
+  $("[href*='scotiaonline.scotiabank.com/online/authentication/authentication.bns']").each(function() {
+    console.log('dtm - sol');
+    var element = this;
+    var url = $(element).attr('href');
+    if (url.indexOf("extoption") > -1) {
+      updateUrlWithTid(element);
+    }
+  });
+}
+function getParameterByName(name) {
+  var match = RegExp('[?&]' + name + '=([^&]*)')
+    .exec(window.location.search);
+  return match ? decodeURIComponent(match[1].replace(/\+/g, ' ')) : null;
+}
+function updateUrlWithTid(element) {
+  var value1 = $(element).attr('href');
+  if (value1.indexOf("TID") > -1) {
+    $(element).attr("href", value1.replace("TID=","tid="));
+  }
+  else {
+    if (value1.indexOf("?") > -1) {
+      $(element).attr("href", value1 + '&tid=' + bnsCID);
+    } else {
+      $(element).attr("href", value1 + '?tid=' + bnsCID);
+    }
+  }
+}
+function updateUrlWithUppercaseTid(element) {
+  var value1 = $(element).attr('href');
+  if (value1.indexOf("tid") > -1) {
+    $(element).attr("href", value1.replace("tid=","TID="));
+  }
+  else {
+    if (value1.indexOf("?") > -1) {
+      $(element).attr("href", value1 + '&TID=' + bnsCID);
+    } else {
+      $(element).attr("href", value1 + '?TID=' + bnsCID);
+    }
+  }
+}
+});

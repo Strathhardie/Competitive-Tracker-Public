@@ -1,0 +1,296 @@
+// 04-02-2016
+// BMO DFA caller
+var DCTAG = (function () {
+
+	// Module object
+	var module = {};
+	
+	// private vars
+	var defaultSrc = '4227502',
+		FloodLightUrl = '.fls.doubleclick.net/activityi',
+		lookup = '',
+		lookupQS = '',
+		lookupHASH = '',
+		lookupHasHash = false,
+		isHashFound = false,
+		lookupHasQS = false,
+		tagListScript = '',
+		waitTimeout = 200,
+		cycle = 0,
+		tagVariants = [],
+		tagVariant = {},
+		staticPrefix = '',
+		sitePrefix = ''
+		;
+
+	var logToConsole = false;
+	
+	function logmsg( s ) { if ( !logToConsole ) return; console.log( s ); }
+	
+	function loadTagList() {
+    logmsg( "loading taglist from " + tagListScript );
+		var s = staticPrefix + tagListScript;
+		module.tagliststatus = 1; // loading
+		document.write("<script language='javascript' type='text/javascript' src='" + s + "'><\/script>");
+	};
+	
+	// private methods
+	
+	//  get the tag parameters from the tagList
+	function lookupTag( tagList ) {
+		logmsg( "lookupTag" );
+		
+		if ( !tagList ) {
+			logmsg( "lookupTag: tagList empty" );
+			return null;
+		}
+
+		var dcparams = tagList[lookup];
+
+		if ( undefined === dcparams || null === dcparams ) { 
+			logmsg( "lookupTag: path not in list" );
+			return null;
+		}
+
+		if ( !lookupHasQS &&  !lookupHasHash) {
+			logmsg( "not lookupHasQS" );
+			return dcparams;
+		}
+		
+		// if the url has a query string, then check if the tag definition has query string variants
+		// if it does, then loop over them and check if the query string contains the string specified in the tag variants
+
+		// if the tag definition has no variants, just return it
+		if ( undefined !== dcparams.v ){
+			// loop over query string variants of the url
+			tagVariants = dcparams.v;
+			for( var idx=0; idx < tagVariants.length; idx++ ) {
+				tagVariant = tagVariants[idx];
+				logmsg( tagVariant );
+				if ( tagVariant === null ) continue;
+				if ( tagVariant.q === undefined ) continue;
+				if ( tagVariant.q === null ) continue;
+				if ( tagVariant.q.length === 0 ) continue;
+				if ( lookupQS.indexOf( tagVariant.q ) !== -1 ) {
+					dcparams = tagVariant.p;
+					break;
+				}
+			}
+		}
+			
+		
+		
+		if ( undefined !== dcparams.u ) {
+			// loop over hash variants of the url
+			tagVariants = dcparams.u;
+			for( var idx=0; idx < tagVariants.length; idx++ ) {
+				tagVariant = tagVariants[idx];
+				logmsg( tagVariant );
+				if ( tagVariant === null ) continue;
+				if ( tagVariant.h === undefined ) continue;
+				if ( tagVariant.h === null ) continue;
+				if ( tagVariant.h.length === 0 ) continue;
+				if ( lookupHASH.indexOf( tagVariant.h ) !== -1 ) {
+					dcparams = tagVariant.p;
+					isHashFound = true;
+					break;
+				}else{
+					isHashFound = false;
+				}
+			}
+		}
+
+		return dcparams;
+	};
+	
+	function loadTag() {
+		logmsg( 'tagging');
+		try {
+			var dcparams = {};
+			logmsg( "DCTAG.loadTag: " + module.tagliststatus );
+			switch ( module.tagliststatus ) {
+			case 0: { // first time in this function
+				dcparams = lookupTag( module.urltagBase );
+				if ( null != dcparams ) {
+					logmsg( "DCTAG.loadTag: tag found for top path: " + lookup );
+					
+					floodlightTag( dcparams.s, dcparams.t, dcparams.c );
+				} else {
+					logmsg( "DCTAG.loadTag: path " + lookup + " not found in top url tag list" );
+					// search in tagLists
+					var al = module.urltagLists.length,
+						found = false;
+					for ( var idx = 0; idx < al; idx++ ) {
+						var tagList = [],
+							tagPrefixes = [];
+							tagPrefixesLen = 0;
+						tagList = module.urltagLists[ idx ];
+						tagPrefixes = tagList[1];
+						tagPrefixesLen = tagList[1].length;
+						for ( var pidx = 0; pidx < tagPrefixesLen; pidx++ ) {
+							logmsg( "DCTAG.loadTag: is " + tagPrefixes[pidx] + " a prefix of " + lookup );
+							if ( tagPrefixes[pidx] == lookup.substr( 0, tagPrefixes[pidx].length ) ) {
+								found = true;
+								tagListScript = tagList[0];
+								loadTagList();
+								setTimeout(
+									function () {
+										loadTag();
+									}, 
+									waitTimeout
+								);
+								break;
+							}
+						}
+						if ( found )
+							break;
+					}
+					if ( !found ) 
+						logmsg( "DCTAG.loadTag: path '" + lookup + "' not handled by any defined tag list" );
+
+				}
+				break;
+			}
+			case 1: { // still loading tag list
+				cycle++;
+				logmsg( "DCTAG.loadTag: waiting for tag list to load. cycle= " + cycle );
+				setTimeout(
+					function () {
+						loadTag();
+					}, 
+					waitTimeout
+				);
+				break;
+			}
+			case 2: { // tag list loaded
+				dcparams = lookupTag( module.urltag );
+				if ( null != dcparams ) {
+					logmsg( "DCTAG.loadTag: tag found for path: " + lookup );
+					if (lookupHasHash) {
+						if (isHashFound) 
+							floodlightTag( dcparams.s, dcparams.t, dcparams.c );
+					} else {
+						floodlightTag( dcparams.s, dcparams.t, dcparams.c );
+					}
+				} else {
+					logmsg( "DCTAG.loadTag: path" + lookup + " not found in url tag list" );
+				}
+				break;
+			} 
+			default: { // should not be here
+				logmsg( "DCTAG.loadTag: invalid floodlight status = " + module.tagliststatus);
+			}
+			} // end switch;
+		} catch ( dcerr ) {
+			console.log( "DCTAG.loadTag: error in tagging" ); console.log( dcerr );
+		}
+			return;
+	};
+
+	function floodlightTag( s, t, c ) {
+		var axel = Math.random() + '';
+		var a = axel * 10000000000000;
+		var s1 = ( s === undefined ) ? defaultSrc : s;
+		var iframesrc = '//' + s1 + FloodLightUrl + ';src=' + s1 +';type=' + t + ';cat=' + c + ';ord=' + a + '?' ;
+		logmsg( "floodlightTag: " + iframesrc );
+
+		var iframe = window.document.createElement("iframe");
+
+		iframe.setAttribute("src", iframesrc );
+		iframe.setAttribute("frameborder", "0");
+		iframe.setAttribute("scrolling", "no");
+		iframe.setAttribute("name", 'dctag' );
+		iframe.setAttribute("id", 'dctag' );
+		iframe.height = 1;
+		iframe.width = 1;
+		iframe.style.height = "1px";
+		iframe.style.width = "1px";
+		iframe.style.display = "none";
+		
+		window.document.body.appendChild(iframe);
+	};
+
+	// public properties
+	module.urltagBase = {};
+	module.urltagLists = [];
+	module.urltag = [];
+	
+	module.tagliststatus = 0;
+	
+	// public methods
+	module.runFloodlight = function() {
+		
+		logmsg( "DCTAG.runFloodlight: ENTER " );
+		try {
+			try {
+				staticPrefix = ""; //BMO.staticPrefix;
+				sitePrefix = ""; //BMO.sitePrefix;
+				logmsg("the StaticPrefix is "+staticPrefix)
+			} catch ( sperr ) {
+			}
+			lookup = window.location.pathname;
+			if ( null != staticPrefix && staticPrefix.length > 0 ) {
+				lookup = lookup.replace( new RegExp( "^" + staticPrefix ), "" );
+			}
+			if ( null != sitePrefix && sitePrefix.length > 0 ) {
+				lookup = lookup.replace( new RegExp( "^" + sitePrefix ), "" );
+			}
+			lookupQS = window.location.search;
+			if ( null === lookupQS ) lookupQS = "";
+			lookupQS = lookupQS.substr(1); // remove leading ?
+			lookupHasQS = ( lookupQS.length > 0 );
+			
+			lookupHASH = window.location.hash;
+			if ( null === lookupHASH ) lookupHASH = "";
+			lookupHASH = lookupHASH.substr(1); // remove leading #
+			lookupHasHash = ( lookupHASH.length > 0 );
+			
+			if ( lookup.length > 1 && lookup[lookup.length - 1] == "/" ) lookup = lookup.substr( 0, lookup.length - 1 );
+			
+			logmsg( lookupQS );
+			logmsg( lookupHasQS );
+
+			loadTag();
+			
+		} catch ( dcerr ) {
+			console.log( "DCTAG.runFloodlight: " ); console.log( dcerr );
+		}
+	};
+
+	return module;
+
+})();
+
+
+// Floodlight tag system configuration
+
+	// top urls
+/*
+	DCTAG.urltagBase = {
+			'/home' : {  t: 'bmoge238', c: 'test1802', v: [ { q: 'isSenior=true', p: {t: 'bmoge238senior', c: 'test1802' } } ] },
+			'/accueil' : {  t: 'bmoge238', c: 'test267' }
+	};
+*/
+	DCTAG.urltagBase = {
+	};
+
+	
+	// url-tag mappings per path prefix
+	DCTAG.urltagLists = [
+    ['/js/floodlight/newpersonal.js', ['/main/personal','/principal/particuliers' ] ],
+    ['/js/floodlight/newWealth.js', ['/main/wealth-management','/principal/gestion-de-patrimoine' ] ],
+    ['/js/floodlight/newInsurance.js', ['/insurance','/assurance' ] ],
+	  ['/js/floodlight/landingPages.js', ['/lp','/lp/gam' ] ],
+    ['/js/floodlight/newGAM.js', [ '/gam/ca', '/gma/ca' ] ],
+    ['/js/floodlight/UKGAM.js', [ '/gam/uk' ] ],
+    ['/js/floodlight/nbdfa.js', [ '/nesbittburns' ] ],
+    ['/js/floodlight/pbca.js', [ '/privatebanking','/banqueprivee' ] ],
+    ['/js/floodlight/newBusiness.js', [ '/main/business', '/principal/entreprise' ] ],
+    ['/js/floodlight/smartfolio.js', [ '/smartfolio', '/portefeuille-fute' ] ],
+	  ['/js/floodlight/newILAD.js', ['/self-directed','/placements-autogeres','/advicedirect','/conseildirect'  ] ]
+	];
+
+/* end of Floodlight tag */
+
+// load the floodlight tag
+	DCTAG.runFloodlight();

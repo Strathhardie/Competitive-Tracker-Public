@@ -1,0 +1,93 @@
+@font-face{font-family:"Frutiger-Light";src:url("../../fonts/Scotiabank/Scotia_W_Rg.eot");src:url("../../fonts/Scotiabank/Scotia_W_Rg.eot?#iefix") format("embedded-opentype"),url("../../fonts/Scotiabank/Scotia_W_Rg.woff") format("woff"),url("../../fonts/Scotiabank/Scotia_W_Rg.ttf") format("truetype"),url("../../fonts/Scotiabank/Scotia_W_Rg.svg#Frutiger-Light") format("svg");font-weight:normal;font-style:normal}
+@media screen and (-webkit-min-device-pixel-ratio:0){@font-face{font-family:"Frutiger-Light";src:url("../../fonts/Scotiabank/Scotia_W_Rg.svg#Frutiger-Light") format("svg")}
+}
+@font-face{font-family:"Frutiger-Roman";src:url("../../fonts/Scotiabank/Scotia_W_Rg.eot");src:url("../../fonts/Scotiabank/Scotia_W_Rg.eot?#iefix") format("embedded-opentype"),url("../../fonts/Scotiabank/Scotia_W_Rg.woff") format("woff"),url("../../fonts/Scotiabank/Scotia_W_Rg.ttf") format("truetype"),url("../../fonts/Scotiabank/Scotia_W_Rg.svg#Frutiger-Roman") format("svg");font-weight:normal;font-style:normal}
+@media screen and (-webkit-min-device-pixel-ratio:0){@font-face{font-family:"Frutiger-Roman";src:url("../../fonts/Scotiabank/Scotia_W_Rg.svg#Frutiger-Roman") format("svg")}
+}
+@font-face{font-family:"Frutiger-Bold";src:url("../../fonts/Scotiabank/Scotia_W_Bd.eot");src:url("../../fonts/Scotiabank/Scotia_W_Bd.eot?#iefix") format("embedded-opentype"),url("../../fonts/Scotiabank/Scotia_W_Bd.woff") format("woff"),url("../../fonts/Scotiabank/Scotia_W_Bd.ttf") format("truetype"),url("../../fonts/Scotiabank/Scotia_W_Bd.svg#Frutiger-Bold") format("svg");font-weight:normal;font-style:normal}
+@media screen and (-webkit-min-device-pixel-ratio:0){@font-face{font-family:"Frutiger-Bold";src:url("../../fonts/Scotiabank/Scotia_W_Bd.svg#Frutiger-Bold") format("svg")}
+}
+@font-face{font-family:"Scotiabank-Light";src:url("../../fonts/Scotiabank/Scotia_W_Lt.eot");src:url("../../fonts/Scotiabank/Scotia_W_Lt.eot?#iefix") format("embedded-opentype"),url("../../fonts/Scotiabank/Scotia_W_Lt.woff") format("woff"),url("../../fonts/Scotiabank/Scotia_W_Lt.ttf") format("truetype"),url("../../fonts/Scotiabank/Scotia_W_Lt.svg#Scotiabank-Light") format("svg");font-weight:normal;font-style:normal}
+@media screen and (-webkit-min-device-pixel-ratio:0){@font-face{font-family:"Scotiabank-Light";src:url("../../fonts/Scotiabank/Scotia_W_Lt.svg#Scotiabank-Light") format("svg")}
+}
+@font-face{font-family:"Scotiabank-Light-It";src:url("../../fonts/Scotiabank/Scotia_W_LtIt.eot");src:url("../../fonts/Scotiabank/Scotia_W_LtIt.eot?#iefix") format("embedded-opentype"),url("../../fonts/Scotiabank/Scotia_W_LtIt.woff") format("woff"),url("../../fonts/Scotiabank/Scotia_W_LtIt.ttf") format("truetype"),url("../../fonts/Scotiabank/Scotia_W_LtIt.svg#Scotiabank-Light-It") format("svg");font-weight:normal;font-style:normal}
+@media screen and (-webkit-min-device-pixel-ratio:0){@font-face{font-family:"Scotiabank-Light-It";src:url("../../fonts/Scotiabank/Scotia_W_LtIt.svg#Scotiabank-Light-It") format("svg")}
+}
+@font-face{font-family:"Scotiabank-Regular";src:url("../../fonts/Scotiabank/Scotia_W_Rg.eot");src:url("../../fonts/Scotiabank/Scotia_W_Rg.eot?#iefix") format("embedded-opentype"),url("../../fonts/Scotiabank/Scotia_W_Rg.woff") format("woff"),url("../../fonts/Scotiabank/Scotia_W_Rg.ttf") format("truetype"),url("../../fonts/Scotiabank/Scotia_W_Rg.svg#Scotiabank-Regular") format("svg");font-weight:normal;font-style:normal}
+@media screen and (-webkit-min-device-pixel-ratio:0){@font-face{font-family:"Scotiabank-Regular";src:url("../../fonts/Scotiabank/Scotia_W_Rg.svg#Scotiabank-Regular") format("svg")}
+}
+@font-face{font-family:"Scotiabank-Regular-It";src:url("../../fonts/Scotiabank/Scotia_W_It.eot");src:url("../../fonts/Scotiabank/Scotia_W_It.eot?#iefix") format("embedded-opentype"),url("../../fonts/Scotiabank/Scotia_W_It.woff") format("woff"),url("../../fonts/Scotiabank/Scotia_W_It.ttf") format("truetype"),url("../../fonts/Scotiabank/Scotia_W_It.svg#Scotiabank-Regular-It") format("svg");font-weight:normal;font-style:normal}
+@media screen and (-webkit-min-device-pixel-ratio:0){@font-face{font-family:"Scotiabank-Regular-It";src:url("../../fonts/Scotiabank/Scotia_W_It.svg#Scotiabank-Regular-It") format("svg")}
+}
+@font-face{font-family:"Scotiabank-Bold";src:url("../../fonts/Scotiabank/Scotia_W_Bd.eot");src:url("../../fonts/Scotiabank/Scotia_W_Bd.eot?#iefix") format("embedded-opentype"),url("../../fonts/Scotiabank/Scotia_W_Bd.woff") format("woff"),url("../../fonts/Scotiabank/Scotia_W_Bd.ttf") format("truetype"),url("../../fonts/Scotiabank/Scotia_W_Bd.svg#Scotiabank-Bold") format("svg");font-weight:normal;font-style:normal}
+@media screen and (-webkit-min-device-pixel-ratio:0){@font-face{font-family:"Scotiabank-Bold";src:url("../../fonts/Scotiabank/Scotia_W_Bd.svg#Scotiabank-Bold") format("svg")}
+}
+@font-face{font-family:"Scotiabank-Bold-It";src:url("../../fonts/Scotiabank/Scotia_W_BdIt.eot");src:url("../../fonts/Scotiabank/Scotia_W_BdIt.eot?#iefix") format("embedded-opentype"),url("../../fonts/Scotiabank/Scotia_W_BdIt.woff") format("woff"),url("../../fonts/Scotiabank/Scotia_W_BdIt.ttf") format("truetype"),url("../../fonts/Scotiabank/Scotia_W_BdIt.svg#Scotiabank-Bold-It") format("svg");font-weight:normal;font-style:normal}
+@media screen and (-webkit-min-device-pixel-ratio:0){@font-face{font-family:"Scotiabank-Bold-It";src:url("../../fonts/Scotiabank/Scotia_W_BdIt.svg#Scotiabank-Bold-It") format("svg")}
+}
+@font-face{font-family:"Scotiabank-Headline";src:url("../../fonts/Scotiabank/Scotia_W_Headline.eot");src:url("../../fonts/Scotiabank/Scotia_W_Headline.eot?#iefix") format("embedded-opentype"),url("../../fonts/Scotiabank/Scotia_W_Headline.woff") format("woff"),url("../../fonts/Scotiabank/Scotia_W_Headline.ttf") format("truetype"),url("../../fonts/Scotiabank/Scotia_W_Headline.svg#Scotiabank-Headline") format("svg");font-weight:normal;font-style:normal}
+@media screen and (-webkit-min-device-pixel-ratio:0){@font-face{font-family:"Scotiabank-Headline";src:url("../../fonts/Scotiabank/Scotia_W_Headline.svg#Scotiabank-Headline") format("svg")}
+}
+@font-face{font-family:"Scotiabank-Legal";src:url("../../fonts/Scotiabank/Scotia_W_Legal.eot");src:url("../../fonts/Scotiabank/Scotia_W_Legal.eot?#iefix") format("embedded-opentype"),url("../../fonts/Scotiabank/Scotia_W_Legal.woff") format("woff"),url("../../fonts/Scotiabank/Scotia_W_Legal.ttf") format("truetype"),url("../../fonts/Scotiabank/Scotia_W_Legal.svg#Scotiabank-Legal") format("svg");font-weight:normal;font-style:normal}
+@media screen and (-webkit-min-device-pixel-ratio:0){@font-face{font-family:"Scotiabank-Legal";src:url("../../fonts/Scotiabank/Scotia_W_Legal.svg#Scotiabank-Legal") format("svg")}
+}
+body.apps .bns--mega-menu .mm--nav>li>a{font-size:1rem}
+.bns--mega-menu .mm--nav>li:hover::after{background-color:#ec111a}
+.bns--title h1,.bns--title h2,.bns--title h3,.bns--title h4,.bns--title h5,.bns--title h6{font-family:"Scotiabank-Headline",sans-serif}
+.bns--title h1 b,.bns--title h2 b,.bns--title h3 b,.bns--title h4 b,.bns--title h5 b,.bns--title h6 b{font-family:"Scotiabank-Headline",sans-serif}
+.bns--title h1 a,.bns--title h2 a,.bns--title h3 a,.bns--title h4 a,.bns--title h5 a,.bns--title h6 a{font-family:"Scotiabank-Headline",sans-serif}
+@media(min-width:768px){.bns--title h1{font-size:46px}
+.bns--title h2{font-size:36px}
+.bns--title h3{font-size:30px}
+.bns--title h4{font-size:24px}
+.bns--title h5,.bns--title h6{font-size:20px}
+}
+@media(max-width:767px){.bns--title h1{font-size:40px}
+.bns--title h2{font-size:35px}
+.bns--title h3{font-size:30px}
+.bns--title h4{font-size:24px}
+.bns--title h5,.bns--title h6{font-size:20px}
+}
+.bns--title small{color:#333}
+body{font-family:"Scotiabank-Regular","Frutiger-Roman",sans-serif;color:#333}
+body p i:not([class*="icon-"]),body p em:not([class*="icon-"]){font-family:"Scotiabank-Regular-It"}
+body p b i:not([class*="icon-"]),body p b em:not([class*="icon-"]),body p strong i:not([class*="icon-"]),body p strong em:not([class*="icon-"]){font-family:"Scotiabank-Bold-It"}
+.dark-bg [class^="icon-"],.dark-bg [class*=" icon-"]{color:#fff}
+.light-bg [class^="icon-"],.light-bg [class*=" icon-"]{color:#333}
+main a{font-family:"Scotiabank-Regular","Frutiger-Roman",sans-serif;font-weight:bold}
+.light-bg main a{color:#333}
+.dark-bg main a{color:#fff}
+.bns--card.card--text .c--title,.bns--card.card--media .c--title,.bns--card.card--cta .c--title{font-family:"Scotiabank-Bold","Frutiger-Bold",sans-serif;font-size:16px}
+.bns--card.card--text .c--text,.bns--card.card--media .c--text,.bns--card.card--cta .c--text{font-size:16px}
+.bns--card .c--subtext{color:#333}
+.bns--card.card--feature .c--title,.bns--card.card--info .c--title{font-family:"Scotiabank-Bold",sans-serif}
+.bns--card.card--feature .c--text,.bns--card.card--info .c--text{color:#333}
+.bns--card.card--feature.card--featured .c--text,.bns--card.card--feature.card--featured .c--icon,.bns--card.card--info.card--featured .c--text,.bns--card.card--info.card--featured .c--icon{color:#fff}
+.bns--card .c--icon{color:#333}
+.card-container .bns--card.c--shadow .c--title,.card-container .bns--card.c--clickable .c--title,.light-bg div.card-container .bns--card.c--shadow .c--title,.light-bg div.card-container .bns--card.c--clickable .c--title{font-size:16px}
+.card-container .bns--card .card-action{border-radius:999px}
+.map--bg .map--card .row .map--card-right .map--card-content{font-size:16px;color:#333}
+.map--bg .map--card .row .map--card-right .map--card-content .map--card-title{font-size:16px}
+.bns--header .h--btn .h--msg{font-size:12px}
+.bns--hero .h--heading .h--title{font-family:"Scotiabank-Headline","Frutiger-Bold",sans-serif;color:#333}
+.bns--hero .h--subtitle{font-family:"Scotiabank-Regular","Frutiger-Roman",sans-serif;color:#333}
+.bns--hero .h--cta .btn{font-family:"Scotiabank-Bold","Frutiger-Bold" sans-serif}
+.bns--hero.hero--bg .h--heading .h--title,.bns--hero.hero--bg .h--heading .h--subtitle{color:#fff}
+.product-cta .cta-main .button--lg{font-family:"Scotiabank-Bold","Frutiger-Bold",sans-serif}
+.bns--banner .b--heading{font-family:"Scotiabank-Headline";color:#333}
+.bns--banner .b--headingh1,.bns--banner .b--headingh2,.bns--banner .b--headingh3,.bns--banner .b--headingh4,.bns--banner .b--headingh5,.bns--banner .b--headingh6{font-family:"Scotiabank-Headline",sans-serif}
+.bns--banner .b--headingh1 b,.bns--banner .b--headingh2 b,.bns--banner .b--headingh3 b,.bns--banner .b--headingh4 b,.bns--banner .b--headingh5 b,.bns--banner .b--headingh6 b{font-family:"Scotiabank-Headline",sans-serif}
+.bns--banner .b--headingh1 a,.bns--banner .b--headingh2 a,.bns--banner .b--headingh3 a,.bns--banner .b--headingh4 a,.bns--banner .b--headingh5 a,.bns--banner .b--headingh6 a{font-family:"Scotiabank-Headline",sans-serif}
+@media(min-width:768px){.bns--banner .b--headingh1{font-size:46px}
+.bns--banner .b--headingh2{font-size:36px}
+.bns--banner .b--headingh3{font-size:30px}
+.bns--banner .b--headingh4{font-size:24px}
+.bns--banner .b--headingh5,.bns--banner .b--headingh6{font-size:20px}
+}
+@media(max-width:767px){.bns--banner .b--headingh1{font-size:40px}
+.bns--banner .b--headingh2{font-size:35px}
+.bns--banner .b--headingh3{font-size:30px}
+.bns--banner .b--headingh4{font-size:24px}
+.bns--banner .b--headingh5,.bns--banner .b--headingh6{font-size:20px}
+}
+.bns--banner .b--text{color:#333}

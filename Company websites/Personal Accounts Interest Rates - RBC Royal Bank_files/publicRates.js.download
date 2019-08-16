@@ -1,0 +1,178 @@
+$(document).ready(function () {
+	/* Lang Specific */
+	var content = {
+		lang: 'en',
+		pdBaseTable: '<table class="outlines table-striped w-full"><thead><th>If Balance is</th><th>Interest Rate [%]</th></thead><tbody class="public-rates-table"></tbody></table>',
+		error: '<a href="/rates/call-for-details.html">Call for details</a>'
+	}
+	/* Lang Specific END */
+	function env() {
+		var url = window.location.href;
+		if (/\.d(\d\d|evmain)/.test(url) || /localhost/.test(url) || /127\.0\.0\.1/.test(url)) {
+			return 'dev';
+		} else if (/sterbcroyalbank/i.test(url) || /sterbcbanqueroyale/i.test(url)) {
+			return 'bronze';
+		} else if (/silver\.rbcroyalbank/i.test(url) || /silver\.rbcbanqueroyale/i.test(url)) {
+			return 'silver';
+		} else {
+			return 'prod';
+		}
+	}
+	function mizDotNetMapping(env) {
+		switch (env) {
+			case 'dev':
+			case 'bronze':
+				return 'https://appsasm.steroyalbank.com';
+			case 'silver':
+				return 'https://appssai.steroyalbank.com';
+			default:
+				return 'https://apps.royalbank.com';
+		}
+	}
+	function getType() {
+		var url = window.location.href;
+		if (/\/persacct.html/.test(url)) {
+			return 'pd';
+		} else if (/\/cardprod.html/.test(url)) {
+			return 'cc';
+		} else if (/\/rsp.html/.test(url)) {
+			return 'ri';
+		} else if (/\/prime.html||\/index.html/.test(url)) {
+			return 'pr';
+		}
+		return '';
+	}
+	function getRatesIdMapping(type) {
+		//Mapping file should be loaded before this js file in the html
+		switch (type) {
+			case 'pd':
+				return pdMapping; // /_assets-custom/js/ratesIdMapping/pd.js
+			case 'ri':
+				return riMapping; // /_assets-custom/js/ratesIdMapping/ri.js
+			case 'cc':
+				return ccMapping; // /_assets-custom/js/ratesIdMapping/cc.js
+			case 'pr':
+				return prMapping; // /_assets-custom/js/ratesIdMapping/pr.js
+		}
+	}
+	function getErrorContent() {
+		var gtmErrorId = '';
+		switch (getType()) {
+			case 'pd':
+				gtmErrorId = 'persacct-sc-error';
+				break;
+			case 'ri':
+				gtmErrorId = 'rsp-sc-error';
+				break;
+			case 'cc':
+				gtmErrorId = 'cardprod-sc-error';
+				break;
+			case 'pr':
+				gtmErrorId = 'prime-sc-error';
+				break;
+		}
+		if (gtmErrorId) {
+			return [content.error.slice(0, 2), ' id="' + gtmErrorId + '" ', content.error.slice(2)].join('');
+		} else {
+			return content.error;
+		}
+	}
+
+	function addRow(tBody, label, value, data, isError) {
+		//if there's is a service error or missing entry, show error
+		if (isError || !data) {
+			value = getErrorContent();
+		} else {
+			value = value ? value.replace('{v}', data.Value) : data.Value;
+		}
+		var labelRow = ['<td>', label, '</td>'].join('');
+		var valueRow = ['<td>', value, '</td>'].join('');
+		tBody.append(['<tr>', labelRow, valueRow, '</tr>'].join(''));
+	}
+	function addPRRow(tBody, label, value, data, isError) {
+		//if there's is a service error or missing entry, show error
+		if (isError || !data) {
+			value = getErrorContent();
+		} else {
+			value = value ? value.replace('{v}', data.Value) : data.Value;
+		}
+		var labelRow = ['<td>', label, '</td>'].join('');
+		var valueRow = ['<td>', value, '</td>'].join('');
+		var formattedDate = data ? [data.EffDate.slice(0, 4), data.EffDate.slice(4, 6), data.EffDate.slice(6)].join('/') : '';
+		var dateRow =  ['<td>', formattedDate, '</td>'].join('');
+		tBody.append(['<tr>', labelRow, valueRow, dateRow, '</tr>'].join(''));
+	}
+	function addCCRow(tRow, value, data, fullWidth, isError) {
+		//if there's is a service error or missing entry, show error
+		if (isError || !data) {
+			value = getErrorContent();
+		} else {
+			value = value ? value.replace('{v}', data.Value) : data.Value;
+		}
+		//every cc table should have two columns, set colspan to 2 to add extra column if missing
+		var td = fullWidth ? '<td colspan="2">' : '<td>';
+		tRow.append([td, value, '</td>'].join(''));
+	}
+	function renderData(type, dataMap, isError) {
+		if (!dataMap) dataMap = {};
+		var mapping = getRatesIdMapping(type);
+		switch (type) {
+			case 'pr':
+				for (var key in mapping) {
+					if (mapping.hasOwnProperty(key)) {
+						var tBody = $(".public-rates-table");
+						mapping[key].forEach(function (row, i) {
+							addPRRow(tBody, row.label, row.value, dataMap[row.id], isError);
+						})
+					}
+				}
+				break;
+			case 'pd':
+				//setup base table in all .table-morph elements (for type pd only)
+				$("div.table-morph").append(content.pdBaseTable);
+			//no break;
+			case 'ri':
+				for (var key in mapping) {
+					if (mapping.hasOwnProperty(key)) {
+						var tBody = $("#public-rates_" + key + " .public-rates-table");
+						mapping[key].forEach(function (row, i) {
+							addRow(tBody, row.label, row.value, dataMap[row.id], isError);
+						})
+					}
+				}
+				break;
+			case 'cc':
+				for (var key in mapping) {
+					if (mapping.hasOwnProperty(key)) {
+						var tRow = $("tr#public-rates_" + key);
+						mapping[key].forEach(function (row, i) {
+							addCCRow(tRow, row.value, dataMap[row.id], mapping[key].length === 1, isError);
+						})
+					}
+				}
+				break;
+		}
+	}
+
+	function fetchData(type) {
+		var type = getType();
+		var typeParam = type && type !== 'pr' ? '&type=' + type : '';
+		$.get(mizDotNetMapping(env()) + '/uaw0/app-services/public-rates/api/publicrates?lang=' + content.lang + typeParam, function (data) {
+			if (data.result_code !== '0') {
+				renderData(type, null, true); //render with error
+				return;
+			}
+			data = data.result_content;
+			//convert to key value map
+			var dataMap = {};
+			data.forEach(function (account, i) {
+				dataMap[account.Name] = account;
+			});
+
+			renderData(type, dataMap);
+		}).fail(function (error) {
+			renderData(type, null, true);
+		})
+	}
+	fetchData();
+});

@@ -1,0 +1,38 @@
+_satellite.pushBlockingScript(function(event, target, $variables){
+  /*_satellite.getVar("referrerType");
+
+var crossSite_queryString;
+
+var cs_campaign = _satellite.readCookie("utm_campaign"); 
+var cs_medium = _satellite.readCookie("utm_medium");
+var cs_source = _satellite.readCookie("utm_source");
+var cs_content = _satellite.readCookie("utm_content");
+var cs_term = _satellite.readCookie("utm_term");
+
+	if (typeof cs_campaign == "undefined" || cs_campaign == "")return;
+  if (typeof cs_medium == "undefined") cs_medium ="";
+  if (typeof cs_source == "undefined") cs_source ="";
+  if (typeof cs_content == "undefined") cs_content ="";
+  if (typeof cs_term == "undefined") cs_term ="";
+
+crossSite_queryString = "cs_campaign=" + cs_campaign +  "&cs_medium=" +cs_medium+ "&cs_source=" +cs_source+ "&cs_content=" +cs_content+ "&cs_term=" +cs_term;
+_satellite.notify(["campBN crrrr ", crossSite_queryString], 3);
+//alert("crossSite_queryString  "+  crossSite_queryString);
+// =========================================================
+var links;
+
+
+if(_satellite.getVar("language")=="fr"){
+	var links = $('a[href*="promobnc.ca"]'); 
+}else{
+	var links = $('a[href*="promonbc.ca"]'); 
+}
+
+for (i = links.length -1 ; i >=0; i--){
+	if (links[i].href.indexOf("?") > -1)
+      		links[i].href = links[i].href + "&" + crossSite_queryString;
+	else
+        	links[i].href = links[i].href + "?" +  crossSite_queryString;
+}
+*/
+});

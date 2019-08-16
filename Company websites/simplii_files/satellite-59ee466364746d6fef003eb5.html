@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!-- saved from url=(0116)https://assets.adobedtm.com/8144c3e3301083430b502676d23b3fd3e0e011ee/scripts/satellite-59ee466364746d6fef003eb5.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head><body>
+    <script type="text/javascript" async="" src="./f.txt"></script><script async="" src="./scevent.min.js.download"></script><script src="./553296508396211" async=""></script><script src="./284592808392980" async=""></script><script async="" src="./fbevents.js.download"></script><script type="text/javascript" async="" src="./insight.min.js.download"></script><script async="" src="./uwt.js.download"></script><script>
+      (function(){
+        function escapeForHtml(str){
+          if (!str) return str
+          return str
+            .replace(/\&/g, '&amp;')
+            .replace(/\</g, '&lt;')
+            .replace(/\>/g, '&gt;')
+            .replace(/\"/g, '&quot;')
+            .replace(/\'/g, '&#x27;')
+            .replace(/\//g, '&#x2F;')
+        }
+
+        var regexChars = /[.*+?^${}()|[\]\\]/g;
+        function escapeForRegex(str) {
+          return str.replace(regexChars, "\\$&");
+        }
+
+        function parseQueryString(){
+          var ret = {}, parts = location.search.substring(1).split('&');
+          for (var i = parts.length; i--;) {
+            var vardef = parts[i].split('='), varname = vardef[0], value = vardef[1];
+            ret[varname] = unescape(value);
+          }
+          return ret;
+        }
+
+        var queryParams = parseQueryString();
+
+        var markup = "<!-- Twitter universal website tag code -->\n<script>\n!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);\n},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',\na=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');\n// Insert Twitter Pixel ID and Standard Event data below\ntwq('init','nzowo');\ntwq('track','PageView');\n</scr"+"ipt>\n<br>\n<script type=\"text/javascript\">\n_linkedin_data_partner_id = \"176073\";\n</scr"+"ipt><script type=\"text/javascript\">\n(function(){var s = document.getElementsByTagName(\"script\")[0];\nvar b = document.createElement(\"script\");\nb.type = \"text/javascript\";b.async = true;\nb.src = \"https://snap.licdn.com/li.lms-analytics/insight.min.js\";\ns.parentNode.insertBefore(b, s);})();\n</scr"+"ipt>\n<noscript>\n<img height=\"1\" width=\"1\" style=\"display:none;\" alt=\"\" src=\"https://dc.ads.linkedin.com/collect/?pid=176073&fmt=gif\" />\n</noscript>\n<br>\n<!-- Facebook Pixel Code -->\n<script>\n!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?\n \nn.callMethod.apply(n,arguments):n.queue.push(arguments)};\n \nif(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';\nn.queue=[];t=b.createElement(e);t.async=!0;\nt.src=v;s=b.getElementsByTagName(e)[0];\ns.parentNode.insertBefore(t,s)}(window,\ndocument,'script',\n'//connect.facebook.net/en_US/fbevents.js');\n \nfbq('init', '284592808392980');\nfbq('init', '553296508396211');\n\nfbq('track', \"PageView\");\n</scr"+"ipt>\n\n<noscript>\n<img height=\"1\" width=\"1\"style=\"display:none\"\nsrc=\"https://www.facebook.com/tr?id=284592808392980&ev=PageView&noscript=1\"/>\n<img height=\"1\" width=\"1\"style=\"display:none\"\nsrc=\"https://www.facebook.com/tr?id=1478310479108228&ev=PageView&noscript=1\"/>\n</noscript>\n<!-- End Facebook Pixel Code -->\n<br>\n<!-- \nStart of global snippet: Please do not remove\nPlace this snippet between the <head> and </head> tags on every page of your site.\n-->\n<!-- Global site tag (gtag.js) - DoubleClick -->\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=DC-8208990\"></scr"+"ipt>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n\n  gtag('config', 'DC-8208990');\n  gtag('config', 'AW-997008455');\n</scr"+"ipt>\n<!-- End of global snippet: Please do not remove -->\n<br>\n<script type='text/javascript'>\n  (function(win, doc, sdk_url){\n  if(win.snaptr) return;\n  var tr=win.snaptr=function(){\n  tr.handleRequest? tr.handleRequest.apply(tr, arguments):tr.queue.push(arguments);\n};\n  tr.queue = [];\n  var s='script';\n  var new_script_section=doc.createElement(s);\n  new_script_section.async=!0;\n  new_script_section.src=sdk_url;\n  var insert_pos=doc.getElementsByTagName(s)[0];\n  insert_pos.parentNode.insertBefore(new_script_section, insert_pos);\n})(window, document, 'https://sc-static.net/scevent.min.js');\n\n  snaptr('init','3ebdc4b3-5a08-4a55-8e0f-55b68eb70853',{\n  'user_email':'<USER-EMAIL>'\n})\n  snaptr('track','PAGE_VIEW') \n</scr"+"ipt>";
+
+        for (var name in queryParams){
+          var regex = new RegExp('%' + escapeForRegex(name) + '%', 'ig');
+          markup = markup.replace(regex, 
+            escapeForHtml(queryParams[name]));
+        }
+
+        document.write(markup)
+      })();
+    </script><!-- Twitter universal website tag code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+// Insert Twitter Pixel ID and Standard Event data below
+twq('init','nzowo');
+twq('track','PageView');
+</script>
+<br>
+<script type="text/javascript">
+_linkedin_data_partner_id = "176073";
+</script><script type="text/javascript">
+(function(){var s = document.getElementsByTagName("script")[0];
+var b = document.createElement("script");
+b.type = "text/javascript";b.async = true;
+b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b, s);})();
+</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=176073&fmt=gif" />
+</noscript>
+<br>
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+ 
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+ 
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,
+document,'script',
+'//connect.facebook.net/en_US/fbevents.js');
+ 
+fbq('init', '284592808392980');
+fbq('init', '553296508396211');
+
+fbq('track', "PageView");
+</script>
+
+<noscript>
+<img height="1" width="1"style="display:none"
+src="https://www.facebook.com/tr?id=284592808392980&ev=PageView&noscript=1"/>
+<img height="1" width="1"style="display:none"
+src="https://www.facebook.com/tr?id=1478310479108228&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+<br>
+<!-- 
+Start of global snippet: Please do not remove
+Place this snippet between the <head> and </head> tags on every page of your site.
+-->
+<!-- Global site tag (gtag.js) - DoubleClick -->
+<script async="" src="./js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'DC-8208990');
+  gtag('config', 'AW-997008455');
+</script>
+<!-- End of global snippet: Please do not remove -->
+<br>
+<script type="text/javascript">
+  (function(win, doc, sdk_url){
+  if(win.snaptr) return;
+  var tr=win.snaptr=function(){
+  tr.handleRequest? tr.handleRequest.apply(tr, arguments):tr.queue.push(arguments);
+};
+  tr.queue = [];
+  var s='script';
+  var new_script_section=doc.createElement(s);
+  new_script_section.async=!0;
+  new_script_section.src=sdk_url;
+  var insert_pos=doc.getElementsByTagName(s)[0];
+  insert_pos.parentNode.insertBefore(new_script_section, insert_pos);
+})(window, document, 'https://sc-static.net/scevent.min.js');
+
+  snaptr('init','3ebdc4b3-5a08-4a55-8e0f-55b68eb70853',{
+  'user_email':'<USER-EMAIL>'
+})
+  snaptr('track','PAGE_VIEW') 
+</script>
+  
+
+<form method="GET" action="https://tr.snapchat.com/cm/i" target="snap05734773139363882" accept-charset="utf-8" style="display: none;"><iframe id="snap05734773139363882" name="snap05734773139363882" src="./saved_resource.html"></iframe></form><script src="./f(1).txt"></script><script src="./adsct" type="text/javascript"></script><script src="./saved_resource" type="text/javascript"></script></body></html>

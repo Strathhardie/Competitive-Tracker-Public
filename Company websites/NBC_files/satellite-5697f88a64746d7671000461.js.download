@@ -1,0 +1,338 @@
+_satellite.pushAsyncScript(function(event, target, $variables){
+  //InsertCookie
+
+var mktcode =  _satellite.getQueryParamCaseInsensitive("promoIdentificationInput");
+if(typeof mktcode != "undefined"){
+_satellite.setCookie("bncmkcode",mktcode);
+}
+//Look for the new bncmkcode cookie
+var marketingCodenew= _satellite.readCookie("bncmkcode");
+if(typeof marketingCodenew != "undefined"){
+	var links2 = $.merge($('a[href*="/formulaires/carte-de-credit/"]'),$('a[href*="/forms/credit-card/"]'));
+	for (i = links2.length -1 ; i >=0; i--){
+		var separator = "?";
+		if (links2[i].href.indexOf("?") > -1) separator = "&";{  
+          links2[i].href += separator + "promoIdentificationInput=" + marketingCodenew;
+		}
+	}
+}else{
+        
+var marketingCode="";
+var referrerType = _satellite.getVar("referrerType");
+var CAARef = "false";
+
+if(referrerType == "direct"){
+	marketingCode="IAOK";
+//  _satellite.setVar("marketingCode");
+
+}else if (referrerType == "organic"){
+	marketingCode="IAOJ";
+//   _satellite.setVar("marketingCode");
+
+}else if (referrerType == "campaign"){
+	var campaign = _satellite.readCookie("_sdsat_utm_campaign");
+	if(typeof campaign != "undefined" && campaign != ""){
+//		if(campaign.indexOf("credit-card-mc-platinum-business_annual_") > -1)	marketingCode = "CICB";
+	if(campaign.indexOf("credit-card-mc-syncro_annual_") > -1) 		marketingCode = "IAOF";
+		else if(campaign.indexOf("credit-card-mc-world_annual_") > -1) 			marketingCode = "IAOG";
+		else if(campaign.indexOf("credit-card-mc-world-elite_annual_") > -1) 	marketingCode = "IAOH";
+		else if(campaign.indexOf("credit-card-mc-mc1_annual_") > -1) 			marketingCode = "IAOI";
+		else if(campaign.indexOf("credit-card_annual_") > -1) 					marketingCode = "IAOE";
+		else if(campaign.indexOf("newsletter-annual_") > -1)					marketingCode = "IAOL";
+		else if(campaign.indexOf("local-annual_") > -1) 						marketingCode = "IAOM";
+		else if(campaign.indexOf("prs_") > -1) 									marketingCode = "IAON";
+
+		var source  = _satellite.readCookie("_sdsat_utm_source"); 		
+		var medium = _satellite.readCookie("_sdsat_utm_medium");
+    var content = _satellite.readCookie("_sdsat_utm_content");// FM 13/04/2016 pour MC Echo
+		if (typeof source == "undefined") source="";
+		if (typeof medium == "undefined") medium="";
+    if (typeof content == "undefined") content="";// FM 13/04/2016 pour MC Echo
+
+	// Si la campagne WE magasinage de fetes existe et utm source a une valeur
+	if(campaign.indexOf("world-elite-magasinage-fetes-fall-2016") > -1 && source!= ""){
+	// Si utm source a facebook alors marketing code est ICEN
+      if (source.indexOf("facebook") > -1) marketingCode="ICEN";
+	} 
+	// Si la campagne ECHO magasinage de fetes existe et utm source a une valeur    
+   if(campaign.indexOf("echo-magasinage-fetes-fall-2016") > -1 && source!= ""){
+	// Si utm source a facebook alors marketing code est ICEM
+      if (source.indexOf("facebook") > -1) marketingCode="ICEM";
+	}  
+
+     // 13 09 2016 No tache Jira - email. 
+		if(campaign.indexOf("world-elite-fall-2016") > -1 && source!= ""){
+      if (source.indexOf("affichage") > -1) marketingCode="ICBH";
+      else if (source.indexOf("dbm-ca-rem-non-converters") > -1) marketingCode="ICCZ";//"ICCW";
+      else if (source.indexOf("dbm-ca-rem-lp") > -1) marketingCode="ICCZ";//"ICCW";
+      else if (source.indexOf("dbm-ca-contextual-vacation") > -1) marketingCode="ICCZ"; // "ICCX";
+      else if (source.indexOf("dbm-ca-contextual-luxury-goods") > -1) marketingCode="ICCZ"; //"ICCX";
+      else if (source.indexOf("dbm-ca-contextual-travel-related") > -1) marketingCode="ICCZ"; //"ICCX";
+      else if (source.indexOf("dbm-ca-custom-affinity-non-competition") > -1) marketingCode="ICCZ"; //"ICCY";
+      else if (source.indexOf("dbm-ca-custom-affinity-competition") > -1) marketingCode="ICCZ";  //"ICCY";
+      else if (source.indexOf("dbm-ca-behavioral-shopping-luxury") > -1) marketingCode="ICCZ";
+      else if (source.indexOf("dbm-ca-behavioral-hhi-75k") > -1) marketingCode="ICCZ";
+      else if (source.indexOf("dbm-ca-behavioral-lookalike-audiences") > -1) marketingCode="ICCZ";
+      else if (source.indexOf("dbm-ca-behavioral-luxury-travel") > -1) marketingCode="ICCZ";
+      else if (source.indexOf("dbm-ca-behavioral-top-tier-spenders") > -1) marketingCode="ICCZ";
+      else if (source.indexOf("dbm-ca-inmarket-audiences") > -1) marketingCode="ICCZ";
+      else if (source.indexOf("dbm-ca-business-insider") > -1) marketingCode="ICDA";
+      else if (source.indexOf("dbm-ca-yahoo") > -1) marketingCode="ICDA";
+      else if (source.indexOf("dbm-ca-cpax") > -1) marketingCode="ICDA";
+      else if (source.indexOf("dbm-ca-bbc") > -1) marketingCode="ICDA";
+      else if (source.indexOf("dbm-ca-tmx-money") > -1) marketingCode="ICDA";
+      else if (source.indexOf("dbm-ca-wall-street-journal") > -1) marketingCode="ICDA";
+      else if (source.indexOf("dbm-ca-globe-and-mail") > -1) marketingCode="ICDA";
+      else if (source.indexOf("dbm-ca-forbes") > -1) marketingCode="ICDA";
+      else if (source.indexOf("dbm-ca-lapresse") > -1) marketingCode="ICDA";
+      else if (source.indexOf("dbm-ca-journal-de-montreal") > -1) marketingCode="ICDA";
+      else if (source.indexOf("dbm-ca-lesaffaires") > -1) marketingCode="ICDA";
+      else if (source.indexOf("tubemogul") > -1) marketingCode="ICDC";
+      else if (source.indexOf("facebook") > -1) marketingCode="ICDB";
+      else if (source.indexOf("google-search") > -1) marketingCode="ICDD";
+//       _satellite.setVar("marketingCode");
+	} 
+    
+    // 06 09 2016 Alex added  by FM Jira task https://bnc-jira-pprd.techsolcom.ca/browse/AOO-203
+		if(campaign.indexOf("echo") > -1 && source!= ""){
+      if (source.indexOf("affichage") > -1) marketingCode="ICBH";
+      else if (source.indexOf("plv") > -1) marketingCode="ICBH";
+      else if (source.indexOf("ooh") > -1) marketingCode="ICBH";
+      else if (source.indexOf("affichage dynamique") > -1) marketingCode="ICBH";
+      else if (source.indexOf("metro") > -1) marketingCode="ICBH";
+      else if (source.indexOf("radio") > -1) marketingCode="ICBH";
+      else if (source.indexOf("publisac") > -1) marketingCode="ICBI";
+      else if (source.indexOf("video") > -1) marketingCode="ICBJ";
+      else if (source.indexOf("youtube") > -1) marketingCode="ICBJ";
+      else if (source.indexOf("tubemogul") > -1) marketingCode="ICBJ";
+      else if (source.indexOf("premium") > -1) marketingCode="ICBJ";
+      else if (source.indexOf("juicemobile") > -1) marketingCode="ICBJ";
+      else if (source.endsWith("facebook-leisure-persona")) marketingCode="ICDE";
+      else if (source.endsWith("facebook-top-brands")) marketingCode="ICDH";
+      else if (source.endsWith("facebook-foodies-persona")) marketingCode="ICDJ";
+      else if (source.endsWith("facebook-retargeting")) marketingCode="ICDM";
+      else if (source.endsWith("facebook-shopping-persona")) marketingCode="ICCO";
+      else if (source.endsWith("facebook")) marketingCode="ICBK";
+      else if (source.indexOf("aol") > -1) marketingCode="ICBL";
+      else if (source.indexOf("atedra") > -1) marketingCode="ICBM";
+      else if (source.indexOf("quebecor") > -1) marketingCode="ICBN";
+      else if (source.indexOf("bell-media") > -1) marketingCode="ICBO";
+      else if (source.indexOf("lapresse") > -1) marketingCode="ICBP";
+      else if (source.indexOf("privatedeal") > -1) marketingCode="ICBP";
+      else if (source.indexOf("oboxmedia") > -1) marketingCode="ICBQ";
+      else if (source.indexOf("notable") > -1) marketingCode="ICBR";
+      else if (source.indexOf("kct") > -1) marketingCode="ICBS";
+      else if (source.indexOf("in-market") > -1) marketingCode="ICBT";
+      else if (source.indexOf("inmarket") > -1) marketingCode="ICBT";
+      else if (source.indexOf("tubemogul-display") > -1) marketingCode="ICBU";
+      else if (source.indexOf("amazon") > -1) marketingCode="ICBV";
+      else if (source.indexOf("districtm") > -1) marketingCode="ICBW";
+      else if (source.indexOf("walmart") > -1) marketingCode="ICBX";
+      else if (source.indexOf("bestbuy") > -1) marketingCode="ICBY";
+      else if (source.indexOf("redflagdeals") > -1) marketingCode="ICBZ";
+      else if (source.indexOf("cpax") > -1) marketingCode="ICCA";
+      else if (source.indexOf("tele-quebec") > -1) marketingCode="ICCB";
+      else if (source.indexOf("radio-canada") > -1) marketingCode="ICCC";
+      else if (source.indexOf("tc-media") > -1) marketingCode="ICCD";
+      else if (source.indexOf("rogers") > -1) marketingCode="ICCE";
+      else if (source.indexOf("cbc") > -1) marketingCode="ICCF";
+      else if (source.indexOf("postmedia") > -1) marketingCode="ICCG";
+      else if (source.indexOf("yahoo") > -1) marketingCode="ICCH";
+      else if (source.indexOf("look-a-like") > -1) marketingCode="ICCI";
+      else if (source.indexOf("lookalike") > -1) marketingCode="ICCI"; 
+      else if (source.indexOf("looalike") > -1) marketingCode="ICCI"; 
+      else if (source.indexOf("remarketing") > -1) marketingCode="ICCJ"; 
+      else if (source.indexOf("gmail") > -1) marketingCode="ICCK"; 
+      else if (source.indexOf("sem") > -1) marketingCode="ICCL"; 
+      else if (source.indexOf("google-search") > -1) marketingCode="ICCL";
+      else if (source.indexOf("dbm-ca-rem") > -1) marketingCode="ICCJ";
+      else if (source.indexOf("dbm-ca-custom-affinity") > -1) marketingCode="ICDF";
+      else if (source.indexOf("dbm-ca-private") > -1) marketingCode="ICBP";
+      else if (source.indexOf("dbm-ca-behavioral") > -1) marketingCode="ICDG";
+      else if (source.indexOf("dbm-ca-bct") > -1) marketingCode="ICDP";
+      else if (source.indexOf("google-display") > -1) marketingCode="ICDL";
+      else if (source.indexOf("dbm-ca-tv-comedy-fans-adx") > -1) marketingCode="ICDO";
+      else if (source.indexOf("dbm-ca-shopaholic-adx") > -1) marketingCode="ICDO";
+      else if (source.indexOf("radium-one") > -1) marketingCode="ICDK";
+      else if (source.indexOf("epush-bnc") > -1) marketingCode="ICCM";
+      else if (source.indexOf("ctv") > -1) marketingCode="ICCN";
+      else if (source.indexOf("star-phoenix") > -1) marketingCode="ICCN";
+      else if (source.indexOf("dbm-ca-behavioural") > -1) marketingCode="ICDG";
+      else if (source.indexOf("contextual") > -1) marketingCode="ICDN";
+// _satellite.setVar("marketingCode");
+	} 
+
+/*    // 29 08 2016 Nick added  by FM
+    if(campaign.indexOf("mc-echo-spring-fall-2016") > -1 && source!= ""){
+      if (source.indexOf("google-search") > -1) marketingCode="ICDN";
+      else if (source.indexOf("gmail") > -1) marketingCode="ICDM";
+      else if (source.indexOf("facebook") > -1) marketingCode="ICDJ";
+      else if (source.indexOf("dbm-ca-private-deals-lapresse") > -1) marketingCode="ICDH";
+      else if (source.indexOf("dbm-ca-rem-recency") > -1) marketingCode="ICDE";
+      else if (source.indexOf("dbm-ca-custom-affinity-non-competition") > -1) marketingCode="ICDF";
+      else if (source.indexOf("dbm-ca-rem-visiteurs-lp-echo") > -1) marketingCode="ICDE";
+      else if (source.indexOf("dbm-ca-rem-clients-25-44") > -1) marketingCode="ICDE";
+      else if (source.indexOf("dbm-ca-private-deals-lesaffaires") > -1) marketingCode="ICDH";
+      else if (source.indexOf("dbm-ca-custom-affinity-competition") > -1) marketingCode="ICDF";
+      else if (source.indexOf("dbm-ca-behavioral-millenials") > -1) marketingCode="ICDG";
+      else if (source.indexOf("dbm-ca-bct-grocery") > -1) marketingCode="ICDP";
+      else if (source.indexOf("dbm-ca-rem-credit-cards") > -1) marketingCode="ICDE";
+      else if (source.indexOf("google-display") > -1) marketingCode="ICDL";
+      else if (source.indexOf("dbm-ca-private-deals-quebecor") > -1) marketingCode="ICDH";
+      else if (source.indexOf("dbm-ca-bct-gas-stations") > -1) marketingCode="ICDP";
+      else if (source.indexOf("dbm-ca-tv-comedy-fans-adx") > -1) marketingCode="ICDO";
+      else if (source.indexOf("dbm-ca-private-deals-bell") > -1) marketingCode="ICDH";
+      else if (source.indexOf("dbm-ca-lookalike-converters") > -1) marketingCode="ICDG";
+      else if (source.indexOf("dbm-ca-private-deals-cpax") > -1) marketingCode="ICDH";
+      else if (source.indexOf("radium-one") > -1) marketingCode="ICDK";
+      else if (source.indexOf("dbm-ca-shopaholic-adx") > -1) marketingCode="ICDO";
+      else if (source.indexOf("dbm-ca-lookalike-echo-lp") > -1) marketingCode="ICDG";
+
+	} */
+ 
+    // FM : ajoute annual mc selon 3 type de sources FB 29-08-16
+if(campaign.indexOf("acq_credit-card_annual_mc") > -1 && source!= ""){
+      if (source.indexOf("facebook-multi-products") > -1) marketingCode="ICDB";
+      else if (source.indexOf("facebook-rem") > -1) marketingCode="ICDC";
+      else if (source.indexOf("facebook-ron") > -1) marketingCode="ICDD";
+//   _satellite.setVar("marketingCode");
+} 
+    if(campaign.indexOf("mc-platine-affaires-summer-2016") > -1 && source!= ""){
+      //if (source.indexOf("facebook") > -1) marketingCode="CICD"; // FM 25-10-16
+      //else if (source.indexOf("dbm-ca-private-deal-lesaffaires") > -1) marketingCode="CICE";
+      //else 
+      if (source.indexOf("dbm-ca-private-deal-radio-canada") > -1) marketingCode="CICF";
+      else if (source.indexOf("dbm-ca-private-deal-quebecor-affaires") > -1) marketingCode="CICG";
+      else if (source.indexOf("dbm-ca-private-deal-ypbanking") > -1) marketingCode="CICH";
+      else if (source.indexOf("dbm-ca-private-deal-rogers") > -1) marketingCode="CICI";
+	  
+      else if (source.indexOf("dbm-ca-demo") > -1) marketingCode="CICQ";
+	  	else if (source.indexOf("dbm-ca-custom-affinity") > -1) marketingCode="CICQ";
+	  	else if (source.indexOf("dbm-ca-interests") > -1) marketingCode="CICQ";
+	  
+      else if (source.indexOf("dbm-ca-look-alike-pages-promo-printemps") > -1) marketingCode="CICR";
+	  	else if (source.indexOf("dbm-ca-look-alike-entreprise") > -1) marketingCode="CICR";
+	  	  
+      else if (source.indexOf("dbm-ca-rem-lesavoirdentreprise") > -1) marketingCode="CICU";
+	  	else if (source.indexOf("dbm-ca-rem-devenir-entrepreneur") > -1) marketingCode="CICU";
+	  	else if (source.indexOf("dbm-ca-rem-icriq") > -1) marketingCode="CICU";
+	  	else if (source.indexOf("dbm-ca-rem-entreprise") > -1) marketingCode="CICU";
+	  	else if (source.indexOf("dbm-ca-rem-jecomprends") > -1) marketingCode="CICU";
+	  	else if (source.indexOf("dbm-ca-rem-page-promo-printemps") > -1) marketingCode="CICU";
+	  	else if (source.indexOf("dbm-ca-rem-generation-inc") > -1) marketingCode="CICU";
+	  	else if (source.indexOf("dbm-ca-rem-lapressextra") > -1) marketingCode="CICU";
+	  	else if (source.indexOf("dbm-ca-rem-eeb") > -1) marketingCode="CICU";
+	  	  
+      else if (source.indexOf("google-display") > -1) marketingCode="CICV";
+      else if (source.indexOf("google-search") > -1) marketingCode="CICW";
+      else if (source.indexOf("les-affaires") > -1) marketingCode="CICX";
+      else if (source.indexOf("lapresse") > -1) marketingCode="CICY";
+	  	else if (source.indexOf("dbm-ca-private-deal-lapresseaffaires") > -1) marketingCode="CICY";
+	  
+      else if (source.indexOf("acquizition.biz") > -1) marketingCode="CICZ";
+      else if (source.indexOf("icriq.com") > -1) marketingCode="CIDA";
+      else if (source.indexOf("fondation-entrepreneurship") > -1) marketingCode="CIDB";
+//    _satellite.setVar("marketingCode");
+}   
+    
+        // 01 09 2017 No tache Jira - email. 
+		if(campaign.indexOf("mc-echo-winter-2017_") > -1 && source!= ""){
+      if (source.indexOf("facebook-lookalike-lp") > -1) marketingCode="IRFB";
+      else if (source.indexOf("facebook-lookalike-fstart") > -1) marketingCode="IRFC";
+      else if (source.indexOf("facebook-lookalike-email") > -1) marketingCode="IRFD";
+      else if (source.indexOf("facebook-interest-shopping") > -1) marketingCode="IRFE";
+      else if (source.indexOf("facebook-interest-music") > -1) marketingCode="IRFF";
+      else if (source.indexOf("facebook-rem") > -1) marketingCode="IRFG";
+      else if (source.indexOf("gmail") > -1) marketingCode="IRFH"; 
+      else if (source.indexOf("dbm") > -1) marketingCode="IRFI";
+      else if (source.indexOf("google") > -1) marketingCode="IRFJ";
+//       _satellite.setVar("marketingCode");
+	}
+    
+	if(campaign.indexOf("caa-madison") > -1 && source!= ""){
+      if (source.indexOf("club-caa-south-central-ontario") > -1) marketingCode="RIGC";
+} 
+// ML: caa campaign Jan 31-2017
+if(campaign.indexOf("acq_credit-card_caa-mass-60bonus") > -1 && source!= ""){
+      if (source.indexOf("club-caa-south-central-ontario") > -1) marketingCode="RIGD";
+} 
+if(campaign.indexOf("acq_credit-card_caa-dm-60bonus") > -1 && source!= ""){
+      if (source.indexOf("club-caa-south-central-ontario") > -1) marketingCode="BRGB";
+} 
+if(campaign.indexOf("acq_credit-card_caa-solo-60bonus") > -1 && source!= ""){
+      if (source.indexOf("club-caa-south-central-ontario") > -1) marketingCode="RIGE";
+} 
+		//specific referrers
+		if (source == "ratehub" && medium =="display")	marketingCode = "IAOP";
+		else if(source == "ratehub") marketingCode = "IAOO";  
+		else if(medium == "referral" && source.indexOf("club-") > -1)  CAARef = "true";  //CAA clubs
+    else if(campaign.indexOf("mc-echo-spring-fall-2016") > -1 && content == "preapp")	 marketingCode = "ICAH";// FM 13/04/2016 pour MC Echo
+    else if(campaign.indexOf("mc-echo-spring-fall-2016") > -1 && content == "prequal")	 marketingCode = "ICAI";// FM 13/04/2016 pour MC Echo
+//     _satellite.setVar("marketingCode");
+	}
+}
+
+	// FM 23 09 2016 : condition de dates de la campagne CAA avec marketing code spécifique
+	var d1 = new Date("November 1, 2016 00:00:00");
+	var d0 = new Date();
+
+if (marketingCode != ""){
+	var links = $('a[href*="promoIdentificationInput"]');
+	var links2 = $.merge($('a[href*="/formulaires/carte-de-credit/"]'),$('a[href*="/forms/credit-card/"]'));
+  
+	for (i = links.length -1 ; i >=0; i--){
+    // it seems no more ...  FM 23 09 2016
+    if (links[i].href.indexOf("cardNumberInput=02001") > -1){  //CAA Card
+      if(CAARef == "true") links[i].href = links[i].href.replace(/(promoIdentificationInput=[^(&|\')]*)/g, "promoIdentificationInput=IRAA");
+    	else links[i].href = links[i].href.replace(/(promoIdentificationInput=[^(&|\')]*)/g, "promoIdentificationInput=IFTE");
+    }
+    else links[i].href = links[i].href.replace(/(promoIdentificationInput=[^(&|\')]*)/g, "promoIdentificationInput=" + marketingCode);
+	};
+
+	for (i = links2.length -1 ; i >=0; i--){
+		var separator = "?";
+    if (links2[i].href.indexOf("?") > -1) separator = "&";
+    
+    if (links2[i].href.indexOf("caa-privilege") > -1 || links2[i].href.indexOf("caa-rewards") > -1)
+    {  //CAA Card
+      if(CAARef == "true") 
+        
+        if(d0 < d1){
+          links2[i].href += separator + "promoIdentificationInput=RIGC";
+        } else {
+          links2[i].href += separator + "promoIdentificationInput=IRAA";
+        }
+				//links2[i].href += separator + "promoIdentificationInput=IRAA";
+            
+    	else 
+        links2[i].href += separator + "promoIdentificationInput=IFTE";
+    }
+    else 
+      links2[i].href += separator + "promoIdentificationInput=" + marketingCode;
+	};
+
+//replace MasterCard Product page banner
+  // FM 23 09 2016: savoir si il est encore utilisé cardNumberInput
+	var bannerLink = $('div[class*="slide active"]').attr("data-target");//$('.productbanner-container').attr("data-target");
+	
+  if(typeof bannerLink != "undefined"){   
+		if(bannerLink.indexOf("cardNumberInput=02001") > -1 && CAARef == "true")
+			if(d0 < d1){
+				bannerLink = bannerLink.replace(/(promoIdentificationInput=[^(&|\')]*)/g, "promoIdentificationInput=RIGC");
+			} else {
+				bannerLink = bannerLink.replace(/(promoIdentificationInput=[^(&|\')]*)/g, "promoIdentificationInput=IRAA");
+			}
+		else if(bannerLink.indexOf("cardNumberInput=02001") > -1)
+			bannerLink = bannerLink.replace(/(promoIdentificationInput=[^(&|\')]*)/g, "promoIdentificationInput=IFTE");
+		else 
+      
+			bannerLink = bannerLink.replace(/(promoIdentificationInput=[^(&|\')]*)/g, "promoIdentificationInput=" + marketingCode);
+		
+    $('div[class*="slide active"]').attr("data-target",bannerLink);
+		//$('.productbanner-container').attr("data-target",bannerLink);
+   }
+  
+  _satellite.setCookie("marketingCode",marketingCode)
+}
+      }
+});

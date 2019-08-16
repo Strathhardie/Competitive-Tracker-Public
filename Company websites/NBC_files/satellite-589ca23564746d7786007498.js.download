@@ -1,0 +1,6 @@
+_satellite.pushAsyncScript(function(event, target, $variables){
+  <!-- Facebook Pixel Code -->
+_satellite.getVar("BNCfacebook");
+	fbq('track', 'PageView');
+<!-- End Facebook Pixel Code -->
+});

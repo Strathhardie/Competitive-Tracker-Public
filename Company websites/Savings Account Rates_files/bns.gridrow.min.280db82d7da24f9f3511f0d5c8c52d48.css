@@ -1,0 +1,46 @@
+#main>._row>.row{margin:0}
+@media(min-width:992px){._row .border-top{border-top:40px solid #f6f6f6}
+._row .border-right{border-right:40px solid #f6f6f6}
+._row .border-bottom{border-bottom:40px solid #f6f6f6}
+._row .border-left{border-left:40px solid #f6f6f6}
+}
+@media(min-width:768px) and (max-width:991px){._row .border-top{border-top:20px solid #f6f6f6}
+._row .border-right{border-right:20px solid #f6f6f6}
+._row .border-bottom{border-bottom:20px solid #f6f6f6}
+._row .border-left{border-left:20px solid #f6f6f6}
+}
+._row .row .red{background-color:#ec111a}
+._row .row .pink{background-color:#f2609e}
+._row .row .blue{background-color:#009dd6}
+._row .row .green{background-color:#118468}
+._row .row .purple{background-color:#7948b8}
+._row .row .orange{background-color:#fb6330}
+._row .row .white{background-color:#fff}
+._row .row .transparent{background-color:none}
+._row .row .light-grey{background-color:#f5f6fc}
+._row .row .dark-grey{background-color:#333}
+._row .row .grid-center{text-align:center}
+._row .row .grid-left{text-align:left}
+._row .row .grid-right{text-align:right}
+._row .row .cmp-text a{color:#333;font-weight:bold;text-decoration:underline}
+._row .row .cmp-text a:hover,._row .row .cmp-text a:focus{color:#333;font-weight:bold;text-decoration:none}
+._row .row .dark-bg{color:#fff}
+._row .row .dark-bg h1,._row .row .dark-bg h2,._row .row .dark-bg h3,._row .row .dark-bg h4,._row .row .dark-bg h5,._row .row .dark-bg h6,._row .row .dark-bg p{color:#fff}
+._row .row .dark-bg .transparent .cmp-text a,._row .row .dark-bg .cmp-text a{color:#fff;font-weight:bold;text-decoration:underline}
+._row .row .dark-bg .transparent .cmp-text a:hover,._row .row .dark-bg .transparent .cmp-text a:focus,._row .row .dark-bg .cmp-text a:hover,._row .row .dark-bg .cmp-text a:focus{color:#fff;font-weight:bold;text-decoration:none}
+._row .row .dark-bg .c--text a,._row .row .dark-bg .c--title a{color:#fff;font-weight:bold;text-decoration:underline}
+._row .row .dark-bg .c--text a:hover,._row .row .dark-bg .c--title a:hover{color:#fff;font-weight:bold;text-decoration:none}
+._row .row .c--text a,._row .row .c--title a{color:#333;font-weight:bold;text-decoration:underline}
+._row .row .c--text a:hover,._row .row .c--title a:hover{color:#333;font-weight:bold;text-decoration:none}
+@media(min-width:992px){.dark-bg ._row .border-top{border-top:40px solid #f6f6f6}
+.dark-bg ._row .border-right{border-right:40px solid #f6f6f6}
+.dark-bg ._row .border-bottom{border-bottom:40px solid #f6f6f6}
+.dark-bg ._row .border-left{border-left:40px solid #f6f6f6}
+}
+@media(min-width:768px) and (max-width:991px){.dark-bg ._row .border-top{border-top:20px solid #f6f6f6}
+.dark-bg ._row .border-right{border-right:20px solid #f6f6f6}
+.dark-bg ._row .border-bottom{border-bottom:20px solid #f6f6f6}
+.dark-bg ._row .border-left{border-left:20px solid #f6f6f6}
+}
+.dark-bg ._row .row .transparent .cmp-text a,.dark-bg ._row .row .cmp-text a{color:#fff;font-weight:bold;text-decoration:underline}
+.dark-bg ._row .row .transparent .cmp-text a:hover,.dark-bg ._row .row .transparent .cmp-text a:focus,.dark-bg ._row .row .cmp-text a:hover,.dark-bg ._row .row .cmp-text a:focus{color:#fff;font-weight:bold;text-decoration:none}

@@ -1,0 +1,23 @@
+_satellite.pushBlockingScript(function(event, target, $variables){
+  /*// First check if there is a tracking code
+var campaign = _satellite.getQueryParamCaseInsensitive("utm_campaign");
+var utm_medium   = _satellite.getQueryParamCaseInsensitive("utm_medium");
+var utm_source   = _satellite.getQueryParamCaseInsensitive("utm_source");
+var utm_content  = _satellite.getQueryParamCaseInsensitive("utm_content");
+var utm_terms    = _satellite.getQueryParamCaseInsensitive("utm_terms");
+var message	 = _satellite.getQueryParamCaseInsensitive("utm_message");
+
+if(typeof campaign != "undefined" && campaign.length > 0){
+	_satellite.setCookie("_sdsat_referrerType","campaign");
+  _satellite.setCookie("_sdsat_utm_campaign",campaign);}
+  
+if(typeof utm_medium != "undefined" && utm_medium.length > 0) {
+  _satellite.setCookie("_sdsat_utm_medium",_satellite.getQueryParamCaseInsensitive("utm_medium"));}
+  
+  _satellite.setCookie("_sdsat_utm_source",_satellite.getQueryParamCaseInsensitive("utm_source"));
+  _satellite.setCookie("_sdsat_utm_content",_satellite.getQueryParamCaseInsensitive("utm_content"));
+  _satellite.setCookie("_sdsat_utm_terms",_satellite.getQueryParamCaseInsensitive("utm_terms"));
+//	return "campaign";
+*/
+
+});

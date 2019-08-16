@@ -1,0 +1,42 @@
+_satellite.pushAsyncScript(function(event, target, $variables){
+  var category = _satellite.getVar("datalayer_pagecategory");
+var usertype = _satellite.getVar("datalayer_usertype");
+var pagetitle = _satellite.getVar("datalayer_pagetitle");
+
+var language = _satellite.getVar("datalayer_language");
+var pagenamenew = category+":"+pagetitle;
+
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1857465931134723');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent', { 
+  content_name: pagenamenew,
+  content_category: category,
+  content_type: pageType,
+  url: window.location.href,
+  custType: usertype,
+  product: prod
+});
+if (window.s) {
+
+if(s.products) var prod = s.products.split(';')[1];
+
+try {
+//if(location.href.search(/en\/0,,2,/gi) >-1) {var pageType = "Home Page"}
+//if(location.href.search(/personal\/credit-cards/gi) >-1) {var pageType = "Category"} //cards
+//if(location.href.search(/en\/0,,(11|12|13|14|15|16),/gi) >-1) {var pageType = "Category"} // d2d
+//if(location.href.search(/en\/0,,(8638|8636|8641|8634|176|175|173|174|8696|7327|),/gi) >-1) {var pageType = "Category"} // mortgages
+//if(location.href.search(/en\/0,,(7|4627),/gi) >-1) {var pageType = "Tool"} //Cards
+//if(location.href.search(/en\/0,,(6|4615|10776),/gi) >-1) {var pageType = "Tool"} // d2d
+//if(location.href.search(/en\/0,,(32|),/gi) >-1) {var pageType = "Tool"} // d2d
+if(s.products) {var pageType = "Product Details"}  
+} catch(e){}
+ 
+ 
+}
+ _satellite.notify('facebook 723all',1);
+});

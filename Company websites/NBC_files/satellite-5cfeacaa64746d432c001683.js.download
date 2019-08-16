@@ -1,0 +1,65 @@
+_satellite.pushAsyncScript(function(event, target, $variables){
+  var link = location.pathname;
+if (link == "/tc-bnc/applicationCompleted") {
+
+/*
+===============================================================================================================================
+DCM Dynamic Values
+===============================================================================================================================
+*/
+var u1 = ""; //Campaign Name
+var u2 = ""; //Marketing Code
+var u3 = _satellite.getVar("visitorId"); //Marketing Cloud ID
+var u4 = _satellite.getVar("language"); //Language
+var u5 = "bnc"; //Web Source
+var u6 = "site"; //Web Medium
+var u7 = ""; //Audience Type
+var u8 = ""; //Audience Name
+var u9 = _satellite.getVar("channel"); //Section
+var u10 = "Business Loan"; //Product Category
+var u11 = "Thinking Capital Form" //Product Name
+var u12 = ""; //Internal Search Keyword
+var u13 = "bottom"; //Funnel Intent
+var u14 = "formSubmit"; //CTA Type
+
+/*
+===============================================================================================================================
+FacebookEvent pixel (fired on all formLaunch)
+===============================================================================================================================
+*/
+_satellite.getVar("BNCfacebook");
+fbq('trackCustom', 'fb-business-online-financing-form-submit', {
+content_campaign: u1,
+content_marketingCloudID:u3,
+content_language:u4,
+content_webSource:u5,
+content_webMedium:u6,
+content_audienceType:u7,
+content_audienceName:u8,
+content_section:u9,
+content_category:u10,
+content_name:u11,
+content_funnel:u13,
+content_ctaType:u14
+});
+
+
+/*
+===============================================================================================================================
+Code for the generic pixel (fired on all formSubmit)
+===============================================================================================================================
+*/
+var axel = Math.random() + "";
+var a = axel * 10000000000000;
+
+var iframe = document.createElement("iframe");
+iframe.width=1;
+iframe.height=1;
+iframe.style="display:none";
+iframe.frameborder=0;
+iframe.src='https://5357220.fls.doubleclick.net/activityi;src=5357220;type=bnc-b00;cat=conve0;u1='+u1+';u2='+u2+';u3='+u3+';u4='+u4+';u5='+u5+';u6='+u6+';u7='+u7+';u8='+u8+';u9='+u9+';u10='+u10+';u11='+u11+';u12='+u12+';u13='+u13+';u14='+u14+';dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=1?';
+document.body.appendChild(iframe);
+}
+
+
+});

@@ -1,0 +1,255 @@
+if ((typeof(DCTAG) === "object")) {
+
+  DCTAG.urltag = {
+
+    "/main/personal/bank-accounts/air-miles-plan": { t: "edbac250", c: "pc_ca008" },
+    "/principal/particuliers/comptes-bancaires/programme-air-miles": { t: "edbac250", c: "pc_ca009" },
+    "/main/personal/bank-accounts/performance-plan": { t: "edbac250", c: "pc_ca004" },
+    "/principal/particuliers/comptes-bancaires/programme-performance": { t: "edbac250", c: "pc_ca005" },
+    "/main/personal/bank-accounts/plus-plan": { t: "edbac250", c: "pc_ca002" },
+    "/principal/particuliers/comptes-bancaires/programme-plus": { t: "edbac250", c: "pc_ca003" },
+    "/main/personal/bank-accounts/practical-plan": { t: "edbac250", c: "pc_ca00-" },
+    "/principal/particuliers/comptes-bancaires/programme-pratique": { t: "edbac250", c: "pc_ca00a" },
+    "/main/personal/bank-accounts/premium-plan": { t: "edbac250", c: "pc_ca006" },
+    "/principal/particuliers/comptes-bancaires/programme-privilege": { t: "edbac250", c: "pc_ca007" },
+    "/accueil/particuliers/services-bancaires/comptes-bancaires/usd": { t: "edbac250", c: "edb-u525" },
+    "/main/personal/bank-accounts/help-me-choose": { t: "edbac250", c: "pc_ca000" },
+    "/principal/particuliers/comptes-bancaires/aidez-moi-a-choisir": { t: "edbac250", c: "pc_ca001" },
+    "/main/personal/bank-accounts/savings": { t: "edbac250", c: "pc_ca0" },
+    "/principal/particuliers/comptes-bancaires/compte-d-epargne": { t: "edbac250", c: "pc_ca00" },
+
+
+    '/main/personal/mortgages/mortgage-rates': { t: 'bmomt792', c: 'bmo-m371' },
+    '/main/personal/mortgages/special-offers': { t: 'bmomt284', c: 'bmo-m348' },
+    '/main/personal/mortgages/mortgage-basics': { t: 'homeb732', c: 'hbms-770' },
+    '/main/personal/mortgages/wants-vs-needs': { t: 'homeb732', c: 'hbms-759' },
+    '/main/personal/mortgages/smart-borrowing': { t: 'homeb732', c: 'hbms-023' },
+    '/main/personal/mortgages/pre-approval': { t: 'homeb732', c: 'hbms-394' },
+    '/main/personal/mortgages/managing-money': { t: 'homeb732', c: 'hbms-770' },
+    '/main/personal/mortgages/home-buying-experts': { t: 'homeb732', c: 'hbms-418' },
+    '/main/personal/mortgages/find-right-home': { t: 'homeb732', c: 'MTG-F0' },
+    '/main/personal/mortgages/home-options': { t: 'homeb732', c: 'hbms-579' },
+    '/main/personal/mortgages/working-with-real-estate-agent': { t: 'homeb732', c: 'wdfff883' },
+    '/main/personal/mortgages/making-your-offer': { t: 'homeb732', c: 'hbms-332' },
+    '/main/personal/mortgages/conditional-offers': { t: 'homeb732', c: 'hbms-254' },
+    '/main/personal/mortgages/negotiating': { t: 'homeb732', c: 'hbms-570' },
+    '/main/personal/mortgages/attorney-review': { t: 'homeb732', c: 'hbms-263' },
+    '/main/personal/mortgages/mortgage-approval': { t: 'homeb732', c: 'hbms-394' },
+    '/main/personal/mortgages/downpayment': { t: 'homeb732', c: 'MTG-D0' },
+    '/main/personal/mortgages/closing-costs': { t: 'homeb732', c: 'hbms-558' },
+    '/main/personal/mortgages/home-inspection': { t: 'homeb732', c: 'hbms-222' },
+    '/main/personal/mortgages/moving-day': { t: 'homeb732', c: 'kgjdn128' },
+    '/main/personal/mortgages/insuring-your-home': { t: 'homeb732', c: 'hbms-034' },
+    '/main/personal/mortgages/insuring-your-mortgage': { t: 'mortg458', c: 'BMO-M00' },
+    '/main/personal/mortgages/pay-mortgage-faster': { t: 'homeb732', c: 'hbms-136' },
+    '/main/personal/mortgages/flexible-mortgage-payments': { t: 'bmomt140', c: 'bmo-m898' },
+    '/main/personal/mortgages/renew-refinance-mortgage': { t: 'bmomt140', c: 'MTG-R0' },
+    '/main/personal/mortgages/switch-mortgage': { t: 'bmomt140', c: 'bmo-m558' },
+    '/main/personal/mortgages/buy-next-property': { t: 'bmomt140', c: 'bmo-m762' },
+    '/main/personal/mortgages': { t: 'bmomt140', c: 'bmo-m489' },
+
+    '/credit-cards/sobeys/sobeysnofeeam/single_ontario.html': { t: 'mc-so0', c: 'pc_ca0' },
+    '/cartes-de-credit/sobeys/sobeysnofeeam/single_ontario.html': { t: 'mc-so0', c: 'pc_ca00' },
+    '/credit-cards/sobeys/sobeysnofeeam/single_west.html': { t: 'mc-so0', c: 'pc_ca000' },
+    '/cartes-de-credit/sobeys/sobeysnofeeam/single_west.html': { t: 'mc-so0', c: 'pc_ca001' },
+    '/credit-cards/sobeys/iganofeeam/single.html': { t: 'mc-so0', c: 'pc_ca002' },
+    '/cartes-de-credit/sobeys/iganofeeam/single.html': { t: 'mc-so0', c: 'pc_ca003' },
+
+
+    '/main/personal/bank-accounts/savings-builder/overview': { t: 'EDBCa0', c: 'pc_ca0' },
+    '/main/personal/bank-accounts/savings-builder': { t: 'EDBCa0', c: 'pc_ca000' },
+    '/main/personal/bank-accounts/banking-services': { t: 'bmopb386', c: 'bmo-p689' },
+    '/main/personal/bank-accounts/primary-chequing': { t: 'edbac250', c: 'edb-c748' },
+    '/main/personal/bank-accounts/premium-rate-savings': { t: 'edbac250', c: 'edb-p815' },
+    '/main/personal/bank-accounts/smart-saver': { t: 'edbac250', c: 'edb-h710' },
+    '/main/personal/bank-accounts/us-prem-chequing': { t: 'edbac250', c: 'edb-u990' },
+    '/main/personal/bank-accounts/us-prem-savings': { t: 'edbac250', c: 'EDB-U0' },
+    '/main/personal/bank-accounts/pay-as-you-go': { t: 'edbba741', c: 'EDB-P0' },
+    '/main/personal/bank-accounts/edb-existing-customers': { t: 'olbex586', c: 'edb-e866' },
+    '/main/personal/bank-accounts': {
+      t: 'edbac250',
+      c: 'edb-c355',
+      u: [
+        { h: 'students', p: { t: 'edbac250', c: 'pc_cd00' } }
+      ]
+    },
+    '/main/personal/credit-cards/credit-card-faqs': { t: 'mctop053', c: 'MC-My0' },
+    '/main/personal/credit-cards/compare-tool': { t: 'mctop053', c: 'mc-co871' },
+    '/main/personal/credit-cards/bmo-world-airmiles-mastercard': { t: 'mctop053', c: 'mc-am738' },
+    '/main/personal/credit-cards/bmo-airmiles-mastercard': { t: 'mctop053', c: 'mc-no683' },
+    '/main/personal/credit-cards/bmo-rewards-world-elite-mastercard': { t: 'mctop053', c: 'mc-we411' },
+    '/main/personal/credit-cards/bmo-cashback-world-mastercard': { t: 'mctop053', c: 'mc-bm166' },
+    '/main/personal/credit-cards/bmo-cashback-mastercard': { t: 'mctop053', c: 'mc-no827' },
+    '/main/personal/credit-cards/bmo-rewards-mastercard': { t: 'mctop053', c: 'mc-bm110' },
+    '/main/personal/credit-cards/us-dollar-mastercard': { t: 'mctop053', c: 'mc-bm615' },
+    '/main/personal/credit-cards/preferred-rate-mastercard': { t: 'mctop053', c: 'mc-pr226' },
+    '/main/personal/credit-cards/prepaid-credit-cards': { t: 'mctop053', c: 'mc-pr365' },
+    '/main/personal/credit-cards/spc-airmiles-student-credit-cards': { t: 'mctop053', c: 'mc-st823' },
+    '/main/personal/credit-cards/spc-cashback-student-credit-cards': { t: 'mcmar428', c: 'mc-sp714' },
+    '/main/personal/credit-cards/credit-card-security-protection': { t: 'mctop053', c: 'MC-My0' },
+    '/main/personal/credit-cards/help-me-choose': { t: 'mctop053', c: 'mc-he0' },
+    '/main/personal/credit-cards/credit-card-travel-insurance': { t: 'mctop053', c: 'MC-My000' },
+    '/main/personal/credit-cards/credit-card-access-details': { t: 'mctop053', c: 'MC-My0' },
+    '/main/personal/credit-cards/bmo-cashback-world-elite-mastercard': { t: 'mctop053', c: 'mc-cb0' },
+    '/main/personal/credit-cards/bmo-air-miles-world-elite-mastercard': { t: 'mctop053', c: 'mc-am0' },
+    '/main/personal/credit-cards/world-elite-cashback/feewaiver': { t: 'mcmar428', c: 'mc-cb0' },
+    '/main/personal/credit-cards/world-elite-airmiles/1000': { t: 'mcmar428', c: 'mc-am0' },
+    '/main/personal/credit-cards': { t: 'mctop053', c: 'mcsho938' },
+
+    '/main/personal/bank-accounts/banking-services': {
+      t: 'bmopb386',
+      c: 'bmo-p689',
+      u: [
+        { h: 'account-statements', p: { t: 'bmoge238', c: 'edb-a113' } },
+        { h: 'alerts', p: { t: 'bmoge238', c: 'edb-b691' } },
+        { h: 'ATM', p: { t: 'bmoge238', c: 'edb-h670' } },
+        { h: 'bill-payment', p: { t: 'bmoge238', c: 'edb-p773' } },
+        { h: 'branch-banking', p: { t: 'bmoge238', c: 'edb-h940' } },
+        { h: 'digital-banking', p: { t: 'bmoge238', c: 'edb-d733' } },
+        { h: 'direct-deposit', p: { t: 'bmoge238', c: 'edb-d665' } },
+        { h: 'mobile-banking', p: { t: 'bmoge238', c: 'edb-m093' } },
+        { h: 'transfer-money', p: { t: 'bmoge238', c: 'edb-t899' } },
+        { h: 'online-banking', p: { t: 'bmoge238', c: 'edb-o063' } },
+        { h: 'order-cheques', p: { t: 'bmoge238', c: 'edb-o323' } },
+        { h: 'overdraft-protection', p: { t: 'bmoge238', c: 'wevfa854' } }
+      ]
+    },
+
+    '/main/personal/bank-accounts/425': { t: 'edb_m0', c: 'pc_ca0' },
+    '/principal/particuliers/comptes-bancaires/425': { t: 'edb_m0', c: 'pc_ca00' },
+    '/main/personal': { t: 'bmoge238', c: 'bmoco260' },
+
+    '/main/personal/credit-cards/world-elite-airmiles/1000': { t: 'mcmar428', c: 'mc-am0' },
+    '/principal/particuliers/cartes-de-credit/world-elite-airmiles-recompenses/1000': { t: 'mcmar428', c: 'mc-am00' },
+
+    '/principal/particuliers/comptes-bancaires/compte-accumulateur-epargne/apercu': { t: 'EDBCa0', c: 'pc_ca00' },
+    '/principal/particuliers/comptes-bancaires/compte-accumulateur-epargne': { t: 'EDBCa0', c: 'pc_ca001' },
+
+    '/principal/particuliers/prets-hypothecaires': { t: 'bmomt140', c: 'bmo-m472' },
+    '/principal/particuliers/prets-hypothecaires/taux-hypothecaires': { t: 'bmomt792', c: 'bmo-m553' },
+    '/principal/particuliers/prets-hypothecaires/offres-speciales': { t: 'bmomt284', c: 'bmo-m898' },
+    '/principal/particuliers/prets-hypothecaires/pret-hypothecaire-abc': { t: 'homeb732', c: 'hbms-179' },
+    '/principal/particuliers/prets-hypothecaires/desirsactuels-besoinsfuturs': { t: 'homeb732', c: 'hbms-255' },
+    '/principal/particuliers/prets-hypothecaires/emprunt-fute': { t: 'homeb732', c: 'hbms-130' },
+    '/principal/particuliers/prets-hypothecaires/pret-preetabli': { t: 'homeb732', c: 'hbms-758' },
+    '/principal/particuliers/prets-hypothecaires/gestion-de-votre-argent': { t: 'homeb732', c: 'hbms-179' },
+    '/principal/particuliers/prets-hypothecaires/experts-en-achat-de-maison': { t: 'homeb732', c: 'hbms-001' },
+    '/principal/particuliers/prets-hypothecaires/trouver-la-bonne-maison': { t: 'homeb732', c: 'hbms-179' },
+    '/principal/particuliers/prets-hypothecaires/accueil-options': { t: 'homeb732', c: 'hbms-551' },
+    '/principal/particuliers/prets-hypothecaires/recours-a-un-agent-immobilier': { t: 'homeb732', c: 'hbms-799' },
+    '/principal/particuliers/prets-hypothecaires/faire-son-offre': { t: 'homeb732', c: 'hbms-556' },
+    '/principal/particuliers/prets-hypothecaires/offres-conditionnelles': { t: 'homeb732', c: 'hbms-124' },
+    '/principal/particuliers/prets-hypothecaires/negociation': { t: 'homeb732', c: 'hbms-036' },
+    '/principal/particuliers/prets-hypothecaires/notaire-ou-avocat': { t: 'homeb732', c: 'hbms-590' },
+    '/principal/particuliers/prets-hypothecaires/approbation-hypotheque': { t: 'homeb732', c: 'hbms-758' },
+    '/principal/particuliers/prets-hypothecaires/mise-de-fonds': { t: 'homeb732', c: 'hbms-330' },
+    '/principal/particuliers/prets-hypothecaires/frais-de-cloture': { t: 'homeb732', c: 'hbms-022' },
+    '/principal/particuliers/prets-hypothecaires/jour-du-demenagement': { t: 'homeb732', c: 'hbms-732' },
+    '/principal/particuliers/prets-hypothecaires/assurer-maison': { t: 'homeb732', c: 'hbms-427' },
+    '/principal/particuliers/prets-hypothecaires/assurer-pret-hypothecaire': { t: 'mortg458', c: 'BMO-M000' },
+    '/principal/particuliers/prets-hypothecaires/remboursement-accelere': { t: 'homeb732', c: 'hbms-575' },
+    '/principal/particuliers/prets-hypothecaires/versements-hypothecaires-souples': { t: 'bmomt284', c: 'bmo-m898' },
+    '/principal/particuliers/prets-hypothecaires/renouvellement-refinancement': { t: 'bmomt284', c: 'bmo-m898' },
+    '/principal/particuliers/prets-hypothecaires/transfert-hypotheque-bmo': { t: 'bmomt140', c: 'bmo-m809' },
+    '/principal/particuliers/prets-hypothecaires/achat-deuxieme-maison': { t: 'bmomt140', c: 'bmo-m569' },
+    '/principal/particuliers/comptes-bancaires/compte-de-cheques-principal': { t: 'edbac250', c: 'edb-c095' },
+    '/principal/particuliers/comptes-bancaires/compte-depargne-a-taux-avantageux': { t: 'edbac250', c: 'edb-p106' },
+    '/principal/particuliers/comptes-bancaires/compte-depargne-bonifiee-bmo': { t: 'edbac250', c: 'edb-h290' },
+    '/principal/particuliers/comptes-bancaires/compte-cheques-principal-en-dollars-us': { t: 'edbac250', c: 'edb-u525' },
+    '/principal/particuliers/comptes-bancaires/compte-epargne-principal-en-dollars-us': { t: 'edbac250', c: 'EDB-U00' },
+    '/principal/particuliers/comptes-bancaires/frais-payables-a-la-transaction': { t: 'edbba741', c: 'EDB-P00' },
+    '/principal/particuliers/comptes-bancaires/services-bancaires-courants-clients-actuels': { t: 'olbex586', c: 'edb-e453' },
+    '/principal/particuliers/comptes-bancaires': {
+      t: 'edbac250',
+      c: 'edb-c300',
+      u: [
+        { h: 'students', p: { t: 'edbac250', c: 'pc_cd000' } }
+      ]
+    },
+    '/principal/particuliers/cartes-de-credit/outil-de-comparaison': { t: 'mctop053', c: 'mccom184' },
+    '/principal/particuliers/cartes-de-credit/carte-mastercard-bmo-airmiles-world': { t: 'mctop053', c: 'mc-am958' },
+    '/principal/particuliers/cartes-de-credit/carte-mastercard-bmo-remises-world': { t: 'mctop053', c: 'mc-bm809' },
+    '/principal/particuliers/cartes-de-credit/aidez-moi-a-choisir': { t: 'mctop053', c: 'mc-he00' },
+    '/principal/particuliers/cartes-de-credit/carte-mastercard-bmo-remises': { t: 'mctop053', c: 'mc-no593' },
+    '/principal/particuliers/cartes-de-credit/carte-mastercard-bmo-recompenses': { t: 'mctop053', c: 'mc-bm545' },
+    '/principal/particuliers/cartes-de-credit/carte-mastercard-bmo-en-dollars-us': { t: 'mctop053', c: 'mc-bm382' },
+    '/principal/particuliers/cartes-de-credit/carte-mastercard-bmo-a-taux-preferentiel': { t: 'mctop053', c: 'mc-pr143' },
+    '/principal/particuliers/cartes-de-credit/carte-credit-prepaye': { t: 'mctop053', c: 'mc-pr488' },
+    '/principal/particuliers/cartes-de-credit/carte-de-credit-etudiants-airmiles-spc': { t: 'mctop053', c: 'mc-st800' },
+    '/principal/particuliers/cartes-de-credit/carte-de-credit-etudiants-remises-spc': { t: 'mcmar428', c: 'mc-sp248' },
+    '/principal/particuliers/cartes-de-credit/carte-de-credit-securite-protection': { t: 'mctop053', c: 'MC-My00' },
+    '/principal/particuliers/cartes-de-credit/assurance-voyage-carte-de-credit': { t: 'mctop053', c: 'MC-My001' },
+    '/principal/particuliers/cartes-de-credit/renseignements-pour-acceder-aux-cartes-de-credit': { t: 'mctop053', c: 'MC-My00' },
+    '/principal/particuliers/cartes-de-credit/carte-mastercard-bmo-world-elite-recompenses': { t: 'mctop053', c: 'mc-we921' },
+    '/principal/particuliers/cartes-de-credit/prepaid-credit-cards': { t: 'mctop053', c: 'mc-pr488' },
+    '/principal/particuliers/cartes-de-credit/bmo-airmiles-mastercard': { t: 'mcapp537', c: 'mc-no683' },
+    '/principal/particuliers/cartes-de-credit/bmo-cashback-mastercard': { t: 'mctop053', c: 'mc-no593' },
+    '/principal/particuliers/cartes-de-credit/carte-mastercard-bmo-remises-world-elite': { t: 'mctop053', c: 'mc-cb00' },
+    '/principal/particuliers/cartes-de-credit/carte-mastercard-bmo-air-miles-world-elite': { t: 'mctop053', c: 'mc-am00' },
+    '/principal/particuliers/cartes-de-credit/world-elite-remises/exonerationdefrais': { t: 'mcmar428', c: 'mc-cb00' },
+    '/principal/particuliers/cartes-de-credit/world-elite-airmiles-recompenses/1000': { t: 'mcmar428', c: 'mc-am00' },
+    '/principal/particuliers/cartes-de-credit': { t: 'mctop053', c: 'mcsho358' },
+
+    'principal/particuliers/comptes-bancaires/services-bancaires': {
+      t: 'bmopb386',
+      c: 'bmo-p825',
+      u: [
+        { h: 'compte-releves-de-compte', p: { t: 'bmoge238', c: 'edb-a444' } },
+        { h: 'alertes', p: { t: 'bmoge238', c: 'edb-b129' } },
+        { h: 'GA', p: { t: 'bmoge238', c: 'edb-h186' } },
+        { h: 'paiement-de-factures', p: { t: 'bmoge238', c: 'edb-p551' } },
+        { h: 'service-en-succursale', p: { t: 'bmoge238', c: 'edb-h796' } },
+        { h: 'service-numerique', p: { t: 'bmoge238', c: 'edb-d278' } },
+        { h: 'depot-direct', p: { t: 'bmoge238', c: 'edb-d693' } },
+        { h: 'service-cellulaire', p: { t: 'bmoge238', c: 'edb-m555' } },
+        { h: 'transfert-d-argent', p: { t: 'bmoge238', c: 'edb-t183' } },
+        { h: 'service-en-ligne', p: { t: 'bmoge238', c: 'edb-o062' } },
+        { h: 'commande-de-cheques', p: { t: 'bmoge238', c: 'edb-o938' } },
+        { h: 'autorisation-de-decouvert', p: { t: 'bmoge238', c: 'edb-o333' } }
+      ]
+    },
+
+    '/principal/particuliers': { t: 'bmoge238', c: 'bmoco516' }
+  };
+
+  (function() {
+    "use strict";
+
+    if (DCTAG.tagliststatus === 2) return;
+
+    var url = "https://4227502.fls.doubleclick.net/activityi;src=4227502;type=edbac250;cat=edb-p815;ord=663231583815.2781?";
+
+    var extraMapping = {
+      "/main/personal/bank-accounts/us-prem-chequing": { t: "edbac250", c: "edb-u990" },
+      "/main/personal/bank-accounts/premium-rate-savings": { t: "edbac250", c: "pc_ca00f" },
+      "/principal/particuliers/comptes-bancaires/compte-depargne-a-taux-avantageux": { t: "edbac250", c: "pc_ca00g" },
+      "/main/personal/bank-accounts/savings-builder": { t: "edbac250", c: "pc_ca00d" },
+      "/principal/particuliers/comptes-bancaires/compte-accumulateur-epargne": { t: "edbac250", c: "pc_ca00e" },
+      "/main/personal/bank-accounts/smart-saver": { t: "edbac250", c: "pc_ca00b" },
+      "/main/personal/bank-accounts/us-prem-savings": { t: "edbac250", c: "pc_ca00h" },
+      "/principal/particuliers/comptes-bancaires/compte-epargne-principal-en-dollars-us": { t: "edbac250", c: "pc_ca00i" },
+      "/principal/particuliers/comptes-bancaires/compte-depargne-bonifiee-bmo": { t: "edbac250", c: "pc_ca00c" },
+      "/principal/particuliers/cartes-de-credit/carte-mastercard-bmo-airmiles": { t: 'mctop053', c: 'mc-no482' }
+    };
+
+    var pathname = window.location.pathname;
+    pathname = pathname.replace(/\/$/, "");
+    var mapping = extraMapping[pathname];
+
+    if (!mapping || !mapping.t || !mapping.c) return;
+
+    var axel = (Math.random() + "") * 10000000000000;
+    var iframe = document.createElement("iframe");
+    iframe.src = "https://4227502.fls.doubleclick.net/activityi;src=4227502;type=" + mapping.t + ";cat=" + mapping.c + ";ord=" + axel + "?";
+
+    iframe.style.display = "none";
+    iframe.hidden = true;
+    iframe.width = 1;
+    iframe.height = 1;
+
+    document.body.appendChild(iframe);
+
+  })();
+
+  DCTAG.tagliststatus = 2; // flag that this script has loaded
+}

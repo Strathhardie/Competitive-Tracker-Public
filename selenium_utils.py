@@ -38,8 +38,9 @@ class SeleniumUtils(object):
     # Sets encoding to utf-8 to avoid UnicodeEncodeError
     @staticmethod
     def saveSourceHTML(url, pathToFile):
-        with open (pathToFile, 'w', encoding="utf-8") as f:
+        with open (pathToFile, 'w', encoding="UTF-8") as f:
             f.write(SeleniumUtils.getSourceHTML(url))
+
 
     '''
     # Method is just a demo

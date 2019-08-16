@@ -1,0 +1,7 @@
+@charset "utf-8";.text{font-family:'Trebuchet MS',Arial,Verdana,sans-serif;overflow:hidden}
+.text-spacer{overflow:hidden}
+.redBox{border:1px solid #e41c23;padding:0 10px;overflow:hidden;clear:both;margin:12px 0}
+.redBox h1,.redBox h2,.redBox h3,.redBox h4,.redBox h5,.redBox h6{font-weight:bold;text-transform:uppercase;font-size:.813rem;color:#e41c23}
+.redBox p,.redBox span,.redBox li{font-size:.75rem;color:#666}
+.redBox a{font-weight:bold;font-size:.75rem;color:#00324d;background:url(nbc-clientlib-text/images/list-arrow-red.png) no-repeat right 4px;padding-right:12px;text-decoration:none}
+aside .parsys>.text{padding:0 7px}

@@ -1,0 +1,9 @@
+@charset "utf-8";.login{background:url(nbc-clientlib-onlineservices/images/bg_login.gif) no-repeat 0 0;height:119px;margin:10px auto 10px auto;width:157px;color:#00334e;font-size:14px;padding:10px}
+.login .login-title{width:135px;margin:6px auto}
+.login .login-title img{float:left;margin-right:10px}
+.login .login-title p{float:left;padding:0;margin:0;text-transform:uppercase;font-weight:bold;width:85px;color:#00334e;font-size:.875rem}
+.login select{width:147px;font-size:11px;margin:6px 0 6px 5px}
+.login a{margin:6px auto 0 auto;display:block}
+.login .login-title .lock-image{float:left;margin-right:10px;width:37px;height:37px;display:block}
+.login a.login-btn{background:url("nbc-clientlib-onlineservices/images/login-btn-right.png") no-repeat scroll 100% 100%;color:#fff;display:table;margin:6px auto 0;text-decoration:none;text-transform:uppercase;padding-right:10px}
+.login a.login-btn span{background:url("nbc-clientlib-onlineservices/images/login-btn-left.png") no-repeat scroll 0 0;display:block;line-height:30px;padding-left:10px;color:#fff}

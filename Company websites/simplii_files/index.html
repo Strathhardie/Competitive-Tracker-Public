@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<!-- saved from url=(0089)https://online.simplii.com/ebm-resources/public/client/web/olbtxn/index.html?locale=en_CA -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><script>
+	(function(win){
+		try {
+			var rootDomain = win.location.hostname.split('.').slice(-2).join('.');
+			document.domain = rootDomain;
+		} catch(err) {}
+
+		if (!(win.postMessage && win.localStorage && win.sessionStorage && win.JSON && win.parent)) {
+			return;
+		}
+
+		var
+			hostname = win.location.hostname
+			, brand = 'simplii'
+			, allowRequest = true
+			, requestTimeout = 300
+			, allowOriginRegex = new RegExp('^https?:\/\/(.+\.)?'+ rootDomain +'$')
+			, localeRegex = /^(en|fr)$|(en|fr)(?=_CA)/i
+			, approot = '/ebm-resources/public/client/web/index.html'
+			, host = win.location.protocol+'//'+win.location.host+approot
+			, locale = 'en'
+			, queryParams = null
+			, storage = Storage()
+			, maxNumOfAllowableSavedCards = 10
+			, maxSavedCardsReachedErrorCode = '0006'
+			, legacySavedCardCookieName = 'cibc.cardNumber'
+			, storeKeys = {
+				'token': 'session_token'
+				, 'bankCards': '/api/v1/bankCards'
+				, 'remember': 'saveCard'
+				, 'cardnum': 'bcs'
+			}
+			, bankCardsModelKey = 'bank-cards'
+			, fallbackCookieName = 'bankCardsApi'
+			;
+
+		// Usage
+		// storage.setItem(key, value) // usage
+		// storage.setItem(key, value, {driver: 'session'}) // default
+		// storage.setItem(key, value, {driver: 'local'})
+		// storage.getItem(key) // usage
+		// storage.getItem(key, {driver: 'session'}) // default
+		// storage.getItem(key, {driver: 'local'})
+		function Storage(){
+			var
+				namespace = 'banking:' // NOTE: banking: [default]
+				, driver = {'session':'sessionStorage','local':'localStorage'}
+				;
+
+			function type(options) {
+				options = options || {};
+				return (typeof options==='object' && driver[options.driver] && win[driver[options.driver]]) || win.sessionStorage;
+			}
+
+			function getKey(key, options) {
+				// Option to override namespace with the exception of session token
+				// shared across multiple apps.
+				options = options || {};
+				return (key === 'token') ? 'ebanking:' + storeKeys[key] : ((options.namespace || namespace) + (storeKeys[key] || key));
+			}
+
+			return {
+				getItem: function(key, options){
+					key = getKey(key, options);
+					var storage = type(options);
+					return storage.getItem(key);
+				},
+				setItem: function(key, value, options){
+					key = getKey(key, options);
+					var storage = type(options);
+					try {
+						storage.setItem(key, value);
+					} catch (e) {
+						// Some incompatibility issues in private mode.
+					}
+				},
+				removeItem: function(key, options){
+					key = getKey(key, options);
+					var storage = type(options);
+					return storage.removeItem(key);
+				}
+			}
+		}
+		// https://tc39.github.io/ecma262/#sec-array.prototype.find
+		if (!Array.prototype.find) {
+			Object.defineProperty(Array.prototype, 'find', {
+				value: function(predicate) {
+					if (this === null) { throw new TypeError('"this" is null or not defined'); }
+
+					var o = Object(this);
+					var len = o.length >>> 0;
+
+					if (typeof predicate !== 'function') { throw new TypeError('predicate must be a function'); }
+
+					var thisArg = arguments[1];
+					var k = 0;
+
+					while (k < len) {
+						var kValue = o[k];
+						if (predicate.call(thisArg, kValue, k, o)) {
+							return kValue;
+						}
+						k++;
+					}
+					return undefined;
+				}
+			});
+		}
+
+		function _obscure(value) {
+			value = value.replace(/\s/g,'');
+			return value.substring(0,4) + '********' + value.substring(12);
+		}
+
+		function _saveCard(card){
+			var store = storage.getItem('bankCards', {driver: 'local'});
+			if (!store) {
+				var
+					useSavedCardsCookie = false
+					, savedCardsCookieRegex = new RegExp('(?:^|;)?(' + fallbackCookieName + '=([^;]+))(?:;|$)')
+					, savedCardsCookie = document.cookie.match(savedCardsCookieRegex);
+
+				if ((navigator.userAgent.match(/safari/i) && !navigator.userAgent.match(/chrome/i)) || navigator.userAgent.match(/CriOS/i)) {
+					if (savedCardsCookie && savedCardsCookie.length) {
+						useSavedCardsCookie = true;
+						store = savedCardsCookie[2];
+					}
+				} else {
+					// Set empty data store
+					store = JSON.stringify({'bank-cards':[]});
+				}
+			}
+
+			var data = JSON.parse(store);
+			if (data && data['bank-cards']) {
+				// EB3 QC#3122: If card has been saved previously, do not update description
+				// But we do want to update lastSignOn (value and isEncrypted will not have changed)
+				var updateCard = false;
+				data['bank-cards'].forEach(function(item){
+					if (item.description && item.description.length) {
+						item.description = decodeURIComponent(item.description);
+					}
+					if (item.value === card.value) {
+						updateCard = true;
+						item.lastSignOn = (new Date()).getTime();
+					}
+				});
+
+				if (!updateCard) { data['bank-cards'].push(card); }
+				storage.setItem('bankCards', JSON.stringify(data), {driver: 'local'});
+			}
+		}
+
+		function _xhr(options) {
+			var data = '{"card":{"value":"'+options.params.cardnum+'","description":"","encrypted":'+(options.params.encrypted || false)+',"encrypt":'+(options.params.encrypt || false)+'},"password":"'+options.params.password+'"}';
+
+			var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+			xhr.open(options.request, options.url);
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState>3) {
+					if (xhr.status==200 || xhr.status==204) {
+						typeof options.success === 'function' && options.success(xhr.responseText && JSON.parse(xhr.responseText), 'success', xhr);
+					} else {
+						typeof options.error === 'function' && options.error(xhr.responseText && JSON.parse(xhr.responseText), 'error', xhr);
+					}
+					typeof options.done === 'function' && options.done(xhr.responseText && JSON.parse(xhr.responseText), 'done', xhr);
+				}
+			};
+			xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+			xhr.setRequestHeader('Accept', 'application/vnd.api+json');
+			xhr.setRequestHeader('Accept-Language', 'en');
+			xhr.setRequestHeader('Content-Type', 'application/vnd.api+json');
+			xhr.setRequestHeader('WWW-Authenticate', (options.headers && options.headers.auth) || 'CardAndPassword');
+			xhr.setRequestHeader('X-Auth-Token', (options.headers && options.headers.token) || '');
+			xhr.setRequestHeader('brand', brand);
+
+			options.request == 'POST' ? xhr.send(data) : xhr.send();
+			return xhr;
+		}
+
+		// TODO possibly throw away??
+		function _auth(options) {
+			return _xhr({
+				url: '/ebm-anp/api/v1/json/sessions',
+				request: 'POST',
+				params: options.params,
+				headers: options.headers,
+				success: options.success,
+				error: options.error
+			});
+		}
+
+		function _delay(request) {
+			if (allowRequest) {
+				allowRequest = false;
+				'function' === typeof request && request();
+				setTimeout(function(){
+					allowRequest = true
+				}, requestTimeout)
+			}
+		}
+
+		function loadQueryParams() {
+			var params = {}
+				, queryStr = win.location.href.split('?')[1]
+				, queryArr = queryStr.split('&')
+				;
+			for (var i = 0; i < queryArr.length; i++) {
+				params[queryArr[i].split('=')[0]] = unescape(queryArr[i].split('=')[1]);
+			}
+			return params;
+		}
+
+		function migrateBankCards(options) {
+			options = options || {};
+			var
+				escapedCookieName = legacySavedCardCookieName.replace(/[.]/g, '\\$&')
+				, savedCardsCookieRegex = new RegExp('(?:^|;)?(' + escapedCookieName + '=([^;]+))(?:;|$)')
+				, savedCardsCookie = document.cookie.match(savedCardsCookieRegex)
+				;
+
+			if (savedCardsCookie && savedCardsCookie.length) {
+				_xhr({
+					url: '/ebm-anp/api/v1/json/migratedBankCards',
+					request: 'GET',
+					params: {},
+					success: function(data, textStatus, xhr) {
+						if (data && data['migratedBankCards'].length) {
+							var store = storage.getItem('bankCards', {driver: 'local'});
+							store = store && JSON.parse(store);
+							if (store && store['bank-cards'] && store['bank-cards'].length) {
+								var migrateCards = data['migratedBankCards'];
+								store['bank-cards'].forEach(function(card, index, bankCards){
+									migrateCards = migrateCards.filter(function(migrateCard, index) {
+										if (card.value != migrateCard.value) {
+											migrateCard.id = bankCards.length + index + 1;
+											migrateCard.lastSignOn = null;
+											return true;
+										}
+									});
+								});
+								store['bank-cards'] = store['bank-cards'].concat(migrateCards);
+								storage.setItem('bankCards', JSON.stringify(store), {driver: 'local'});
+							} else {
+								data['migratedBankCards'].forEach(function(migrateCard){
+									migrateCard.lastSignOn = null;
+								});
+								storage.setItem('bankCards', JSON.stringify({'bank-cards':data['migratedBankCards']}), {driver: 'local'});
+							}
+
+							if ((navigator.userAgent.match(/safari/i) && !navigator.userAgent.match(/chrome/i)) || navigator.userAgent.match(/CriOS/i)) {
+								var date = new Date();
+								date.setTime(date.getTime()+(365*24*60*60*1000));
+								document.cookie = fallbackCookieName+'='+JSON.stringify({'bank-cards':data['migratedBankCards']})+';path=/;domain=.'+ rootDomain +';expires='+date.toUTCString();
+							}
+						}
+
+						document.cookie = legacySavedCardCookieName + '=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT';
+					},
+					done: options.done
+				});
+			} else {
+				'function' === typeof options.done && options.done();
+			}
+		}
+
+		function killSessionRequest(options) {
+			options = options || {};
+			try {
+				_xhr({
+					url: '/ebm-anp/api/v1/json/sessions',
+					request: 'DELETE',
+					headers: { token: JSON.parse(storage.getItem('token')) },
+					params: options.params,
+					success: options.success,
+					error: options.error,
+					done: options.done
+				});
+			} catch(err) {
+				'function' === typeof options.done && options.done();
+			}
+			storage.removeItem('token', {driver: 'session'});
+		}
+
+		function signOnRequest(params){
+			if (!params.remember || (params.remember && params.cardslen < maxNumOfAllowableSavedCards)) {
+				_auth({
+					params: params,
+					success: function(data, textStatus, xhr) {
+						document.cookie='ssoToken='+xhr.getResponseHeader('X-Auth-Token')+';path=/;domain=.'+ rootDomain;
+						if (data.cciRequired) {
+							document.cookie='cciRequired='+data.cciRequired+';path=/;domain=.'+ rootDomain;
+						}
+						if (data.cdiRequired) {
+							document.cookie = 'cdiRequired=' + data.cdiRequired + ';path=/;domain=.'+rootDomain;
+						}
+						if (params.remember || params.encrypted) {
+							storage.setItem('remember', true);
+							if (data && data.card && data.card.value) {
+								storage.setItem('cardnum', JSON.stringify({id:params.cardnum,value:data.card.value,description:params.description}));
+							} else if (params.encrypted) {
+								storage.setItem('cardnum', JSON.stringify({id:params.cardnum,value:params.cardnum}));
+							}
+						}
+						win.parent.location.assign(host+'#/sso?siteId=dotcom');
+					},
+					error: function(data, textStatus, xhr) {
+						try {
+							var	otvc = void 0;
+							if (xhr.status === 401) {
+								otvc = data.entitlements.find(function(entitlement){
+									return entitlement === 'CHOOSE_OTVC_CHANNEL';
+								});
+							} else {
+								otvc = data.problems.find(function(problem){
+									return xhr.status === 403 && (/^506(2|4|6|7)$/).test(problem.code);
+								});
+							}
+
+							if (otvc) {
+								var headers = {
+									'X-Auth-Token': xhr.getResponseHeader('X-Auth-Token'),
+									'WWW-Authenticate': xhr.getResponseHeader('WWW-Authenticate'),
+									'Content-Type': xhr.getResponseHeader('Content-Type'),
+									'Local-DateTime': xhr.getResponseHeader('Local-DateTime')
+								}
+								storage.setItem('errorResponse', JSON.stringify({data: data, status: xhr.status, headers:headers}));
+								win.parent.location.assign(host+'#/sso?siteId=dotcom');
+							} else {
+								storage.setItem('problems', JSON.stringify(data.problems));
+								win.parent.location.assign(host+'#/signout?reset=true&msgId=dotcom');
+							}
+
+						} catch(err) {
+							win.parent.location.assign(host+'#/signout?reset=true&msgId=dotcom');
+						}
+					}
+				});
+			} else {
+				win.parent.location.assign(host+'#/signout?reset=true&msgId='+maxSavedCardsReachedErrorCode);
+			}
+		}
+
+		function prefillRequest(params) {
+			if (params.bypass) {
+				_xhr({
+					url: '/ebm-anp/api/v1/profile/json/prefillData',
+					request: 'GET',
+					params: params,
+					headers: { token: JSON.parse(storage.getItem('token')) },
+					success:function(data, textStatus, xhr) {
+						win.parent.postMessage(JSON.stringify({method:'anp:profile', data:data}), origin);
+					}
+				});
+			} else {
+				_auth({
+					params: params,
+					headers: { auth: 'CardAndPasswordPrefill' },
+					success: function(data, textStatus, xhr) {
+						storage.setItem('token', JSON.stringify(xhr.getResponseHeader('X-Auth-Token')));
+						if (params.remember) {
+							if (data && data.card && data.card.value) {
+								_saveCard({
+									value: data.card.value,
+									lastSignOn: Date.now(),
+									isEncrypted: true,
+									maskedCardNumber: _obscure(params.cardnum),
+									description: params.description
+								});
+							}
+						}
+						_xhr({
+							url: '/ebm-anp/api/v1/profile/json/prefillData',
+							request: 'GET',
+							headers: { token: JSON.parse(storage.getItem('token')) },
+							params: params,
+							success: function(data, textStatus, xhr) {
+								win.parent.postMessage(JSON.stringify({method:'anp:profile', data:data}), origin);
+								killSessionRequest({params: params});
+							}
+						});
+					}
+				});
+			}
+		}
+
+		function onMessage(e) {
+			var payload = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
+			switch(payload.method) {
+				case 'get':
+					cleanBankCards();
+					var data = storage.getItem(payload.key, {driver: 'local'});
+
+					// FALLBACK FOR SAFARI
+					var savedCardsCookieRegex = new RegExp('(?:^|;)?(' + fallbackCookieName + '=([^;]+))(?:;|$)')
+					, savedCardsCookie = document.cookie.match(savedCardsCookieRegex);
+
+					if ((navigator.userAgent.match(/safari/i) && !navigator.userAgent.match(/chrome/i)) || navigator.userAgent.match(/CriOS/i)) {
+						if (!data && savedCardsCookie && savedCardsCookie.length) {
+							data = JSON.parse(savedCardsCookie[2]);
+							data['bank-cards'].forEach(function(card){
+								if (card.description && card.description.length) {
+									card.description = decodeURIComponent(card.description);
+								}
+								if (card.label && card.label.length) {
+									card.label = decodeURIComponent(card.label);
+								}
+							});
+						}
+					}
+
+					win.parent.postMessage(JSON.stringify({method:'post', data:data}), origin);
+					break;
+				case 'remove':
+					var store = storage.getItem(payload.key, {driver: 'local'});
+
+					// FALLBACK FOR SAFARI
+					var
+						useSavedCardsCookie = false
+						, savedCardsCookieRegex = new RegExp('(?:^|;)?(' + fallbackCookieName + '=([^;]+))(?:;|$)')
+						, savedCardsCookie = document.cookie.match(savedCardsCookieRegex);
+
+					if ((navigator.userAgent.match(/safari/i) && !navigator.userAgent.match(/chrome/i)) || navigator.userAgent.match(/CriOS/i)) {
+						if (!store && savedCardsCookie && savedCardsCookie.length) {
+							useSavedCardsCookie = true;
+							store = JSON.parse(savedCardsCookie[2]);
+							store['bank-cards'].forEach(function(card){
+								if (card.description && card.description.length) {
+									card.description = decodeURIComponent(card.description);
+								}
+							});
+							store = JSON.stringify(store);
+						}
+					}
+
+					if (!store) {
+						return;
+					}
+
+					var data = JSON.parse(store);
+					if (data && data['bank-cards']) {
+						data['bank-cards'] = data['bank-cards'].filter(function(card){
+							return card.value !== payload.data.value;
+						});
+					}
+
+					if (!useSavedCardsCookie) {
+						storage.setItem(payload.key, JSON.stringify(data), {driver: 'local'});
+					}
+
+					win.parent.postMessage(JSON.stringify({method:'post', data:data}), origin);
+
+					if (useSavedCardsCookie) {
+						data['bank-cards'].forEach(function(card){
+							if (card.description && card.description.length) {
+								card.description = encodeURIComponent(card.description);
+							}
+						});
+						var date = new Date();
+						date.setTime(date.getTime()+(365*24*60*60*1000));
+						document.cookie = fallbackCookieName+'='+JSON.stringify(data)+';path=/;domain=.'+ rootDomain +';expires='+date.toUTCString();
+					}
+					break;
+				case 'ui:register':
+					killSessionRequest();
+					storage.setItem('cardnum', JSON.stringify(payload.data.cardnum || ''));
+					win.parent.location.assign(host+'#/register/information');
+					break;
+				case 'ui:password':
+					killSessionRequest();
+					storage.setItem('cardnum', JSON.stringify(payload.data.cardnum || ''));
+					win.parent.location.assign(host+'#/password/new/information');
+					break;
+				case 'ui:login':
+					killSessionRequest({done:function(){
+						_delay(signOnRequest(payload.data));
+					}});
+					break;
+				case 'ui:prefill':
+					_delay(prefillRequest(payload.data));
+					break;
+			}
+		}
+
+		function cleanBankCards(){
+			var savedCards = JSON.parse(storage.getItem('bankCards', {driver: 'local'}));
+			if(savedCards){
+				var filteredSavedCards = savedCards['bank-cards'].filter(function(card, index, arr){
+				if(card.maskedCardNumber && card.maskedCardNumber.length <= 16){
+						return card;
+				} else if(!card.maskedCardNumber && card.label){
+					return card;
+				}
+			});
+			
+			storage.removeItem('bankCards', {driver: 'local'});
+			storage.setItem('bankCards', JSON.stringify({"bank-cards": filteredSavedCards}), {driver: 'local'});
+			}
+		}
+
+		// Setup postMessage event listeners
+		if (win.addEventListener) {
+			win.addEventListener('message', onMessage, false);
+		} else {
+			win.attachEvent('onmessage', onMessage);
+		}
+
+		try {
+			origin = allowOriginRegex.test(win.parent.location.origin) ? win.parent.location.origin : hostname;
+			queryParams = loadQueryParams();
+			locale = queryParams.locale && localeRegex.exec(queryParams.locale)[0];
+		} catch (err) {}
+
+		locale && storage.setItem('locale', JSON.stringify(locale));
+		migrateBankCards({
+			done: function() {
+				win.parent.postMessage(JSON.stringify({method:'ui:ready', data:{status:1}}), origin);
+			}
+		});
+	})(window);
+</script>
+</head><body></body></html>

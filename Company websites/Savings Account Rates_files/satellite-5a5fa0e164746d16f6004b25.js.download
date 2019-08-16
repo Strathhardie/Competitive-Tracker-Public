@@ -1,0 +1,27 @@
+_satellite.pushAsyncScript(function(event, target, $variables){
+  
+
+var language = _satellite.getVar("datalayer_language");
+var category = _satellite.getVar("datalayer_pagecategory");
+var usertype = _satellite.getVar("datalayer_usertype");
+var pagetitle = _satellite.getVar("datalayer_pagetitle");
+
+
+  
+ var axel = Math.random() + "";
+var a = axel * 10000000000000;
+//try{var prod = s.products.split(";")[1];} catch(err){}
+//try{var cidx = cid;} catch(err){} 
+try{ 
+var dcIMG = document.createElement('iframe');
+dcIMG.setAttribute('src', '//6104928.fls.doubleclick.net/activityi;src=6104928;type=globa0;cat=bnsun0;u3='+category+';u5='+category+':'+pagetitle+';u6='+window.location.pathname+';u7='+usertype+';u10='+language+';u15=Personal Banking?');
+
+//dcIMG.setAttribute('src', '//6104928.fls.doubleclick.net/activityi;src=6104928;type=globa0;cat=bnsun0;u3='+category+';u5='+category+':'+pagetitle+';u7='+usertype+';u10='+language+';u12='+guid+';u15=Personal Banking?');
+dcIMG.setAttribute('height','1');
+dcIMG.setAttribute('width','1');
+dcIMG.setAttribute('Border','0');
+dcIMG.setAttribute('style','display:none');
+document.body.appendChild(dcIMG);
+}
+catch (e) {_satellite.notify('global floodlight error',5);}
+});

@@ -1,0 +1,191 @@
+@charset "utf-8";.old_auraltext{FONT-SIZE:0;LEFT:-10000px;POSITION:absolute;letter-spacing:0}
+.old_bg3ongletspacer{background-image:url(old-nbc-clientlib-global/images/3onglet_spacer.gif)}
+.old_bg3ongletspacercontraction{background-image:url(old-nbc-clientlib-global/images/3onglet_spacer.gif);display:none}
+.old_bg3ongletspaceron{background-image:url(old-nbc-clientlib-global/images/3onglet_spacer_on.gif)}
+.old_bgcase{background-image:url(old-nbc-clientlib-global/images/bg_case.gif);padding-top:1px;padding-left:3px;background-color:#efefef}
+.old_bgongletscontent{background-image:url(old-nbc-clientlib-global/images/bg_ongletscontent.gif)}
+.old_bgongletspacer{background-image:url(old-nbc-clientlib-global/images/onglet_spacer.gif)}
+.old_bgongletspaceron{background-image:url(old-nbc-clientlib-global/images/onglet_spacer_on.gif)}
+.old_bgonsmenuOff{background-image:url(old-nbc-clientlib-global/images/bt_sousmenu_off.gif)}
+.old_bgonsmenuOn{background-image:url(old-nbc-clientlib-global/images/bt_sousmenu_on.gif)}
+.old_bgtitcarte{background-color:#efefef}
+.old_bigBlueZoneBold{background:#e2f1f6;FONT-SIZE:13px;COLOR:#00364e;FONT-WEIGHT:bold;FONT-FAMILY:arial,helvetica,sans serif}
+.old_blackLine{border-bottom:1px solid #aaa}
+.old_blinkover{BACKGROUND:url(old-nbc-clientlib-global/images/bglkbulleover_off.gif) repeat-x left bottom;PADDING-BOTTOM:0;CURSOR:pointer;COLOR:#06c!important;BORDER-BOTTOM:medium none;TEXT-DECORATION:none!important}
+.old_border{border:1px solid #070000}
+.old_border2{border-top:#f2f2f2 1px solid;border-left:#f2f2f2 1px solid;border-bottom:#f2f2f2 1px solid;border-right:#f2f2f2 1px solid}
+.old_bottomfaqspacer{padding-bottom:0}
+.old_btcartes{padding-bottom:10px}
+.old_bullet{font-size:12px;font-family:verdana,arial,sans serif;font-weight:bold;color:#69f}
+.old_cachelayer{display:none}
+.old_calculette{FONT-WEIGHT:bold;FONT-SIZE:14px;COLOR:#900;FONT-FAMILY:arial,helvetica,sans serif}
+.footer-section .old_column{float:left;width:252px;margin:0 0 0 15px;padding:0 0 0 10px;background:url(old-nbc-clientlib-global/images/shadow-column.png) no-repeat 0 15px}
+.old_compareTitle{font-family:arial,helvetica,sans serif;font-size:11pt;color:#000;font-weight:bold}
+.old_content2Tableau{color:#00334e}
+.old_content3Tableau{font-size:11px;color:#597a8c}
+.old_contentAmpoule{color:#5b5b5b}
+.old_content-box{width:290px;margin:0 0 20px;background:#fff}
+.old_contentcarte{font-size:11px;padding-right:30px}
+.old_content-columns{overflow:hidden;width:622px;margin:0 -21px 0 0}
+.old_contentTableau{color:#395c6f}
+.old_contraction{DISPLAY:none}
+.old_corptxt{font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:12px;font-weight:normal;color:#666;text-decoration:none;margin:0;padding:0}
+.old_ctongsmenuOn{text-decoration:none;color:#00364e;font-weight:bold}
+.old_devise{FONT-SIZE:10px;COLOR:#000;FONT-FAMILY:arial,helvetica,sans serif}
+.old_divContent{display:none}
+.old_divposreponse{padding-left:0;padding-top:0}
+.old_divreponse{display:none;padding-bottom:7px}
+.old_dotted1{border-bottom:#00364e 2px dotted;border-top:#00364e 2px dotted;border-left:#00364e 2px dotted;border-right:#00364e 2px dotted}
+.old_ent1{font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:18px;font-style:normal;font-weight:bold;color:#00324d;text-decoration:none;margin:0;padding:0}
+.old_expansion{DISPLAY:}
+.old_faqquestion{text-decoration:none!important}
+.old_gallery .old_frame{position:relative;width:598px;height:138px}
+.old_fundsNamePadding{padding-left:10px}
+.old_fundsSpacing{font-size:0;height:6px}
+.old_fundsTableBorder{border-left:1px solid #cfdae0;border-right:1px solid #cfdae0;border-bottom:1px solid #cfdae0}
+.old_fundsTitle{font-size:90%}
+.old_fundsTitleHeight{height:25px}
+.old_gallery{width:598px;height:138px;position:relative;border:1px solid #fff;margin:0 0 21px}
+.old_hideBulle{DISPLAY:none;OVERFLOW:hidden;WIDTH:0;HEIGHT:0}
+.old_home{FONT-WEIGHT:bold;FONT-SIZE:11px;COLOR:#666;FONT-FAMILY:arial,helvetica,sans serif}
+.old_content-box .old_image-block{position:relative;background:url(old-nbc-clientlib-global/images/shadow2.gif) no-repeat 50% 100%;padding:0 0 7px}
+.old_invisible{background-color:#fff;color:#000;padding:0;text-decoration:none;display:none;height:100px;font-size:0}
+.old_leftMenu{FONT-WEIGHT:normal;FONT-SIZE:11px;COLOR:#666;FONT-FAMILY:verdana}
+.old_legal{FONT-WEIGHT:normal;FONT-SIZE:10px;COLOR:#666;FONT-FAMILY:arial,helvetica,sans serif}
+.old_legalLink{font-family:arial,helvetica,sans serif;FONT-SIZE:11px;COLOR:#00009c}
+.old_lieniv3{font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:10pt;font-weight:bold;color:#e41c23}
+ul.old_liste_fleche_rouge{list-style-type:none;list-style-position:outside;padding:0;margin:0}
+.old_mcTabItem{font-size:11px;padding-left:10px;color:#333;padding-right:3px;line-height:20px;white-space:nowrap;text-align:right}
+.old_mcTabItem2{font-size:11px}
+.old_mcTxtPromo{font-size:11px;font-weight:bold;color:#4d6880;padding-left:5px}
+.old_mcTxtPromo2{font-size:11px;font-weight:bold;color:#4d6880;padding-left:0}
+.old_menu{color:#272425;font:11px Arial,Verdana;height:30px}
+.old_menuright1{background-image:url(old-nbc-clientlib-global/images/bg_degrad1.gif);border-top:#a6b9c2 1px dotted;border-right:#a6b9c2 1px dotted;border-bottom:#a6b9c2 1px dotted;border-left:#a6b9c2 1px dotted}
+.old_navtxt{font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#FFF;padding:0}
+.old_nonaffiche{display:none}
+.old_normal{font-weight:normal}
+.old_noteslegales{font-size:10px;color:gray}
+.old_normalFont{font-family:verdana,arial,helvetica,sans serif;font-size:80%;color:black}
+.old_paddingSubHeader{padding-top:7px;padding-bottom:6px}
+.old_padTitle{MARGIN:3px}
+.old_padTitle{COLOR:#ffc;FONT-SIZE:10px;FONT-WEIGHT:bold;TEXT-DECORATION:none}
+.old_plusfaq{vertical-align:top;padding-top:1px}
+.old_plusMinusImage{text-align:center;width:3%;padding-left:5px;padding-top:3px}
+.old_pointille{border-bottom-width:thin;border-bottom-style:dashed;border-bottom-color:#999}
+.old_profilePadding{padding-top:12px;padding-bottom:12px;padding-left:8px}
+.old_questFaq{padding-top:5px}
+.old_rateTitlePadding{padding-top:15px;padding-bottom:5px}
+.old_reerListSubHeader{font-family:arial,helvetica,sans serif;font-size:80%;color:#7a7a7a;font-weight:bold}
+.old_reerListSubHeader3{font-family:arial,helvetica,sans serif;font-size:80%;color:#4d4e52;font-weight:normal}
+.old_Rightmenu{FONT-SIZE:11px;COLOR:#000;FONT-FAMILY:arial,helvetica,sans serif}
+.old_rightsection{font-size:10px;font-family:verdana,arial,sans serif;text-decoration:none;color:#000}
+.old_header-frame .old_row{width:100%;padding:0 0 15px}
+.old_header-frame .old_row:after{content:'';display:block;clear:both}
+.old_size11{font-size:12px;color:#00364e;text-decoration:none}
+.old_sizeBlank{width:224px;height:43px}
+.old_sizeBlank_celi{width:86px;height:43px}
+.old_sizeBlank_celi_contribuer{width:86px;height:43px}
+.old_sizeBlank_etudiants{width:358px;height:43px}
+.old_sizeBlank_professionnels{width:358px;height:43px}
+.old_spacerreponse{height:5px}
+.old_spacing{FONT-SIZE:2px;COLOR:#000}
+.old_stylefrais1{background-image:url(old-nbc-clientlib-global/images/bg_frais.gif);font-size:11px;padding-left:5px}
+.old_SubMenuItem{font-size:10px;font-family:Verdana,Geneva,Arial,Helvetica,sans-serif;font-weight:normal;color:#fff;text-decoration:none}
+.old_SubMenuTransItem{font-size:10px;font-family:Verdana,Geneva,Arial,Helvetica,sans-serif;font-weight:normal;color:#ccc;text-decoration:none}
+.old_subtitle{FONT-WEIGHT:bold;FONT-SIZE:13px;COLOR:#000;FONT-FAMILY:arial,helvetica,sans serif}
+.old_subtitle2{font-size:13px;font-weight:bold;color:#2c5170}
+.old_tab-boldtext{MARGIN-TOP:0;FONT-SIZE:12px;MARGIN-BOTTOM:0;COLOR:#000f2d;font-weight:bold;line-height:11px}
+.old_table-tab-content{background-image:url(old-nbc-clientlib-global/images/bg_3content.gif);PADDING-RIGHT:15px;PADDING-LEFT:15px;FONT-SIZE:71%;PADDING-BOTTOM:15px;PADDING-TOP:5px;BORDER-BOTTOM:#000f2d 1px solid;BORDER-LEFT:#000f2d 1px solid;BORDER-RIGHT:#000f2d 1px solid;FONT-FAMILY:Arial,Verdana,Geneva,Helvetica,sans-serif}
+.old_table-tab-title-highlight{background-image:url(old-nbc-clientlib-global/images/3onglet_on.gif);PADDING-RIGHT:8px;PADDING-LEFT:8px;FONT-WEIGHT:bold;FONT-SIZE:12px;MARGIN-BOTTOM:0;PADDING-BOTTOM:8px;COLOR:#000f2d;PADDING-TOP:10px;FONT-FAMILY:arial,verdana,helvetica,sans-serif;TEXT-DECORATION:none}
+.old_table-tab-title-nohighlight{background-image:url(old-nbc-clientlib-global/images/3onglet_off.gif);PADDING-RIGHT:8px;PADDING-LEFT:8px;FONT-WEIGHT:normal;FONT-SIZE:12px;MARGIN-BOTTOM:0;PADDING-BOTTOM:8px;COLOR:#333;PADDING-TOP:17px;FONT-FAMILY:arial,verdana,helvetica,sans-serif;TEXT-DECORATION:none}
+.old_taglinecarte{font-size:11px;color:#2c5170;padding-top:10px;line-height:11px;padding-left:10px}
+.old_text{FONT-SIZE:11px;COLOR:#000;FONT-FAMILY:arial,helvetica,sans serif}
+.old_textErrorBlack{FONT-SIZE:11px;COLOR:#000}
+.old_textpage{padding-left:10px;padding-right:20px;font-size:12px}
+.old_titcarte{font-size:11px;color:#2c5170;font-weight:bold}
+.old_titre{color:#c00;font-size:17px;font-family:Verdana,Arial,Helvetica,sans-serif;font-weight:bold;line-height:25px}
+.old_titreniv2{font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:16pt;color:#e41c23}
+.old_titreniv3{font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:14px;color:#006}
+.old_titreTableau{background-color:#fff;padding-right:8px;color:#3c618e;font-family:Arial,Helvetica,sans-serif;font-weight:bold;font-size:14px;padding-top:5px}
+.old_titretableau_w_bl{font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:10pt;color:#FFF;background-color:#006}
+.old_visuels{font-size:9px;border-top:#7891a4 1px solid;border-right:#7891a4 1px solid;border-bottom:#7891a4 1px solid;border-left:#7891a4 1px solid;padding-bottom:1px;padding-top:1px;padding-left:4px;padding-right:4px;text-decoration:none;color:#01374f}
+.old_visuelsOn{font-size:9px;border-top:#afcae0 1px solid;border-right:#7992a6 1px solid;border-bottom:#7992a6 1px solid;border-left:#afcae0 1px solid;padding-bottom:1px;padding-top:1px;padding-left:4px;padding-right:4px;text-decoration:none;color:#01374f;background-color:#d5e2ee;cursor:hand}
+.old_zoneHeader{BORDER-RIGHT:#9a9994 1px solid;PADDING-RIGHT:5px;PADDING-LEFT:5px;PADDING-BOTTOM:5px;COLOR:#000;PADDING-TOP:5px;BACKGROUND-COLOR:#ece8dc;TEXT-DECORATION:none}
+.old_zoneHeader2{BORDER-RIGHT:#9a9994 1px solid;PADDING-RIGHT:0;PADDING-LEFT:0;PADDING-BOTTOM:0;COLOR:#000;PADDING-TOP:0;BACKGROUND-COLOR:#ece8dc;TEXT-DECORATION:none}
+.old_zoneHeaderMenu{BORDER-TOP:#9a9994 1px solid;BORDER-BOTTOM:#9a9994 1px solid;PADDING-RIGHT:5px;PADDING-LEFT:0;PADDING-BOTTOM:5px;COLOR:#000;PADDING-TOP:5px;BACKGROUND-COLOR:#ece8dc;TEXT-DECORATION:none}
+.old_zoneHeaderNoBorder{PADDING-RIGHT:5px;PADDING-LEFT:5px;PADDING-BOTTOM:5px;COLOR:#000;PADDING-TOP:5px;BACKGROUND-COLOR:#ece8dc;TEXT-DECORATION:none}
+.old_zoneTable1{BORDER-RIGHT:#c9c9c9 1px solid;PADDING-RIGHT:5px;PADDING-LEFT:5px;PADDING-BOTTOM:5px;COLOR:#000;PADDING-TOP:5px;BACKGROUND-COLOR:#fff;TEXT-DECORATION:none}
+.old_zoneTable1Menu{BORDER-TOP:#9a9994 1px solid;PADDING-RIGHT:5px;PADDING-LEFT:0;PADDING-BOTTOM:5px;COLOR:#000;PADDING-TOP:5px;BACKGROUND-COLOR:#fff;TEXT-DECORATION:none}
+.old_zoneTable1MenuNoBorder{PADDING-RIGHT:5px;PADDING-LEFT:0;PADDING-BOTTOM:5px;COLOR:#000;PADDING-TOP:5px;BACKGROUND-COLOR:#fff;TEXT-DECORATION:none}
+.old_zoneTable1NoBorder{PADDING-RIGHT:5px;PADDING-LEFT:5px;PADDING-BOTTOM:5px;COLOR:#000;PADDING-TOP:5px;BACKGROUND-COLOR:#fff;TEXT-DECORATION:none}
+.old_zoneTable2{BORDER-RIGHT:#c9c9c9 1px solid;PADDING-RIGHT:5px;PADDING-LEFT:5px;PADDING-BOTTOM:5px;COLOR:#000;PADDING-TOP:5px;BACKGROUND-COLOR:#f5f5f5;TEXT-DECORATION:none}
+.old_zoneTable2NoBorder{PADDING-RIGHT:5px;PADDING-LEFT:5px;PADDING-BOTTOM:5px;COLOR:#000;PADDING-TOP:5px;BACKGROUND-COLOR:#f5f5f5;TEXT-DECORATION:none}
+.old_addthis_button{cursor:pointer}
+.old_Bleu_BNC{color:#00324d}
+.old_bodytext{color:#666;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:14px}
+.old_bodytxt{color:#333;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:12px;font-weight:normal;list-style-image:url("old-nbc-clientlib-global/images/puce_carre_rouge_collateral.png")}
+p.old_boite{border:1px solid #cecfce;padding:10px}
+.old_border_bas_shadow{border-bottom-color:#cacaca;border-top-color:#ccc;border-top-width:0;height:17px;padding:0;text-decoration:none}
+.old_borderfond{background-image:url("old-nbc-clientlib-global/images/image_bilan_responsabilite_sociale.jpg");background-position:right bottom;background-repeat:no-repeat;border:thin solid #ccc;padding:0 10px;text-decoration:none}
+.old_box_full{border-bottom-color:#cacaca;border-top-color:#ccc;border-top-width:0;padding:17px 0 34px;text-align:left;text-decoration:none;vertical-align:top;width:100%}
+.old_button{BORDER-RIGHT:#fff 0 solid;BORDER-TOP:#fff 0 solid;FONT-WEIGHT:bold;FONT-SIZE:12px;BACKGROUND-IMAGE:url(old-nbc-clientlib-global/css/<%=env.getStaticPath()%>/wi/calculator/OrderCreditCard/img/<%=langCd%>/btn_3d_110px.gif);BORDER-LEFT:#fff 0 solid;CURSOR:pointer;COLOR:#fff;BORDER-BOTTOM:#fff 0 solid;FONT-STYLE:normal;FONT-FAMILY:"Trebuchet MS",Arial,Helvetica,sans-serif;HEIGHT:30px;BACKGROUND-COLOR:#fff;TEXT-ALIGN:center}
+.old_corptxt1{color:#666;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:12px;font-weight:normal;margin:0;padding:0;text-decoration:none}
+.old_default,.old_Default{border:0 none;font-size:inherit;margin:0;padding:0;vertical-align:baseline}
+.old_dotted_line_vertical{border-left:thin dotted #333}
+.old_encre{border-bottom:1px dotted #666;color:#666;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:14px}
+.old_espace_message{background-color:#f0f1f8;color:#00324d;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:14px;font-weight:normal;text-decoration:none}
+.old_espace_message1{background-color:#f0f1f8;border-radius:0 10px 0 0;color:#00324d;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:14px;font-weight:normal;text-decoration:none}
+.old_exposant{color:#666;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:9px;font-weight:normal;text-decoration:none}
+a.old_fundsTitleClose:link{color:#00364e;font-family:arial,helvetica,sans serif;font-size:90%;text-decoration:none}
+A.old_lien_titre:link{color:#00324e;font-weight:bold;text-decoration:none}
+.old_lieniv31{color:#e41c23;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:10pt;font-weight:bold;margin:0;padding:0;text-decoration:none}
+.old_liens{color:#e41c23;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;text-decoration:none}
+.old_LinkBleu{color:#00324d;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;text-decoration:none}
+.old_LinkRouge{color:#e41c23;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;text-decoration:none}
+.old_LinkRougebody{color:#e41c23;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;text-decoration:none}
+ul.old_liste_carre_fleche_rouge{list-style-position:outside;list-style-type:none;margin:0;padding:0}
+ul.old_liste_fleche_grise{list-style-position:outside;list-style-type:none;margin:0;padding:0}
+.old_Liste_lien{background-image:url("old-nbc-clientlib-global/images/arrow.gif");background-position:170px 8px;background-repeat:no-repeat;color:#666;display:list-item;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:13px;list-style-position:outside;list-style-type:none;text-align:left;text-decoration:none}
+.old_listHeader2{color:#4e7a92;font-family:arial,helvetica,sans serif;font-size:11pt;font-weight:bold;height:35px}
+.old_message_separateur{border-bottom:1px dotted #666;border-top:1px dotted #666}
+.old_padding_produit{margin-left:6px;margin-right:3px;padding-left:6px;padding-right:3px}
+.old_pointille_haut_bas{border-bottom:thin dotted #999;border-top:thin dotted #999}
+.old_pointille_tableau{border-bottom:thin dotted #666;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:1px;text-decoration:none;vertical-align:middle}
+.old_pointille_verti{border-left:thin dotted #666;margin:0;padding:0}
+.old_Rouge_BNC{color:#e41c23}
+.old_solid-grey-left{border-left:1px solid #999}
+.old_solid-grey-right{border-right:1px solid #999}
+.old_soustitre_bleu{color:#00324d;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:18px;font-weight:bold;text-decoration:none}
+.old_soustitre_bleu_lien{color:#00324d;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;text-decoration:none}
+.old_stylefrais2{font-size:11px;padding-left:5px}
+.old_switcher{background:url("old-nbc-clientlib-global/images/bg-switcher.png") no-repeat scroll 100% 0 rgba(0,0,0,0);bottom:-3px;padding:0;position:absolute;right:0;z-index:2}
+.old_text_tabl{color:#000;font-size:11px}
+.old_texte_courant{color:#666;cursor:text;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:13px;font-style:normal;font-weight:normal;line-height:18px;list-style-image:url("old-nbc-clientlib-global/images/arrow.gif");list-style-position:outside;text-decoration:none}
+.old_texte_courant_2{color:#666;cursor:text;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:13px;font-style:normal;font-weight:normal;line-height:14px;list-style-image:url("old-nbc-clientlib-global/images/arrow.gif");list-style-position:outside;text-decoration:none}
+.old_texte_courant_liens:link{color:#e41c23}
+.old_texte_liste_liens:link{color:#666}
+.old_TH1_bleu{color:#00324d;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:32px;font-style:normal;font-weight:lighter;line-height:36px;padding:0}
+.old_TH1_rouge{color:#e41c23;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:32px;font-style:normal;font-weight:lighter;line-height:36px;padding:0}
+.old_TH2_rouge{color:#e41c23;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:24px;font-style:normal;font-weight:lighter;line-height:26px}
+.old_TH3_bleu{color:#00324d;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:18px;font-style:normal;font-weight:lighter}
+.old_TH3_bleu_citation{border-bottom:thin solid #e41c23;border-top:thin solid #e41c23;color:#00324d;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:18px;font-style:normal;font-weight:lighter;margin:0;padding:0}
+.old_TH6{color:#00324d;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;text-transform:uppercase}
+.old_titre_bleu{color:#00324d;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;text-decoration:none;text-transform:uppercase}
+.old_titre_bleu_b{color:#00324d;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;text-decoration:none;text-transform:uppercase}
+.old_titre_bleu1{color:#00324d;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:25px;font-weight:bold;text-decoration:none}
+.old_titre_bleu2{color:#00324d;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:22px;font-weight:bold;text-decoration:none}
+.old_Titre_boite{color:#e41c23;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;padding:0}
+.old_titre_gris{color:#666;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:20px;font-weight:normal;text-decoration:none}
+.old_titre_niveau_2{color:#00324d;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:18px;font-weight:bold;padding-bottom:4px;padding-top:12px;text-align:left;text-decoration:none;vertical-align:top}
+.old_titre_niveau_21{color:#00324d;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:20px;font-weight:bold;text-align:left;text-decoration:none;vertical-align:top}
+.old_titre_niveau_22{color:#00324d;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:20px;font-weight:bold;text-align:left;text-decoration:none;vertical-align:top}
+.old_titre_niveau_3{color:#00324d;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;padding-bottom:4px;padding-top:12px;text-align:left;text-decoration:none;vertical-align:top}
+.old_Titre_page{color:#e41c23;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:20px;font-weight:bold;text-transform:uppercase}
+.old_titre_tabl{color:#fff;font-size:12px}
+.old_titre_tableau_1{color:#fff;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;text-align:left;text-decoration:none;vertical-align:middle}
+.old_titre_tableau_12{color:#fff;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:9px;font-weight:bold;text-align:left;text-decoration:none;vertical-align:middle}
+.old_titre_tableau_2{color:#00324d;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;text-align:left;text-decoration:none;vertical-align:middle}
+.old_txt_intro{font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:14px}
+.old_TypoTel{color:#e41c23;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;margin-right:30px;text-align:right}
+.old_valign-middle{vertical-align:middle}
+.old_valign-top{vertical-align:top}

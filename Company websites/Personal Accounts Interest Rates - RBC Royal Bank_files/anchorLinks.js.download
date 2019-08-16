@@ -1,0 +1,22 @@
+$(document).ready(function () {
+	//script for displaying hidden anchors in dvl Collapsibles
+	//currently used in persacct.html
+	function escapeHtml(str) {
+		var div = document.createElement('div');
+		div.appendChild(document.createTextNode(str));
+		return div.innerHTML;
+	}
+	var hash = escapeHtml(window.location.hash);
+	if (!hash) return;
+	var anchorElement = $(hash);
+	if (!anchorElement.length) return;
+	var collapsible = anchorElement.closest('.collapse-content'); //find parent collapsible
+	if (!collapsible.length) return;
+	var toggle = $("[data-target='#" + collapsible.attr('id') + "']");
+	if (toggle) {
+		toggle.click();
+		setTimeout(function () {
+			$(window).scrollTop(anchorElement.offset().top - 85); //offset by 85 to account for dvl nav header
+		}, 700); //wait to allow expand animation to complete first
+	}
+});

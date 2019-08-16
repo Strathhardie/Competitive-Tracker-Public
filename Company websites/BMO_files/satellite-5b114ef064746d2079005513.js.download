@@ -1,0 +1,85 @@
+_satellite.pushAsyncScript(function(event, target, $variables){
+  var anaEDBs = {
+    "en": {
+        "bmo_public": {
+            "pract_premium": "Practical Plan Premium Rate Savings Account",
+            "plus_premium": "Plus Plan Premium Rate Savings Account",
+            "perf_premium": "Performance Plan Premium Rate Savings Account",
+            "am_premium": "AIR MILES<sup>®†</sup> Plan Premium Rate Savings Account",
+            "premium_premium": "Premium Plan Premium Rate Savings Account",
+            "pract": "Practical Plan",
+            "plus": "Plus Plan",
+            "perf": "Performance Plan",
+            "am": "AIR MILES<sup>®†</sup> Plan",
+            "premium": "Premium Plan",
+            "ssa": "Smart Saver Account",
+            "sba": "Savings Builder Account"
+        },
+        "dst": {
+            "pract_premium": "Bank Accounts; Primary Chequing Account|Bank Accounts; Premium Rate Savings Account",
+            "plus_premium": "Bank Accounts; Primary Chequing Account|Bank Accounts; Premium Rate Savings Account",
+            "perf_premium": "Bank Accounts; Primary Chequing Account|Bank Accounts; Premium Rate Savings Account",
+            "am_premium": "Bank Accounts; Primary Chequing Account|Bank Accounts; Premium Rate Savings Account",
+            "premium_premium": "Bank Accounts; Primary Chequing Account|Bank Accounts; Premium Rate Savings Account",
+            "pract": "Bank Accounts; Primary Chequing Account",
+            "plus": "Bank Accounts; Primary Chequing Account",
+            "perf": "Bank Accounts; Primary Chequing Account",
+            "am": "Bank Accounts; Primary Chequing Account",
+            "premium": "Bank Accounts; Primary Chequing Account",
+            "ssa": "Bank Accounts; Smart Saver Account",
+            "sba": "Bank Accounts; Savings Builder Account"
+        }
+    },
+    "fr": {
+        "bmo_public": {
+            "pract_premium": "Programme%20Pratique%20Compte%20d%E2%80%99%C3%A9pargne%20%C3%A0%20taux%20avantageux",
+            "plus_premium": "Programme%20Plus%20Compte%20d%E2%80%99%C3%A9pargne%20%C3%A0%20taux%20avantageux",
+            "perf_premium": "Programme%20Performance%20Compte%20d%E2%80%99%C3%A9pargne%20%C3%A0%20taux%20avantageux",
+            "am_premium": "Programme%20AIR%20MILES%3Csup%3EMD%E2%80%A0%3C%2Fsup%3E%20Compte%20d%E2%80%99%C3%A9pargne%20%C3%A0%20taux%20avantageux",
+            "premium_premium": "Programme%20Privil%C3%A8ge%20Compte%20d%E2%80%99%C3%A9pargne%20%C3%A0%20taux%20avantageux",
+            "pract": "Programme%20Pratique",
+            "plus": "Programme%20Plus",
+            "perf": "Programme%20Performance",
+            "am": "Programme%20AIR%20MILES%3Csup%3EMD%E2%80%A0%3C%2Fsup%3E",
+            "premium": "Programme%20Privil%C3%A8ge",
+            "ssa": "Compte%20d%E2%80%99%C3%A9pargne%20bonifi%C3%A9e",
+            "sba": "Accumulateur%20d'%C3%A9pargne"
+        },
+        "dst": {
+            "pract_premium": "Bank Accounts; Compte de chèques principal|Bank Accounts; Compte d'épargne à taux Avantageux",
+            "plus_premium": "Bank Accounts; Compte de chèques principal|Bank Accounts; Compte d'épargne à taux Avantageux",
+            "perf_premium": "Bank Accounts; Compte de chèques principal|Bank Accounts; Compte d'épargne à taux Avantageux",
+            "am_premium": "Bank Accounts; Compte de chèques principal|Bank Accounts; Compte d'épargne à taux Avantageux",
+            "premium_premium": "Bank Accounts; Compte de chèques principal|Bank Accounts; Compte d'épargne à taux Avantageux",
+            "pract": "Bank Accounts; Compte de chèques principal",
+            "plus": "Bank Accounts; Compte de chèques principal",
+            "perf": "Bank Accounts; Compte de chèques principal",
+            "am": "Bank Accounts; Compte de chèques principal",
+            "premium": "Bank Accounts; Compte de chèques principal",
+            "ssa": "Bank Accounts; Compte d'épargne bonifiée",
+            "sba": "Bank Accounts; Compte accumulateur d'épargne"
+        }
+    }
+}
+
+function getDSTLabel(text, anaMappingObj) {
+    for (key in anaMappingObj.bmo_public) {
+        if (text === decodeURIComponent(anaMappingObj.bmo_public[key])) {
+            return anaMappingObj.dst[key];
+        }
+    }
+    return "no translator match found";
+}
+
+document.addEventListener('DOMContentLoaded', function(evt){
+
+    var dataApplyNowEls = Array.prototype.slice.call(document.querySelectorAll('[data-ana-apply-now]'));
+
+    dataApplyNowEls.forEach(function(el) {
+        var dataAnaApplyNowObj = JSON.parse(el.dataset.anaApplyNow);
+        dataAnaApplyNowObj.anaProdName = getDSTLabel(dataAnaApplyNowObj.productName, anaEDBs[BMOINFO.language]);
+        el.dataset.anaApplyNow = JSON.stringify(dataAnaApplyNowObj);
+    });
+
+});
+});

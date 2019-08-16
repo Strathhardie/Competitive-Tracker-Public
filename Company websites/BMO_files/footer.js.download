@@ -1,0 +1,92 @@
+(function () {
+    'use strict';
+
+    var ready = function ready(fn) {
+        if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") main();
+        else document.addEventListener('DOMContentLoaded', main);
+    };
+
+    var addClass = function addClass(el, className) {
+        if (el.classList) el.classList.add(className);
+        else el.className += ' ' + className;
+    };
+
+    var removeClass = function removeClass(el, className) {
+        if (el.classList) el.classList.remove(className);
+        else el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+    };
+
+    var stopAllEvents = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+    };
+
+    var main = function() {
+        var emailLink = document.getElementsByClassName("button-link-footer")[0];
+        var emailModalContent = document.querySelectorAll('div[data-meta="footer-primary--modal"]')[0];
+    
+        var showModal = function() {
+            // Display email modal
+            addClass(document.body, 'is-reveal-open');
+            addClass(emailModalContent, 'reveal-show');
+            addClass(emailModalContent.parentElement, 'reveal-show');
+            // Set focus to email modal
+            emailModalContent.focus();
+        }
+
+        var hideModal = function() {
+            // Hide email modal
+            removeClass(document.body, 'is-reveal-open');
+            removeClass(emailModalContent, 'reveal-show');
+            removeClass(emailModalContent.parentElement, 'reveal-show');
+            // Set focus to email link
+            emailLink.focus();
+        }
+
+        if (emailLink) {
+            emailLink.addEventListener('click', function() {
+                showModal();
+            });
+        }
+
+        if (emailModalContent) {
+            var emailModalCloseButton = emailModalContent.querySelectorAll('button[class="close-button"]')[0];
+
+            emailModalCloseButton.addEventListener('click', function() {
+                hideModal();
+            });
+    
+            emailModalCloseButton.addEventListener('blur', function(e) {
+                emailModalContent.focus();
+                stopAllEvents(e);
+            });
+        
+            emailModalCloseButton.addEventListener('keydown', function(e) {
+                // Tab
+                if (e.keyCode === 9) {
+                    emailModalContent.focus();
+                }
+                // Enter button
+                if (e.keyCode === 13) {
+                    hideModal();
+                }
+                stopAllEvents(e);
+            });
+        }
+
+        window.addEventListener('click', function(e) {
+            if (emailModalContent && (e.target === emailModalContent.parentElement)) {
+                hideModal();
+            }
+        });
+
+        window.addEventListener('keyup', function(e) {
+            if (e.keyCode === 27 && (e.target == emailModalContent || e.target.parentElement == emailModalContent)) {
+                hideModal();
+            }
+        });
+    }
+    
+    ready();    
+})();

@@ -1,0 +1,59 @@
+_satellite.pushAsyncScript(function(event, target, $variables){
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1483843105201008'); // Insert your pixel ID here.
+fbq('track', 'ViewContent', { 
+ // content_name: s.pageName,
+ // content_category: siteSection,
+ // content_ids: s.prop31,
+ // content_type: pageType,
+  url: window.location.href,
+ // custType: s.eVar5,
+ // product: prod
+}); 
+if (window.s) {
+
+if(s.products) var prod = s.products.split(';')[1];
+try {  
+var siteSection =  s.channel;
+switch (s.prop13) {
+  case "Chequing & Savings" :
+    siteSection = "Chequing & Savings";  break;
+  case "Credit Cards" :
+    siteSection = "Credit Cards";  break;
+  case "Mortgage Centre" :
+    siteSection = "Mortgage";  break;
+  case "Loans & Lines" :
+    siteSection = "Loans & Lines";  break;
+  case "Investment Centre" :
+    siteSection = "Investments";  break;
+  case "Insurance" :
+    siteSection = "Insurance";  break;
+  case "Insurance" :
+    siteSection = "Insurance";  break;
+  case "Programs & Offers" :
+    siteSection = "Programs & Offers";  break;
+  case "Rates" :
+    siteSection = "Rates"; 
+}  
+} catch(e) { console.log('siteSection var fail'); }
+ 
+try {
+if(location.href.search(/en\/0,,2,/gi) >-1) {var pageType = "Home Page"}
+if(location.href.search(/en\/0,,(33|34|35|36|37|38|39),/gi) >-1) {var pageType = "Category"} //cards
+if(location.href.search(/en\/0,,(11|12|13|14|15|16),/gi) >-1) {var pageType = "Category"} // d2d
+if(location.href.search(/en\/0,,(8638|8636|8641|8634|176|175|173|174|8696|7327|),/gi) >-1) {var pageType = "Category"} // mortgages
+if(location.href.search(/en\/0,,(7|4627),/gi) >-1) {var pageType = "Tool"} //Cards
+if(location.href.search(/en\/0,,(6|4615|10776),/gi) >-1) {var pageType = "Tool"} // d2d
+if(location.href.search(/en\/0,,(32|),/gi) >-1) {var pageType = "Tool"} // d2d
+if(s.products) {var pageType = "Product Details"}  
+} catch(e){}
+ 
+
+  
+}
+ _satellite.notify('facebook 008',1);
+});

@@ -1,0 +1,32 @@
+.divided-columns-2{width:100%;overflow:hidden;background:url(nbc-clientlib-colCtrl/images/shadow-col.gif) no-repeat 50% 50%}
+.divided-columns-2 .parsys_column_nbc_inner .parsys_column_nbc_innerChild>div{width:49.25%;float:left;padding:1.5% 0}
+.divided-columns-2 .parsys_column_nbc_inner{background:url(nbc-clientlib-colCtrl/images/shadow.png) no-repeat center 0;overflow:hidden}
+.divided-columns-2 .parsys_column_nbc_inner .parsys_column_nbc_innerChild .divided-columns-2-c0{padding-right:.75%;padding-top:initial}
+.divided-columns-2 .parsys_column_nbc_inner .parsys_column_nbc_innerChild .divided-columns-2-c1{padding-left:.75%;padding-top:initial}
+.content-columns-2{width:100%;overflow:hidden}
+.content-columns-2 .parsys_column_nbc_inner .parsys_column_nbc_innerChild>div{width:49.25%;float:left;padding:1.5% 0}
+.content-columns-2 .parsys_column_nbc_inner .parsys_column_nbc_innerChild .content-columns-2-c0{padding-right:.75%}
+.content-columns-2 .parsys_column_nbc_inner .parsys_column_nbc_innerChild .content-columns-2-c1{padding-left:.75%}
+.cq-colctrl-lt1{width:100%;overflow:hidden}
+.cq-colctrl-lt1 .parsys_column_nbc_inner .parsys_column_nbc_innerChild>div{float:left;padding:1.5% 0}
+.cq-colctrl-lt1 .parsys_column_nbc_inner .parsys_column_nbc_innerChild .cq-colctrl-lt1-c0{width:65.25%;padding-right:.75%}
+.cq-colctrl-lt1 .parsys_column_nbc_inner .parsys_column_nbc_innerChild .cq-colctrl-lt1-c1{width:32.25%;padding-left:.75%}
+.cq-colctrl-lt2{width:100%;overflow:hidden;background:url(nbc-clientlib-colCtrl/images/shadow-col.gif) no-repeat 66% 50%}
+.cq-colctrl-lt2 .parsys_column_nbc_inner .parsys_column_nbc_innerChild>div{float:left;padding:1.5% 0}
+.cq-colctrl-lt2 .parsys_column_nbc_inner .parsys_column_nbc_innerChild{background:url(nbc-clientlib-colCtrl/images/shadow.png) no-repeat center 0;overflow:hidden}
+.cq-colctrl-lt2 .parsys_column_nbc_inner .parsys_column_nbc_innerChild .cq-colctrl-lt2-c0{width:65.25%;padding-right:.75%}
+.cq-colctrl-lt2 .parsys_column_nbc_inner .parsys_column_nbc_innerChild .cq-colctrl-lt2-c1{width:32.25%;padding-left:.75%}
+.cq-colctrl-lt3{width:100%;overflow:hidden}
+.cq-colctrl-lt3 .parsys_column_nbc_inner .parsys_column_nbc_innerChild>div{float:left;padding:1.5% 0}
+.cq-colctrl-lt3 .parsys_column_nbc_inner .parsys_column_nbc_innerChild .cq-colctrl-lt3-c0{width:32.33%;padding-right:.75%}
+.cq-colctrl-lt3 .parsys_column_nbc_inner .parsys_column_nbc_innerChild .cq-colctrl-lt3-c1{width:32.33%;padding-right:.75%;padding-left:.75%}
+.cq-colctrl-lt3 .parsys_column_nbc_inner .parsys_column_nbc_innerChild .cq-colctrl-lt3-c2{width:32.33%;padding-left:.75%}
+.cq-colctrl-lt4{width:100%;overflow:hidden;background:url(nbc-clientlib-colCtrl/images/shadow-col.gif) no-repeat 32.915% 50%}
+.cq-colctrl-lt4 .parsys_column_nbc_inner{background:url(nbc-clientlib-colCtrl/images/shadow-col.gif) no-repeat 67.5% 50%;overflow:hidden}
+.cq-colctrl-lt4 .parsys_column_nbc_inner .parsys_column_nbc_innerChild{overflow:hidden;background:url(nbc-clientlib-colCtrl/images/shadow.png) no-repeat center 0}
+.cq-colctrl-lt4 .parsys_column_nbc_inner .parsys_column_nbc_innerChild>div{float:left;padding:1.5% 0}
+.cq-colctrl-lt4 .parsys_column_nbc_inner .parsys_column_nbc_innerChild .cq-colctrl-lt4-c0{width:32.33%;padding-right:.75%}
+.cq-colctrl-lt4 .parsys_column_nbc_inner .parsys_column_nbc_innerChild .cq-colctrl-lt4-c1{width:32.33%;padding-right:.75%;padding-left:.75%}
+.cq-colctrl-lt4 .parsys_column_nbc_inner .parsys_column_nbc_innerChild .cq-colctrl-lt4-c2{width:32.33%;padding-left:.75%}
+.parsys_column_nbc_outer .text .no-bottom{margin-bottom:0}
+.parsys_column_nbc_innerChild{overflow:hidden}

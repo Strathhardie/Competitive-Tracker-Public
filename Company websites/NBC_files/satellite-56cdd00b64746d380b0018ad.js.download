@@ -1,0 +1,39 @@
+_satellite.pushAsyncScript(function(event, target, $variables){
+  /*
+Use this code as a base for DCM pixels. 
+1-Use Non-sequential Javascript calls in DTM, this will inject javascript in the <head>
+2-The script will create and append an iframe at the end of the page that will send the data to DCM
+3-Fill the following variables as appropriate
+*/
+
+var cat="bnc-d0";	//Pixel Category (from DCM)
+var u1=_satellite.getVar("campaignName"); //Campaign Name
+var u2=""; //Marketing Code
+var u3=_satellite.getVar("visitorId"); //Marketing Cloud ID
+var u4=_satellite.getVar("language"); //Language
+var u5="bnc"; //Web Source
+var u6="site"; //Web Medium
+var u7=_satellite.getVar("audienceType"); //Audience Type
+var u8=_satellite.getVar("audienceName"); //Audience Name
+var u9=_satellite.getVar("channel"); //Section
+var u10=""; //Product Category
+var u11=""; //Product Name
+var u12=""; //Internal Search Keyword
+var u13=""; //Funnel Intent
+var u14=""; //CTA Type
+var u19= _satellite.getVar("pageName"); //pageName
+
+var axel = Math.random() + "";
+var a = axel * 10000000000000;
+
+var iframe = document.createElement("iframe");
+iframe.width=1;
+iframe.height=1;
+iframe.style="display:none";
+iframe.frameborder=0;
+iframe.src='https://5357220.fls.doubleclick.net/activityi;src=5357220;type=bnc-d0;cat='+cat+';u1='+u1+';u2='+u2+';u3='+u3+';u4='+u4+';u5='+u5+';u6='+u6+';u7='+u7+';u8='+u8+';u9='+u9+';u10='+u10+';u11='+u11+';u12='+u12+';u13='+u13+';u14='+u14+';u19='+u19+';dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=1?';
+
+document.body.appendChild(iframe);
+
+
+});
