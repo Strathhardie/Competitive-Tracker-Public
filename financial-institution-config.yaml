@@ -2,14 +2,29 @@ root:
   - financial_institution:
     name: 'Simplii'
     url: 'https://www.simplii.com/en/rates.html'
+    div: 'div'
+    id:  'accounts'
+    table: 'table'
     accounts:
       - account:
-        account_name: 'HISA'
-        xpath: '//*[@id="accounts"]'
+        account_name: 'No Fee Chequing Account'
+        xpath: 'none'
+      - account:
+        account_name: 'Overdraft'
+        xpath: 'none'
+      - account:
+        account_name: 'High Interest Savings Account'
+        xpath: '//*[@id="accounts"]/div[68]/div/div'
+      - account:
+        account_name: 'Simplii Financial Savings Account'
+        xpath: 'none'
+
 
   - financial_institution:
     name: 'CIBC'
     url: 'https://www.cibc.com/en/interest-rates/personal-bank-account-rates.html'
+    id: 'none'
+    table: "table"
     accounts:
       - account:
         account_name: 'eAdvantage_Savings'
@@ -132,29 +147,3 @@ root:
       account_name: 'High Interest Savings Account'
       xpath: 
 
-   -  financial_institution:
-      name: 'B2B Bank'
-      - account:
-      account_name: 'High Interest Savings Account'
-      xpath: 
-
-   -  financial_institution:
-      name: 'Scotia iTrade'
-      url: 'https://www.scotiaitrade.com/en/direct-investing-and-online-trading/trading-fees/commissions-and-fees.html'
-      - account:
-      account_name: 'Cash Optimizer Investment Account'
-      xpath: 
-
-   -  financial_institution:
-      name: 'Meridian Credit'
-      url: 'https://www.meridiancu.ca/Personal/Meridian-Rates-Fees.aspx'
-       - account:
-      account_name: 'Good to Grow High Interest Savings Account'
-      xpath: 
- 
-   -  financial_institution:
-      name: 'EQ Bank'
-      url: 'https://www.eqbank.ca/personal-banking/features-rates'
-      - account:
-      account_name: 'Savings Plus Account'
-      xpath: 
