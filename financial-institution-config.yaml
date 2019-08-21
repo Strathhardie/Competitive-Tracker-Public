@@ -76,6 +76,7 @@ root:
    -  financial_institution:
       name: 'BMO'
       url: 'https://www.bmo.com/main/personal/bank-accounts/savings/interest-rates/'
+      accounts:
       - account:
         account_name: 'Savings Builder Account'
         xpath:
@@ -89,61 +90,98 @@ root:
    -  financial_institution:
       name: 'BNS'
       url: 'https://www.scotiabank.com/ca/en/personal/rates-prices/savings-account-rates.html'
+      accounts:
       - account:
-      account_name: 'Scotiabank MomentumPLUS Savings Account'
-      xpath: 
+        account_name: 'Scotiabank MomentumPLUS Savings Account'
+        xpath: 
       - account:
-      account_name: 'Money Master Savings Account'
-      xpath: 
+        account_name: 'Money Master Savings Account'
+        xpath: 
       - account:
-      account_name: 'Scotiabank Savings Accelerator Account'
-      xpath: 
+        account_name: 'Scotiabank Savings Accelerator Account'
+        xpath: 
       
    -  financial_institution:
       name: 'Tangerine'
       url: 'https://www.tangerine.ca/en/rates/'
+      accounts:
       - account:
-      account_name: 'Tangerine Savings Account'
-      xpath: 
+        account_name: 'Tangerine Savings Account'
+        xpath: 
 
    -  financial_institution:
       name: 'ICICI'
       url: 'https://www.icicibank.ca/personalbanking/popup_sav.page'
+      accounts:
       - account:
-      account_name: 'ICICI HiSave Savings Account'
-      xpath: 
+        account_name: 'ICICI HiSave Savings Account'
+        xpath: 
       - account:
-      account_name: 'ICICI Premium Savings Account'
-      xpath: 
+        account_name: 'ICICI Premium Savings Account'
+        xpath: 
       - account:
-      account_name: 'ICICI Young Stars Savings Account'
-      xpath: 
+        account_name: 'ICICI Young Stars Savings Account'
+        xpath: 
       
    -  financial_institution:
       name: 'National Bank'
       url: 'https://www.nbc.ca/en/rates-and-analysis/interest-rates-and-returns/bank-accounts.html'
+      accounts:
       - account:
-      account_name: 'High-Interest Savings Account'
-      xpath: 
+        account_name: 'High-Interest Savings Account'
+        xpath: 
       
    -  financial_institution:
       name: 'Manulife'
       url: 'https://www.manulifebank.ca/current-rates.html'
+      accounts:
       - account:
-      account_name: 'Advantage Account' 
-      xpath:       
+        account_name: 'Advantage Account' 
+        xpath:       
       
    -  financial_institution:
       name: 'HSBC'
       url: 'https://www.hsbc.ca/savings-accounts/rates/'
+      accounts:
       - account:
-      account_name: 'High Rate Savings'
-      xpath:       
+        account_name: 'High Rate Savings'
+        xpath:       
       
    -  financial_institution:
       name: 'CDN TIRE'
       url: 'https://www.myctfs.com/Rates/'
+      accounts:
       - account:
-      account_name: 'High Interest Savings Account'
-      xpath: 
+        account_name: 'High Interest Savings Account'
+        xpath: 
 
+   -  financial_institution:
+      name: 'B2B Bank'
+      accounts:
+      - account:
+        account_name: 'High Interest Savings Account'
+        xpath: 
+
+   -  financial_institution:
+      name: 'Scotia iTrade'
+      url: 'https://www.scotiaitrade.com/en/direct-investing-and-online-trading/trading-fees/commissions-and-fees.html'
+      accounts:
+      - account:
+        account_name: 'Cash Optimizer Investment Account'
+        xpath: 
+
+   -  financial_institution:
+      name: 'Meridian Credit'
+      url: 'https://www.meridiancu.ca/Personal/Meridian-Rates-Fees.aspx'
+      accounts:
+      - account:
+        account_name: 'Good to Grow High Interest Savings Account'
+        xpath: 
+ 
+   -  financial_institution:
+      name: 'EQ Bank'
+      url: 'https://www.eqbank.ca/personal-banking/features-rates'
+      accounts:
+      - account:
+        account_name: 'Savings Plus Account'
+        xpath: 
