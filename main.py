@@ -59,8 +59,8 @@ def main():
             else:
                 print("Change detected in " + bank['name'] + "-" + currSrcAccount)
 
-        saveDataFiles(bank['url'],'WebsitesHTML/' + bank['name']  + '-' + dt + ".html")
-        findBankElements(bank['name'],'WebsitesHTML/' + bank['name']  + '-' + dt + ".html",bank['id'],bank['table'],bank['accounts'])
+#        saveDataFiles(bank['url'],'WebsitesHTML/' + bank['name']  + '-' + dt + ".html")
+#        findBankElements(bank['name'],'WebsitesHTML/' + bank['name']  + '-' + dt + ".html",bank['id'],bank['table'],bank['accounts'])
 
 
 main()
