@@ -5,6 +5,9 @@ import datetime
 import os
 from Check_Accounts import saveDataFiles
 from Check_Accounts import findBankElements
+import logging
+
+logging.basicConfig(filename='Output.log', level=logging.INFO, format='%(asctime)s:%(message)s')
 
 def main():
 
@@ -55,9 +58,11 @@ def main():
             # 3. Output whether the current xpath text has changed from the previous xpath text
 
             if (prevSrc == currSrc):
-                print("No change in " + bank['name'] + "-" + currSrcAccount)
+                print(bank['name'] + "--" + currSrcAccount + "--" + "No change");
+                logging.info(bank['name'] + "--" + currSrcAccount + "--" + "No change")
             else:
-                print("Change detected in " + bank['name'] + "-" + currSrcAccount)
+                print(bank['name'] + "--" + currSrcAccount + "--" + "Change detected");
+                logging.info(bank['name'] + "--" + currSrcAccount + "--" + "Change detected")
 
 #        saveDataFiles(bank['url'],'WebsitesHTML/' + bank['name']  + '-' + dt + ".html")
 #        findBankElements(bank['name'],'WebsitesHTML/' + bank['name']  + '-' + dt + ".html",bank['id'],bank['table'],bank['accounts'])
