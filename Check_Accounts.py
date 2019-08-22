@@ -14,7 +14,7 @@ def findBankElements(bankName,pathTO,bankID,bankTable,NumberOfAccounts):
 #  soup = BeautifulSoup(page, 'html.parser')
 
   if bankName=="Simplii" or bankName=="RBC":
-     divRowsbank = soup.find('div', id=bankID)
+#     divRowsbank = soup.find('div', id=bankID)
      Bankrows = divRowsbank.find_all(bankTable)
      if len(Bankrows) == len(NumberOfAccounts):
          print("No account has been added in the bank " + " " + bankName)
