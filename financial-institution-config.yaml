@@ -20,7 +20,7 @@ root:
     param: "'main[id=\"blq-content\"]'"
     suffix: ''
     count: '</table>'
-  total_count: 1
+  total_count: 2
 
 - financial_institution:
   name: 'CIBC'
@@ -43,7 +43,7 @@ root:
     param: "'div[class=\"main-content-wrapper\"]'"
     suffix: ''
     count: '</table>'
-  total_count: 3
+  total_count: 5
 
 - financial_institution:
   name: 'RBC'
@@ -51,19 +51,19 @@ root:
   accounts:
   - account:
     account_name: 'High_Interest_eSavings'
-    xpath: '/html/body/table[1]/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr[4]/td[2]/table[1]'
+    xpath: '//*[@id="public-rates_esavingsnotiers"]'
   - account:
     account_name: 'Enhanced_Savings'
-    xpath: '/html/body/table[1]/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr[4]/td[2]/table[2]'
+    xpath: '//*[@id="public-rates_enhancedsavings"]'
   - account:
     account_name: 'Day_To_Day_Savings'
-    xpath: '/html/body/table[1]/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr[4]/td[2]/table[3]'
+    xpath: '//*[@id="public-rates_daysavings"]'
   - account:
     account_name: 'US_Personal'
-    xpath: '/html/body/table[1]/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr[4]/td[2]/table[12]'
+    xpath: '//*[@id="public-rates_uspersonalaccount2"]'
   - account:
     account_name: 'US_High_Interest_eSavings'
-    xpath: '/html/body/table[1]/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr[4]/td[2]/table[13]'
+    xpath: '//*[@id="public-rates_usesavingsnotiers"]'
   functions:
   - function: soup.select_one
     param: "'div[id=\"baspdair-savings\"]'"
@@ -81,13 +81,13 @@ root:
   accounts:
   - account:
     account_name: 'Everyday Savings Account'
-    xpath:
+    xpath: 'none'
   - account:
     account_name: 'High Interest Savings Account'
-    xpath:
+    xpath: 'none'
   - account:
     account_name: 'ePremium Savings Account'
-    xpath:
+    xpath: 'none'
   functions:
   - function: soup.select_one
     param: "'div[id=\"sa\"]'"
@@ -104,14 +104,14 @@ root:
   url: 'https://www.bmo.com/main/personal/bank-accounts/savings/interest-rates/'
   accounts:
   - account:
-    account_name: 'Savings Builder Account'
-    xpath:
+    account_name: 'Savings_Builder_Account'
+    xpath: '//*[@id="main"]/div[3]/div'
   - account:
-    account_name: 'Smart Saver Account'
-    xpath:
+    account_name: 'Smart_Saver_Account'
+    xpath: '//*[@id="main"]/div[4]/div'
   - account:
-    account_name: 'Premium Rate Savings Account'
-    xpath:
+    account_name: 'Premium_Rate_Savings_Account'
+    xpath: '//*[@id="main"]/div[5]/div'
   functions:
   - function: 'soup.select_one'
     param: "'main'"
@@ -124,14 +124,14 @@ root:
   url: 'https://www.scotiabank.com/ca/en/personal/rates-prices/savings-account-rates.html'
   accounts:
   - account:
-    account_name: 'Scotiabank MomentumPLUS Savings Account'
-    xpath:
+    account_name: 'Scotiabank_MomentumPLUS_Savings_Account'
+    xpath: '//*[@id="main"]/div[1]/div/div/div/div[5]/div/table'
   - account:
-    account_name: 'Money Master Savings Account'
-    xpath:
+    account_name: 'Money_Master_Savings_Account'
+    xpath: '//*[@id="main"]/div[1]/div/div/div/div[14]/div/div/table'
   - account:
-    account_name: 'Scotiabank Savings Accelerator Account'
-    xpath:
+    account_name: 'Scotiabank_Savings_Accelerator_Account'
+    xpath: '//*[@id="main"]/div[1]/div/div/div/div[18]/div/div/table'
   functions:
   - function: 'soup.select_one'
     param: "'main'"
@@ -144,8 +144,8 @@ root:
   url: 'https://www.tangerine.ca/en/rates/'
   accounts:
   - account:
-    account_name: 'Tangerine Savings Account'
-    xpath:
+    account_name: 'Tangerine_Savings_Account'
+    xpath: '/html/body/section[5]/div/div/div[1]/div[1]/div/div[1]/div[2]/div[3]/ul/li[1]'
   functions:
   - function: 'soup.find'
     param: "'h5', text=\"Tangerine Saving Accounts\""
@@ -159,13 +159,13 @@ root:
   accounts:
   - account:
     account_name: 'ICICI HiSave Savings Account'
-    xpath:
+    xpath: 'none'
   - account:
     account_name: 'ICICI Premium Savings Account'
-    xpath:
+    xpath: 'none'
   - account:
     account_name: 'ICICI Young Stars Savings Account'
-    xpath:
+    xpath: 'none'
   functions:
   - function: 'soup.find'
     param: "'h2', text=\"Canadian Dollar\""
@@ -178,8 +178,8 @@ root:
   url: 'https://www.nbc.ca/en/rates-and-analysis/interest-rates-and-returns/bank-accounts.html'
   accounts:
   - account:
-    account_name: 'High-Interest Savings Account'
-    xpath:
+    account_name: 'High_Interest_Savings_Account'
+    xpath: '//*[@id="main-wrapper"]/section/div/article/div[3]/div/div[10]'
   functions:
   - function: 'soup.find'
     param: "'div', 'table parbase section'"
@@ -197,7 +197,7 @@ root:
   accounts:
   - account:
     account_name: 'Advantage Account'
-    xpath:
+    xpath: '//*[@id="content"]/div[3]/div/div/div/div/div/div[6]/section/div/div/table/tbody/tr[1]'
   functions:
   - function: 'soup.find_all'
     param: "'h2'"
@@ -211,7 +211,7 @@ root:
   accounts:
   - account:
     account_name: 'High Rate Savings'
-    xpath:
+    xpath: '//*[@id="content_main_basicTable_6"]'
   functions:
   - function: 'soup.find'
     param: "'body'"
@@ -225,7 +225,7 @@ root:
   accounts:
   - account:
     account_name: 'High Interest Savings Account'
-    xpath:
+    xpath: '//*[@id="mainContent"]/div[1]/table[1]'
   functions:
   - function: 'soup.find'
     param: "'div', 'mainContent'"
@@ -239,7 +239,7 @@ root:
   accounts:
   - account:
     account_name: 'High Interest Savings Account'
-    xpath:
+    xpath: '//*[@id="sn_widget_6194"]/div[1]/table/tbody/tr[3]'
   functions:
   - function: 'soup.find'
     param: "'th', text='Banking Services'"
@@ -253,7 +253,7 @@ root:
   accounts:
   - account:
     account_name: 'Cash Optimizer Investment Account'
-    xpath:
+    xpath: '//*[@id="main"]/div/div/div/div/div[2]/div/div[5]/div/div[2]/div/div[1]'
   functions:
   - function: 'soup.find'
     param: "string=' Interest Rates'"
@@ -268,12 +268,12 @@ root:
   accounts:
   - account:
     account_name: 'Good to Grow High Interest Savings Account'
-    xpath:
+    xpath: '//div[contains(@class, "content-section-block")]/div/div/div/div/div/ul/li/div'
   functions:
   - function: 'soup.find'
-    param: "'h2', text='Saving Accounts'"
-    suffix: '.parent'
-    count: "<div class=\"row\">"
+    param: "'a', text='Good To Grow High Interest Savings Account'"
+    suffix: ".parent.select_one('tbody')"
+    count: "</tr>"
   total_count: 4
 
 - financial_institution:
@@ -282,4 +282,4 @@ root:
   accounts:
   - account:
     account_name: 'Savings Plus Account'
-    xpath:
+    xpath: '//*[@id="contentPlaceholder_C059_Col00"]/div[1]/div/div/div[1]'

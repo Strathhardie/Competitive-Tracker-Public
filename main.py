@@ -8,19 +8,21 @@ from bs4 import BeautifulSoup
 
 def main():
     banks = YAMLUtils.readYAML(YAMLUtils.FILE_NAME)
+    # Initialize the webdriver so we don't have to create a new instance of driver 
+    SeleniumUtils.initializeDriver()
     # 1. Save the current HTML with format <financial institution>-<account type>-<current date time>.html
-    dt = '{:%Y%m%d_%H%M%S}'.format(datetime.datetime.now())
+    dt = '{:%Y%m%d_%H%M%S}'.format(datetime.datetime.now())    
     # Iterate through each bank in the YAML
-
-    for bank in banks:
-      if bank['name'] == 'Simplii' or bank['name'] == 'CIBC':
+    for bank in banks:  
+      #if bank['name'] != 'ICICI' and bank['name'] == 'TDCT':
+        print("")  
         # Make a dictionary where key:value is filepath:xpath
         bankData = dict()
         # Go through each account in the bank
         for account in bank['accounts']:
           # Save each account's filepath, and the xpath to the dictionary
             if account['xpath'] == "none":
-                print("")
+                pass
             else:
                 bankData['websites/' + bank['name'] + '-' + account['account_name'] + '-' + dt + ".html"] = account['xpath']
                 
@@ -59,7 +61,7 @@ def main():
         # 4. Count the number of accounts for a given banks to determine if one is added or removed
         # EQ bank is currently out of scope due to having only one bank account, not in a table
         if bank['name'] != 'EQ_Bank':
-            path = 'full_websites/' + bank['name'] + '.html'
+            path = 'full_websites/' + bank['name'] + '-' + dt + '.html'
             SeleniumUtils.saveSourceHTML(bank['url'], path)
             with open(path,encoding="utf-8") as f:
                 global count; count = 0
@@ -70,11 +72,13 @@ def main():
                     command = 'count += str(' + fn['function'] + '(' + fn['param'] + ')' + fn['suffix'] + ').count(\'' + fn['count'] + '\')'
                     exec(command, globals())
                 # If the count is not equal to the original number of accounts, output message and update the yaml
-                if count != bank['total_count']:
-                    print(bank['name'], ": Account added or removed!")
+                if count > bank['total_count']:
+                    print("Account added to", bank['name'])
                     YAMLUtils.writeYAML(YAMLUtils.FILE_NAME, bank['name'], count)
-                else:
-                    print(bank['name'], ": All good")
+                elif count < bank['total_count']:
+                    print("Account removed from", bank['name'])
+                    YAMLUtils.writeYAML(YAMLUtils.FILE_NAME, bank['name'], count)
+
 
 main()
 
