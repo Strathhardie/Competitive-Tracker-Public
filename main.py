@@ -3,11 +3,12 @@ from selenium_utils import SeleniumUtils
 from parser_utils import ParserUtils
 import datetime
 import os
+import requests
+from bs4 import BeautifulSoup
 import logging
 
 logging.basicConfig(filename='Output.log', level=logging.INFO, format='%(asctime)s:%(message)s')
-import requests
-from bs4 import BeautifulSoup
+
 
 def main():
     banks = YAMLUtils.readYAML(YAMLUtils.FILE_NAME)
@@ -79,9 +80,11 @@ def main():
                 # If the count is not equal to the original number of accounts, output message and update the yaml
                 if count > bank['total_count']:
                     print("Account added to", bank['name'])
+                    logging.info("Account added to", bank['name'])
                     YAMLUtils.writeYAML(YAMLUtils.FILE_NAME, bank['name'], count)
                 elif count < bank['total_count']:
                     print("Account removed from", bank['name'])
+                    logging.info("Account removed from", bank['name'])
                     YAMLUtils.writeYAML(YAMLUtils.FILE_NAME, bank['name'], count)
 
 
