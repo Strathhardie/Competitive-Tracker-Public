@@ -8,6 +8,7 @@ venv
 
 # Saved bank files
 websites
+full_websites
 
 #Temp Files
 */~$*.xlsm
