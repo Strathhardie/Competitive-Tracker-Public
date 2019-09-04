@@ -3,6 +3,9 @@ from selenium_utils import SeleniumUtils
 from parser_utils import ParserUtils
 import datetime
 import os
+import logging
+
+logging.basicConfig(filename='Output.log', level=logging.INFO, format='%(asctime)s:%(message)s')
 import requests
 from bs4 import BeautifulSoup
 
@@ -54,9 +57,11 @@ def main():
                     break
             # 3. Output whether the current xpath text has changed from the previous xpath text
             if (prevSrc == currSrc):
-                print("No change in " + bank['name'] + "-" + currSrcAccount)
+                print(bank['name'] + "--" + currSrcAccount + "--" + "No change");
+                logging.info(bank['name'] + "--" + currSrcAccount + "--" + "No change")
             else:
-                print("Change detected in " + bank['name'] + "-" + currSrcAccount)
+                print(bank['name'] + "--" + currSrcAccount + "--" + "Change detected");
+                logging.info(bank['name'] + "--" + currSrcAccount + "--" + "Change detected")
 
         # 4. Count the number of accounts for a given banks to determine if one is added or removed
         # EQ bank is currently out of scope due to having only one bank account, not in a table
