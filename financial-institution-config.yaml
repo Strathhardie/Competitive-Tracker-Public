@@ -50,10 +50,10 @@ root:
      accounts:
       - account:
         account_name: 'Everyday Savings Account'
-        xpath: '
+        xpath: '//*[@id="sa"]/table/tbody/tr[3]/td'
       - account: 
         account_name: 'High Interest Savings Account'
-        xpath:
+        xpath: 
       - account:
         account_name: 'ePremium Savings Account'
         xpath:
