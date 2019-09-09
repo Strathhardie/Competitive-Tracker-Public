@@ -16,3 +16,5 @@ full_websites
 */~$*.xls
 Excel Scanner/Archive/
 
+# Generated files
+*.log

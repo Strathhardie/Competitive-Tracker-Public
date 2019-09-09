@@ -7,7 +7,7 @@ import requests
 from bs4 import BeautifulSoup
 import logging
 
-logging.basicConfig(filename='Output.log', level=logging.INFO, format='%(asctime)s:%(message)s')
+logging.basicConfig(filename='results.log', level=logging.INFO, format='%(asctime)s:%(message)s')
 
 
 def main():
@@ -18,7 +18,7 @@ def main():
     dt = '{:%Y%m%d_%H%M%S}'.format(datetime.datetime.now())    
     # Iterate through each bank in the YAML
     for bank in banks:  
-      #if bank['name'] != 'ICICI' and bank['name'] == 'TDCT':
+      if bank['name'] != 'ICICI' and bank['name'] != 'TDCT':
         print("")  
         # Make a dictionary where key:value is filepath:xpath
         bankData = dict()
@@ -72,7 +72,7 @@ def main():
             with open(path,encoding="utf-8") as f:
                 global count; count = 0
                 data = f.read()     
-                global soup; soup = BeautifulSoup(data, 'html.parser')    
+                global soup; soup = BeautifulSoup(data, 'html.parser') 
                 # Based on the functions in the yaml, search the HTML page for specific elements and count them       
                 for fn in bank['functions']:
                     command = 'count += str(' + fn['function'] + '(' + fn['param'] + ')' + fn['suffix'] + ').count(\'' + fn['count'] + '\')'
@@ -87,6 +87,7 @@ def main():
                     logging.info("Account removed from", bank['name'])
                     YAMLUtils.writeYAML(YAMLUtils.FILE_NAME, bank['name'], count)
 
+    logging.info('\n')
 
 main()
 
