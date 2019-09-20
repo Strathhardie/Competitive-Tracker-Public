@@ -128,10 +128,10 @@ root:
     xpath: '//*[@id="main"]/div[1]/div/div/div/div[5]/div/table'
   - account:
     account_name: 'Money_Master_Savings_Account'
-    xpath: '//*[@id="main"]/div[1]/div/div/div/div[14]/div/div/table'
+    xpath: '//*[@id="main"]/div[1]/div/div/div/div[13]/div/div/table' 
   - account:
     account_name: 'Scotiabank_Savings_Accelerator_Account'
-    xpath: '//*[@id="main"]/div[1]/div/div/div/div[18]/div/div/table'
+    xpath: '//*[@id="main"]/div[1]/div/div/div/div[17]/div/div/table'
   functions:
   - function: 'soup.select_one'
     param: "'main'"

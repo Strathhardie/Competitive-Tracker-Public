@@ -5,21 +5,24 @@ import datetime
 import os
 import requests
 from bs4 import BeautifulSoup
-import logging
-
-logging.basicConfig(filename='results.log', level=logging.INFO, format='%(asctime)s:%(message)s')
-
+import logging_utils as LoggingUtils
+from tqdm import tqdm
 
 def main():
+    # Initialize a boolean to check if a change has been detected, to improve output display at the end of execution
+    change_detected = False
     banks = YAMLUtils.readYAML(YAMLUtils.FILE_NAME)
-    # Initialize the webdriver so we don't have to create a new instance of driver 
+    # Initialize the webdriver so we don't have to create a new instance of driver every time we change banks
     SeleniumUtils.initializeDriver()
+    logger = LoggingUtils.initialize_logger()
     # 1. Save the current HTML with format <financial institution>-<account type>-<current date time>.html
-    dt = '{:%Y%m%d_%H%M%S}'.format(datetime.datetime.now())    
+    dt = '{:%Y%m%d_%H%M%S}'.format(datetime.datetime.now())
+    t = tqdm(banks, desc="Auditing Changes", leave=True, ncols=100)
     # Iterate through each bank in the YAML
-    for bank in banks:  
+    for bank in t: #tqdm(banks, desc="Auditing Changes",position=0,leave=True):  
       if bank['name'] != 'ICICI' and bank['name'] != 'TDCT':
-        print("")  
+        t.set_description("%-15s" % str(bank['name']))
+        t.update()  
         # Make a dictionary where key:value is filepath:xpath
         bankData = dict()
         # Go through each account in the bank
@@ -35,7 +38,7 @@ def main():
         try:
             SeleniumUtils.saveBankAccountsXPathHTML(bank['url'], bankData)
         except(Exception) as error:
-            print(error)
+            tqdm.write(error)
         for filepath in bankData:
             # Read the downloaded file contents, bank name, account, and datetime
             currSrcFile = open(filepath, encoding='utf-8')
@@ -58,11 +61,12 @@ def main():
                     break
             # 3. Output whether the current xpath text has changed from the previous xpath text
             if (prevSrc == currSrc):
-                print(bank['name'] + "--" + currSrcAccount + "--" + "No change");
-                logging.info(bank['name'] + "--" + currSrcAccount + "--" + "No change")
+                #print(bank['name'] + "--" + currSrcAccount + "--" + "No change");
+                logger.info(bank['name'] + "--" + currSrcAccount + "--" + "No change")
             else:
-                print(bank['name'] + "--" + currSrcAccount + "--" + "Change detected");
-                logging.info(bank['name'] + "--" + currSrcAccount + "--" + "Change detected")
+                #print(bank['name'] + "--" + currSrcAccount + "--" + "Change detected");
+                logger.warning(bank['name'] + "--" + currSrcAccount + "--" + "Change detected")
+                change_detected = True
 
         # 4. Count the number of accounts for a given banks to determine if one is added or removed
         # EQ bank is currently out of scope due to having only one bank account, not in a table
@@ -79,15 +83,18 @@ def main():
                     exec(command, globals())
                 # If the count is not equal to the original number of accounts, output message and update the yaml
                 if count > bank['total_count']:
-                    print("Account added to", bank['name'])
-                    logging.info("Account added to", bank['name'])
+                    #print("Account added to", bank['name'])
+                    logger.warning("Account added to " + bank['name'])
                     YAMLUtils.writeYAML(YAMLUtils.FILE_NAME, bank['name'], count)
+                    change_detected = True
                 elif count < bank['total_count']:
-                    print("Account removed from", bank['name'])
-                    logging.info("Account removed from", bank['name'])
+                    #print("Account removed from", bank['name'])
+                    logger.warning("Account removed from " + bank['name'])
                     YAMLUtils.writeYAML(YAMLUtils.FILE_NAME, bank['name'], count)
+                    change_detected = True
 
-    logging.info('\n')
+    print("Change(s) detected." if change_detected else "No changes detected.", "Please refer to results.log for the further details.")    
+    logger.newline()
 
 main()
 
