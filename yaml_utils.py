@@ -25,12 +25,13 @@ class YAMLUtils(object):
             print("File <" + file_name + "> does not exist!")
             return None
 
+    # Method to make updates to the total count of a given bank's accounts
     @staticmethod
     def writeYAML(file_name, bank_name, update):
         yaml = YAML()
         yaml.preserve_quotes = True
         with open(file_name, "r") as stream:
-            data = yaml.load(stream)#['root']
+            data = yaml.load(stream)
         for bank in data['root']:
             if bank['name'] == bank_name:
                 bank['total_count'] = update

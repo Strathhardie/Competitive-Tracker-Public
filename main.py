@@ -1,11 +1,11 @@
 from yaml_utils import YAMLUtils
 from selenium_utils import SeleniumUtils
 from parser_utils import ParserUtils
+import logging_utils as LoggingUtils
 import datetime
 import os
 import requests
 from bs4 import BeautifulSoup
-import logging_utils as LoggingUtils
 from tqdm import tqdm
 
 def main():
@@ -17,10 +17,12 @@ def main():
     logger = LoggingUtils.initialize_logger()
     # 1. Save the current HTML with format <financial institution>-<account type>-<current date time>.html
     dt = '{:%Y%m%d_%H%M%S}'.format(datetime.datetime.now())
-    t = tqdm(banks, desc="Auditing Changes", leave=True, ncols=100)
+    # Create a progress bar to track the auditor at a bank level
+    t = tqdm(banks, desc="Auditing Changes", leave=True, ncols=100, position=0)
     # Iterate through each bank in the YAML
-    for bank in t: #tqdm(banks, desc="Auditing Changes",position=0,leave=True):  
+    for bank in t:  
       if bank['name'] != 'ICICI' and bank['name'] != 'TDCT':
+        # Change the description of the progress bar to the current bank's name
         t.set_description("%-15s" % str(bank['name']))
         t.update()  
         # Make a dictionary where key:value is filepath:xpath
@@ -46,7 +48,7 @@ def main():
             currSrcBankName = ParserUtils.parseBankName(filepath.split('/')[1])
             currSrcAccount = ParserUtils.parseAccount(filepath)
             currSrcDateTime = ParserUtils.parseDateTime(filepath)
-
+        
             # Find the most recent previous file
             # Sort the files by reverse alphabetical order (most recent datetime first)
             files = sorted(os.listdir('websites'), reverse=True)
@@ -59,12 +61,11 @@ def main():
                     prevSrcFile = open('websites/' + file, encoding='utf-8')
                     prevSrc = prevSrcFile.read()
                     break
-            # 3. Output whether the current xpath text has changed from the previous xpath text
+
+            # 3. Log whether the current xpath text has changed from the previous xpath text
             if (prevSrc == currSrc):
-                #print(bank['name'] + "--" + currSrcAccount + "--" + "No change");
                 logger.info(bank['name'] + "--" + currSrcAccount + "--" + "No change")
             else:
-                #print(bank['name'] + "--" + currSrcAccount + "--" + "Change detected");
                 logger.warning(bank['name'] + "--" + currSrcAccount + "--" + "Change detected")
                 change_detected = True
 
@@ -83,12 +84,10 @@ def main():
                     exec(command, globals())
                 # If the count is not equal to the original number of accounts, output message and update the yaml
                 if count > bank['total_count']:
-                    #print("Account added to", bank['name'])
                     logger.warning("Account added to " + bank['name'])
                     YAMLUtils.writeYAML(YAMLUtils.FILE_NAME, bank['name'], count)
                     change_detected = True
                 elif count < bank['total_count']:
-                    #print("Account removed from", bank['name'])
                     logger.warning("Account removed from " + bank['name'])
                     YAMLUtils.writeYAML(YAMLUtils.FILE_NAME, bank['name'], count)
                     change_detected = True
