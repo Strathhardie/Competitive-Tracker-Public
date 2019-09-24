@@ -41,6 +41,7 @@ def main():
             SeleniumUtils.saveBankAccountsXPathHTML(bank['url'], bankData)
         except(Exception) as error:
             tqdm.write(error)
+            break
         for filepath in bankData:
             # Read the downloaded file contents, bank name, account, and datetime
             currSrcFile = open(filepath, encoding='utf-8')
