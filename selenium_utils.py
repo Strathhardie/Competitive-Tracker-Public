@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 import os
+import time
 
 # This class contains all methods to handle selenium logic
 class SeleniumUtils(object):
@@ -26,17 +27,17 @@ class SeleniumUtils(object):
 
     # Creates the driver, and saves the obtained HTML from the xpath to the given file path
     @classmethod
-    def saveBankAccountsXPathHTML(cls, url, bankData):
+    def saveBankAccountXPathHTML(cls, url, filepath, bankData):
         SeleniumUtils.driver.get(url)
-        
-        for filepath in bankData:
-            with open(filepath, 'w', encoding="utf-8") as f:
-                f.write(SeleniumUtils.getBankAccountXPathHTML(bankData[filepath], SeleniumUtils.driver))
+        time.sleep(0.5)
+        with open(filepath, 'w', encoding="utf-8") as f:
+            f.write(SeleniumUtils.getBankAccountXPathHTML(bankData[filepath], SeleniumUtils.driver))
 
     # Returns the HTML source
     @classmethod
     def getSourceHTML(cls, url):
         SeleniumUtils.driver.get(url)
+        time.sleep(0.5)
         return SeleniumUtils.driver.page_source
 
     # Saves the HTML source to /websites directory
