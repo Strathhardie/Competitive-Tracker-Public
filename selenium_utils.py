@@ -3,6 +3,9 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 import os
 import time
 
@@ -23,6 +26,8 @@ class SeleniumUtils(object):
     # Returns the text given an xpath
     @classmethod
     def getBankAccountXPathHTML(cls, xpath, driver):
+        #Waits up to 3 minutes for the code to be loaded properly
+        element = WebDriverWait(driver, 180).until(EC.presence_of_element_located((By.TAG_NAME, "title")))
         return driver.find_element_by_xpath(xpath).get_attribute("innerHTML")
 
     # Creates the driver, and saves the obtained HTML from the xpath to the given file path
