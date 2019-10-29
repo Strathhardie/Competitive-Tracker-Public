@@ -49,16 +49,14 @@ def main():
             try:                
                 SeleniumUtils.saveBankAccountXPathHTML(bank['url'], filepath, bankData) 
             except (TimeoutError) as timeOut:
-                logger.error(bank['name'] + "--" + currSrcAccount + "--" + "Error in execution: TineoutError")
+                logger.error(bank['name'] + "--" + currSrcAccount + "--" + "Error in execution: TimeoutError")
                 continue
             except(Exception) as error:
                 tqdm.write(error)
                 logger.error(bank['name'] + "--" + currSrcAccount + "--" + "Error in execution: Unable to locate element")
             else:           
-            #for filepath in bankData:
                 # Read the downloaded file contents, bank name, account, and datetime
-                currSrcFile = open(filepath, encoding='utf-8')
-                currSrc = currSrcFile.read()                
+                with open(filepath, encoding='utf-8') as currSrcFile: currSrc = currSrcFile.read()                
         
                 # Find the most recent previous file
                 # Sort the files by reverse alphabetical order (most recent datetime first)
@@ -69,15 +67,13 @@ def main():
                     if (currSrcBankName == ParserUtils.parseBankName(file)
                             and currSrcAccount == ParserUtils.parseAccount(file)
                             and ParserUtils.dateTimeLessThan(ParserUtils.parseDateTime(file), currSrcDateTime)):
-                        prevSrcFile = open('websites/' + file, encoding='utf-8')
-                        prevSrc = prevSrcFile.read()
+                        with open('websites/' + file, encoding='utf-8') as prevSrcFile: prevSrc = prevSrcFile.read()
                         break
 
                 # 3. Log whether the current xpath text has changed from the previous xpath text
                 if (prevSrc == currSrc):
                     logger.info(bank['name'] + "--" + currSrcAccount + "--" + "No change")
                     # if no change was made, delete the latest version
-                    currSrcFile.close()
                     os.remove(filepath)
                 else:
                     logger.warning(bank['name'] + "--" + currSrcAccount + "--" + "Change detected")
@@ -90,31 +86,29 @@ def main():
             path = 'full_websites/' + bank['name'] + '-' + dt + '.html'
             SeleniumUtils.saveSourceHTML(bank['url'], path)
             #check to see if file was properly retrived by measuring the size if file is below 2kb it will reload it again
-            while  os.path.getsize(path) < 2000:
+            while os.path.getsize(path) < 2000:
                 SeleniumUtils.saveSourceHTML(bank['url'], path)
 
-            with open(path,encoding="utf-8") as f:
-                global count; count = 0
-                data = f.read()     
-                global soup; soup = BeautifulSoup(data, 'html.parser') 
-                # Based on the functions in the yaml, search the HTML page for specific elements and count them       
-                for fn in bank['functions']:
-                    command = 'count += str(' + fn['function'] + '(' + fn['param'] + ')' + fn['suffix'] + ').count(\'' + fn['count'] + '\')'
-                    exec(command, globals())
-                # If the count is not equal to the original number of accounts, output message and update the yaml
-                if count > bank['total_count']:
-                    logger.warning("Account(s) added to " + bank['name'])
-                    YAMLUtils.writeYAML(YAMLUtils.FILE_NAME, bank['name'], count)
-                    change_detected = True
-                    
-                elif count < bank['total_count']:
-                    logger.warning("Account(s) removed from " + bank['name'])
-                    YAMLUtils.writeYAML(YAMLUtils.FILE_NAME, bank['name'], count)
-                    change_detected = True
-                else:
-                    #If no change is detected it will delete the latest addition
-                    f.close()
-                    os.remove(path)            
+            with open(path,encoding="utf-8") as f: data = f.read()
+            global count; count = 0                     
+            global soup; soup = BeautifulSoup(data, 'html.parser') 
+            # Based on the functions in the yaml, search the HTML page for specific elements and count them       
+            for fn in bank['functions']:
+                command = 'count += str(' + fn['function'] + '(' + fn['param'] + ')' + fn['suffix'] + ').count(\'' + fn['count'] + '\')'
+                exec(command, globals())
+            # If the count is not equal to the original number of accounts, output message and update the yaml
+            if count > bank['total_count']:
+                logger.warning("Account(s) added to " + bank['name'])
+                YAMLUtils.writeYAML(YAMLUtils.FILE_NAME, bank['name'], count)
+                change_detected = True
+                
+            elif count < bank['total_count']:
+                logger.warning("Account(s) removed from " + bank['name'])
+                YAMLUtils.writeYAML(YAMLUtils.FILE_NAME, bank['name'], count)
+                change_detected = True
+            else:
+                #If no change is detected it will delete the latest addition
+                os.remove(path)            
 
     print("Change(s) detected." if change_detected else "No changes detected.", "Please refer to results.log for further details.") 
     if error_encountered: print("Error(s) encountered. Please refer to results.log for further details.")   
