@@ -11,4 +11,4 @@ elem.send_keys("pycon")
 elem.send_keys(Keys.RETURN)
 assert "No results found." not in driver.page_source
 driver.close()
-# testing merge conflicts!
+# here is a demo for merge conflicts
