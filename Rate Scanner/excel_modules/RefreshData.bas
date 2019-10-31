@@ -20,6 +20,7 @@ Public Sub RefreshQueries()
     'Dim success() As Variant
     Dim i As Integer
     Dim x As Integer
+    Dim Ok As String
     Dim count As Integer
     Dim currTime As Date, execTime As Long
     
@@ -146,6 +147,15 @@ End Sub
 '|30-07-2018    |Jude Arokiam       |Add Refresh All Queries
 
 '|23-04-2019    |Jacob Bourdeau     |Add logging of query results to menu page
+
+
+
+
+
+
+
+
+
 
 
 
