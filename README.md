@@ -5,7 +5,8 @@ A Web Scraper application to automate the compilation of interest rate data from
 ## How to clone & connect to this repository
 
 1. On Git Bash, configure the Proxy settings by entering this command. The port may be different depending on CNTLM settings. Ensure the proxy is running (ie. CNTLM.exe):
-`` git config --global http.proxy "127.0.0.1:5128" `` 
+`` git config --global http.proxy "http://127.0.0.1:5128" `` 
+`` git config --global https.proxy "http://127.0.0.1:5128" `` 
 
 2. Create a personal access token by following this guide. Use it as your password for authentication instead: https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
 
@@ -15,7 +16,7 @@ A Web Scraper application to automate the compilation of interest rate data from
 
 ## How to install the dependencies
 
-Ensure you have Python 3.6 or higher installed.
+Ensure you have Python 3.6 or higher installed. As for the .whl files, ensure to download the ones compatible with your system requirements, as the ones provided under resources/ may not be compatible for you.
 
 1. After cloning this repository, open it on your terminal and run:
 
