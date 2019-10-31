@@ -1,3 +1,4 @@
+Attribute VB_Name = "RefreshData"
 ' @author: Jude Arokiam
 ' @date: July 30, 2018
 ' @Revision: 3
@@ -15,57 +16,49 @@ Public Sub RefreshQueries()
     Dim wks As Worksheet
     Dim qt As QueryTable
     Dim lo As ListObject
-    'Dim failed() As Variant
-    'Dim success() As Variant
     Dim i As Integer
     Dim count As Integer
     Dim currTime As Date, execTime As Long
     
-    
-    Range(Range("E5"), Range("E5").End(xlDown).End(xlDown).Offset(0, 4)).ClearContents
-    'Cells(4, 5) = "Number"
-    'Cells(4, 6) = "Table Name"
-    'Cells(4, 7) = "Status"
-    'Cells(4, 8) = "Execution Time"
-    'Cells(4, 9) = "Message"
-    'Cells(3, 5) = "Query Outcome Summary"
-    count = 0
-    Application.GoTo Reference:=Worksheets("Menu").Range("E3"), scroll:=True
-    
-    i = 0
-    For Each wks In Worksheets
-        If wks.Name <> "Menu" And _
-           wks.Name <> "Retail_Report" And _
-           wks.Name <> "US$_Report" And _
-           wks.Name <> "Broker_Report" And _
-           wks.Name <> "BNS_Rates" And _
-           wks.Name <> "Dev Change Log" Then
-           
-'        On Error GoTo RefreshErrHandler:
-'            For Each qt In wks.QueryTables
-'20              qt.Refresh BackgroundQuery:=False
-'                ' Range("E5").Offset(i, 2) = qt.Name
-'
-'            Next qt
+    With Worksheets("Menu")
+        Range(.Range("E5"), .Range("E5").End(xlDown).End(xlDown).Offset(0, 4)).ClearContents
+        count = 0
+        Application.GoTo Reference:=.Range("E3"), scroll:=True
         
-        On Error GoTo RefreshErrHandler:
-        
-            For Each lo In wks.ListObjects
-                  currTime = Now
-                  lo.QueryTable.Refresh BackgroundQuery:=False
-                  execTime = (Now - currTime) * 86400
-                  Range("E5").Offset(i, 0) = i
-                  'Range("E5").Offset(i, 0) = lo.QueryTable.Connection
-                  Range("E5").Offset(i, 1) = lo.Name
-                  Range("E5").Offset(i, 2) = "Success"
-                  Range("E5").Offset(i, 3) = execTime
-                  'Range(Range("E5").Offset(i, 0), Range("E5").Offset(i, 4)).Show
-                  'Application.Goto Reference:=Worksheets("Menu").Range("E5").Offset(i, 0), scroll:=True
-                  i = i + 1
+        i = 0
+        For Each wks In Worksheets
+            If wks.Name <> "Menu" And _
+               wks.Name <> "Retail_Report" And _
+               wks.Name <> "US$_Report" And _
+               wks.Name <> "Broker_Report" And _
+               wks.Name <> "Dev Change Log" Then
+               
+    '        On Error GoTo RefreshErrHandler:
+    '            For Each qt In wks.QueryTables
+    '20              qt.Refresh BackgroundQuery:=False
+    '                ' Range("E5").Offset(i, 2) = qt.Name
+    '
+    '            Next qt
+            
+            On Error GoTo RefreshErrHandler:
+            
+                For Each lo In wks.ListObjects
+                      currTime = Now
+                      lo.QueryTable.Refresh
+                      execTime = (Now - currTime) * 86400
+                      .Range("E5").Offset(i, 0) = i
+                      'Range("E5").Offset(i, 0) = lo.QueryTable.Connection
+                      .Range("E5").Offset(i, 1) = lo.Name
+                      .Range("E5").Offset(i, 2) = "Success"
+                      .Range("E5").Offset(i, 3) = execTime
+                      'Range(Range("E5").Offset(i, 0), Range("E5").Offset(i, 4)).Show
+                      'Application.Goto Reference:=Worksheets("Menu").Range("E5").Offset(i, 0), scroll:=True
+                      i = i + 1
 Point:
-            Next lo
-        End If
-    Next wks
+                Next lo
+            End If
+        Next wks
+    End With
     
     Set qt = Nothing
     Set wks = Nothing
@@ -130,6 +123,8 @@ End Sub
 '|30-07-2018    |Jude Arokiam       |Add Refresh All Queries
 
 '|23-04-2019    |Jacob Bourdeau     |Add logging of query results to menu page
+
+
 
 
 
