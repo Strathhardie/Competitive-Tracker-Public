@@ -16,12 +16,21 @@ Public Sub RefreshQueries()
     Dim wks As Worksheet
     Dim qt As QueryTable
     Dim lo As ListObject
+    'Dim failed() As Variant
+    'Dim success() As Variant
     Dim i As Integer
+    Dim x As Integer
     Dim count As Integer
     Dim currTime As Date, execTime As Long
     
     With Worksheets("Menu")
         Range(.Range("E5"), .Range("E5").End(xlDown).End(xlDown).Offset(0, 4)).ClearContents
+        'Cells(4, 5) = "Number"
+        'Cells(4, 6) = "Table Name"
+        'Cells(4, 7) = "Status"
+        'Cells(4, 8) = "Execution Time"
+        'Cells(4, 9) = "Message"
+        'Cells(3, 5) = "Query Outcome Summary"
         count = 0
         Application.GoTo Reference:=.Range("E3"), scroll:=True
         
@@ -68,15 +77,29 @@ Point:
 Exit Sub
 
 RefreshErrHandler:
-    execTime = (Now - currTime) * 86400
-    Range("E5").Offset(i, 0) = i
-    Range("E5").Offset(i, 1) = lo.Name
-    Range("E5").Offset(i, 2) = "Error"
-    Range("E5").Offset(i, 3) = execTime
-    Range("E5").Offset(i, 4) = Err.Description
-    'Range(Range("E5").Offset(i, 0), Range("E5").Offset(i, 4)).Show
-    'Application.Goto Reference:=Worksheets("Menu").Range("E5").Offset(i, 0), scroll:=True
-    i = i + 1
+
+    Do While x < 3
+        execTime = (Now - currTime) * 86400
+        Range("E5").Offset(x, 0) = x
+        Range("E5").Offset(x, 1) = lo.Name
+        Range("E5").Offset(x, 2) = "Error"
+        Range("E5").Offset(x, 3) = execTime
+        Range("E5").Offset(x, 4) = Err.Description
+        'Range(Range("E5").Offset(i, 0), Range("E5").Offset(i, 4)).Show
+        'Application.Goto Reference:=Worksheets("Menu").Range("E5").Offset(i, 0), scroll:=True
+        
+        x = x + 1
+        
+    Loop
+    
+    
+    If (x < 3) Then
+    MsgBox (Ok)
+    Else
+    MsgBox (Error)
+    End If
+    
+    
     
 '    If Err.Number = 1004 Then
 '        Range("E5").Offset(i, 0) = i
