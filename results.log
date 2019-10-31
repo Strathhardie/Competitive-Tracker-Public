@@ -1,0 +1,1410 @@
+
+2019-10-18 10:04:33,397 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-18 10:04:40,912 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-18 10:04:43,157 INFO   : CIBC--Bonus_Savings--No change
+2019-10-18 10:04:45,654 INFO   : CIBC--Premium_Growth--No change
+2019-10-18 10:04:48,219 INFO   : CIBC--US_Personal--No change
+2019-10-18 10:04:55,006 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-18 10:04:56,368 INFO   : RBC--Enhanced_Savings--No change
+2019-10-18 10:04:57,453 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-18 10:04:58,607 INFO   : RBC--US_Personal--No change
+2019-10-18 10:04:59,657 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-18 10:07:21,376 INFO   : TDCT--Savings Accounts--No change
+2019-10-18 10:09:31,583 INFO   : TDCT--US Accounts--No change
+2019-10-18 10:10:12,649 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-18 10:10:14,974 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-18 10:10:16,527 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-18 10:10:24,994 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-18 10:10:27,024 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-18 10:10:28,560 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-18 10:10:36,348 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-18 10:11:17,421 INFO   : ICICI--Savings Accounts--No change
+2019-10-18 10:11:53,854 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-18 10:12:06,509 INFO   : Manulife--Advantage Account--No change
+2019-10-18 10:12:31,873 INFO   : HSBC--High Rate Savings--No change
+2019-10-18 10:12:35,630 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-18 10:12:40,941 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-18 10:12:46,880 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-18 10:12:51,728 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-18 10:12:59,081 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-21 09:33:17,946 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-21 09:33:28,201 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-21 09:33:31,377 INFO   : CIBC--Bonus_Savings--No change
+2019-10-21 09:33:33,986 INFO   : CIBC--Premium_Growth--No change
+2019-10-21 09:33:36,783 INFO   : CIBC--US_Personal--No change
+2019-10-21 09:33:45,489 WARNING: RBC--High_Interest_eSavings--Change detected
+2019-10-21 09:33:47,031 INFO   : RBC--Enhanced_Savings--No change
+2019-10-21 09:33:48,223 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-21 09:33:49,380 INFO   : RBC--US_Personal--No change
+2019-10-21 09:33:50,686 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-21 09:34:22,847 INFO   : TDCT--Savings Accounts--No change
+2019-10-21 09:34:32,584 INFO   : TDCT--US Accounts--No change
+2019-10-21 09:34:40,688 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-21 09:34:44,544 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-21 09:34:48,398 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-21 09:34:55,300 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-21 09:34:57,528 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-21 09:34:58,874 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-21 09:35:06,032 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-21 09:35:42,981 INFO   : ICICI--Savings Accounts--No change
+2019-10-21 09:36:20,020 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-21 09:36:32,796 INFO   : Manulife--Advantage Account--No change
+2019-10-21 09:36:44,844 INFO   : HSBC--High Rate Savings--No change
+2019-10-21 09:36:47,964 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-21 09:36:51,645 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-21 09:36:56,817 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-21 09:37:02,251 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-21 09:37:12,444 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-21 09:42:56,212 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-21 09:43:06,718 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-21 09:43:09,477 INFO   : CIBC--Bonus_Savings--No change
+2019-10-21 09:43:12,086 INFO   : CIBC--Premium_Growth--No change
+2019-10-21 09:43:14,987 INFO   : CIBC--US_Personal--No change
+2019-10-21 09:43:24,314 WARNING: RBC--High_Interest_eSavings--Change detected
+2019-10-21 09:43:26,075 INFO   : RBC--Enhanced_Savings--No change
+2019-10-21 09:43:27,453 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-21 09:43:28,882 INFO   : RBC--US_Personal--No change
+2019-10-21 09:43:30,063 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-21 09:45:45,610 INFO   : TDCT--Savings Accounts--No change
+2019-10-21 09:46:06,063 INFO   : TDCT--US Accounts--No change
+2019-10-21 09:46:17,543 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-21 09:46:19,443 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-21 09:46:21,544 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-21 09:46:31,726 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-21 09:46:33,574 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-21 09:46:35,249 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-21 09:46:43,713 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-21 09:47:25,162 INFO   : ICICI--Savings Accounts--No change
+2019-10-21 09:48:00,996 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-21 09:48:14,093 INFO   : Manulife--Advantage Account--No change
+2019-10-21 09:48:20,591 INFO   : HSBC--High Rate Savings--No change
+2019-10-21 09:48:25,319 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-21 09:48:31,494 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-21 09:48:45,255 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-21 09:48:55,393 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-21 09:49:24,918 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-21 09:50:01,441 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-21 09:50:09,847 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-21 09:50:13,377 INFO   : CIBC--Bonus_Savings--No change
+2019-10-21 09:50:16,430 INFO   : CIBC--Premium_Growth--No change
+2019-10-21 09:50:19,989 INFO   : CIBC--US_Personal--No change
+2019-10-21 09:50:28,616 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-21 09:50:30,539 INFO   : RBC--Enhanced_Savings--No change
+2019-10-21 09:50:31,974 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-21 09:50:33,490 INFO   : RBC--US_Personal--No change
+2019-10-21 09:50:34,665 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-21 09:50:54,381 INFO   : TDCT--Savings Accounts--No change
+2019-10-21 09:53:44,634 INFO   : TDCT--US Accounts--No change
+2019-10-21 09:53:55,686 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-21 09:53:58,451 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-21 09:54:00,099 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-21 09:54:09,296 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-21 09:54:11,508 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-21 09:54:14,036 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-21 09:54:27,093 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-21 09:55:06,775 INFO   : ICICI--Savings Accounts--No change
+2019-10-21 09:55:43,246 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-21 09:55:57,688 INFO   : Manulife--Advantage Account--No change
+2019-10-21 09:56:29,601 INFO   : HSBC--High Rate Savings--No change
+2019-10-21 09:56:33,819 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-21 09:56:39,501 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-21 09:56:47,044 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-21 09:56:52,841 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-21 09:57:00,419 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-21 09:57:29,717 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-21 09:57:37,534 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-21 09:57:40,391 INFO   : CIBC--Bonus_Savings--No change
+2019-10-21 09:57:43,279 INFO   : CIBC--Premium_Growth--No change
+2019-10-21 09:57:45,899 INFO   : CIBC--US_Personal--No change
+2019-10-21 09:57:52,848 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-21 09:57:54,165 INFO   : RBC--Enhanced_Savings--No change
+2019-10-21 09:57:55,422 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-21 09:57:56,905 INFO   : RBC--US_Personal--No change
+2019-10-21 09:57:58,111 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-21 09:58:41,895 INFO   : TDCT--Savings Accounts--No change
+2019-10-21 09:58:45,175 INFO   : TDCT--US Accounts--No change
+2019-10-21 09:58:52,053 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-21 09:58:54,922 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-21 09:58:56,600 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-21 09:59:02,954 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-21 09:59:05,217 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-21 09:59:06,560 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-21 09:59:13,711 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-21 09:59:51,720 INFO   : ICICI--Savings Accounts--No change
+2019-10-21 10:00:32,677 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-21 10:00:49,053 INFO   : Manulife--Advantage Account--No change
+2019-10-21 10:00:59,606 INFO   : HSBC--High Rate Savings--No change
+2019-10-21 10:01:03,582 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-21 10:01:07,557 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-21 10:01:15,986 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-21 10:01:22,082 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-21 10:01:31,785 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-21 10:02:55,092 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-21 10:03:03,622 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-21 10:03:06,008 INFO   : CIBC--Bonus_Savings--No change
+2019-10-21 10:03:08,670 INFO   : CIBC--Premium_Growth--No change
+2019-10-21 10:03:10,974 INFO   : CIBC--US_Personal--No change
+2019-10-21 10:03:16,836 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-21 10:03:18,331 INFO   : RBC--Enhanced_Savings--No change
+2019-10-21 10:03:19,497 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-21 10:03:20,706 INFO   : RBC--US_Personal--No change
+2019-10-21 10:03:21,694 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-21 10:03:48,358 INFO   : TDCT--Savings Accounts--No change
+2019-10-21 10:03:52,099 INFO   : TDCT--US Accounts--No change
+2019-10-21 10:04:29,602 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-21 10:04:31,634 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-21 10:04:33,061 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-21 10:04:38,868 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-21 10:04:40,555 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-21 10:04:41,820 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-21 10:04:47,417 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-21 10:05:26,232 INFO   : ICICI--Savings Accounts--No change
+2019-10-21 10:06:01,277 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-21 10:06:13,145 INFO   : Manulife--Advantage Account--No change
+2019-10-21 10:06:18,334 INFO   : HSBC--High Rate Savings--No change
+2019-10-21 10:06:21,893 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-21 10:06:26,597 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-21 10:06:32,606 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-21 10:06:37,429 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-21 10:06:45,137 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-21 10:32:54,956 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-21 10:33:26,205 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-21 10:33:29,295 INFO   : CIBC--Bonus_Savings--No change
+2019-10-21 10:33:33,260 INFO   : CIBC--Premium_Growth--No change
+2019-10-21 10:33:36,800 INFO   : CIBC--US_Personal--No change
+2019-10-21 10:33:48,597 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-21 10:33:51,026 INFO   : RBC--Enhanced_Savings--No change
+2019-10-21 10:33:52,455 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-21 10:33:53,913 INFO   : RBC--US_Personal--No change
+2019-10-21 10:33:55,287 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-21 10:35:20,159 INFO   : TDCT--Savings Accounts--No change
+2019-10-21 10:38:07,942 INFO   : TDCT--US Accounts--No change
+2019-10-21 10:38:24,653 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-21 10:38:27,545 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-21 10:38:29,184 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-21 10:38:42,118 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-21 10:38:44,004 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-21 10:38:45,671 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-21 10:38:54,282 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-21 10:39:32,216 INFO   : ICICI--Savings Accounts--No change
+2019-10-21 10:40:10,841 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-21 10:40:20,900 INFO   : Manulife--Advantage Account--No change
+2019-10-21 10:40:32,589 INFO   : HSBC--High Rate Savings--No change
+2019-10-21 10:40:38,698 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-21 10:40:47,336 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-21 10:40:57,566 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-21 10:41:04,717 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-21 10:41:34,376 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-21 10:46:44,350 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-21 10:46:57,222 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-21 10:47:00,655 INFO   : CIBC--Bonus_Savings--No change
+2019-10-21 10:47:04,188 INFO   : CIBC--Premium_Growth--No change
+2019-10-21 10:47:07,213 INFO   : CIBC--US_Personal--No change
+2019-10-21 10:47:18,885 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-21 10:47:20,920 INFO   : RBC--Enhanced_Savings--No change
+2019-10-21 10:47:22,411 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-21 10:47:24,132 INFO   : RBC--US_Personal--No change
+2019-10-21 10:47:25,735 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-21 10:47:35,515 INFO   : TDCT--Savings Accounts--No change
+2019-10-21 10:49:45,238 INFO   : TDCT--US Accounts--No change
+2019-10-21 10:51:26,922 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-21 10:51:29,609 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-21 10:51:31,161 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-21 10:51:41,009 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-21 10:51:43,243 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-21 10:51:44,794 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-21 10:51:54,956 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-21 10:52:33,884 INFO   : ICICI--Savings Accounts--No change
+2019-10-21 10:53:09,936 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-21 10:53:17,833 INFO   : Manulife--Advantage Account--No change
+2019-10-21 10:53:32,279 INFO   : HSBC--High Rate Savings--No change
+2019-10-21 10:53:36,315 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-21 10:53:42,187 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-21 10:53:49,749 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-21 10:53:56,103 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-21 10:54:08,689 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-21 10:57:30,179 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-21 10:57:41,117 WARNING: CIBC--eAdvantage_Savings--Change detected
+2019-10-21 10:57:44,364 INFO   : CIBC--Bonus_Savings--No change
+2019-10-21 10:57:46,696 INFO   : CIBC--Premium_Growth--No change
+2019-10-21 10:57:49,239 INFO   : CIBC--US_Personal--No change
+2019-10-21 10:57:58,431 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-21 10:58:00,316 INFO   : RBC--Enhanced_Savings--No change
+2019-10-21 10:58:01,986 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-21 10:58:03,272 INFO   : RBC--US_Personal--No change
+2019-10-21 10:58:05,182 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-21 10:58:31,569 INFO   : TDCT--Savings Accounts--No change
+2019-10-21 10:59:12,085 INFO   : TDCT--US Accounts--No change
+2019-10-21 10:59:19,922 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-21 10:59:22,715 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-21 10:59:25,173 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-21 11:00:14,578 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-21 11:00:17,194 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-21 11:00:19,393 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-21 11:00:28,233 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-21 11:01:10,189 INFO   : ICICI--Savings Accounts--No change
+2019-10-21 11:01:46,225 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-21 11:01:59,515 INFO   : Manulife--Advantage Account--No change
+2019-10-21 11:02:05,228 INFO   : HSBC--High Rate Savings--No change
+2019-10-21 11:02:09,296 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-21 11:02:13,361 WARNING: B2B_Bank--High Interest Savings Account--Change detected
+2019-10-21 11:02:22,158 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-21 11:02:28,332 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-21 11:02:50,345 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-21 11:12:43,915 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-21 11:13:02,118 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-21 11:13:08,193 INFO   : CIBC--Bonus_Savings--No change
+2019-10-21 11:13:10,874 INFO   : CIBC--Premium_Growth--No change
+2019-10-21 11:13:14,002 INFO   : CIBC--US_Personal--No change
+2019-10-21 11:13:24,388 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-21 11:13:26,216 INFO   : RBC--Enhanced_Savings--No change
+2019-10-21 11:13:27,907 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-21 11:13:29,473 INFO   : RBC--US_Personal--No change
+2019-10-21 11:13:31,005 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-21 11:14:26,886 INFO   : TDCT--Savings Accounts--No change
+2019-10-21 11:14:41,701 INFO   : TDCT--US Accounts--No change
+2019-10-21 11:15:01,564 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-21 11:15:04,368 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-21 11:15:07,398 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-21 11:15:17,863 WARNING: BNS--Scotiabank_MomentumPLUS_Savings_Account--Change detected
+2019-10-21 11:15:20,403 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-21 11:15:21,953 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-21 11:15:34,010 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-21 11:16:11,651 INFO   : ICICI--Savings Accounts--No change
+2019-10-21 11:16:49,320 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-21 11:16:58,377 INFO   : Manulife--Advantage Account--No change
+2019-10-21 11:17:06,982 INFO   : HSBC--High Rate Savings--No change
+2019-10-21 11:17:44,523 ERROR  : CDN_TIRE--High Interest Savings Account--Error in execution: Unable to locate element
+2019-10-21 11:18:15,312 WARNING: Account(s) removed from CDN_TIRE
+2019-10-21 11:18:21,255 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-21 11:18:29,302 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-21 11:18:36,716 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-21 11:18:46,745 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-21 11:23:42,162 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-21 11:23:56,708 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-21 11:23:59,639 INFO   : CIBC--Bonus_Savings--No change
+2019-10-21 11:24:05,209 INFO   : CIBC--Premium_Growth--No change
+2019-10-21 11:24:07,843 INFO   : CIBC--US_Personal--No change
+2019-10-21 11:24:22,403 WARNING: RBC--High_Interest_eSavings--Change detected
+2019-10-21 11:24:24,715 INFO   : RBC--Enhanced_Savings--No change
+2019-10-21 11:24:26,493 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-21 11:24:28,127 INFO   : RBC--US_Personal--No change
+2019-10-21 11:24:29,862 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-21 11:26:56,755 INFO   : TDCT--Savings Accounts--No change
+2019-10-21 11:27:14,542 INFO   : TDCT--US Accounts--No change
+2019-10-21 11:30:56,013 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-21 11:30:58,671 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-21 11:31:00,498 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-21 11:31:10,265 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-21 11:31:12,458 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-21 11:31:14,307 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-21 11:31:23,582 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-21 11:32:04,870 INFO   : ICICI--Savings Accounts--No change
+2019-10-21 11:32:42,397 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-21 11:32:50,942 INFO   : Manulife--Advantage Account--No change
+2019-10-21 11:32:59,303 INFO   : HSBC--High Rate Savings--No change
+2019-10-21 11:33:03,873 WARNING: CDN_TIRE--High Interest Savings Account--Change detected
+2019-10-21 11:33:05,058 WARNING: Account(s) added to CDN_TIRE
+2019-10-21 11:33:11,596 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-21 11:33:20,291 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-21 11:33:27,671 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-21 11:33:37,703 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-21 11:47:59,152 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-21 11:48:09,783 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-21 11:48:14,078 INFO   : CIBC--Bonus_Savings--No change
+2019-10-21 11:48:16,987 INFO   : CIBC--Premium_Growth--No change
+2019-10-21 11:48:20,717 INFO   : CIBC--US_Personal--No change
+2019-10-21 11:48:29,427 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-21 11:48:31,362 INFO   : RBC--Enhanced_Savings--No change
+2019-10-21 11:48:32,901 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-21 11:48:34,188 INFO   : RBC--US_Personal--No change
+2019-10-21 11:48:35,507 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-21 11:48:43,849 INFO   : TDCT--Savings Accounts--No change
+2019-10-21 11:48:46,351 INFO   : TDCT--US Accounts--No change
+2019-10-21 11:48:56,943 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-21 11:48:59,967 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-21 11:49:01,922 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-21 11:49:13,718 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-21 11:49:15,648 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-21 11:49:17,034 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-21 11:49:25,362 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-21 11:50:03,708 INFO   : ICICI--Savings Accounts--No change
+2019-10-21 11:50:40,666 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-21 11:50:47,139 INFO   : Manulife--Advantage Account--No change
+2019-10-21 11:50:54,269 INFO   : HSBC--High Rate Savings--No change
+2019-10-21 11:50:58,866 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-21 11:51:57,599 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-21 11:52:06,471 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-21 11:52:13,693 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-21 11:52:22,631 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-21 12:00:53,809 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-21 12:01:04,959 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-21 12:01:37,403 INFO   : CIBC--Bonus_Savings--No change
+2019-10-21 12:01:40,098 INFO   : CIBC--Premium_Growth--No change
+2019-10-21 12:01:42,404 INFO   : CIBC--US_Personal--No change
+2019-10-21 12:01:51,322 WARNING: RBC--High_Interest_eSavings--Change detected
+2019-10-21 12:01:52,948 INFO   : RBC--Enhanced_Savings--No change
+2019-10-21 12:01:54,464 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-21 12:01:55,861 INFO   : RBC--US_Personal--No change
+2019-10-21 12:01:57,196 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-21 12:02:22,509 INFO   : TDCT--Savings Accounts--No change
+2019-10-21 12:04:27,208 INFO   : TDCT--US Accounts--No change
+2019-10-21 12:04:49,437 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-21 12:04:51,743 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-21 12:04:53,854 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-21 12:05:02,238 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-21 12:05:04,283 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-21 12:05:05,912 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-21 12:05:17,041 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-21 12:05:58,340 INFO   : ICICI--Savings Accounts--No change
+2019-10-21 12:06:35,250 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-21 12:06:43,921 INFO   : Manulife--Advantage Account--No change
+2019-10-21 12:06:51,787 INFO   : HSBC--High Rate Savings--No change
+2019-10-21 12:06:56,656 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-21 12:07:02,992 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-21 12:07:13,532 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-21 12:07:19,841 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-21 12:07:30,076 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-21 13:01:47,379 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-21 13:01:55,328 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-21 13:01:58,354 INFO   : CIBC--Bonus_Savings--No change
+2019-10-21 13:02:01,386 INFO   : CIBC--Premium_Growth--No change
+2019-10-21 13:02:04,503 INFO   : CIBC--US_Personal--No change
+2019-10-21 13:02:11,384 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-21 13:02:12,984 INFO   : RBC--Enhanced_Savings--No change
+2019-10-21 13:02:14,348 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-21 13:02:15,422 INFO   : RBC--US_Personal--No change
+2019-10-21 13:02:16,611 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-21 13:05:26,338 INFO   : TDCT--Savings Accounts--No change
+2019-10-21 13:05:33,938 INFO   : TDCT--US Accounts--No change
+2019-10-21 13:05:47,747 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-21 13:05:50,537 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-21 13:05:52,294 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-21 13:06:01,770 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-21 13:06:03,928 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-21 13:06:06,295 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-21 13:06:18,321 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-21 13:06:57,879 INFO   : ICICI--Savings Accounts--No change
+2019-10-21 13:07:34,123 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-21 13:07:48,040 INFO   : Manulife--Advantage Account--No change
+2019-10-21 13:07:55,254 INFO   : HSBC--High Rate Savings--No change
+2019-10-21 13:07:59,014 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-21 13:08:04,087 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-21 13:08:12,143 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-21 13:08:17,762 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-21 13:08:26,928 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-22 15:33:17,166 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-22 15:33:33,809 WARNING: CIBC--eAdvantage_Savings--Change detected
+2019-10-22 15:33:37,095 WARNING: CIBC--Bonus_Savings--Change detected
+2019-10-22 15:33:40,009 WARNING: CIBC--Premium_Growth--Change detected
+2019-10-22 15:33:43,168 WARNING: CIBC--US_Personal--Change detected
+2019-10-22 15:33:52,847 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-22 15:33:54,838 INFO   : RBC--Enhanced_Savings--No change
+2019-10-22 15:33:56,243 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-22 15:33:57,984 INFO   : RBC--US_Personal--No change
+2019-10-22 15:33:59,709 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-22 15:34:33,772 INFO   : TDCT--Savings Accounts--No change
+2019-10-22 15:34:48,983 INFO   : TDCT--US Accounts--No change
+2019-10-22 15:35:04,332 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-22 15:35:06,379 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-22 15:35:08,725 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-22 15:35:19,158 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-22 15:35:21,447 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-22 15:35:23,197 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-22 15:35:32,521 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-22 15:36:12,106 INFO   : ICICI--Savings Accounts--No change
+2019-10-22 15:36:58,518 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-22 15:37:18,748 INFO   : Manulife--Advantage Account--No change
+2019-10-22 15:37:28,046 INFO   : HSBC--High Rate Savings--No change
+2019-10-22 15:37:31,891 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-22 15:37:39,267 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-22 15:37:47,942 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-22 15:38:12,277 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-22 15:38:21,792 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-22 15:56:18,554 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-22 15:56:33,272 WARNING: CIBC--eAdvantage_Savings--Change detected
+2019-10-22 15:56:36,565 WARNING: CIBC--Bonus_Savings--Change detected
+2019-10-22 15:56:40,512 WARNING: CIBC--Premium_Growth--Change detected
+2019-10-22 15:56:43,450 WARNING: CIBC--US_Personal--Change detected
+2019-10-22 15:56:54,397 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-22 15:56:56,743 INFO   : RBC--Enhanced_Savings--No change
+2019-10-22 15:56:58,394 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-22 15:56:59,879 INFO   : RBC--US_Personal--No change
+2019-10-22 15:57:02,449 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-22 15:59:43,496 INFO   : TDCT--Savings Accounts--No change
+2019-10-22 15:59:53,770 INFO   : TDCT--US Accounts--No change
+2019-10-22 16:00:13,219 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-22 16:00:15,775 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-22 16:00:17,310 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-22 16:00:28,148 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-22 16:00:30,918 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-22 16:00:33,208 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-22 16:00:46,978 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-22 16:01:30,921 INFO   : ICICI--Savings Accounts--No change
+2019-10-22 16:02:13,147 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-22 16:02:22,817 INFO   : Manulife--Advantage Account--No change
+2019-10-22 16:02:33,540 INFO   : HSBC--High Rate Savings--No change
+2019-10-22 16:02:38,642 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-22 16:02:45,824 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-22 16:02:55,536 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-22 16:03:02,192 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-22 16:03:15,839 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-22 16:05:59,444 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-22 16:06:26,926 WARNING: CIBC--eAdvantage_Savings--Change detected
+2019-10-22 16:06:34,735 WARNING: CIBC--Bonus_Savings--Change detected
+2019-10-22 16:06:39,051 WARNING: CIBC--Premium_Growth--Change detected
+2019-10-22 16:06:42,704 WARNING: CIBC--US_Personal--Change detected
+2019-10-22 16:06:58,303 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-22 16:07:00,189 INFO   : RBC--Enhanced_Savings--No change
+2019-10-22 16:07:01,732 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-22 16:07:03,403 INFO   : RBC--US_Personal--No change
+2019-10-22 16:07:05,233 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-22 16:07:29,273 INFO   : TDCT--Savings Accounts--No change
+2019-10-22 16:07:36,532 INFO   : TDCT--US Accounts--No change
+2019-10-22 16:08:01,464 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-22 16:08:04,674 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-22 16:08:06,814 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-22 16:08:25,311 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-22 16:08:34,577 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-22 16:08:42,463 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-22 16:08:58,259 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-22 16:09:37,446 INFO   : ICICI--Savings Accounts--No change
+2019-10-22 16:10:15,216 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-22 16:10:29,849 INFO   : Manulife--Advantage Account--No change
+2019-10-22 16:10:37,829 INFO   : HSBC--High Rate Savings--No change
+2019-10-22 16:10:42,205 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-22 16:10:51,717 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-22 16:11:01,171 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-22 16:11:07,715 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-22 16:11:22,794 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-22 16:12:45,665 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-22 16:12:59,125 WARNING: CIBC--eAdvantage_Savings--Change detected
+2019-10-22 16:13:02,337 WARNING: CIBC--Bonus_Savings--Change detected
+2019-10-22 16:13:05,613 WARNING: CIBC--Premium_Growth--Change detected
+2019-10-22 16:13:08,149 WARNING: CIBC--US_Personal--Change detected
+2019-10-22 16:13:17,231 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-22 16:13:19,009 INFO   : RBC--Enhanced_Savings--No change
+2019-10-22 16:13:20,400 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-22 16:13:21,975 INFO   : RBC--US_Personal--No change
+2019-10-22 16:13:23,431 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-22 16:13:51,677 INFO   : TDCT--Savings Accounts--No change
+2019-10-22 16:14:12,992 INFO   : TDCT--US Accounts--No change
+2019-10-22 16:14:26,140 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-22 16:14:28,152 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-22 16:14:29,869 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-22 16:14:38,531 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-22 16:14:41,069 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-22 16:14:42,617 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-22 16:14:51,025 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-22 16:15:33,057 INFO   : ICICI--Savings Accounts--No change
+2019-10-22 16:16:10,034 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-22 16:16:25,640 INFO   : Manulife--Advantage Account--No change
+2019-10-22 16:16:34,949 INFO   : HSBC--High Rate Savings--No change
+2019-10-22 16:16:39,169 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-22 16:16:45,809 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-22 16:16:54,851 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-22 16:17:03,276 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-22 16:17:14,052 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-22 16:18:39,676 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-22 16:18:50,041 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-22 16:18:53,059 INFO   : CIBC--Bonus_Savings--No change
+2019-10-22 16:18:55,978 INFO   : CIBC--Premium_Growth--No change
+2019-10-22 16:18:58,446 INFO   : CIBC--US_Personal--No change
+2019-10-22 16:19:08,371 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-22 16:19:09,924 INFO   : RBC--Enhanced_Savings--No change
+2019-10-22 16:19:11,257 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-22 16:19:12,876 INFO   : RBC--US_Personal--No change
+2019-10-22 16:19:14,169 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-22 16:21:46,086 INFO   : TDCT--Savings Accounts--No change
+2019-10-22 16:24:31,018 INFO   : TDCT--US Accounts--No change
+2019-10-22 16:30:03,301 ERROR  : BMO--Savings_Builder_Account--Error in execution: Unable to locate element
+
+
+2019-10-22 16:32:32,826 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-22 16:32:56,233 WARNING: CIBC--eAdvantage_Savings--Change detected
+2019-10-22 16:33:02,493 WARNING: CIBC--Bonus_Savings--Change detected
+2019-10-22 16:33:05,172 WARNING: CIBC--Premium_Growth--Change detected
+2019-10-22 16:33:08,027 WARNING: CIBC--US_Personal--Change detected
+2019-10-22 16:33:16,192 WARNING: RBC--High_Interest_eSavings--Change detected
+2019-10-22 16:33:17,533 WARNING: RBC--Enhanced_Savings--Change detected
+2019-10-22 16:33:19,016 WARNING: RBC--Day_To_Day_Savings--Change detected
+2019-10-22 16:33:20,341 WARNING: RBC--US_Personal--Change detected
+2019-10-22 16:33:21,665 WARNING: RBC--US_High_Interest_eSavings--Change detected
+2019-10-22 16:33:46,123 WARNING: TDCT--Savings Accounts--Change detected
+2019-10-22 16:34:11,342 WARNING: TDCT--US Accounts--Change detected
+2019-10-22 16:34:27,522 WARNING: BMO--Savings_Builder_Account--Change detected
+2019-10-22 16:34:30,688 WARNING: BMO--Smart_Saver_Account--Change detected
+2019-10-22 16:34:32,879 WARNING: BMO--Premium_Rate_Savings_Account--Change detected
+2019-10-22 16:34:43,133 WARNING: BNS--Scotiabank_MomentumPLUS_Savings_Account--Change detected
+2019-10-22 16:34:47,522 WARNING: BNS--Money_Master_Savings_Account--Change detected
+2019-10-22 16:34:49,346 WARNING: BNS--Scotiabank_Savings_Accelerator_Account--Change detected
+2019-10-22 16:34:58,601 WARNING: Tangerine--Tangerine_Savings_Account--Change detected
+2019-10-22 16:35:39,828 WARNING: ICICI--Savings Accounts--Change detected
+2019-10-22 16:36:17,721 WARNING: National_Bank--High_Interest_Savings_Account--Change detected
+2019-10-22 16:36:26,139 WARNING: Manulife--Advantage Account--Change detected
+2019-10-22 16:36:33,219 WARNING: HSBC--High Rate Savings--Change detected
+2019-10-22 16:36:37,286 WARNING: CDN_TIRE--High Interest Savings Account--Change detected
+2019-10-22 16:36:42,821 WARNING: B2B_Bank--High Interest Savings Account--Change detected
+2019-10-22 16:36:50,864 WARNING: Scotia_iTrade--Cash Optimizer Investment Account--Change detected
+2019-10-22 16:36:57,322 WARNING: Meridian_Credit--Good to Grow High Interest Savings Account--Change detected
+2019-10-22 16:37:08,169 WARNING: EQ_Bank--Savings Plus Account--Change detected
+
+2019-10-23 09:37:34,727 INFO   : Simplii--High_Interest_Savings_Account--No change
+
+2019-10-23 10:03:01,847 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-23 10:03:13,903 WARNING: CIBC--eAdvantage_Savings--Change detected
+2019-10-23 10:03:16,460 WARNING: CIBC--Bonus_Savings--Change detected
+2019-10-23 10:03:19,122 WARNING: CIBC--Premium_Growth--Change detected
+2019-10-23 10:03:21,546 WARNING: CIBC--US_Personal--Change detected
+2019-10-23 10:03:28,859 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-23 10:03:30,291 INFO   : RBC--Enhanced_Savings--No change
+2019-10-23 10:03:31,683 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-23 10:03:32,811 INFO   : RBC--US_Personal--No change
+2019-10-23 10:03:33,998 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-23 10:05:44,118 INFO   : TDCT--Savings Accounts--No change
+2019-10-23 10:06:31,505 INFO   : TDCT--US Accounts--No change
+2019-10-23 10:08:51,655 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-23 10:08:54,039 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-23 10:08:56,024 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-23 10:09:05,559 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-23 10:09:07,821 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-23 10:09:09,445 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-23 10:09:20,422 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-23 10:10:00,831 INFO   : ICICI--Savings Accounts--No change
+2019-10-23 10:10:38,658 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-23 10:10:44,924 INFO   : Manulife--Advantage Account--No change
+2019-10-23 10:10:52,301 INFO   : HSBC--High Rate Savings--No change
+2019-10-23 10:10:56,301 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-23 10:11:01,845 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-23 10:11:08,916 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-23 10:11:13,881 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-23 10:11:24,177 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-23 10:46:40,922 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-23 10:46:58,780 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-23 10:47:10,319 INFO   : CIBC--Bonus_Savings--No change
+2019-10-23 10:47:12,256 INFO   : CIBC--Premium_Growth--No change
+2019-10-23 10:47:15,164 INFO   : CIBC--US_Personal--No change
+2019-10-23 10:47:21,875 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-23 10:47:23,175 INFO   : RBC--Enhanced_Savings--No change
+2019-10-23 10:47:24,342 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-23 10:47:25,464 INFO   : RBC--US_Personal--No change
+2019-10-23 10:47:26,672 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-23 10:48:22,678 INFO   : TDCT--Savings Accounts--No change
+2019-10-23 10:48:41,989 INFO   : TDCT--US Accounts--No change
+2019-10-23 10:48:59,073 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-23 10:49:01,848 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-23 10:49:03,675 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-23 10:49:11,921 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-23 10:49:13,910 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-23 10:49:16,080 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-23 10:49:24,577 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-23 10:50:02,845 INFO   : ICICI--Savings Accounts--No change
+2019-10-23 10:50:38,669 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-23 10:50:50,751 INFO   : Manulife--Advantage Account--No change
+2019-10-23 10:50:56,506 INFO   : HSBC--High Rate Savings--No change
+2019-10-23 10:50:59,977 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-23 10:51:05,109 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-23 10:51:11,930 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-23 10:51:17,003 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-23 10:51:31,103 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-23 11:10:46,606 ERROR  : Simplii--High_Interest_Savings_Account--Error in execution: Unable to locate element
+2019-10-23 11:15:21,449 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-23 11:15:24,844 INFO   : CIBC--Bonus_Savings--No change
+2019-10-23 11:15:30,558 INFO   : CIBC--Premium_Growth--No change
+2019-10-23 11:15:33,352 INFO   : CIBC--US_Personal--No change
+2019-10-23 11:15:44,621 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-23 11:15:46,050 INFO   : RBC--Enhanced_Savings--No change
+2019-10-23 11:15:47,335 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-23 11:15:48,627 INFO   : RBC--US_Personal--No change
+2019-10-23 11:15:49,791 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-23 11:16:02,651 INFO   : TDCT--Savings Accounts--No change
+2019-10-23 11:20:43,382 INFO   : TDCT--US Accounts--No change
+2019-10-23 11:21:50,143 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-23 11:21:52,744 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-23 11:21:54,741 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-23 11:22:07,546 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-23 11:22:10,191 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-23 11:22:12,730 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-23 11:22:24,543 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-23 11:23:02,443 INFO   : ICICI--Savings Accounts--No change
+2019-10-23 11:23:46,374 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-23 11:23:57,912 INFO   : Manulife--Advantage Account--No change
+2019-10-23 11:24:23,681 INFO   : HSBC--High Rate Savings--No change
+2019-10-23 11:24:28,732 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-23 11:24:37,395 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-23 11:24:46,470 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-23 11:25:09,228 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-23 11:25:19,217 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-23 11:27:24,199 WARNING: Simplii--High_Interest_Savings_Account--Change detected
+2019-10-23 11:27:43,491 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-23 11:27:46,693 INFO   : CIBC--Bonus_Savings--No change
+2019-10-23 11:27:52,761 INFO   : CIBC--Premium_Growth--No change
+2019-10-23 11:27:56,751 INFO   : CIBC--US_Personal--No change
+2019-10-23 11:28:08,100 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-23 11:28:09,905 INFO   : RBC--Enhanced_Savings--No change
+2019-10-23 11:28:11,880 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-23 11:28:13,385 INFO   : RBC--US_Personal--No change
+2019-10-23 11:28:14,690 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-23 11:28:41,162 INFO   : TDCT--Savings Accounts--No change
+2019-10-23 11:31:19,418 INFO   : TDCT--US Accounts--No change
+2019-10-23 11:32:26,674 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-23 11:32:28,904 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-23 11:32:30,462 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-23 11:32:41,348 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-23 11:32:43,817 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-23 11:32:45,463 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-23 11:32:53,723 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-23 11:33:37,019 INFO   : ICICI--Savings Accounts--No change
+2019-10-23 11:34:15,633 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-23 11:34:23,445 INFO   : Manulife--Advantage Account--No change
+2019-10-23 11:34:31,000 INFO   : HSBC--High Rate Savings--No change
+2019-10-23 11:34:34,663 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-23 11:34:40,968 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-23 11:34:49,868 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-23 11:34:56,646 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-23 11:35:35,063 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-23 11:36:08,296 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-23 11:36:16,691 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-23 11:36:19,967 INFO   : CIBC--Bonus_Savings--No change
+2019-10-23 11:36:23,276 INFO   : CIBC--Premium_Growth--No change
+2019-10-23 11:36:27,170 INFO   : CIBC--US_Personal--No change
+2019-10-23 11:36:36,272 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-23 11:36:37,774 INFO   : RBC--Enhanced_Savings--No change
+2019-10-23 11:36:38,929 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-23 11:36:40,129 INFO   : RBC--US_Personal--No change
+2019-10-23 11:36:41,468 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-23 11:39:20,146 INFO   : TDCT--Savings Accounts--No change
+2019-10-23 11:39:34,365 INFO   : TDCT--US Accounts--No change
+2019-10-23 11:39:43,382 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-23 11:39:45,859 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-23 11:39:47,476 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-23 11:39:55,023 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-23 11:39:57,233 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-23 11:39:58,998 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-23 11:40:07,597 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-23 11:40:45,821 INFO   : ICICI--Savings Accounts--No change
+2019-10-23 11:41:21,254 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-23 11:41:32,820 INFO   : Manulife--Advantage Account--No change
+2019-10-23 11:41:37,993 INFO   : HSBC--High Rate Savings--No change
+2019-10-23 11:41:41,416 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-23 11:41:46,116 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-23 11:41:53,193 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-23 11:41:58,772 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-23 11:42:07,979 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-23 11:47:14,562 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-23 11:47:27,864 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-23 11:47:31,526 INFO   : CIBC--Bonus_Savings--No change
+2019-10-23 11:47:34,166 INFO   : CIBC--Premium_Growth--No change
+2019-10-23 11:47:37,173 INFO   : CIBC--US_Personal--No change
+2019-10-23 11:47:43,745 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-23 11:47:45,122 INFO   : RBC--Enhanced_Savings--No change
+2019-10-23 11:47:46,245 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-23 11:47:47,515 INFO   : RBC--US_Personal--No change
+2019-10-23 11:47:48,808 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-23 11:48:18,853 INFO   : TDCT--Savings Accounts--No change
+2019-10-23 11:51:24,245 INFO   : TDCT--US Accounts--No change
+2019-10-23 11:51:41,888 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-23 11:51:46,594 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-23 11:51:47,988 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-23 11:51:53,324 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-23 11:51:55,523 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-23 11:51:56,913 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-23 11:52:04,143 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-23 11:52:43,717 INFO   : ICICI--Savings Accounts--No change
+2019-10-23 11:53:19,692 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-23 11:53:33,522 INFO   : Manulife--Advantage Account--No change
+2019-10-23 11:54:02,208 INFO   : HSBC--High Rate Savings--No change
+2019-10-23 11:54:05,813 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-23 11:54:09,424 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-23 11:54:14,479 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-23 11:54:19,259 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-23 11:54:26,018 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-23 12:02:09,575 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-23 12:02:16,152 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-23 12:02:18,645 INFO   : CIBC--Bonus_Savings--No change
+2019-10-23 12:02:20,990 INFO   : CIBC--Premium_Growth--No change
+2019-10-23 12:02:23,111 INFO   : CIBC--US_Personal--No change
+2019-10-23 12:02:57,527 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-23 12:02:58,709 INFO   : RBC--Enhanced_Savings--No change
+2019-10-23 12:02:59,737 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-23 12:03:01,017 INFO   : RBC--US_Personal--No change
+2019-10-23 12:03:02,134 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-23 12:05:51,643 INFO   : TDCT--Savings Accounts--No change
+2019-10-23 12:06:21,595 INFO   : TDCT--US Accounts--No change
+2019-10-23 12:06:30,349 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-23 12:06:32,196 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-23 12:06:33,758 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-23 12:06:55,057 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-23 12:07:01,904 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-23 12:07:03,406 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-23 12:07:10,833 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-23 12:07:48,459 INFO   : ICICI--Savings Accounts--No change
+2019-10-23 12:08:26,024 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-23 12:08:40,359 INFO   : Manulife--Advantage Account--No change
+2019-10-23 12:08:55,171 INFO   : HSBC--High Rate Savings--No change
+2019-10-23 12:08:58,903 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-23 12:09:05,017 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-23 12:09:12,686 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-23 12:09:18,079 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-23 12:09:27,507 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-23 12:52:22,464 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-23 12:52:29,707 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-23 12:52:33,843 INFO   : CIBC--Bonus_Savings--No change
+2019-10-23 12:52:36,052 INFO   : CIBC--Premium_Growth--No change
+2019-10-23 12:52:38,803 INFO   : CIBC--US_Personal--No change
+2019-10-23 12:52:45,099 WARNING: RBC--High_Interest_eSavings--Change detected
+2019-10-23 12:52:46,589 INFO   : RBC--Enhanced_Savings--No change
+2019-10-23 12:52:47,779 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-23 12:52:49,081 INFO   : RBC--US_Personal--No change
+2019-10-23 12:52:50,509 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-23 12:53:03,736 INFO   : TDCT--Savings Accounts--No change
+2019-10-23 12:53:25,959 INFO   : TDCT--US Accounts--No change
+2019-10-23 12:54:22,830 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-23 12:54:24,801 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-23 12:54:26,230 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-23 12:54:31,559 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-23 12:54:33,700 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-23 12:54:35,285 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-23 12:54:41,658 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-23 12:55:18,497 INFO   : ICICI--Savings Accounts--No change
+2019-10-23 12:55:53,310 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-23 12:55:57,562 INFO   : Manulife--Advantage Account--No change
+2019-10-23 12:56:04,146 INFO   : HSBC--High Rate Savings--No change
+2019-10-23 12:56:07,334 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-23 12:56:11,257 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-23 12:56:15,692 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-23 12:56:20,864 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-23 12:56:30,478 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-23 13:13:55,938 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-23 13:14:06,811 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-23 13:14:16,034 INFO   : CIBC--Bonus_Savings--No change
+2019-10-23 13:14:47,840 INFO   : CIBC--Premium_Growth--No change
+2019-10-23 13:15:19,603 INFO   : CIBC--US_Personal--No change
+2019-10-23 13:15:31,322 WARNING: RBC--High_Interest_eSavings--Change detected
+2019-10-23 13:15:32,689 INFO   : RBC--Enhanced_Savings--No change
+2019-10-23 13:15:33,923 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-23 13:15:35,134 INFO   : RBC--US_Personal--No change
+2019-10-23 13:15:36,458 WARNING: RBC--US_High_Interest_eSavings--Change detected
+2019-10-23 13:18:04,124 INFO   : TDCT--Savings Accounts--No change
+2019-10-23 13:19:12,795 INFO   : TDCT--US Accounts--No change
+2019-10-23 13:20:09,408 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-23 13:20:11,560 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-23 13:20:12,903 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-23 13:20:19,695 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-23 13:20:21,474 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-23 13:20:22,939 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-23 13:20:29,333 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-23 13:21:08,510 INFO   : ICICI--Savings Accounts--No change
+2019-10-23 13:21:44,232 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-23 13:21:49,683 INFO   : Manulife--Advantage Account--No change
+2019-10-23 13:21:56,091 INFO   : HSBC--High Rate Savings--No change
+2019-10-23 13:21:59,888 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-23 13:22:04,462 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-23 13:22:10,040 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-23 13:22:15,200 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-23 13:22:26,485 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-23 14:16:44,940 INFO   : Simplii--High_Interest_Savings_Account--No change
+
+2019-10-23 14:20:13,634 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-23 14:21:20,886 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-23 14:21:24,074 INFO   : CIBC--Bonus_Savings--No change
+2019-10-23 14:21:27,295 INFO   : CIBC--Premium_Growth--No change
+2019-10-23 14:21:30,752 INFO   : CIBC--US_Personal--No change
+2019-10-23 14:21:40,299 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-23 14:21:43,035 INFO   : RBC--Enhanced_Savings--No change
+2019-10-23 14:21:45,082 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-23 14:21:46,430 INFO   : RBC--US_Personal--No change
+2019-10-23 14:21:47,808 WARNING: RBC--US_High_Interest_eSavings--Change detected
+2019-10-23 14:23:04,582 INFO   : TDCT--Savings Accounts--No change
+2019-10-23 14:23:07,414 INFO   : TDCT--US Accounts--No change
+2019-10-23 14:23:15,263 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-23 14:23:17,804 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-23 14:23:19,175 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-23 14:23:26,168 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-23 14:23:28,008 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-23 14:23:29,362 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-23 14:23:36,847 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-23 14:24:20,323 INFO   : ICICI--Savings Accounts--No change
+2019-10-23 14:24:55,954 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-23 14:25:08,664 INFO   : Manulife--Advantage Account--No change
+2019-10-23 14:25:16,281 INFO   : HSBC--High Rate Savings--No change
+2019-10-23 14:25:20,273 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-23 14:25:24,835 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-23 14:25:33,567 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-23 14:25:51,463 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-23 14:26:03,274 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-23 14:26:56,343 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-23 14:27:06,581 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-23 14:27:09,682 INFO   : CIBC--Bonus_Savings--No change
+2019-10-23 14:27:12,742 INFO   : CIBC--Premium_Growth--No change
+2019-10-23 14:27:15,235 INFO   : CIBC--US_Personal--No change
+2019-10-23 14:27:21,350 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-23 14:27:22,771 INFO   : RBC--Enhanced_Savings--No change
+2019-10-23 14:27:24,183 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-23 14:27:25,941 INFO   : RBC--US_Personal--No change
+2019-10-23 14:27:27,897 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-23 14:27:55,563 INFO   : TDCT--Savings Accounts--No change
+2019-10-23 14:28:09,208 INFO   : TDCT--US Accounts--No change
+2019-10-23 14:28:19,787 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-23 14:28:22,522 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-23 14:28:24,585 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-23 14:28:31,450 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-23 14:28:33,617 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-23 14:28:35,416 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-23 14:28:44,459 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-23 14:29:23,870 INFO   : ICICI--Savings Accounts--No change
+2019-10-23 14:30:00,225 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-23 14:30:10,964 INFO   : Manulife--Advantage Account--No change
+2019-10-23 14:30:16,563 INFO   : HSBC--High Rate Savings--No change
+2019-10-23 14:30:20,078 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-23 14:30:24,621 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-23 14:30:36,296 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-23 14:30:41,680 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-23 14:30:56,493 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-23 14:33:18,039 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-23 14:33:24,468 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-23 14:33:27,327 INFO   : CIBC--Bonus_Savings--No change
+2019-10-23 14:33:30,386 INFO   : CIBC--Premium_Growth--No change
+2019-10-23 14:33:34,582 INFO   : CIBC--US_Personal--No change
+2019-10-23 14:33:40,796 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-23 14:33:42,481 INFO   : RBC--Enhanced_Savings--No change
+2019-10-23 14:33:44,269 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-23 14:33:45,779 INFO   : RBC--US_Personal--No change
+2019-10-23 14:33:47,738 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-23 14:36:36,682 INFO   : TDCT--Savings Accounts--No change
+2019-10-23 14:38:50,630 INFO   : TDCT--US Accounts--No change
+2019-10-23 14:39:15,447 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-23 14:39:19,461 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-23 14:39:21,129 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-23 14:39:28,380 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-23 14:39:30,306 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-23 14:39:31,725 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-23 14:39:39,498 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-23 14:40:19,208 INFO   : ICICI--Savings Accounts--No change
+2019-10-23 14:40:55,695 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-23 14:41:03,321 INFO   : Manulife--Advantage Account--No change
+2019-10-23 14:41:11,322 INFO   : HSBC--High Rate Savings--No change
+2019-10-23 14:41:17,776 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-23 14:41:23,767 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-23 14:41:32,979 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-23 14:41:40,703 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-23 14:41:52,163 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-23 14:44:42,486 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-23 14:44:50,575 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-23 14:44:53,551 INFO   : CIBC--Bonus_Savings--No change
+2019-10-23 14:44:56,021 INFO   : CIBC--Premium_Growth--No change
+2019-10-23 14:44:58,596 INFO   : CIBC--US_Personal--No change
+2019-10-23 14:45:05,031 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-23 14:45:06,582 INFO   : RBC--Enhanced_Savings--No change
+2019-10-23 14:45:07,955 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-23 14:45:09,360 INFO   : RBC--US_Personal--No change
+2019-10-23 14:45:10,646 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-23 14:47:57,932 INFO   : TDCT--Savings Accounts--No change
+2019-10-23 14:50:39,626 INFO   : TDCT--US Accounts--No change
+2019-10-23 14:51:29,605 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-23 14:51:32,067 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-23 14:51:33,783 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-23 14:51:41,283 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-23 14:51:43,212 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-23 14:51:45,305 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-23 14:51:53,246 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-23 14:52:33,006 INFO   : ICICI--Savings Accounts--No change
+2019-10-23 14:53:15,246 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-23 14:53:22,691 INFO   : Manulife--Advantage Account--No change
+2019-10-23 14:53:30,345 INFO   : HSBC--High Rate Savings--No change
+2019-10-23 14:53:34,468 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-23 14:53:40,778 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-23 14:53:47,912 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-23 14:53:53,341 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-23 14:54:04,871 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-23 14:56:16,660 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-23 14:56:25,133 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-23 14:56:28,434 INFO   : CIBC--Bonus_Savings--No change
+2019-10-23 14:56:31,509 INFO   : CIBC--Premium_Growth--No change
+2019-10-23 14:56:34,004 INFO   : CIBC--US_Personal--No change
+2019-10-23 14:56:42,774 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-23 14:56:44,150 INFO   : RBC--Enhanced_Savings--No change
+2019-10-23 14:56:45,673 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-23 14:56:46,994 INFO   : RBC--US_Personal--No change
+2019-10-23 14:56:48,467 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-23 14:57:02,871 INFO   : TDCT--Savings Accounts--No change
+2019-10-23 14:59:19,347 INFO   : TDCT--US Accounts--No change
+2019-10-23 14:59:32,786 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-23 14:59:35,996 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-23 14:59:38,469 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-23 14:59:49,449 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-23 14:59:51,602 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-23 14:59:53,900 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-23 15:00:06,878 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-23 15:00:47,483 INFO   : ICICI--Savings Accounts--No change
+2019-10-23 15:01:24,781 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-23 15:01:32,680 INFO   : Manulife--Advantage Account--No change
+2019-10-23 15:01:41,262 INFO   : HSBC--High Rate Savings--No change
+2019-10-23 15:01:45,380 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-23 15:01:51,707 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-23 15:01:59,586 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-23 15:02:06,264 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-23 15:02:17,598 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-23 15:06:00,267 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-23 15:06:07,046 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-23 15:06:09,950 INFO   : CIBC--Bonus_Savings--No change
+2019-10-23 15:06:13,191 INFO   : CIBC--Premium_Growth--No change
+2019-10-23 15:06:16,411 INFO   : CIBC--US_Personal--No change
+2019-10-23 15:06:22,143 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-23 15:06:23,559 INFO   : RBC--Enhanced_Savings--No change
+2019-10-23 15:06:24,848 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-23 15:06:26,032 INFO   : RBC--US_Personal--No change
+2019-10-23 15:06:27,290 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-23 15:07:30,977 INFO   : TDCT--Savings Accounts--No change
+2019-10-23 15:10:13,831 INFO   : TDCT--US Accounts--No change
+2019-10-23 15:11:05,147 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-23 15:11:07,615 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-23 15:11:09,077 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-23 15:11:17,023 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-23 15:11:19,066 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-23 15:11:20,415 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-23 15:11:30,321 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-23 15:12:09,898 INFO   : ICICI--Savings Accounts--No change
+2019-10-23 15:12:48,096 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-23 15:12:56,762 INFO   : Manulife--Advantage Account--No change
+2019-10-23 15:13:04,380 INFO   : HSBC--High Rate Savings--No change
+2019-10-23 15:13:07,965 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-23 15:13:14,200 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-23 15:13:21,802 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-23 15:13:27,315 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-23 15:13:40,130 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-23 15:16:51,371 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-23 15:17:04,915 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-23 15:17:08,403 INFO   : CIBC--Bonus_Savings--No change
+2019-10-23 15:17:11,970 INFO   : CIBC--Premium_Growth--No change
+2019-10-23 15:17:14,787 INFO   : CIBC--US_Personal--No change
+2019-10-23 15:17:24,221 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-23 15:17:25,759 INFO   : RBC--Enhanced_Savings--No change
+2019-10-23 15:17:27,426 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-23 15:17:28,754 INFO   : RBC--US_Personal--No change
+2019-10-23 15:17:30,152 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-23 15:18:01,791 INFO   : TDCT--Savings Accounts--No change
+2019-10-23 15:22:28,909 INFO   : TDCT--US Accounts--No change
+2019-10-23 15:22:57,944 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-23 15:23:00,446 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-23 15:23:02,370 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-23 15:23:12,292 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-23 15:23:14,490 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-23 15:23:16,306 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-23 15:23:26,702 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-23 15:24:09,366 INFO   : ICICI--Savings Accounts--No change
+2019-10-23 15:24:51,189 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-23 15:25:04,513 INFO   : Manulife--Advantage Account--No change
+2019-10-23 15:25:11,532 INFO   : HSBC--High Rate Savings--No change
+2019-10-23 15:25:15,486 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-23 15:25:21,082 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-23 15:25:28,801 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-23 15:25:35,831 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-23 15:25:47,836 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-24 10:08:26,900 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-24 10:08:51,195 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-24 10:08:55,758 INFO   : CIBC--Bonus_Savings--No change
+2019-10-24 10:08:58,577 INFO   : CIBC--Premium_Growth--No change
+2019-10-24 10:09:01,324 INFO   : CIBC--US_Personal--No change
+2019-10-24 10:09:13,008 WARNING: RBC--High_Interest_eSavings--Change detected
+2019-10-24 10:09:14,773 INFO   : RBC--Enhanced_Savings--No change
+2019-10-24 10:09:16,559 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-24 10:09:18,059 INFO   : RBC--US_Personal--No change
+2019-10-24 10:09:19,391 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-24 10:09:46,791 INFO   : TDCT--Savings Accounts--No change
+2019-10-24 10:09:57,629 INFO   : TDCT--US Accounts--No change
+2019-10-24 10:10:15,191 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-24 10:10:17,580 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-24 10:10:19,438 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-24 10:10:32,298 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-24 10:10:34,849 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-24 10:10:37,481 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-24 10:10:47,463 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-24 10:11:30,695 INFO   : ICICI--Savings Accounts--No change
+2019-10-24 10:12:07,043 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-24 10:12:15,176 INFO   : Manulife--Advantage Account--No change
+2019-10-24 10:12:22,474 INFO   : HSBC--High Rate Savings--No change
+2019-10-24 10:12:28,572 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-24 10:12:35,279 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-24 10:12:43,149 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-24 10:12:51,941 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-24 10:13:03,069 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-24 13:02:15,710 ERROR  : Simplii--High_Interest_Savings_Account--Error in execution: Unable to locate element
+2019-10-24 13:03:19,706 ERROR  : CIBC--eAdvantage_Savings--Error in execution: Unable to locate element
+2019-10-24 13:03:25,769 ERROR  : CIBC--Bonus_Savings--Error in execution: Unable to locate element
+
+2019-10-24 13:05:49,690 ERROR  : Simplii--High_Interest_Savings_Account--Error in execution: Unable to locate element
+
+2019-10-24 13:07:21,191 ERROR  : Simplii--High_Interest_Savings_Account--Error in execution: Unable to locate element
+2019-10-24 13:08:03,844 ERROR  : CIBC--eAdvantage_Savings--Error in execution: Unable to locate element
+
+2019-10-24 13:09:50,965 ERROR  : Simplii--High_Interest_Savings_Account--Error in execution: Unable to locate element
+2019-10-24 13:09:59,500 ERROR  : CIBC--eAdvantage_Savings--Error in execution: Unable to locate element
+
+
+
+
+
+2019-10-24 13:37:30,937 WARNING: Simplii--High_Interest_Savings_Account--Change detected
+2019-10-24 13:37:51,193 WARNING: CIBC--eAdvantage_Savings--Change detected
+2019-10-24 13:37:55,494 INFO   : CIBC--Bonus_Savings--No change
+2019-10-24 13:37:59,397 INFO   : CIBC--Premium_Growth--No change
+2019-10-24 13:38:02,783 INFO   : CIBC--US_Personal--No change
+2019-10-24 13:38:14,725 WARNING: RBC--High_Interest_eSavings--Change detected
+2019-10-24 13:38:16,879 INFO   : RBC--Enhanced_Savings--No change
+2019-10-24 13:38:18,649 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-24 13:38:20,456 INFO   : RBC--US_Personal--No change
+2019-10-24 13:38:22,507 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-24 13:41:18,717 INFO   : TDCT--Savings Accounts--No change
+2019-10-24 13:41:48,910 INFO   : TDCT--US Accounts--No change
+2019-10-24 13:44:05,008 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-24 13:44:10,095 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-24 13:44:12,141 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-24 13:44:25,134 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-24 13:44:27,670 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-24 13:44:29,775 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+
+2019-10-24 13:50:28,882 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-24 13:50:53,379 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-24 13:50:57,884 INFO   : CIBC--Bonus_Savings--No change
+2019-10-24 13:51:00,597 INFO   : CIBC--Premium_Growth--No change
+2019-10-24 13:51:04,176 INFO   : CIBC--US_Personal--No change
+2019-10-24 13:51:15,806 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-24 13:51:17,668 INFO   : RBC--Enhanced_Savings--No change
+2019-10-24 13:51:19,029 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-24 13:51:20,294 INFO   : RBC--US_Personal--No change
+2019-10-24 13:51:21,589 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-24 13:52:30,902 INFO   : TDCT--Savings Accounts--No change
+2019-10-24 13:53:00,442 INFO   : TDCT--US Accounts--No change
+2019-10-24 13:53:33,986 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-24 13:53:36,252 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-24 13:53:38,156 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-24 13:53:54,364 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-24 13:53:57,178 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-24 13:53:58,869 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+
+2019-10-24 14:00:23,784 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-24 14:00:34,550 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-24 14:00:42,766 INFO   : CIBC--Bonus_Savings--No change
+2019-10-24 14:00:47,900 INFO   : CIBC--Premium_Growth--No change
+2019-10-24 14:00:59,408 INFO   : CIBC--US_Personal--No change
+2019-10-24 14:01:09,368 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-24 14:01:10,968 INFO   : RBC--Enhanced_Savings--No change
+2019-10-24 14:01:12,285 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-24 14:01:13,571 INFO   : RBC--US_Personal--No change
+2019-10-24 14:01:15,035 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-24 14:01:40,375 INFO   : TDCT--Savings Accounts--No change
+2019-10-24 14:02:01,534 INFO   : TDCT--US Accounts--No change
+2019-10-24 14:02:24,442 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-24 14:02:26,969 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-24 14:02:29,084 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-24 14:02:37,812 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-24 14:02:39,930 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-24 14:02:42,242 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-24 14:02:51,704 WARNING: Tangerine--Tangerine_Savings_Account--Change detected
+2019-10-24 14:03:30,890 INFO   : ICICI--Savings Accounts--No change
+2019-10-24 14:06:24,280 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-24 14:07:09,571 INFO   : Manulife--Advantage Account--No change
+2019-10-24 14:07:21,342 INFO   : HSBC--High Rate Savings--No change
+2019-10-24 14:07:27,432 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-24 14:07:37,992 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-24 14:07:52,195 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-24 14:08:04,130 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-24 14:08:24,075 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-24 14:08:56,203 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-24 14:09:25,943 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-24 14:09:30,161 INFO   : CIBC--Bonus_Savings--No change
+2019-10-24 14:09:42,837 INFO   : CIBC--Premium_Growth--No change
+2019-10-24 14:09:47,758 INFO   : CIBC--US_Personal--No change
+2019-10-24 14:09:59,223 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-24 14:10:01,080 INFO   : RBC--Enhanced_Savings--No change
+2019-10-24 14:10:02,747 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-24 14:10:05,496 INFO   : RBC--US_Personal--No change
+2019-10-24 14:10:07,100 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-24 14:10:33,287 INFO   : TDCT--Savings Accounts--No change
+2019-10-24 14:11:35,090 INFO   : TDCT--US Accounts--No change
+2019-10-24 14:11:56,148 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-24 14:11:58,839 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-24 14:12:01,081 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-24 14:12:15,925 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-24 14:12:19,546 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-24 14:12:22,358 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-24 14:12:34,957 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-24 14:13:18,632 INFO   : ICICI--Savings Accounts--No change
+2019-10-24 14:13:59,921 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-24 14:14:10,641 INFO   : Manulife--Advantage Account--No change
+2019-10-24 14:14:24,564 INFO   : HSBC--High Rate Savings--No change
+2019-10-24 14:14:31,982 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-24 14:14:41,920 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-24 14:14:57,576 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-24 14:15:04,859 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-24 14:15:20,126 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-24 14:45:50,676 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-24 14:46:09,073 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-24 14:46:12,244 INFO   : CIBC--Bonus_Savings--No change
+2019-10-24 14:46:44,643 INFO   : CIBC--Premium_Growth--No change
+2019-10-24 14:46:47,825 INFO   : CIBC--US_Personal--No change
+2019-10-24 14:46:55,818 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-24 14:46:57,514 INFO   : RBC--Enhanced_Savings--No change
+2019-10-24 14:46:58,967 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-24 14:47:00,350 INFO   : RBC--US_Personal--No change
+2019-10-24 14:47:01,906 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-24 14:47:44,179 INFO   : TDCT--Savings Accounts--No change
+2019-10-24 14:47:49,061 INFO   : TDCT--US Accounts--No change
+2019-10-24 14:48:12,715 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-24 14:48:15,547 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-24 14:48:17,608 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-24 14:48:30,505 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-24 14:48:32,951 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-24 14:48:35,423 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-24 14:48:47,335 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-24 14:49:25,920 INFO   : ICICI--Savings Accounts--No change
+2019-10-24 14:50:02,383 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-24 14:50:10,018 INFO   : Manulife--Advantage Account--No change
+2019-10-24 14:50:17,453 INFO   : HSBC--High Rate Savings--No change
+2019-10-24 14:50:22,653 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-24 14:50:30,426 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-24 14:50:42,838 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-24 14:51:04,988 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-24 14:51:28,526 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-24 14:52:03,500 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-24 14:52:22,541 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-24 14:52:25,917 INFO   : CIBC--Bonus_Savings--No change
+2019-10-24 14:52:30,486 INFO   : CIBC--Premium_Growth--No change
+2019-10-24 14:52:34,369 INFO   : CIBC--US_Personal--No change
+2019-10-24 14:52:45,858 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-24 14:52:47,429 INFO   : RBC--Enhanced_Savings--No change
+2019-10-24 14:52:48,879 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-24 14:52:50,259 INFO   : RBC--US_Personal--No change
+2019-10-24 14:52:51,704 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-24 14:53:18,678 INFO   : TDCT--Savings Accounts--No change
+2019-10-24 14:53:26,178 INFO   : TDCT--US Accounts--No change
+2019-10-24 14:53:49,643 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-24 14:53:52,456 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-24 14:53:54,087 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-24 14:54:03,895 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-24 14:54:06,291 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-24 14:54:07,978 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-24 14:54:18,901 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-24 14:54:58,382 INFO   : ICICI--Savings Accounts--No change
+2019-10-24 14:55:35,197 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-24 14:55:42,422 INFO   : Manulife--Advantage Account--No change
+2019-10-24 14:55:49,387 INFO   : HSBC--High Rate Savings--No change
+2019-10-24 14:55:54,031 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-24 14:56:01,842 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-24 14:56:10,654 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-24 14:56:16,685 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-24 14:56:25,380 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-24 14:57:11,314 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-24 14:57:21,960 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-24 14:57:25,435 INFO   : CIBC--Bonus_Savings--No change
+2019-10-24 14:57:28,914 INFO   : CIBC--Premium_Growth--No change
+2019-10-24 14:57:32,286 INFO   : CIBC--US_Personal--No change
+2019-10-24 14:57:52,785 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-24 14:57:57,144 INFO   : RBC--Enhanced_Savings--No change
+2019-10-24 14:57:59,574 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-24 14:58:03,702 INFO   : RBC--US_Personal--No change
+2019-10-24 14:58:06,789 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-24 15:00:29,796 INFO   : TDCT--Savings Accounts--No change
+2019-10-24 15:02:53,426 INFO   : TDCT--US Accounts--No change
+2019-10-24 15:04:03,679 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-24 15:04:07,879 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-24 15:04:09,664 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-24 15:04:20,912 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-24 15:04:22,711 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-24 15:04:24,182 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-24 15:04:33,428 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-24 15:05:13,343 INFO   : ICICI--Savings Accounts--No change
+2019-10-24 15:05:51,420 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-24 15:06:09,447 INFO   : Manulife--Advantage Account--No change
+2019-10-24 15:06:24,178 INFO   : HSBC--High Rate Savings--No change
+2019-10-24 15:06:28,997 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-24 15:06:38,621 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-24 15:06:49,970 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-24 15:06:57,663 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-24 15:07:11,648 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-24 15:08:02,434 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-24 15:08:19,906 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-24 15:08:23,252 INFO   : CIBC--Bonus_Savings--No change
+2019-10-24 15:08:26,562 INFO   : CIBC--Premium_Growth--No change
+2019-10-24 15:08:30,666 INFO   : CIBC--US_Personal--No change
+2019-10-24 15:08:41,220 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-24 15:08:42,950 INFO   : RBC--Enhanced_Savings--No change
+2019-10-24 15:08:44,604 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-24 15:08:46,013 INFO   : RBC--US_Personal--No change
+2019-10-24 15:08:47,407 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-24 15:09:24,765 INFO   : TDCT--Savings Accounts--No change
+2019-10-24 15:09:31,622 INFO   : TDCT--US Accounts--No change
+2019-10-24 15:09:45,344 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-24 15:09:47,842 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-24 15:09:50,037 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-24 15:10:02,923 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-24 15:10:05,679 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-24 15:10:07,454 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-24 15:10:16,952 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-24 15:11:01,913 INFO   : ICICI--Savings Accounts--No change
+2019-10-24 15:11:40,322 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-24 15:11:49,301 INFO   : Manulife--Advantage Account--No change
+2019-10-24 15:11:58,860 INFO   : HSBC--High Rate Savings--No change
+2019-10-24 15:12:04,048 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-24 15:12:12,588 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-24 15:12:23,220 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-24 15:12:30,374 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-24 15:12:40,610 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-28 10:11:41,659 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-28 10:11:50,601 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-28 10:11:53,447 INFO   : CIBC--Bonus_Savings--No change
+2019-10-28 10:11:56,215 INFO   : CIBC--Premium_Growth--No change
+2019-10-28 10:11:59,408 INFO   : CIBC--US_Personal--No change
+2019-10-28 10:12:06,193 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-28 10:12:07,587 INFO   : RBC--Enhanced_Savings--No change
+2019-10-28 10:12:08,954 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-28 10:12:10,066 INFO   : RBC--US_Personal--No change
+2019-10-28 10:12:11,206 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-28 10:13:05,099 INFO   : TDCT--Savings Accounts--No change
+2019-10-28 10:14:13,032 INFO   : TDCT--US Accounts--No change
+2019-10-28 10:15:06,981 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-28 10:15:09,447 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-28 10:15:11,076 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-28 10:15:20,497 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-28 10:15:24,016 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-28 10:15:25,941 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-28 10:15:34,122 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-28 10:16:12,080 INFO   : ICICI--Savings Accounts--No change
+2019-10-28 10:16:47,617 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-28 10:16:58,044 INFO   : Manulife--Advantage Account--No change
+2019-10-28 10:17:05,338 INFO   : HSBC--High Rate Savings--No change
+2019-10-28 10:17:09,437 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-28 10:17:14,209 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-28 10:17:22,533 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-28 10:17:28,263 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-28 10:17:35,981 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-28 14:24:08,797 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-28 14:24:12,027 WARNING: Account(s) added to Simplii
+2019-10-28 14:24:25,408 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-28 14:24:28,938 INFO   : CIBC--Bonus_Savings--No change
+2019-10-28 14:24:32,275 INFO   : CIBC--Premium_Growth--No change
+2019-10-28 14:24:35,532 INFO   : CIBC--US_Personal--No change
+2019-10-28 14:24:45,256 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-28 14:24:47,134 INFO   : RBC--Enhanced_Savings--No change
+2019-10-28 14:24:48,655 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-28 14:24:50,133 INFO   : RBC--US_Personal--No change
+2019-10-28 14:24:51,565 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-28 14:25:18,872 INFO   : TDCT--Savings Accounts--No change
+2019-10-28 14:28:22,887 INFO   : TDCT--US Accounts--No change
+2019-10-28 14:29:01,362 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-28 14:29:03,941 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-28 14:29:05,654 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-28 14:29:13,558 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-28 14:29:15,520 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-28 14:29:17,005 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-28 14:29:25,277 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-28 14:30:05,351 INFO   : ICICI--Savings Accounts--No change
+2019-10-28 14:30:40,805 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-28 14:30:45,932 INFO   : Manulife--Advantage Account--No change
+2019-10-28 14:31:02,269 INFO   : HSBC--High Rate Savings--No change
+2019-10-28 14:31:06,098 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-28 14:31:09,972 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-28 14:31:14,898 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-28 14:31:19,522 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-28 14:31:26,323 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-28 14:36:33,381 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-28 14:36:46,674 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-28 14:36:50,268 INFO   : CIBC--Bonus_Savings--No change
+2019-10-28 14:36:53,774 INFO   : CIBC--Premium_Growth--No change
+2019-10-28 14:36:57,290 INFO   : CIBC--US_Personal--No change
+2019-10-28 14:37:05,071 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-28 14:37:06,910 INFO   : RBC--Enhanced_Savings--No change
+2019-10-28 14:37:08,302 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-28 14:37:09,673 INFO   : RBC--US_Personal--No change
+2019-10-28 14:37:11,283 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-28 14:39:54,998 INFO   : TDCT--Savings Accounts--No change
+2019-10-28 14:42:03,499 INFO   : TDCT--US Accounts--No change
+2019-10-28 14:42:19,833 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-28 14:42:22,392 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-28 14:42:23,905 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-28 14:42:32,328 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-28 14:42:34,370 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-28 14:42:36,189 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-28 14:42:44,544 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-28 14:43:23,529 INFO   : ICICI--Savings Accounts--No change
+2019-10-28 14:44:01,138 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-28 14:44:10,913 INFO   : Manulife--Advantage Account--No change
+2019-10-28 14:44:51,705 INFO   : HSBC--High Rate Savings--No change
+2019-10-28 14:44:55,630 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-28 14:45:01,092 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-28 14:45:08,459 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-28 14:45:31,656 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-28 14:45:40,036 INFO   : EQ_Bank--Savings Plus Account--No change
+
+2019-10-28 14:49:08,753 INFO   : Simplii--High_Interest_Savings_Account--No change
+2019-10-28 14:49:16,402 INFO   : CIBC--eAdvantage_Savings--No change
+2019-10-28 14:49:19,146 INFO   : CIBC--Bonus_Savings--No change
+2019-10-28 14:49:23,032 INFO   : CIBC--Premium_Growth--No change
+2019-10-28 14:49:25,665 INFO   : CIBC--US_Personal--No change
+2019-10-28 14:49:34,525 INFO   : RBC--High_Interest_eSavings--No change
+2019-10-28 14:49:36,158 INFO   : RBC--Enhanced_Savings--No change
+2019-10-28 14:49:37,396 INFO   : RBC--Day_To_Day_Savings--No change
+2019-10-28 14:49:38,680 INFO   : RBC--US_Personal--No change
+2019-10-28 14:49:40,461 INFO   : RBC--US_High_Interest_eSavings--No change
+2019-10-28 14:50:26,613 INFO   : TDCT--Savings Accounts--No change
+2019-10-28 14:50:31,696 INFO   : TDCT--US Accounts--No change
+2019-10-28 14:50:41,461 INFO   : BMO--Savings_Builder_Account--No change
+2019-10-28 14:50:44,501 INFO   : BMO--Smart_Saver_Account--No change
+2019-10-28 14:50:46,065 INFO   : BMO--Premium_Rate_Savings_Account--No change
+2019-10-28 14:50:56,547 INFO   : BNS--Scotiabank_MomentumPLUS_Savings_Account--No change
+2019-10-28 14:50:58,631 INFO   : BNS--Money_Master_Savings_Account--No change
+2019-10-28 14:51:00,269 INFO   : BNS--Scotiabank_Savings_Accelerator_Account--No change
+2019-10-28 14:51:11,212 INFO   : Tangerine--Tangerine_Savings_Account--No change
+2019-10-28 14:51:49,117 INFO   : ICICI--Savings Accounts--No change
+2019-10-28 14:52:25,219 INFO   : National_Bank--High_Interest_Savings_Account--No change
+2019-10-28 14:52:32,662 INFO   : Manulife--Advantage Account--No change
+2019-10-28 14:52:40,046 INFO   : HSBC--High Rate Savings--No change
+2019-10-28 14:52:44,381 INFO   : CDN_TIRE--High Interest Savings Account--No change
+2019-10-28 14:52:50,549 INFO   : B2B_Bank--High Interest Savings Account--No change
+2019-10-28 14:52:59,293 INFO   : Scotia_iTrade--Cash Optimizer Investment Account--No change
+2019-10-28 14:53:04,929 INFO   : Meridian_Credit--Good to Grow High Interest Savings Account--No change
+2019-10-28 14:53:43,530 INFO   : EQ_Bank--Savings Plus Account--No change
