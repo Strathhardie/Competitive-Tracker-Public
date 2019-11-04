@@ -52,7 +52,7 @@ def main():
                 logger.error(bank['name'] + "--" + currSrcAccount + "--" + "Error in execution: TimeoutError")
                 continue
             except(Exception) as error:
-                tqdm.write(error)
+                tqdm.write(str(error))
                 logger.error(bank['name'] + "--" + currSrcAccount + "--" + "Error in execution: Unable to locate element")
             else:           
                 # Read the downloaded file contents, bank name, account, and datetime
