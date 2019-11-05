@@ -23,6 +23,8 @@ Public Sub RefreshQueries()
     Dim Ok As String
     Dim count As Integer
     Dim currTime As Date, execTime As Long
+    Dim total As Integer
+    Dim pctCompl As Integer
     
     With Worksheets("Menu")
         Range(.Range("E5"), .Range("E5").End(xlDown).End(xlDown).Offset(0, 4)).ClearContents
@@ -35,6 +37,24 @@ Public Sub RefreshQueries()
         count = 0
         Application.GoTo Reference:=.Range("E3"), scroll:=True
         
+
+        'counts total number of queries
+        total = 0
+        For Each wks In Worksheets
+        If wks.Name <> "Menu" And _
+               wks.Name <> "Retail_Report" And _
+               wks.Name <> "US$_Report" And _
+               wks.Name <> "Broker_Report" And _
+               wks.Name <> "Dev Change Log" Then
+               
+               
+               For Each lo In wks.ListObjects
+               total = total + 1
+                 Next lo
+            End If
+        Next wks
+
+
         i = 0
         For Each wks In Worksheets
             If wks.Name <> "Menu" And _
@@ -137,6 +157,15 @@ End Function
 Sub SaveCloseReOpen()
     ThisWorkbook.Save
     Application.Workbooks.Open (ThisWorkbook.FullName)
+End Sub
+
+Sub progress(pctCompl As Integer, total As Integer)
+
+
+UserForm1.Text.Caption = pctCompl & "/" & total & " Queries Complete"
+UserForm1.Bar.Width = pctCompl / total * 200
+
+DoEvents
 End Sub
 
 '@REVISION HISTORY
