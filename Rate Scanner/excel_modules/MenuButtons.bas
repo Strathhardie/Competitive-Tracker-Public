@@ -1,4 +1,3 @@
-Attribute VB_Name = "MenuButtons"
 ' @author: Jude Arokiam
 ' @date: July 26, 2018
 ' @version: 2.0
@@ -68,6 +67,23 @@ Sub ArchiveAll_Click()
 End Sub
 
 Sub RefreshAll_Click()
+    
+        'progress indicator
+        UserForm1.Show
+
+End Sub
+
+Sub RefreshArchive_Click()
+    Call RefreshAll_Click
+    Call ArchiveAll_Click
+End Sub
+
+Private Sub UserForm_Activate()
+code
+End Sub
+
+Sub code()
+
     Call RefreshQueries
     Call HighlightAllChanges
     Dim execTime As Integer
@@ -76,9 +92,5 @@ Sub RefreshAll_Click()
     ActiveWorkbook.Save
     ActiveSheet.Range("B3").Select
     ActiveWindow.ScrollColumn = 1
-End Sub
 
-Sub RefreshArchive_Click()
-    Call RefreshAll_Click
-    Call ArchiveAll_Click
 End Sub
