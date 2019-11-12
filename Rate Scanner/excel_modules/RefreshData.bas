@@ -23,8 +23,8 @@ Public Sub RefreshQueries()
     Dim Ok As String
     Dim count As Integer
     Dim currTime As Date, execTime As Long
-    Dim total As Integer
-    Dim pctCompl As Integer
+    Dim totalQs As Integer
+    Dim QsComp As Integer
     
     With Worksheets("Menu")
         Range(.Range("E5"), .Range("E5").End(xlDown).End(xlDown).Offset(0, 4)).ClearContents
@@ -39,7 +39,7 @@ Public Sub RefreshQueries()
         
 
         'counts total number of queries
-        total = 0
+        totalQs = 0
         For Each wks In Worksheets
         If wks.Name <> "Menu" And _
                wks.Name <> "Retail_Report" And _
@@ -49,7 +49,7 @@ Public Sub RefreshQueries()
                
                
                For Each lo In wks.ListObjects
-               total = total + 1
+               totalQs = totalQs + 1
                  Next lo
             End If
         Next wks
@@ -83,6 +83,8 @@ Public Sub RefreshQueries()
                       .Range("E5").Offset(i, 3) = execTime
                       'Range(Range("E5").Offset(i, 0), Range("E5").Offset(i, 4)).Show
                       'Application.Goto Reference:=Worksheets("Menu").Range("E5").Offset(i, 0), scroll:=True
+                      QsComp = i+1
+                      progress QsComp, totalQs
                       i = i + 1
 Point:
                 Next lo
@@ -162,8 +164,8 @@ End Sub
 Sub progress(pctCompl As Integer, total As Integer)
 
 
-UserForm1.Text.Caption = pctCompl & "/" & total & " Queries Complete"
-UserForm1.Bar.Width = pctCompl / total * 200
+UserForm1.Text.Caption =  QsComp & "/" & totalQs & " Queries Complete"
+UserForm1.Bar.Width = QsComp / totalQs * 200
 
 DoEvents
 End Sub
