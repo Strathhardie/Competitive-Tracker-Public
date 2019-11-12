@@ -164,8 +164,8 @@ End Sub
 Sub progress(pctCompl As Integer, total As Integer)
 
 
-UserForm1.Text.Caption =  QsComp & "/" & totalQs & " Queries Complete"
-UserForm1.Bar.Width = QsComp / totalQs * 200
+Refresh_progressBar.Text.Caption =  QsComp & "/" & totalQs & " Queries Complete"
+Refresh_progressBar.Bar.Width = QsComp / totalQs * 200
 
 DoEvents
 End Sub
