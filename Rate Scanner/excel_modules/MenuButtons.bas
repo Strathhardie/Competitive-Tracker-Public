@@ -66,23 +66,19 @@ Sub ArchiveAll_Click()
     MsgBox ("Report exporting completed.")
 End Sub
 
+Sub RefreshArchive_Click()
+    Call RefreshAll_Click
+    Call ArchiveAll_Click
+End Sub
+'registers users click and triggers userform
 Sub RefreshAll_Click()
     
         'progress indicator
         UserForm1.Show
 
 End Sub
-
-Sub RefreshArchive_Click()
-    Call RefreshAll_Click
-    Call ArchiveAll_Click
-End Sub
-
-Private Sub UserForm_Activate()
-code
-End Sub
-
-Sub code()
+'called by userform once it has been triggered 
+Sub Refresh_progressBar()
 
     Call RefreshQueries
     Call HighlightAllChanges
