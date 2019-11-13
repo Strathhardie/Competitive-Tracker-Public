@@ -1,7 +1,9 @@
 # To install module, please enter command in terminal:
 # pip install pyyaml
-import yaml
+#import yaml
+from ruamel.yaml import YAML
 import os
+import sys
 
 # This class contains all methods to handle YAML files
 class YAMLUtils(object):
@@ -11,6 +13,7 @@ class YAMLUtils(object):
     # Method reads YAML File
     @staticmethod
     def readYAML(file_name):
+        yaml = YAML()
         if (os.path.isfile(file_name)):
             with open(file_name, "r") as stream:
                 try:
@@ -21,4 +24,17 @@ class YAMLUtils(object):
         else:
             print("File <" + file_name + "> does not exist!")
             return None
-            
+
+    # Method to make updates to the total count of a given bank's accounts
+    @staticmethod
+    def writeYAML(file_name, bank_name, update):
+        yaml = YAML()
+        yaml.preserve_quotes = True
+        with open(file_name, "r") as stream:
+            data = yaml.load(stream)
+        for bank in data['root']:
+            if bank['name'] == bank_name:
+                bank['total_count'] = update
+                break
+        with open(file_name, 'w') as f:
+            yaml.dump(data, f)

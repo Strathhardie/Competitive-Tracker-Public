@@ -3,43 +3,55 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 import os
-
+import time
 
 # This class contains all methods to handle selenium logic
 class SeleniumUtils(object):
 
+    driver = None
+
+    @classmethod
+    def initializeDriver(cls):
+        chrome_options = Options()
+        chrome_options.add_argument("--headless")  
+        chrome_options.add_argument("--log-level=3")
+        chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
+        SeleniumUtils.driver = webdriver.Chrome(os.path.join(os.path.dirname(__file__), 'resources/chromedriver.exe'), chrome_options=chrome_options)
+        SeleniumUtils.driver.implicitly_wait(5)
+
     # Returns the text given an xpath
-    @staticmethod
-    def getBankAccountXPathHTML(xpath, driver):
+    @classmethod
+    def getBankAccountXPathHTML(cls, xpath, driver):
+        #Waits up to 3 minutes for the code to be loaded properly
+        element = WebDriverWait(driver, 180).until(EC.presence_of_element_located((By.TAG_NAME, "title")))
         return driver.find_element_by_xpath(xpath).get_attribute("innerHTML")
 
     # Creates the driver, and saves the obtained HTML from the xpath to the given file path
-    @staticmethod
-    def saveBankAccountsXPathHTML(url, bankData):
-        chrome_options = Options()
-        chrome_options.add_argument("--headless")  
-        driver = webdriver.Chrome(os.path.join(os.path.dirname(__file__), 'resources/chromedriver.exe'), chrome_options=chrome_options)
-        driver.get(url)
-        for filepath in bankData:
-            with open(filepath, 'w', encoding="utf-8") as f:
-                f.write(SeleniumUtils.getBankAccountXPathHTML(bankData[filepath], driver))
+    @classmethod
+    def saveBankAccountXPathHTML(cls, url, filepath, bankData):
+        SeleniumUtils.driver.get(url)
+        time.sleep(0.5)
+        with open(filepath, 'w', encoding="utf-8") as f:
+            f.write(SeleniumUtils.getBankAccountXPathHTML(bankData[filepath], SeleniumUtils.driver))
 
     # Returns the HTML source
-    @staticmethod
-    def getSourceHTML(url):
-        chrome_options = Options()  
-        chrome_options.add_argument("--headless")
-        driver = webdriver.Chrome(os.path.join(os.path.dirname(__file__), 'resources/chromedriver.exe'), chrome_options=chrome_options)
-        driver.get(url)
-        return driver.page_source
+    @classmethod
+    def getSourceHTML(cls, url):
+        SeleniumUtils.driver.get(url)
+        time.sleep(0.5)
+        return SeleniumUtils.driver.page_source
 
     # Saves the HTML source to /websites directory
     # Sets encoding to utf-8 to avoid UnicodeEncodeError
-    @staticmethod
-    def saveSourceHTML(url, pathToFile):
-        with open (pathToFile, 'w', encoding="utf-8") as f:
+    @classmethod
+    def saveSourceHTML(cls, url, pathToFile):
+        with open (pathToFile, 'w', encoding="UTF-8") as f:
             f.write(SeleniumUtils.getSourceHTML(url))
+
 
     '''
     # Method is just a demo

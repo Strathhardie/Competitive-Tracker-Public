@@ -1,160 +1,276 @@
-root: 
-  - financial_institution:
-    name: 'Simplii'
-    url: 'https://www.simplii.com/en/rates.html'
-    accounts:
-      - account:
-        account_name: 'HISA'
-        xpath: '//*[@id="accounts"]'
+root:
+- financial_institution:
+  name: 'Simplii'
+  url: 'https://www.simplii.com/en/rates/high-interest-savings-account-rates.html'
+  accounts:
+  - account:
+    account_name: 'No_Fee_Chequing_Account'
+    xpath: 'none'
+  - account:
+    account_name: 'Overdraft'
+    xpath: 'none'
+  - account:
+    account_name: 'High_Interest_Savings_Account'
+    xpath: '//*[@id="blq-content"]/div[2]/div/div/div/div/div[2]/div[1]/div'
+  - account:
+    account_name: 'Simplii_Financial_Savings_Account'
+    xpath: 'none'
+  functions:
+  - function: 'soup.select_one'
+    param: "'main[id=\"blq-content\"]'"
+    suffix: ''
+    count: '</table>'
+  total_count: 2
 
-  - financial_institution:
-    name: 'CIBC'
-    url: 'https://www.cibc.com/en/interest-rates/personal-bank-account-rates.html'
-    accounts:
-      - account:
-        account_name: 'eAdvantage_Savings'
-        xpath: '//*[@id="blq-content"]/div[5]'
-      - account: 
-        account_name: 'Bonus_Savings'
-        xpath: '//*[@id="blq-content"]/div[6]'
-      - account:
-        account_name: 'Premium_Growth'
-        xpath: '//*[@id="blq-content"]/div[7]'
-      - account:
-        account_name: 'US_Personal'
-        xpath: '//*[@id="blq-content"]/div[10]'
+- financial_institution:
+  name: 'CIBC'
+  url: 'https://www.cibc.com/en/interest-rates/personal-bank-account-rates.html'
+  accounts:
+  - account:
+    account_name: 'eAdvantage_Savings'
+    xpath: '//*[@id="blq-content"]/div[5]'
+  - account:
+    account_name: 'Bonus_Savings'
+    xpath: '//*[@id="blq-content"]/div[6]'
+  - account:
+    account_name: 'Premium_Growth'
+    xpath: '//*[@id="blq-content"]/div[7]'
+  - account:
+    account_name: 'US_Personal'
+    xpath: '//*[@id="blq-content"]/div[10]'
+  functions:
+  - function: 'soup.select_one'
+    param: "'div[class=\"main-content-wrapper\"]'"
+    suffix: ''
+    count: '</table>'
+  total_count: 5
 
-  - financial_institution:
-    name: 'RBC'
-    url: 'http://www.rbcroyalbank.com/rates/persacct.html'
-    accounts:
-      - account:
-        account_name: 'High_Interest_eSavings'
-        xpath: '/html/body/table[1]/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr[4]/td[2]/table[1]'
-      - account: 
-        account_name: 'Enhanced_Savings'
-        xpath: '/html/body/table[1]/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr[4]/td[2]/table[2]'
-      - account:
-        account_name: 'Day_To_Day_Savings'
-        xpath: '/html/body/table[1]/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr[4]/td[2]/table[3]'
-      - account:
-        account_name: 'US_Personal'
-        xpath: '/html/body/table[1]/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr[4]/td[2]/table[12]'
-      - account:
-        account_name: 'US_High_Interest_eSavings'
-        xpath: '/html/body/table[1]/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr[4]/td[2]/table[13]'
-   
-   - financial_instituion:
-     name: 'TDCT'
-     url: 'https://www.tdcanadatrust.com/products-services/banking/accounts/account-rates.jsp'
-     accounts:
-      - account:
-        account_name: 'Everyday Savings Account'
-        xpath: '
-      - account: 
-        account_name: 'High Interest Savings Account'
-        xpath:
-      - account:
-        account_name: 'ePremium Savings Account'
-        xpath:
-        
-   -  financial_institution:
-      name: 'BMO'
-      url: 'https://www.bmo.com/main/personal/bank-accounts/savings/interest-rates/'
-      - account:
-        account_name: 'Savings Builder Account'
-        xpath:
-      - account:
-        account_name: 'Smart Saver Account'
-        xpath:
-      - account:
-        account_name: 'Premium Rate Savings Account'
-        xpath: 
-      
-   -  financial_institution:
-      name: 'BNS'
-      url: 'https://www.scotiabank.com/ca/en/personal/rates-prices/savings-account-rates.html'
-      - account:
-      account_name: 'Scotiabank MomentumPLUS Savings Account'
-      xpath: 
-      - account:
-      account_name: Money Master Savings Account
-      xpath: 
-      - account:
-      account_name: Scotiabank Savings Accelerator Account
-      xpath: 
-      
-   -  financial_institution:
-      name: 'Tangerine'
-      url: 'https://www.tangerine.ca/en/rates/'
-      - account:
-      account_name: 'Tangerine Savings Account'
-      xpath: 
+- financial_institution:
+  name: 'RBC'
+  url: 'http://www.rbcroyalbank.com/rates/persacct.html'
+  accounts:
+  - account:
+    account_name: 'High_Interest_eSavings'
+    xpath: '//*[@id="public-rates_esavingsnotiers"]'
+  - account:
+    account_name: 'Enhanced_Savings'
+    xpath: '//*[@id="public-rates_enhancedsavings"]'
+  - account:
+    account_name: 'Day_To_Day_Savings'
+    xpath: '//*[@id="public-rates_daysavings"]'
+  - account:
+    account_name: 'US_Personal'
+    xpath: '//*[@id="public-rates_uspersonalaccount2"]'
+  - account:
+    account_name: 'US_High_Interest_eSavings'
+    xpath: '//*[@id="public-rates_usesavingsnotiers"]'
+  functions:
+  - function: soup.select_one
+    param: "'div[id=\"baspdair-savings\"]'"
+    suffix: ''
+    count: '</table>'
+  - function: soup.select_one
+    param: "'div[id=\"baspdair-us\"]'"
+    suffix: ''
+    count: '</table>'
+  total_count: 6
 
-   -  financial_institution:
-      name: 'ICICI'
-      url: 'https://www.icicibank.ca/personalbanking/popup_sav.page'
-      - account:
-      account_name: ICICI HiSave Savings Account
-      xpath: 
-      - account:
-      account_name: ICICI Premium Savings Account
-      xpath: 
-      - account:
-      account_name: ICICI Young Stars Savings Account
-      xpath: 
-      
-   -  financial_institution:
-      name: 'National Bank'
-      url: 'https://www.nbc.ca/en/rates-and-analysis/interest-rates-and-returns/bank-accounts.html'
-      - account:
-      account_name: 'High-Interest Savings Account'
-      xpath: 
-      
-   -  financial_institution:
-      name: 'Manulife'
-      url: 'https://www.manulifebank.ca/current-rates.html'
-      - account:
-      account_name: 'Advantage Account' 
-      xpath:       
-      
-   -  financial_institution:
-      name: 'HSBC'
-      url: 'https://www.hsbc.ca/savings-accounts/rates/'
-      - account:
-      account_name: 'High Rate Savings'
-      xpath:       
-      
-   -  financial_institution:
-      name: 'CDN TIRE'
-      url: 'https://www.myctfs.com/Rates/'
-      - account:
-      account_name: 'High Interest Savings Account'
-      xpath: 
+- financial_institution:
+  name: 'TDCT'
+  url: 'https://www.tdcanadatrust.com/products-services/banking/accounts/account-rates.jsp'
+  accounts:
+  - account:
+    account_name: 'Savings Accounts'
+    xpath: '//*[@id="sa"]'
+  - account:
+    account_name: 'US Accounts'
+    xpath: '//*[@id="usda"]'
+  functions:
+  - function: soup.select_one
+    param: "'div[id=\"sa\"]'"
+    suffix: ''
+    count: '<p class="decisionPage">'
+  - function: soup.select_one
+    param: "'div[id=\"usda\"]'"
+    suffix: ''
+    count: '<p class="decisionPage">'
+  total_count: 4
 
-   -  financial_institution:
-      name: 'B2B Bank'
-      - account:
-      account_name: 'High Interest Savings Account'
-      xpath: 
+- financial_institution:
+  name: 'BMO'
+  url: 'https://www.bmo.com/main/personal/bank-accounts/savings/interest-rates/'
+  accounts:
+  - account:
+    account_name: 'Savings_Builder_Account'
+    xpath: '//*[@id="main"]/div[3]/div'
+  - account:
+    account_name: 'Smart_Saver_Account'
+    xpath: '//*[@id="main"]/div[4]/div'
+  - account:
+    account_name: 'Premium_Rate_Savings_Account'
+    xpath: '//*[@id="main"]/div[5]/div'
+  functions:
+  - function: 'soup.select_one'
+    param: "'main'"
+    suffix: ''
+    count: '</table>'
+  total_count: 5
 
-   -  financial_institution:
-      name: 'Scotia iTrade'
-      url: 'https://www.scotiaitrade.com/en/direct-investing-and-online-trading/trading-fees/commissions-and-fees.html'
-      - account:
-      account_name: 'Cash Optimizer Investment Account'
-      xpath: 
+- financial_institution:
+  name: 'BNS'
+  url: 'https://www.scotiabank.com/ca/en/personal/rates-prices/savings-account-rates.html'
+  accounts:
+  - account:
+    account_name: 'Scotiabank_MomentumPLUS_Savings_Account'
+    xpath: '//*[@id="main"]/div[1]/div/div/div/div[5]/div/table'
+  - account:
+    account_name: 'Money_Master_Savings_Account'
+    xpath: '//*[@id="main"]/div[1]/div/div/div/div[13]/div/div/table'
+  - account:
+    account_name: 'Scotiabank_Savings_Accelerator_Account'
+    xpath: '//*[@id="main"]/div[1]/div/div/div/div[17]/div/div/table'
+  functions:
+  - function: 'soup.select_one'
+    param: "'main'"
+    suffix: ''
+    count: '</table>'
+  total_count: 12
 
-   -  financial_institution:
-      name: 'Meridian Credit'
-      url: 'https://www.meridiancu.ca/Personal/Meridian-Rates-Fees.aspx'
-       - account:
-      account_name: 'Good to Grow High Interest Savings Account'
-      xpath: 
- 
-   -  financial_institution:
-      name: 'EQ Bank'
-      url: 'https://www.eqbank.ca/personal-banking/features-rates'
-      - account:
-      account_name: 'Savings Plus Account'
-      xpath: 
+- financial_institution:
+  name: 'Tangerine'
+  url: 'https://www.tangerine.ca/en/rates/'
+  accounts:
+  - account:
+    account_name: 'Tangerine_Savings_Account'
+    xpath: '/html/body/section[5]/div/div/div[1]/div[1]/div/div[1]/div[2]/div[3]/ul/li[1]'
+  functions:
+  - function: 'soup.find'
+    param: "'h5', text=\"Tangerine Saving Accounts\""
+    suffix: '.parent.next_sibling.next_sibling'
+    count: '</li>'
+  total_count: 5
+
+- financial_institution:
+  name: 'ICICI'
+  url: 'https://www.icicibank.ca/personalbanking/popup_sav.page'
+  accounts:
+  - account:
+    account_name: 'Savings Accounts'
+    xpath: '//*[@id="main"]/div[4]/div[2]/div[1]/div/div'
+  functions:
+  - function: 'soup.find'
+    param: "'h2', text=\"Canadian Dollar\""
+    suffix: ".next_sibling"
+    count: '<th>'
+  total_count: 4
+
+- financial_institution:
+  name: 'National_Bank'
+  url: 'https://www.nbc.ca/en/rates-and-analysis/interest-rates-and-returns/bank-accounts.html'
+  accounts:
+  - account:
+    account_name: 'High_Interest_Savings_Account'
+    xpath: '//*[@id="main-wrapper"]/section/div/article/div[3]/div/div[10]'
+  functions:
+  - function: 'soup.find'
+    param: "'div', 'table parbase section'"
+    suffix: ''
+    count: '<td>'
+  - function: 'soup.find'
+    param: "'article'"
+    suffix: ''
+    count: "<div class=\"table parbase section\">"
+  total_count: 12
+
+- financial_institution:
+  name: 'Manulife'
+  url: 'https://www.manulifebank.ca/current-rates.html'
+  accounts:
+  - account:
+    account_name: 'Advantage Account'
+    xpath: '//*[@id="content"]/div[3]/div/div/div/div/div/div[6]/section/div/div/table/tbody/tr[1]'
+  functions:
+  - function: 'soup.find_all'
+    param: "'h2'"
+    suffix: "[1].parent.next_sibling.next_sibling"
+    count: '</strong>'
+  total_count: 7
+
+- financial_institution:
+  name: 'HSBC'
+  url: 'https://www.hsbc.ca/savings-accounts/rates/'
+  accounts:
+  - account:
+    account_name: 'High Rate Savings'
+    xpath: '//*[@id="content_main_basicTable_6"]'
+  functions:
+  - function: 'soup.find'
+    param: "'body'"
+    suffix: ''
+    count: '<table class="desktop">'
+  total_count: 7
+
+- financial_institution:
+  name: 'CDN_TIRE'
+  url: 'https://www.myctfs.com/Rates/'
+  accounts:
+  - account:
+    account_name: 'High Interest Savings Account'
+    xpath: '//*[@id="mainContent"]/div[1]/table[1]'
+  functions:
+  - function: 'soup.find'
+    param: "'div', 'mainContent'"
+    suffix: ''
+    count: '</table>'
+  total_count: 3
+
+- financial_institution:
+  name: 'B2B_Bank'
+  url: 'https://b2bbank.com/en/rates/banking-rates'
+  accounts:
+  - account:
+    account_name: 'High Interest Savings Account'
+    xpath: '//*[@id="sn_widget_6194"]/div[1]/table/tbody/tr[3]'
+  functions:
+  - function: 'soup.find'
+    param: "'th', text='Banking Services'"
+    suffix: '.parent.parent.next_sibling.next_sibling'
+    count: '</tr>'
+  total_count: 7
+
+- financial_institution:
+  name: 'Scotia_iTrade'
+  url: 'https://www.scotiaitrade.com/en/direct-investing-and-online-trading/trading-fees/commissions-and-fees.html'
+  accounts:
+  - account:
+    account_name: 'Cash Optimizer Investment Account'
+    xpath: '//*[@id="main"]/div/div/div/div/div[2]/div/div[5]/div/div[2]/div/div[1]'
+  functions:
+  - function: 'soup.find'
+    param: "string=' Interest Rates'"
+    suffix: ".parent.parent.parent.parent.parent.next_sibling.next_sibling.find('th',\
+      \ text='Accounts').parent.parent.next_sibling"
+    count: '</tr>'
+  total_count: 2
+
+- financial_institution:
+  name: 'Meridian_Credit'
+  url: 'https://www.meridiancu.ca/Personal/Meridian-Rates-Fees.aspx'
+  accounts:
+  - account:
+    account_name: 'Good to Grow High Interest Savings Account'
+    xpath: '//div[contains(@class, "content-section-block")]/div/div/div/div/div/ul/li/div'
+  functions:
+  - function: 'soup.find'
+    param: "'a', text='Good To Grow High Interest Savings Account'"
+    suffix: ".parent.select_one('tbody')"
+    count: "</tr>"
+  total_count: 4
+
+- financial_institution:
+  name: 'EQ_Bank'
+  url: 'https://www.eqbank.ca/personal-banking/features-rates'
+  accounts:
+  - account:
+    account_name: 'Savings Plus Account'
+    xpath: '//*[@id="contentPlaceholder_C062_Col00"]/section/div/div/div/div/div[2]'
