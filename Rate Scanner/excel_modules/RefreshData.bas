@@ -71,7 +71,8 @@ Public Sub RefreshQueries()
     '            Next qt
             
             On Error GoTo RefreshErrHandler:
-            
+                      x=0
+Context:
                 For Each lo In wks.ListObjects
                       currTime = Now
                       lo.QueryTable.Refresh
@@ -81,6 +82,8 @@ Public Sub RefreshQueries()
                       .Range("E5").Offset(i, 1) = lo.Name
                       .Range("E5").Offset(i, 2) = "Success"
                       .Range("E5").Offset(i, 3) = execTime
+                      .Range("E5").Offset(i, 4).ClearContents
+                      .Range("E5").Offset(i, 5) = "0"
                       'Range(Range("E5").Offset(i, 0), Range("E5").Offset(i, 4)).Show
                       'Application.Goto Reference:=Worksheets("Menu").Range("E5").Offset(i, 0), scroll:=True
                       QsComp = i+1
@@ -101,7 +104,7 @@ Exit Sub
 
 RefreshErrHandler:
 
-    Do While x < 3
+  
         execTime = (Now - currTime) * 86400
         Range("E5").Offset(x, 0) = x
         Range("E5").Offset(x, 1) = lo.Name
@@ -110,18 +113,20 @@ RefreshErrHandler:
         Range("E5").Offset(x, 4) = Err.Description
         'Range(Range("E5").Offset(i, 0), Range("E5").Offset(i, 4)).Show
         'Application.Goto Reference:=Worksheets("Menu").Range("E5").Offset(i, 0), scroll:=True
-        
+     Do While x < 3
         x = x + 1
+        Range("E5").Offset(i, 3) = execTime + Range("E5").Offset(i, 3)
+        Range("E5").Offset(i, 2) = "Retrying"
+        Range("E5").Offset(i, 5) = x
+        
+        
+        
+        Resume Context:
         
     Loop
     
     
-    If (x < 3) Then
-    MsgBox (Ok)
-    Else
-    MsgBox (Error)
-    End If
-    
+ 
     
     
 '    If Err.Number = 1004 Then
