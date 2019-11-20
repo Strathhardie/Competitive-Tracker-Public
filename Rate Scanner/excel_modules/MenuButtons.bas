@@ -60,10 +60,13 @@ Sub ArchiveBroker_Click()
 End Sub
 
 Sub ArchiveAll_Click()
+    Complete.Msg.Caption = "Report exporting completed."
+    Complete.Width = 162.5
     Call ArchiveRetail_Click
     Call ArchiveUS_Click
     Call ArchiveBroker_Click
-    MsgBox ("Report exporting completed.")
+    'MsgBox ("Report exporting completed.")
+    Complete.Show
 End Sub
 
 Sub RefreshArchive_Click()
