@@ -84,7 +84,8 @@ Sub Refresh_progressBar()
     Call HighlightAllChanges
     Dim execTime As Integer
     execTime = Application.WorksheetFunction.Sum(Range(Worksheets("Menu").Range("H5"), Worksheets("Menu").Range("H5").End(xlDown)))
-    MsgBox ("Data refresh completed. Total execution time was " & execTime & " seconds.")
+   ' MsgBox ("Data refresh completed. Total execution time was " & execTime & " seconds.")
+    ProgressBar.Text.Caption = QsComp & "/" & totalQs & " Queries Complete, Total execution time was " & execTime & " seconds."
     ActiveWorkbook.Save
     ActiveSheet.Range("B3").Select
     ActiveWindow.ScrollColumn = 1
