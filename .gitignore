@@ -8,10 +8,12 @@ venv
 
 # Saved bank files
 websites
+full_websites
 
 #Temp Files
 */~$*.xlsm
 */~$*.xlsx
 */~$*.xls
-Rate Scanner/Archive/
 
+# Generated files
+*.log
