@@ -28,8 +28,7 @@ Public Sub ImportSourceFiles()
     file = Dir(ActiveWorkbook.Path + "\excel_modules\")
     While (file <> vbNullString)
         If Not file = "DevTools.bas" Then
-            Application.VBE.ActiveVBProject.VBComponents.Import ActiveWorkbook.Path & "\excel_modules\" & file
-            'Application.VBE.ActiveVBProject.VBComponents.Import sourcePath & file
+            Application.VBE.ActiveVBProject.VBComponents.Import sourcePath & file
         End If
         file = Dir
     Wend
@@ -65,3 +64,4 @@ Private Function ToFileExtension(vbeComponentType As vbext_ComponentType) As Str
             ToFileExtension = vbNullString
     End Select
 End Function
+
