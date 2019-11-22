@@ -1,3 +1,4 @@
+Attribute VB_Name = "DevTools"
 Public Sub ExportSourceFiles()
     Dim component As VBComponent
     Dim fdObj As Object
