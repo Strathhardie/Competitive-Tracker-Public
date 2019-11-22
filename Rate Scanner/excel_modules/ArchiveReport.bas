@@ -1,4 +1,3 @@
-Attribute VB_Name = "ArchiveReport"
 ' @author: Jude Arokiam
 ' @date: July 26, 2018
 ' @version: 2.0

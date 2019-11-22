@@ -1,4 +1,3 @@
-Attribute VB_Name = "HighlightChanges"
 ' @author: David Yan
 ' @date: 2018/08/10
 ' @version: 2.0
@@ -58,7 +57,7 @@ End Sub
 ' Returns a large varaint array to compare and highlight
 ' Helper function for highlighting changes
 Private Function ExtractArchiveData(SheetName As String, FileName As String) As Variant
-    ' Declare variables
+' Declare variables
     Dim FilePath As String
     Dim MostRecentFile As String
     Dim MostRecentDate As Date
@@ -69,38 +68,49 @@ Private Function ExtractArchiveData(SheetName As String, FileName As String) As 
     Dim RangeToExtract As String
     Dim ArchivedBook As Workbook
     
-    On Error GoTo GenericErrHandler:
-    ' Set variables and create file system object
-    Let RangeToExtract = "A1:AA30"
+     On Error GoTo GenericErrHandler:
+' Set variables and create file system object
+    Let RangeToExtract = "A1:DA1000"
 
     Let FilePath = Application.ThisWorkbook.Path & "\Archive\"
     Set oFSO = CreateObject("Scripting.FileSystemObject")
     Set oFolder = oFSO.GetFolder(FilePath)
     Set oFiles = oFolder.Files
     
+    
     Debug.Print FileName
     
-    ' For each file in the archive folder
-    ' If the file's name is the specified name, and time file was modified was more recent than record
-    ' Set that file's date to be most recent date, and record file name
+' For each file in the archive folder
+' If the file's name is the specified name, and time file was modified was more recent than record
+' Set that file's date to be most recent date, and record file name
     For Each oFile In oFiles
         If InStr(1, oFile.Name, FileName) = 1 Then
             If FileDateTime(oFile.Path) > MostRecentDate Then
                 MostRecentDate = FileDateTime(oFile.Path)
                 MostRecentFile = oFile.Path
             End If
+                Debug.Print oFile.Name
         End If
-        Debug.Print oFile.Name
+                Debug.Print oFile.Name
+                'Debug.Print MostRecentFile
     Next oFile
 
-    ' Opens the latest archive and extract the data
+' Opens the latest archive and extract the data
+
+    
     If MostRecentFile = "" Then
-        MsgBox "The files that are necessary to make a comparison with it are not available. Please check if the files has been deleted or moved"
+    
+     MsgBox "The files that are necessary to make a comparison with it are not available. Please check if the files has been deleted or moved"
+    
     Else
-        Set ArchivedBook = Workbooks.Open(MostRecentFile)
-        Let ExtractArchiveData = ArchivedBook.Worksheets(SheetName).Range(RangeToExtract)
-        ' Close workbook
-        ArchivedBook.Close Savechanges:=False
+    
+    Set ArchivedBook = Workbooks.Open(MostRecentFile)
+
+    Let ExtractArchiveData = ArchivedBook.Worksheets(SheetName).Range(RangeToExtract)
+    
+   
+' Close workbook
+    ArchivedBook.Close Savechanges:=False
     End If
     
 Point:
@@ -121,7 +131,7 @@ Private Sub ResetHighlight(SheetName As String)
     Dim RangeToReset As String
     
     On Error GoTo FileErrHandler:
-    Let RangeToReset = "A1:AA30"
+    Let RangeToReset = "A1:DA1000"
 
       
 ' For all the cells in range A1 to DA1000
@@ -161,7 +171,7 @@ Private Sub HighlightChange(SheetName As String, FileName As String)
     Set oFiles = oFolder.Files
 
     ' Set variables
-    Let RangeToHighlight = "A1:AA30"
+    Let RangeToHighlight = "A1:DA1000"
     Let ExtractedData = ExtractArchiveData(SheetName, FileName)
     
     If IsEmpty(ExtractedData) Then
@@ -192,10 +202,8 @@ Point:
     Set fso = Nothing
     Set oFolder = Nothing
     Set oFiles = Nothing
-    On Error Resume Next
     Erase ExtractedData
     Erase CurrentData
-    On Error GoTo 0
     Exit Sub
 GenericErrHandler:
     MsgBox Err.Description
@@ -205,3 +213,6 @@ FileErrHandler:
     Resume Point:
     
 End Sub
+
+
+
