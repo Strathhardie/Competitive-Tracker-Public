@@ -25,6 +25,21 @@ Public Sub RefreshQueries()
         Range(.Range("E5"), .Range("E5").End(xlDown).End(xlDown).Offset(0, 5)).ClearContents
         Application.GoTo Reference:=.Range("E3"), scroll:=True
         
+       'counts total number of queries
+        totalQs = 0
+        For Each wks In Worksheets
+            If wks.Name <> "Menu" And _
+               wks.Name <> "Retail_Report" And _
+               wks.Name <> "US$_Report" And _
+               wks.Name <> "Broker_Report" And _
+               wks.Name <> "Dev Change Log" Then
+                
+                For Each lo In wks.ListObjects
+                    totalQs = totalQs + 1
+                Next lo
+            End If
+        Next wks
+        
         i = 0
         
         ' Iterate through all worksheets containing queries
@@ -36,7 +51,6 @@ Public Sub RefreshQueries()
                wks.Name <> "Dev Change Log" Then
                
                 On Error GoTo RefreshErrHandler:
-            
                     ' Iterate through each query in a worksheet
                     For Each lo In wks.ListObjects
                         x = 1
@@ -50,6 +64,8 @@ Context:
                         .Range("E5").Offset(i, 3) = execTime
                         .Range("E5").Offset(i, 4).ClearContents
                         .Range("E5").Offset(i, 5) = x
+                           QsComp = i + 1
+                        Progress QsComp, totalQs
                         i = i + 1
 Point:
                     Next lo
@@ -75,11 +91,8 @@ RefreshErrHandler:
         Range("E5").Offset(i, 3) = execTime
         Range("E5").Offset(i, 2) = "Retrying"
         Range("E5").Offset(i, 5) = x
-        
         Debug.Print lo.Name & " - Attempt " & x & ", " & Err.Description
-        
         x = x + 1
-        
         Resume Context:
     Loop
     
@@ -97,6 +110,14 @@ Sub SaveCloseReOpen()
     ThisWorkbook.Save
     Application.Workbooks.Open (ThisWorkbook.FullName)
 End Sub
+
+Sub Progress(QsComp As Integer, totalQs As Integer)
+    ProgressBar.Text.Caption = QsComp & "/" & totalQs & " Queries Complete"
+    ProgressBar.Bar.Width = QsComp / totalQs * 200
+    DoEvents
+End Sub
+
+
 
 '@REVISION HISTORY
 '|Date          |Change Author      |Summary of change
