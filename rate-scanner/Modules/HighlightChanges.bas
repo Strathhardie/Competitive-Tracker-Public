@@ -78,8 +78,6 @@ Private Function ExtractArchiveData(SheetName As String, FileName As String) As 
     Set oFolder = oFSO.GetFolder(FilePath)
     Set oFiles = oFolder.Files
     
-    Debug.Print FileName
-    
     ' For each file in the archive folder
     ' If the file's name is the specified name, and time file was modified was more recent than record
     ' Set that file's date to be most recent date, and record file name
@@ -90,7 +88,6 @@ Private Function ExtractArchiveData(SheetName As String, FileName As String) As 
                 MostRecentFile = oFile.Path
             End If
         End If
-        Debug.Print oFile.Name
     Next oFile
 
     ' Opens the latest archive and extract the data
@@ -127,7 +124,6 @@ Private Sub ResetHighlight(SheetName As String)
 ' For all the cells in range A1 to DA1000
 ' Set highlighting to None
     For Each Cell In ThisWorkbook.Sheets(SheetName).Range(RangeToReset)
-    
         If Cell.Interior.ColorIndex = 6 Then
         Cell.Interior.Color = xlNone
         End If

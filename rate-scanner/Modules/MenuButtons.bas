@@ -6,7 +6,8 @@ Attribute VB_Name = "MenuButtons"
 ' PURPOSE:
 ' All UI related code should be place in this module.
 ' Button clicks have been mapped the following procedures.
-
+Public totalQs As Integer
+Public QsComp As Integer
 Option Explicit
 
 Sub ArchiveRetail_Click()
@@ -68,17 +69,28 @@ Sub ArchiveAll_Click()
 End Sub
 
 Sub RefreshAll_Click()
-    Call RefreshQueries
-    Call HighlightAllChanges
-    Dim execTime As Integer
-    execTime = Application.WorksheetFunction.Sum(Range(Worksheets("Menu").Range("H5"), Worksheets("Menu").Range("H5").End(xlDown)))
-    MsgBox ("Data refresh completed. Total execution time was " & execTime & " seconds.")
-    ActiveWorkbook.Save
-    ActiveSheet.Range("B3").Select
-    ActiveWindow.ScrollColumn = 1
+   
+        'progress indicator
+        ProgressBar.Show
+
 End Sub
 
 Sub RefreshArchive_Click()
     Call RefreshAll_Click
     Call ArchiveAll_Click
 End Sub
+Sub Refresh_progressBar()
+
+    Call RefreshQueries
+    Call HighlightAllChanges
+    Dim execTime As Integer
+    execTime = Application.WorksheetFunction.Sum(Range(Worksheets("Menu").Range("H5"), Worksheets("Menu").Range("H5").End(xlDown)))
+    'MsgBox ("Data refresh completed. Total execution time was " & execTime & " seconds.")
+    ActiveWorkbook.Save
+    
+    ActiveSheet.Range("B3").Select
+    ActiveWindow.ScrollColumn = 1
+    ProgressBar.Text.Caption = QsComp & "/" & totalQs & " Queries Complete, Total execution time was " & execTime & " seconds."
+
+End Sub
+
