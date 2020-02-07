@@ -1,4 +1,4 @@
-# change-checker
+# Change-Auditor
 
 A Web Scraper application to automate the compilation of interest rate data from various competitor websites. This repository specifically detects if the HTML of a website has changed since the last run.
 
@@ -23,7 +23,7 @@ Ensure you have Python 3.6 or higher installed.
 
 `` pip install resources/PyYAML-3.13-cp36-cp36m-win_amd64.whl ``
 
-## How to run the change-checker (source code)
+## How to run the Change-Auditor (source code)
 
 1. Open the repo on your terminal and run:
 `` python main.py ``
@@ -32,7 +32,7 @@ Note: You may have to lower your bit9 settings to run resources/chromedriver.exe
 
 ## How to run the change-checker (executable release)
 
-1. Unzip [releases/change_checker_0.0.1.zip](releases/change_checker_0.0.1.zip)
+1. Unzip [feature/change-auditor-executable](executables/lastest_build)
 2. Run main/main.exe
 
 Note: You may have to lower your bit9 settings to run main.exe
