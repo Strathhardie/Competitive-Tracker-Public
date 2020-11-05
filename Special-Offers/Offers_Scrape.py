@@ -6,9 +6,16 @@ from openpyxl import Workbook
 from openpyxl.styles import PatternFill
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
-import time
-#import pandas as pd
+from datetime import date
 
+import pandas as pd
+import os
+from pathlib import Path
+# pip install xlsxwriter
+import xlsxwriter
+
+
+import glob
 
 #The list of all potential FI's websites that we might visit
 pages = ["https://www.cibc.com/en/special-offers/fall-savings-promotion.html",
@@ -16,6 +23,8 @@ pages = ["https://www.cibc.com/en/special-offers/fall-savings-promotion.html",
 # "https://www.scotiabank.com/ca/en/personal/bank-accounts/savings-accounts/momentum-plus-savings-account.html",
 "https://www.tangerine.ca/en/landing-page/raptors"]
 
+#Today date in order to generate Excel timestamp
+todayDate = str(date.today())
 
 #This is write header to excel file
 headers =['Bank','Account','Details','Special Offer']
@@ -25,8 +34,7 @@ sheet = book.active
 for index, header in enumerate(headers):
     sheet.cell(row=1, column=index+1).value=header
 
-#This is for reference to change background color code
-#sheet['A1'].fill = PatternFill(start_color="FFC7CE", fill_type = "solid")
+
 
 for index, link in enumerate(pages):
 
@@ -91,4 +99,72 @@ for index, link in enumerate(pages):
         #Offer 2
         sheet.cell(row=index+2, column=4).value = data[2].text.strip()
 
-book.save("specialOffer.xlsx")
+book.save("specialOffer"+todayDate+".xlsx")
+####################################################
+
+
+
+
+# def compare_changed_Special_Offer(previousFile,todayFile):
+
+
+#Today date in order to generate Excel timestamp
+todayDate = str(date.today())
+
+#Get correct file
+excelFile=glob.glob("specialOffer[0-9]*.xlsx")
+excelFile = sorted(excelFile)
+#path to files
+currentDirectory = os.getcwd()+"\\"
+path_OLD=Path(currentDirectory+excelFile[0])
+path_NEW=Path(currentDirectory+excelFile[1])
+
+
+
+# Read in the two excel files and fill NA
+df_OLD = pd.read_excel(path_OLD,header=None, names=None).fillna(0)
+df_NEW = pd.read_excel(path_NEW,header=None, names=None).fillna(0)
+
+
+dfDiff = df_OLD.copy()
+for row in range(dfDiff.shape[0]):
+    for col in range(dfDiff.shape[1]):
+        value_OLD = df_OLD.iloc[row,col]
+        try:
+            value_NEW = df_NEW.iloc[row,col]
+            if value_OLD==value_NEW:
+                dfDiff.iloc[row,col] = df_NEW.iloc[row,col]
+            elif( value_OLD!=value_NEW and value_NEW==0):
+                dfDiff.iloc[row,col] = ('Expired: {}').format(value_OLD)
+            else:
+                dfDiff.iloc[row,col] = ('Update: {}').format(value_NEW)
+
+        except:
+            dfDiff.iloc[row,col] = ('{}-->{}').format(value_OLD, 'NaN')
+writer = pd.ExcelWriter("specialOffer_compare"+todayDate+".xlsx", engine='xlsxwriter') # pylint: disable=abstract-class-instantiated
+dfDiff.to_excel(writer, sheet_name='DIFF', index=False, header=None)
+# df_NEW.to_excel(writer, sheet_name=path_NEW.stem, index=False)
+# df_OLD.to_excel(writer, sheet_name=path_OLD.stem, index=False)
+
+
+
+workbook  = writer.book
+worksheet = writer.sheets['DIFF']
+
+
+# define formats
+highlight_fmt_red = workbook.add_format({'font_color': '#000000', 'bg_color':'#FF0000'})
+highlight_fmt_yellow = workbook.add_format({'font_color': '#000000', 'bg_color':'#FFFF00'})
+
+## highlight changed cells
+worksheet.conditional_format('A1:ZZ1000', {'type': 'text',
+                                        'criteria': 'containing',
+                                        'value':'Update',
+                                        'format': highlight_fmt_yellow})
+## highlight unchanged cells
+worksheet.conditional_format('A1:ZZ1000', {'type': 'text',
+                                        'criteria': 'containing',
+                                        'value':'Expired',
+                                        'format': highlight_fmt_red})
+# save
+writer.save()
