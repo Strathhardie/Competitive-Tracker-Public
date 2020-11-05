@@ -13,8 +13,6 @@ import os
 from pathlib import Path
 # pip install xlsxwriter
 import xlsxwriter
-
-
 import glob
 
 #The list of all potential FI's websites that we might visit
@@ -108,6 +106,7 @@ book.save("specialOffer"+todayDate+".xlsx")
 # def compare_changed_Special_Offer(previousFile,todayFile):
 
 
+
 #Today date in order to generate Excel timestamp
 todayDate = str(date.today())
 
@@ -116,8 +115,8 @@ excelFile=glob.glob("specialOffer[0-9]*.xlsx")
 excelFile = sorted(excelFile)
 #path to files
 currentDirectory = os.getcwd()+"\\"
-path_OLD=Path(currentDirectory+excelFile[0])
-path_NEW=Path(currentDirectory+excelFile[1])
+path_OLD=Path(currentDirectory+excelFile[len(excelFile)-2])
+path_NEW=Path(currentDirectory+excelFile[len(excelFile)-1])
 
 
 
@@ -132,8 +131,10 @@ for row in range(dfDiff.shape[0]):
         value_OLD = df_OLD.iloc[row,col]
         try:
             value_NEW = df_NEW.iloc[row,col]
-            if value_OLD==value_NEW:
+            if value_OLD==value_NEW and value_NEW!=0:
                 dfDiff.iloc[row,col] = df_NEW.iloc[row,col]
+            elif value_OLD==value_NEW and value_NEW==0:
+                dfDiff.iloc[row,col] = ""
             elif( value_OLD!=value_NEW and value_NEW==0):
                 dfDiff.iloc[row,col] = ('Expired: {}').format(value_OLD)
             else:
@@ -143,8 +144,7 @@ for row in range(dfDiff.shape[0]):
             dfDiff.iloc[row,col] = ('{}-->{}').format(value_OLD, 'NaN')
 writer = pd.ExcelWriter("specialOffer_compare"+todayDate+".xlsx", engine='xlsxwriter') # pylint: disable=abstract-class-instantiated
 dfDiff.to_excel(writer, sheet_name='DIFF', index=False, header=None)
-# df_NEW.to_excel(writer, sheet_name=path_NEW.stem, index=False)
-# df_OLD.to_excel(writer, sheet_name=path_OLD.stem, index=False)
+
 
 
 
@@ -156,12 +156,12 @@ worksheet = writer.sheets['DIFF']
 highlight_fmt_red = workbook.add_format({'font_color': '#000000', 'bg_color':'#FF0000'})
 highlight_fmt_yellow = workbook.add_format({'font_color': '#000000', 'bg_color':'#FFFF00'})
 
-## highlight changed cells
+## highlight Update cells
 worksheet.conditional_format('A1:ZZ1000', {'type': 'text',
                                         'criteria': 'containing',
                                         'value':'Update',
                                         'format': highlight_fmt_yellow})
-## highlight unchanged cells
+## highlight Expired cells
 worksheet.conditional_format('A1:ZZ1000', {'type': 'text',
                                         'criteria': 'containing',
                                         'value':'Expired',
