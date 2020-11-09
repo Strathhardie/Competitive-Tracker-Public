@@ -1,0 +1,11 @@
+root:
+- financial_institution:
+  name: 'RBC'
+  accounts:
+  - account_category: 'Chequing Accounts'
+    url: 'https://www.rbcroyalbank.com/accounts/chequing-accounts.html'
+    elements : 
+      account_name: "div[class='grid-one-fourth flex'] > div > div > h3"
+      fee: "div[class='grid-one-fourth flex'] > div > div > p > span"
+      details: div[class='grid-one-fourth flex'] > div > div > ul
+      special_offer: "div[class='grid-one-fourth flex'] > div > div > p > a"
