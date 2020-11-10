@@ -4,3 +4,5 @@ lxml
 html5lib
 beautifulsoup4
 selenium
+openpyxl
+xlsxwriter
