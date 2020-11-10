@@ -1,0 +1,22 @@
+root:
+- financial_institution:
+  name: 'CIBC'
+  url: 'https://www.cibc.com/en/special-offers/fall-savings-promotion.html'
+  accounts:
+  - account:
+    account_name: 'eAdvantage_Savings'
+    xpath: '//*[@id="blq-content"]/div[5]'
+- financial_institution:
+  name: 'Scotiabank'
+  url: 'https://www.scotiabank.com/ca/en/personal/rates-prices/savings-account-rates.html'
+  accounts:
+  - account:
+    account_name: 'The MomentumPLUS Savings Account'
+    xpath: '/html/body/div[1]/main/div[2]/div/div/div/div[3]/div/table/tbody/tr[1]/td[4]'
+- financial_institution:
+  name: 'Tangerine'
+  url: 'https://www.tangerine.ca/en/landing-page/raptors'
+  accounts:
+  - account:
+    account_name: 'Tangerine_Savings_Account'
+    xpath: '//*[@id="mainContentSection"]/section/div[4]/div/div/div/div[1],//*[@id="mainContentSection"]/section/div[4]/div/div/div/div[3]'
