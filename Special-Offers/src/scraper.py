@@ -4,6 +4,9 @@ import requests
 import json
 from datetime import datetime
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+# import chromedriver_binary  # Adds chromedriver binary to path
+from webdriver_manager.chrome import ChromeDriverManager
 
 """
 Makes various requests to bank websites and returns a dictionary containing special offers.
@@ -100,7 +103,11 @@ def get_special_offer_accounts():
         #Selenium Driver initialization 
         fireFoxOptions = webdriver.FirefoxOptions()
         fireFoxOptions.headless = True
-        driver = webdriver.Firefox(options=fireFoxOptions)
+        # driver = webdriver.Firefox(options=fireFoxOptions)
+
+        # This is for google chrome
+        driver = webdriver.Chrome(ChromeDriverManager().install())
+
 
         #initialization of dictionary
         special_offers_dictionary = {}

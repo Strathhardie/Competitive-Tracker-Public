@@ -1,6 +1,5 @@
 import requests
 import re
-import csv
 #pip install openpyxl
 from openpyxl import Workbook
 from openpyxl.styles import PatternFill
@@ -14,7 +13,11 @@ from pathlib import Path
 # pip install xlsxwriter
 import xlsxwriter
 import glob
+import scraper
+import json
 
+# print(scraper.get_special_offers())
+print(json.dumps(scraper.get_special_offer_accounts(), indent=1))
 #The list of all potential FI's websites that we might visit
 pages = ["https://www.cibc.com/en/special-offers/fall-savings-promotion.html",
 "https://www.scotiabank.com/ca/en/personal/rates-prices/savings-account-rates.html",

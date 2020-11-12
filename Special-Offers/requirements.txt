@@ -6,3 +6,6 @@ beautifulsoup4
 selenium
 openpyxl
 xlsxwriter
+pandas
+xlrd
+webdriver-manager
