@@ -96,5 +96,6 @@ Untitled.code-workspace
 #test_files
 banks.json
 dump.html
-.xlsx
+*.xlsx
 .DS_Store
+
