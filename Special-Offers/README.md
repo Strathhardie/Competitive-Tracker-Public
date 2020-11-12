@@ -14,7 +14,10 @@ Install venv from pip
 `python3 -m venv venv`
 
 ### Activate venv 
-`source venv/bin/activate`
+  #### Mac
+    `source venv/bin/activate`
+  #### Windows
+    `./venv/Script/activate`
 
 ### Install dependencies
 `pip install -r requirements.txt`
