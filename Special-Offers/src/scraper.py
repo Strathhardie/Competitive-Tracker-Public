@@ -7,6 +7,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 # import chromedriver_binary  # Adds chromedriver binary to path
 from webdriver_manager.chrome import ChromeDriverManager
+from tqdm import tqdm
 
 """
 Makes various requests to bank websites and returns a dictionary containing special offers.
@@ -99,6 +100,9 @@ def get_special_offer_accounts():
     #reading YAML File
     banks = YAMLUtils.readYAML("../"+YAMLUtils.FILE_NAME)
 
+    # Create a progress bar
+    t = tqdm(banks, desc="Auditing Changes", leave=True, ncols=100, position=0)
+
     try:
         #Selenium Driver initialization 
         fireFoxOptions = webdriver.FirefoxOptions()
@@ -109,19 +113,22 @@ def get_special_offer_accounts():
         driver = webdriver.Chrome(ChromeDriverManager().install())
 
 
-        #initialization of dictionary
         special_offers_dictionary = {}
         for index, bank in enumerate(banks):
+            t.set_description("%-15s" % str(bank['name']))
+            t.update()
+
             special_offers_dictionary[index] = {}
 
             special_offers_dictionary[index]['institution_name'] = bank['name']
 
+            special_offers_dictionary[index]['accounts'] = []
+
             for account in bank['accounts']:
                 driver.get(account['url'])
-                soup = b(driver.page_source,'html5lib')
-                # print(soup);
-                special_offers_dictionary[index]['accounts'] = []
 
+                soup = b(driver.page_source,'html5lib')
+                
                 account_dictionary = {}
                 account_dictionary['account_category'] = account['account_category']
                 for k,v in account['elements'].items():
