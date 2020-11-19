@@ -2,10 +2,45 @@ root:
 - financial_institution:
   name: 'RBC'
   accounts:
-  - account_category: 'Chequing Accounts'
-    url: 'https://www.rbcroyalbank.com/accounts/chequing-accounts.html'
+  - account_category: 'Chequing Account'
+    url: 'https://www.rbcroyalbank.com/accounts/signature-no-limit-banking.html'
     elements : 
-      account_name: "div[class='grid-one-fourth flex'] > div > div > h3"
-      fee: "div[class='grid-one-fourth flex'] > div > div > p > span"
-      details: div[class='grid-one-fourth flex'] > div > div > ul
-      special_offer: "div[class='grid-one-fourth flex'] > div > div > p > a"
+      account_name: "div[class='nav-bar'] > div[class='nav-inner'] > h1"
+      fee: "div > div[class='banner-text'] > p[class='mar-b-dbl']"
+      details: "div[class='grid-wpr eh-wpr mar-t-dbl mar-b-0'] > div > ul"
+      special_offer: "div[class='banner-text'] > h3"
+  - account_category: 'Chequing Account'
+    url: 'https://www.rbcroyalbank.com/accounts/vip-banking.html'
+    elements : 
+      account_name: "div[class='nav-bar'] > div[class='nav-inner'] > h1"
+      fee: "div > div[class='banner-text'] > p[class='mar-b mob-mar-b-dbl']"
+      details: "div[class='grid-wpr eh-wpr mar-t-dbl mar-b-0'] > div > ul"
+      special_offer: 'div[class="rte ng-binding"] > p[class="compare-modal-only"] > a'
+- financial_institution:
+  name: 'TD'
+  accounts:
+  - account_category: 'Chequing Account'
+    url: 'https://www.td.com/ca/en/personal-banking/products/bank-accounts/chequing-accounts/unlimited-chequing-account/'
+    elements : 
+      account_name: "div[class='td-container'] > h1[id='ba_9002_title']"
+      fee: "div > ul > li > span[class='td-product-feature-text customText']"
+      details: "div[class='td-row'] > div > div > ul[class='td-rte-margin-top-none'] > li[class='td-rte-margin-bottom-medium']"
+      special_offer: "div[class='td-row'] > div > div[class='td-col-lg-10 heightAuto'] > p"
+  - account_category: 'Chequing Account'
+    url: 'https://www.td.com/ca/en/personal-banking/products/bank-accounts/chequing-accounts/all-inclusive-banking-plan/'
+    elements : 
+      account_name: "div[class='td-container'] > h1[id='ba_9001_title']"
+      fee: "div > ul > li > span[class='td-product-feature-text customText']"
+      details: "div[class='td-row'] > div > div > ul[class='td-rte-margin-top-none'] > li[class='td-rte-margin-bottom-medium']"
+      special_offer: 'div[class="rte ng-binding"] > p[class="compare-modal-only"] > a'
+- financial_institution:
+  name: "Scotiabank"
+  accounts:
+  - account_category: 'Chequing Account'
+    url: 'https://www.scotiabank.com/ca/en/personal/bank-accounts/chequing-accounts/preferred.html'
+    elements:
+      account_name: 'div[class="title bns--title"] > h1'
+      fee: 'div[class="col-md-6 col-lg-8"] > div[class="contentfragment"] > div[class="cmp-contentfragment"] > p'
+      details: 'div > div[class="description"] > ul > li'
+      special_offer: 'div[class="offer stacked"] > div[class="text-container stacked-container"] > div[class="headline"] > p'
+          

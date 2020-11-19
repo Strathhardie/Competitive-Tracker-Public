@@ -4,6 +4,7 @@ import requests
 import json
 from datetime import datetime
 from selenium import webdriver
+from tqdm import tqdm
 
 """
 Makes various requests to bank websites and returns a dictionary containing special offers.
@@ -96,25 +97,31 @@ def get_special_offer_accounts():
     #reading YAML File
     banks = YAMLUtils.readYAML("../"+YAMLUtils.FILE_NAME)
 
+    # Create a progress bar
+    t = tqdm(banks, desc="Auditing Changes", leave=True, ncols=100, position=0)
+
     try:
         #Selenium Driver initialization 
         fireFoxOptions = webdriver.FirefoxOptions()
         fireFoxOptions.headless = True
         driver = webdriver.Firefox(options=fireFoxOptions)
 
-        #initialization of dictionary
         special_offers_dictionary = {}
         for index, bank in enumerate(banks):
+            t.set_description("%-15s" % str(bank['name']))
+            t.update()
+
             special_offers_dictionary[index] = {}
 
             special_offers_dictionary[index]['institution_name'] = bank['name']
 
+            special_offers_dictionary[index]['accounts'] = []
+
             for account in bank['accounts']:
                 driver.get(account['url'])
+
                 soup = b(driver.page_source,'html5lib')
                 
-                special_offers_dictionary[index]['accounts'] = []
-
                 account_dictionary = {}
                 account_dictionary['account_category'] = account['account_category']
                 for k,v in account['elements'].items():
