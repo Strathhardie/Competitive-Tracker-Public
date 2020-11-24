@@ -21,17 +21,54 @@ import json
 
 
 ############################################################
+#This is write header to excel file
+headers =['Bank','Account Name','Account Type', 'Monthly Fee', 'Special Offer','Expiry Date', 'Account Perks', 'Webiste']
+book = Workbook()
+sheet = book.active
+
+for index, header in enumerate(headers):
+    sheet.cell(row=1, column=index+1).value=header
+
 # 1. Get dictionary return value from scraper.py for sepecial offer.
 print(json.dumps(scraper.get_special_offer_accounts(), indent=1))
-dict = scraper.get_special_offer_accounts();
+special_offer_dict = scraper.get_special_offer_accounts()
 # print(dic)
 
 def getList(dict): 
-    return dict.keys() 
-print(getList(dict[0])) 
-# print(dict)
+    return special_offer_dict.keys() 
+# print(getList(dict))
 
-# 2. And to m
+# print("dict "+ len(dict.keys()))
+#Get bank name
+# print(dict[0]['institution_name'])
+
+rowNum = 2
+for x in getList(special_offer_dict):
+    #Get Bank name
+    bankName=special_offer_dict[x]['institution_name']
+
+    for y in range(len(special_offer_dict[x]['accounts'])):
+        sheet.cell(row=rowNum, column=1).value=bankName
+        sheet.cell(row=rowNum, column=2).value=special_offer_dict[x]['accounts'][y]['account_name'][0]        
+        sheet.cell(row=rowNum, column=3).value=special_offer_dict[x]['accounts'][y]['account_category']
+        # sheet.cell(row=rowNum, column=4).value=special_offer_dict[x]['accounts'][y]['fee'][0]
+        res_list = [special_offer_dict[x]['accounts'][y]['fee'][i] for i in range(len(special_offer_dict[x]['accounts'][y]['fee']))] 
+        # print(len(special_offer_dict[x]['accounts'][y]['fee']))
+        # print(special_offer_dict[x]['accounts'][y])
+
+        # sheet.cell(row=rowNum, column=4).value=special_offer_dict[x]['accounts'][y]['special_offer']
+        
+        # print(special_offer_dict[x]['accounts'][y]['account_category'])
+        rowNum +=1
+    #     print(y)
+        
+    # arr = getList(dict)
+    # print(x)
+    # print(bankName)
+
+# 2. And to Excel Accoridng
+
+
 ############################################################
 #The list of all potential FI's websites that we might visit
 pages = ["https://www.cibc.com/en/special-offers/fall-savings-promotion.html",
@@ -42,13 +79,7 @@ pages = ["https://www.cibc.com/en/special-offers/fall-savings-promotion.html",
 #Today date in order to generate Excel timestamp
 todayDate = str(date.today())
 
-#This is write header to excel file
-headers =['Bank','Account Name','Account Type', 'Monthly Fee', 'Special Offer','Expiry Date', 'Account Perks', 'Webiste']
-book = Workbook()
-sheet = book.active
 
-for index, header in enumerate(headers):
-    sheet.cell(row=1, column=index+1).value=header
 
 
 

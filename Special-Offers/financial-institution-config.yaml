@@ -15,7 +15,7 @@ root:
       account_name: "div[class='nav-bar'] > div[class='nav-inner'] > h1"
       fee: "div > div[class='banner-text'] > p[class='mar-b mob-mar-b-dbl']"
       details: "div[class='grid-wpr eh-wpr mar-t-dbl mar-b-0'] > div > ul"
-      special_offer: 'div[class="rte ng-binding"] > p[class="compare-modal-only"] > a'
+      special_offer: "div[class='banner-text'] > h3"
 - financial_institution:
   name: 'TD'
   accounts:

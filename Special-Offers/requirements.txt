@@ -9,3 +9,4 @@ xlsxwriter
 pandas
 xlrd
 webdriver-manager
+tqdm
