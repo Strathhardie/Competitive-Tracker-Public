@@ -15,7 +15,14 @@ root:
       account_name: "div[class='nav-bar'] > div[class='nav-inner'] > h1"
       fee: "div > div[class='banner-text'] > p[class='mar-b mob-mar-b-dbl']"
       details: "div[class='grid-wpr eh-wpr mar-t-dbl mar-b-0'] > div > ul"
-      special_offer: "div[class='banner-text'] > h3"
+      special_offer: 'div[class="rte ng-binding"] > p[class="compare-modal-only"] > a'
+  - account_category: 'Saving Accounts'
+    url: 'https://www.rbcroyalbank.com/accounts/e-savings.html'
+    elements : 
+      account_name: div[class='nav-inner'] > h1 
+      fee: table[class='table-striped w-full tablesaw']
+      details: ul[class='check-list']
+      special_offer: div[class='banner-text'] > h3
 - financial_institution:
   name: 'TD'
   accounts:
@@ -43,4 +50,46 @@ root:
       fee: 'div[class="col-md-6 col-lg-8"] > div[class="contentfragment"] > div[class="cmp-contentfragment"] > p'
       details: 'div > div[class="description"] > ul > li'
       special_offer: 'div[class="offer stacked"] > div[class="text-container stacked-container"] > div[class="headline"] > p'
-          
+  - account_category: 'Chequing Account'
+    url: 'https://www.scotiabank.com/ca/en/personal/bank-accounts/chequing-accounts/ultimate-package.html'
+    elements:
+      account_name: 'div[class="title bns--title"] > h1'
+      fee: 'div[class="col-md-6 col-lg-8"] > div[class="contentfragment"] > div[class="cmp-contentfragment"] > p'
+      details: 'div > div[class="description"] > ul > li'
+      special_offer: 'div[class="offer stacked"] > div[class="text-container stacked-container"] > div[class="headline"] > p'
+  - account_category: 'Saving Accounts'
+    url: 'https://www.scotiabank.com/ca/en/personal/bank-accounts/savings-accounts/momentum-plus-savings-account.html?cid=ps_ce66dcc43815eae8ce94650882090096e87fa67e&gclid=CjwKCAjwi_b3BRAGEiwAemPNU4g9PqUl4fV2aIIYt8eoLxcZxylnkR2Z6M6IO1qqFkOaaEkjCvfuLBoCmiMQAvD_BwE&gclsrc=aw.ds'
+    elements : 
+      account_name: div[class='title bns--title'] > h1  
+      fee: div[class='col-md-6 col-lg-3'] > div 
+      details: div[class="col-md-6"] > div > p  
+      special_offer: div[class='cmp cmp-text'] > p
+- financial_institution:
+  name: "Simplii"
+  accounts:
+  - account_category: 'Chequing Account'
+    url: 'https://www.simplii.com/en/bank-accounts/no-fee-chequing.html'
+    elements:
+      account_name: 'div[class="longformtext base parbase"] > div > h1 > span[class="subheading-medium"]'
+      details: 'div[class="rte longformtext base parbase"] > div > p > span[class="banner-body-copy"]'
+      special_offer: 'div[class="longformtext base parbase"] > div > p > span[class="banner-body-copy"]'
+- financial_institution:
+  name: 'CIBC'
+  accounts:
+  - account_category: 'Saving Accounts'
+    url: 'https://www.cibc.com/en/personal-banking/bank-accounts/savings-accounts/eadvantage-high-interest-savings-account.html'
+    elements : 
+      account_name: span[class='headline-l'] 
+      fee: div[class='longformtext base parbase'] > div > p > span[class="subheading-large-light"]
+      details: div[class='container-content'] > div > div > p
+      special_offer: div[class='column margins-padding no-sides no-top large-padding-bottom']
+- financial_institution:
+  name: 'Tangerine'
+  accounts:
+  - account_category: 'Saving Accounts'
+    url: 'https://www.tangerine.ca/en/landing-page/special-offer/?ds_rl=1265627&gclid=CjwKCAjwi_b3BRAGEiwAemPNU725JMWgLSNI2lOHdMwdGL6WNqw6LS2LRWAE2WOJOhU7aEKHbBbWPBoCDHAQAvD_BwE&gclsrc=aw.ds'
+    elements : 
+      account_name: div[class='tngWrapper padding_bottom-60px'] > h2 
+      fee: div[class='tngBodyBase-prx margin_top-20px margin_top-inherit-mobile']
+      details: div[class='tngContent']
+      special_offer: div[class='tngBodyBase-prx'] > p
