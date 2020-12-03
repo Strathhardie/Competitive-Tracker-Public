@@ -131,11 +131,7 @@ def get_special_offer_accounts():
                 
                 account_dictionary = {}
                 account_dictionary['account_category'] = account['account_category']
-                for k,v in account['elements'].items():
-                    # print("K "+k)
-                    # print("V " + v)
-                    # print(account['elements'].items())
-                                            
+                for k,v in account['elements'].items():                       
                     account_dictionary[k] = [x.text.strip() for x in soup.select(v)]
                 special_offers_dictionary[index]['accounts'].append(account_dictionary)
     finally:

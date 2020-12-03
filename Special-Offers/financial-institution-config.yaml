@@ -71,6 +71,7 @@ root:
     url: 'https://www.simplii.com/en/bank-accounts/no-fee-chequing.html'
     elements:
       account_name: 'div[class="longformtext base parbase"] > div > h1 > span[class="subheading-medium"]'
+      fee: 'div[class="longformtext base parbase"] > div > h1 > span[class="subheading-medium"]'
       details: 'div[class="rte longformtext base parbase"] > div > p > span[class="banner-body-copy"]'
       special_offer: 'div[class="longformtext base parbase"] > div > p > span[class="banner-body-copy"]'
 - financial_institution:
