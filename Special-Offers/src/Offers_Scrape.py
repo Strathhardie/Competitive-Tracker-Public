@@ -25,7 +25,7 @@ for index, header in enumerate(headers):
     sheet.cell(row=1, column=index+1).value=header
 
 # 1. Get dictionary return value from scraper.py for sepecial offer.
-# print(json.dumps(scraper.get_special_offer_accounts(), indent=1))
+print(json.dumps(scraper.get_special_offer_accounts(), indent=1))
 special_offer_dict = scraper.get_special_offer_accounts()
 # print(dic)
 
