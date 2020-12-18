@@ -4,6 +4,9 @@ import requests
 import json
 from datetime import datetime
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+# import chromedriver_binary  # Adds chromedriver binary to path
+from webdriver_manager.chrome import ChromeDriverManager
 from tqdm import tqdm
 
 """
@@ -107,17 +110,21 @@ Returns:
 
 
 def get_special_offer_accounts():
-    # reading YAML File
-    banks = YAMLUtils.readYAML("../" + YAMLUtils.FILE_NAME)
+    #reading YAML File
+    banks = YAMLUtils.readYAML("../"+YAMLUtils.FILE_NAME)
 
     # Create a progress bar
     t = tqdm(banks, desc="Auditing Changes", leave=True, ncols=100, position=0)
 
     try:
-        # Selenium Driver initialization
+        #Selenium Driver initialization 
         fireFoxOptions = webdriver.FirefoxOptions()
         fireFoxOptions.headless = True
-        driver = webdriver.Firefox(options=fireFoxOptions)
+        # driver = webdriver.Firefox(options=fireFoxOptions)
+
+        # This is for google chrome
+        driver = webdriver.Chrome(ChromeDriverManager().install())
+
 
         special_offers_dictionary = {}
         for index, bank in enumerate(banks):
@@ -130,14 +137,16 @@ def get_special_offer_accounts():
 
             special_offers_dictionary[index]['accounts'] = []
 
+
             for account in bank['accounts']:
                 driver.get(account['url'])
 
-                soup = b(driver.page_source, 'html5lib')
-
+                soup = b(driver.page_source,'html5lib')
+                
                 account_dictionary = {}
+                account_dictionary['account_url']=account['url']
                 account_dictionary['account_category'] = account['account_category']
-                for k, v in account['elements'].items():
+                for k,v in account['elements'].items():                       
                     account_dictionary[k] = [x.text.strip() for x in soup.select(v)]
                 special_offers_dictionary[index]['accounts'].append(account_dictionary)
     finally:
@@ -145,7 +154,7 @@ def get_special_offer_accounts():
             driver.quit()
         except:
             pass
-
+    
     return special_offers_dictionary
 
 
