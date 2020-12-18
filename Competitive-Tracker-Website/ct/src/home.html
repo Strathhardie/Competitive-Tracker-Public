@@ -1,0 +1,339 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<title>Tracker Home</title>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+
+        .buttonload {
+  background-color: #c41f3e;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+/* Add a right margin to each icon */
+.fa {
+  margin-left: -12px;
+  margin-right: 8px;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
+  padding: 16px;
+  background-color: whitesmoke;
+  width: 80%;
+  margin: 0 auto;
+  color: black;
+
+}
+
+.mm-container {
+    height: 30px;
+    background: #af0b1c;
+    -moz-box-shadow: 0 3px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 3px 0 rgba(0,0,0,0.15);
+}
+
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+p.downloadmessage {
+  text-align: right;
+
+
+}
+/*button download*/
+.button {
+  border-radius: 4px;
+  background-color: #af0b1c;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 20px;
+  width: 169px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 4px;
+}
+
+.contactbutton {
+  border-radius: 4px;
+  background-color: #af0b1c;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 120px;
+  margin: 4px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+a:link, a:visited {
+  background-color: #af0b1c;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 12px;
+  display: inline-block;
+  float: right;
+  margin: 4px 2px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.footer{
+    height: 90px;
+    background:rgb(192, 197, 197);
+    padding: 10px;
+    border-top: 10px solid #af0b1c ;
+    font-family: 'Lato', sans-serif;
+}
+
+.nav{
+  display: flex;
+  align-items:center;
+  float:right;
+
+}
+
+.tab-container{
+    margin-right: 50px;
+    text-align:right;
+}
+
+.tab-item{
+ margin: 0px 30px 0px 30px
+}
+
+.products-container{
+   padding-top: 50px;
+   padding-bottom:50px;
+}
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+  <div class="nav">
+    <!-- Website menu tabs. Clicking will scroll the web page down to that section.-->
+    <div  class="tab-container">
+      <span id="contact-tab" class="tab-item" style="font-family: 'Poppins', sans-serif;">Contact Us</span>
+    </div>
+     <a href="webpages/logout">Logout</a>
+  </div>
+
+
+
+  <div><h1 style="font-family: 'Poppins', sans-serif;"><img src= "static/cibclogo.png" style="width:90px;height:90px;">  Competitive Tracker</h1> </div>
+  <div class="mm-container"></div>
+
+
+
+  <div style="text-align: center; padding-left: 10px; padding-right: 10px;"><h1 style="font-family: 'Poppins', sans-serif;  background-color: rgb(192, 197, 197);">CT Mandate</h1>
+<p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+    laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+     architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
+      sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+       voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+       et, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut
+        labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
+        nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
+    aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui i</p>
+
+
+
+<div class="products-container">
+<h1 style="font-family: 'Poppins', sans-serif;">OUR PRODUCTS</h1>
+<br>
+  <div class="card">
+        <h2 style="font-family: 'Poppins', sans-serif;">Special Offer</h2>
+      <div class="w3-row">
+        <div class="w3-container w3-half">
+          <h2>Description</h2>
+          <p style="text-align: center">The Special Offers report is an Excel report generated by Selenium and Beautiful soup, based in Python tool that extracts promotional offer information from competing FIs' websites. The purpose of this product is to consolidate and report information pertaining to any special offers that CIBC's competitors offer on a given set of financial products. </p>
+        </div>
+        <div class="w3-container w3-half">
+          <h2>Instructions</h2>
+          <p style="text-align: center">At vero eos et accusamus et iusto odio dignissimos ducimus qui
+            blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt
+            mollitia animi, id est laborum et dolorum fuga.</p>
+        </div>
+        <div> <button class="button" style="float: right;" onclick="specialOffer()">
+          <span>Download Here</span>
+        </button></div>
+      </div>
+      <div id="specialoffer-status" style="text-align:right; padding:10px;">The last data refresh was on dd/mm/yyyy at hh:mm</div>
+      <h3 id="specialoffer"></h3>
+    </div>
+
+    <br>
+
+    <div class="card">
+      <h2 style="font-family: 'Poppins', sans-serif;">Rate Scanner</h2>
+    <div class="w3-row">
+      <div class="w3-container w3-half">
+        <h2>Description</h2>
+        <p style="text-align: center">By leveraging VBA macros and power queries, the Deposits Rate Scanner is an automated tool with the purpose of extracting data from various Financial Institutions’ websites to yield a standardized report for internal CIBC clients. Those seeking the latest information regarding account interest rate amongst CIBC’s competitors can use Rate Scanner to retrieve relevant reports in which all data is accurately displayed. Ultimately, this tool will allow CIBC clients understand where CIBC ranks in its offerings in a high-paced, competitive market. </p>
+
+      </div>
+      <div class="w3-container w3-half">
+        <h2>Instructions</h2>
+        <p >The Rate Scanner is a user-friendly tool that allows individuals to action the basic commands of the product such as Scanning the Rates as well as Exporting the Report. The tool has many capabilities including highlighting accounts that have had a change in rate, exporting select or all reports which are automatically saved to users’ H: drives, and an execution log that identifies all accounts that were successfully scanned.
+The first action the user will perform is clicking on the “Scan All Rates” button to run the macro for refreshing all power queries. Resultantly, the macro triggers a subroutine to refresh all power queries within each FI’s tab. As power queries are being refreshed, a progress bar is displayed on the screen, indicating that the queries have been completed. An execution log will also be displayed for the user to see, in which the outcome of a query refresh will be logged (Success or Error+message). Finally, when the refreshing is done, another subroutine will be triggered to highlight any updates in the interest rate data from the last refreshed report.
+Following the rate scanning of the various Financial Institutions, three reports are generated in separate tabs which the individual can choose from: CAD Retail Report, Brokerage Report, and USD Report.
+</p>
+      </div>
+      <div>
+      <button class="button" style="float: right;" onclick="rateScanner()">
+        <span>Download Here</span>
+      </button></div>
+    </div>
+    <div id="ratescanner-status" style="text-align:right; padding:10px;">The last data refresh was on dd/mm/yyyy at hh:mm</div>
+    <h3 id="ratescanner"></h3>
+  </div>
+
+</div>
+
+<br>
+
+
+
+<div id="contact" class="contact-us-container" style="float:center; width: 80%;margin: 0 auto; display: block;">
+  <div style="text-align:left;">
+  <h2>CONTACT US</h2>
+  <h5>Team Description</h5>
+  <p> At vero eos et accusamus et iusto odio dignissimos ducimus qui
+    blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt
+    mollitia animi, id est laborum et dolorum fuga.</p>
+  <p> Any addtional questions? Pleease reach out to our Project Lead, and we will respond as soon as we can! </p>
+    <br>
+  </div>
+</div>
+
+<div style="text-align: center;">
+  <button class="button" id="bug-button" style="margin-right:30px;" onclick="">
+    <span>Raise an Issue</span>
+  </button>
+  <button class="button" id="story-button" style="" onclick="">
+    <span>Give Feedback</span>
+  </button>
+</div>
+
+
+
+<br><br><br>
+
+
+<div class="footer">
+  <p> <img src="static/cibclogo.png" style="width:50px;height:50px;">  Canadian Imperial Bank of Commerce Website - Copyright © CIBC.
+    <button class="contactbutton" style="float: right;">
+      <span>Contact Us</span>
+    </button></p>
+
+</div>
+
+<script>
+  function specialOffer() {
+    document.getElementById("specialoffer-status").innerHTML ="The last data refresh was on dd/mm/yyyy at hh:mm - updated";
+
+    if (true) {
+      document.getElementById("specialoffer").innerHTML ="Downloading File  ......";
+    }
+    else{
+      document.getElementById("specialoffer").innerHTML ="&#9888; Unable to load report. Please try again.";
+    }
+
+  }
+  function rateScanner() {
+    document.getElementById("ratescanner-status").innerHTML ="The last data refresh was on dd/mm/yyyy at hh:mm - updated";
+
+    if (true) {
+      document.getElementById("ratescanner").innerHTML ="&#9888; Unable to load report. Please try again.";
+    }
+    else{
+      document.getElementById("ratescanner").innerHTML ="Downloading File  ......";
+    }
+  }
+  </script>
+
+  <script>
+
+      var btn = document.getElementById('contact-tab')
+      btn.addEventListener('click',function(){
+        document.getElementById("contact").scrollIntoView()
+      },false);
+  </script>
+
+   <!--Jira Issue Collector  bug button -->
+  	<script type="text/javascript" src="https://jira.cibcatl.com/s/d41d8cd98f00b204e9800998ecf8427e-CDN/-h12dpo/805003/06f8ac18406a341a62c8b8f80fa9f326/2.2.4.7/_/download/batch/com.atlassian.plugins.jquery:jquery/com.atlassian.plugins.jquery:jquery.js?collectorId=e26dda85"></script><script type="text/javascript" src="https://jira.cibcatl.com/s/040c4aaf4286811445324be3b0fcc160-T/-h12dpo/805003/06f8ac18406a341a62c8b8f80fa9f326/3.1.0/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=e26dda85"></script>
+	<script type="text/javascript" src="https://jira.cibcatl.com/s/d41d8cd98f00b204e9800998ecf8427e-CDN/-h12dpo/805003/06f8ac18406a341a62c8b8f80fa9f326/2.2.4.7/_/download/batch/com.atlassian.plugins.jquery:jquery/com.atlassian.plugins.jquery:jquery.js?collectorId=4a3037b7"></script><script type="text/javascript" src="https://jira.cibcatl.com/s/040c4aaf4286811445324be3b0fcc160-T/-h12dpo/805003/06f8ac18406a341a62c8b8f80fa9f326/3.1.0/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=4a3037b7"></script>
+
+	<script type="text/javascript">window.ATL_JQ_PAGE_PROPS =  {
+
+	'e26dda85' :{
+	"triggerFunction": function(showCollectorDialog) {
+				jQuery("#bug-button").click(function(e) {
+					e.preventDefault();
+					showCollectorDialog();
+				});
+			}
+		},
+
+	'4a3037b7' :{
+	"triggerFunction": function(showCollectorDialog) {
+				jQuery("#story-button").click(function(e) {
+					e.preventDefault();
+					showCollectorDialog();
+				});
+			}
+		}
+	};
+	</script>
+
+</body>
+</html>
