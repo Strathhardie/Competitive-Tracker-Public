@@ -1,2 +1,0 @@
-# Competitive Tracker Website
- 
