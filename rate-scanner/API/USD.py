@@ -28,7 +28,8 @@ Account Code Mapping
 'CUPA':     CIBC - USD Personal Account
 'CHISAUS':  CIBC - Renaissance High Interest Savings Account (USD)
 
-'TDUSD':    TDCT - US$ Daily Interest Chequing & Borderless Account
+'TDUSD':    TDCT - US$ Daily Interest Chequing
+'TDUSB':    TDCT - US$ Borderless Account
 'TDUSIS':   TDCT - Investment Savings Account (US$)
 
 'RUSHIS':   RBC - US$ High Interest eSavings Account
@@ -49,7 +50,7 @@ Account Code Mapping
 
 'HUSHRS':   HSBC - USD High Rate Savings 
 
-'AUSCPA':    Altamira - US$ Cash Performer
+'AUSCPA':   Altamira - US$ Cash Performer
 
 'SCOUSA':   Scotia iTrade - Cash Optimizer US$ Account
 
@@ -107,9 +108,10 @@ def td_usd():
     soup = BeautifulSoup(response.text, features="html.parser")
     tables = soup.findAll("table")
 
-    rates = {'TDUSD': [0] * max_index}
-    raw_rates = []
+    rates = {'TDUSD': [0] * max_index, 'TDUSB': [0] * max_index}
 
+    #TD USD Daily Interest Chequing Account
+    raw_rates = []
     for tr in tables[8].find_all('tr')[1:]:
         td = tr.find_all('td')
         row = [i.text for i in td[1:]]
@@ -124,6 +126,24 @@ def td_usd():
 
     for i in range(8, max_index):
         rates["TDUSD"][i] = raw_rates[7]
+
+    #TD USD Borderless Plan
+    raw_rates.clear()
+    for tr in tables[9].find_all('tr')[1:]:
+        td = tr.find_all('td')
+        row = [i.text for i in td[1:]]
+        raw_rates.append(re.findall('\d*\.?\d+', str(row))[0])
+
+    raw_rates = [float(i) for i in raw_rates]
+    for i in range(6):
+        rates["TDUSB"][i] = raw_rates[i]
+
+    rates["TDUSB"][6] = raw_rates[6]
+    rates["TDUSB"][7] = raw_rates[6]
+
+    for i in range(8, max_index):
+        rates["TDUSB"][i] = raw_rates[7]
+
 
     return rates
 
@@ -313,7 +333,12 @@ def mappings():
         {
             'acc_code': "TDUSD",
             'institution': "TDCT",
-            'account_name': "US$ Daily Interest Chequing & Borderless Account",
+            'account_name': "US$ Daily Interest Chequing",
+            'url': "https://www.td.com/ca/en/personal-banking/products/bank-accounts/account-rates/"},
+        {
+            'acc_code': "TDUSB",
+            'institution': "TDCT",
+            'account_name': "US$ Borderless Account",
             'url': "https://www.td.com/ca/en/personal-banking/products/bank-accounts/account-rates/"},
         {
             'acc_code': "TDUSIS",
