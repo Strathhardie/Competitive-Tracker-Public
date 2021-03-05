@@ -1,10 +1,12 @@
 import pandas as pd
+from styleframe import StyleFrame, Styler, utils
 
 from API.Brokerage import merged_brokerage_rates, mappings as brokerage_map
 from API.Retail import merged_retail_rates, mappings as retail_map
 from API.USD import merged_usd_rates, mappings as usd_map
 
 
+# Adds + symbol to complex objects indicating Base rates and added Bonus rates
 def normalize_nested_json(data):
     for key in data.keys():
         values = data[key]
@@ -13,108 +15,38 @@ def normalize_nested_json(data):
     return data
 
 
-def retail_report(writer):
-    # Add a header format.
-    header_format = {
-        'bold': True,
-        'text_wrap': True,
-        'valign': 'top',
-        'align': 'centre',
-        'fg_color': '#D7E4BC',
-        'border': 1}
-    workbook = writer.book
-
-    print('Starting Retail')
-    retail_rates = merged_retail_rates()
-    retail_rates = normalize_nested_json(retail_rates)
-
-    df_retail = pd.DataFrame(retail_rates)
-    df_retail = df_retail.loc[::-1]
-    df_retail = df_retail.rename(columns={
-        code['acc_code']: '=HYPERLINK("%s", "%s\n%s")' % (code['url'], code['institution'], code['account_name']) for
-        code in retail_map()})
-    df_retail.to_excel(writer, sheet_name='Retail_Report', index=False, header=False, startrow=1)
-
-    worksheet = writer.sheets['Retail_Report']
-
-    # Write the column headers with the defined format.
-    for col_num, value in enumerate(df_retail.columns.values):
-        worksheet.write(0, col_num, value, workbook.add_format(header_format))
-
-    print('Completed Retail')
-
-
-def usd_report(writer):
-    # Add a header format.
-    header_format = {
-        'bold': True,
-        'text_wrap': True,
-        'valign': 'top',
-        'align': 'centre',
-        'fg_color': '#D7E4BC',
-        'border': 1}
-    workbook = writer.book
-
-    print('Starting USD')
-    usd_rates = merged_usd_rates()
-    usd_rates = normalize_nested_json(usd_rates)
-
-    df_usd = pd.DataFrame(usd_rates)
-    df_usd = df_usd.loc[::-1]
-    df_usd = df_usd.rename(columns=
-                           {code['acc_code']: '=HYPERLINK("%s", "%s\n%s")' % (
-                               code['url'], code['institution'], code['account_name']) for code in usd_map()}
-                           )
-    df_usd.to_excel(writer, sheet_name='USD_Report', index=False, header=False, startrow=1)
-    worksheet = writer.sheets['USD_Report']
-
-    # Write the column headers with the defined format.
-    for col_num, value in enumerate(df_usd.columns.values):
-        worksheet.write(0, col_num, value, workbook.add_format(header_format))
-
-    print('Completed USD')
-
-
-def brokerage_report(writer):
-    # Add a header format.
-    header_format = {
-        'bold': True,
-        'text_wrap': True,
-        'valign': 'top',
-        'align': 'centre',
-        'fg_color': '#D7E4BC',
-        'border': 1}
-    workbook = writer.book
-
-    print('Starting Brokerage')
-    brokerage_rates = merged_brokerage_rates()
-    brokerage_rates = normalize_nested_json(brokerage_rates)
-
-    df_brokerage = pd.DataFrame(brokerage_rates)
-    df_brokerage = df_brokerage.loc[::-1]
-    df_brokerage = df_brokerage.rename(columns=
-                           {code['acc_code']: '=HYPERLINK("%s", "%s\n%s")' % (
-                               code['url'], code['institution'], code['account_name']) for code in brokerage_map()}
-                           )
-    df_brokerage.to_excel(writer, sheet_name='Brokerage_Report', index=False, header=False, startrow=1)
-    worksheet = writer.sheets['Brokerage_Report']
-
-    # Write the column headers with the defined format.
-    for col_num, value in enumerate(df_brokerage.columns.values):
-        worksheet.write(0, col_num, value, workbook.add_format(header_format))
-    print('Completed Brokerage')
-
-
 def main():
-    writer = pd.ExcelWriter('./RateScanner.xlsx', engine='xlsxwriter')
+    writer = StyleFrame.ExcelWriter('RateScanner.xlsx')
 
-    retail_report(writer)
+    default_style = Styler(font=utils.fonts.calibri)
+    header_style = Styler(bold=True, font=utils.fonts.arial, font_size=10)
 
-    usd_report(writer)
+    for (k, v, m) in [('Retail', merged_retail_rates(), retail_map()),
+                      ('USD', merged_usd_rates(), usd_map()),
+                      ('Brokerage', merged_brokerage_rates(), brokerage_map())]:
+        df = pd.DataFrame(normalize_nested_json(v)).loc[::-1]
+        df = df.rename(columns={
+            code['acc_code']: '=HYPERLINK("%s", "%s\n%s")' % (code['url'], code['institution'], code['account_name'])
+            for code in m})
+        sf = StyleFrame(df, styler_obj=default_style)
+        sf.apply_headers_style(styler_obj=header_style)
 
-    brokerage_report(writer)
+        #Get the max length of each column
+        max_len_dict = dict(
+            [(v, df[v].apply(lambda r: len(str(r)) if r != None else 0).max()) for v in df.columns.values])
 
-    writer.save()
+        #Set minimum column width to 12 units
+        min_12 = lambda v: v if v > 12 else 12
+        max_len_dict = {k: min_12(v) for k, v in max_len_dict.items()}
+
+        # Change the columns width and the rows height
+        sf.set_column_width_dict(col_width_dict=max_len_dict)
+        all_rows = sf.row_indexes
+        sf.set_row_height_dict(row_height_dict={
+            all_rows[0]: 90,  # headers row
+            all_rows[1:]: 15
+        })
+        sf.to_excel(excel_writer=writer, sheet_name=k).save()
 
 
 if __name__ == "__main__":
