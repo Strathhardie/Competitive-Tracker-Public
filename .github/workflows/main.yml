@@ -2,7 +2,7 @@ name: Daily Build
 
 on:
   schedule:
-  - cron: "30 21 * * *"
+  - cron: "00 06 * * *"
 
 jobs:
   build:
