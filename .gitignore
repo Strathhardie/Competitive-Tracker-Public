@@ -17,3 +17,5 @@ full_websites
 
 # Generated files
 *.log
+
+.vscode/
