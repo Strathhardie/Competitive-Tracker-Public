@@ -2,7 +2,7 @@ name: Daily Build
 
 on:
   schedule:
-  - cron: "50 20 * * *"
+  - cron: "05 21 * * *"
 
 jobs:
   build:
@@ -18,7 +18,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install flake8 
-        if [ -f requirements.txt ]; then pip install -r ./rate-scanner/requirements.txt; fi
+        pip install -r ./rate-scanner/requirements.txt
     - name: Genarate Report
       run: |
         python ./rate-scanner/ExcelGenerator.py
