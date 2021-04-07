@@ -31,7 +31,7 @@ jobs:
         make -j RELEASE=1
     - name: Encrypt build file 
       run: |
-        bin/msoffice-crypt.exe -e -p ../RateScanner.xlsx ../RateScanner.xlsx
+        ./msoffice/bin/msoffice-crypt.exe -e -p test123 ./RateScanner.xlsx ./RateScanner.xlsx
 
     - name: Archive artifacts
       uses: actions/upload-artifact@v2
