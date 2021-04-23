@@ -39,6 +39,18 @@ Note: You may have to lower your bit9 settings to run resources/chromedriver.exe
 2. Contact TSC and request to have the file 'main.exe', located in the excutables folder of the above branch, whitelisted. \*have the exact filepath for this file ready when calling TSC
 3. Once it has been whitelisted, the file can be run at anytime without specifically having your bit9 lowered
 
+## How to run the Special-Offers
+
+1. Create a virtual environment:
+   For example, in your terminal use: python3 -m venv ./venv
+
+2. Install the dependencies using the requirements folder
+   For example, run: py -m pip install -r requirements.txt
+
+3. Ensure your development environment is using the correct interpreter path
+
+4. Run main.py
+
 ## Development Workflow
 
 We will be using the Git Flow Workflow. In this workflow, all code is committed to a `feature/feature-name` branch, reviewed, and merged to `master` for deployment. Find out more [here](https://guides.github.com/introduction/flow/) and [here.](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
