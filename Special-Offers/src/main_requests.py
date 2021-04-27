@@ -11,6 +11,8 @@ from selenium.webdriver.chrome.options import Options
 from tqdm import tqdm
 import time
 import xlsxwriter
+import pandas as pd
+from lxml import html
 
 #Function to write to workbook using xlsxwriter library
 def writeWorkbook(overall_dict):
@@ -38,45 +40,27 @@ def writeWorkbook(overall_dict):
     workbook.close()
 
 def main():
-    banks = YAMLUtils.readYAML("../xpath-"+YAMLUtils.FILE_NAME)
+    banks = pd.read_csv('financial_institution_config.csv')
 
     # Create a progress bar
-    t = tqdm(banks, desc="Auditing Changes", leave=True, ncols=100, position=0)
+    #t = tqdm(banks, desc="Auditing Changes", leave=True, ncols=100, position=0)
 
     #Add headless option and open driver
     #chrome_options = Options()
     #chrome_options.add_argument("--headless")
     
-    driver = webdriver.Chrome(chrome_options=chrome_options)
+    #driver = webdriver.Chrome(chrome_options=chrome_options)
 
 
     #Initialize dictionary where key:value is BankName-AccountName:Offer
     offersDict = {}
 
-    for bank in t:
-        #Change the description of the progress bar to the current bank's name
-        t.set_description("%-15s" % str(bank['name']))
-        t.update()
+    #for i in range (banks.shape[0]): 
+    page = requests.get(banks.iloc[1, 2])
+    tree = html.fromstring(page.content)
 
-        driver.get(bank['url'])
-        delay = 10
-        bankName = bank['name']
-
-        #Iterate through each account in the bank (Only 1 for now for testing purposes)
-        for account in bank['accounts']:
-            offer = ''
-            xis = account['xpath'].split(",")
-            accountName = account['account_name']
-            for xpath in xis:
-                try:
-                    element = WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.XPATH, xpath)))
-                    offer = offer + element.text
-                except TimeoutException:
-                    tqdm.write("Page took too long to load.")
-
-            offersDict[bankName+" - "+accountName] = offer
-
-    writeWorkbook(offersDict)
+    offer = tree.xpath("h1 > span[class='subheading-medium'")
+    print(offer)
 
 
 main()

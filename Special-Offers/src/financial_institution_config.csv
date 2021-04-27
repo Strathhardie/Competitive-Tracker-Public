@@ -1,4 +1,6 @@
 ﻿NAME,ACCOUNT_NAME,URL,XPATH
-CIBC,eAdvantage_Savings,https://www.cibc.com/en/special-offers/fall-savings-promotion.html,"//*[@id=""blq-content""]/div[5]"
+Simplii, Chequing Account, https://www.simplii.com/en/bank-accounts/no-fee-chequing.html, h1 > span[class='subheading-medium']
+CIBC,eAdvantage_Savings,https://www.cibc.com/en/special-offers/fall-savings-promotion.html, //*[@id=""blq-content""]/div[5] 
 Scotiabank,The MomentumPLUS Savings Account,https://www.scotiabank.com/ca/en/personal/rates-prices/savings-account-rates.html,/html/body/div[1]/main/div[2]/div/div/div/div[3]/div/table/tbody/tr[1]/td[4]
 Tangerine,Tangerine_Savings_Account,https://www.tangerine.ca/en/products/saving/savings-accounts/savings-account,"//*[@id=""mainContentSection""]/section/div[4]/div/div/div/div[1],//*[@id=""mainContentSection""]/section/div[4]/div/div/div/div[3]"
+ 
