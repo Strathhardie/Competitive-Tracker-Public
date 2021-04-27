@@ -12,7 +12,12 @@ from tqdm import tqdm
 import time
 import xlsxwriter
 import pandas as pd
+from pandas import json_normalize
 from lxml import html
+from lxml.cssselect import CSSSelector
+
+
+## CSS Selector, 
 
 #Function to write to workbook using xlsxwriter library
 def writeWorkbook(overall_dict):
@@ -41,6 +46,8 @@ def writeWorkbook(overall_dict):
 
 def main():
     banks = pd.read_csv('financial_institution_config.csv')
+    #with open('financial-institution-config-COPY.yaml') as yaml_file:
+     #   yaml_contents = load('financial-institution-config-COPY.yaml')
 
     # Create a progress bar
     #t = tqdm(banks, desc="Auditing Changes", leave=True, ncols=100, position=0)
@@ -56,11 +63,10 @@ def main():
     offersDict = {}
 
     #for i in range (banks.shape[0]): 
-    page = requests.get(banks.iloc[1, 2])
+    page = requests.get('https://www.cibc.com/en/special-offers/fall-savings-promotion.html')
     tree = html.fromstring(page.content)
-
-    offer = tree.xpath("h1 > span[class='subheading-medium'")
-    print(offer)
-
+    rate_select = CSSSelector('//*[@id=""blq-content""]/div[5]')
+    print(rate_select)
+    
 
 main()
