@@ -16,7 +16,6 @@ const msg = {
     },
     subject: 'Rate Scanner Release',
     text: 'Hello, PFA the latest Rate Scanner sheet.',
-    //html: '<p>Hello HTML world!</p>',
     attachments: [
         {
             content: data.toString('base64'),
