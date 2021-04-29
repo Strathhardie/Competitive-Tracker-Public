@@ -6,6 +6,8 @@ jobs:
   mail:
     runs-on: ubuntu-latest
     steps:    
+      - name: Checkout code
+        uses: actions/checkout@v2
       - name: SendGrid
         uses: peter-evans/sendgrid-action@v1
         env:
