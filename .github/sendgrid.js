@@ -4,9 +4,9 @@ const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const fs = require('fs'),
-    filename = 'RateScanner.xlsx',
-    fileType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-    data = fs.readFileSync('./RateScanner.xlsx');
+    filename = 'README.md',
+    fileType = 'text/plain',
+    data = fs.readFileSync('./README.md');
 
 const msg = {
     to: ['devarshi.j.raval@gmail.com'],
