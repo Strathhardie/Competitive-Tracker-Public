@@ -2,7 +2,8 @@ name: Daily Build
 
 on:
   schedule:
-  - cron: "00 06 * * *"
+  # 1100 hrs GMT is 0700 hrs EST
+  - cron: "00 11 * * *"
 
 jobs:
   build:
