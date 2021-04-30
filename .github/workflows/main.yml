@@ -89,9 +89,9 @@ jobs:
           username: b6e65922a014dcc66ecf63de04a95369
           password: cf6c5c2641c9a3c641382a75ace52782
           subject: Rate Scanner Release
-          to: devarshi.j.raval@gmail.com, rishish98@gmail.com
-          from: Competitive Tracker <devarshi.j.raval@gmail.com>
-          body: Hello, PFA the latest Rate Scanner sheet.'
+          to: Devarshi.Raval@cibc.com, Tatiana.Artemyeva@cibc.com, 
+          from: Competitive Tracker <devarshi.raval@cibc.com>
+          body: Hello, PFA the latest Rate Scanner sheet.
           ignore_cert: true
           convert_markdown: true
           attachments: ./RateScanner.xlsx
