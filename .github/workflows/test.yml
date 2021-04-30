@@ -27,9 +27,10 @@ jobs:
         git clone https://github.com/herumi/msoffice
         cd msoffice
         make -j RELEASE=1
-    - name: Encrypt build file 
-      run: |
-        ./msoffice/bin/msoffice-crypt.exe -e -p CompetitiveTracker ./RateScanner.xlsx ./RateScanner.xlsx
+    # Not needed with email distribution
+    # - name: Encrypt build file 
+    #   run: |
+    #     ./msoffice/bin/msoffice-crypt.exe -e -p CompetitiveTracker ./RateScanner.xlsx ./RateScanner.xlsx
     - name: Archive artifacts
       uses: actions/upload-artifact@v2
       with:
