@@ -1,9 +1,12 @@
 name: Daily Build 
 
-on: workflow_dispatch
-  #schedule: 
+on: 
+  # Manualn Trigger
+  workflow_dispatch:
+  
   # 1100 hrs GMT is 0700 hrs EST
-  #- cron: "00 11 * * *"
+  schedule: 
+  - cron: "00 11 * * *"
 
 jobs:
   build:
