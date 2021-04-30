@@ -1,9 +1,9 @@
 name: Daily Build 
 
-on:
-  schedule:
+on: workflow_dispatch
+  #schedule: 
   # 1100 hrs GMT is 0700 hrs EST
-  - cron: "35 12 * * *"
+  #- cron: "00 11 * * *"
 
 jobs:
   build:
