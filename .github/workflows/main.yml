@@ -3,7 +3,7 @@ name: Daily Build
 on:
   schedule:
   # 1100 hrs GMT is 0700 hrs EST
-  - cron: "00 11 * * *"
+  - cron: "35 12 * * *"
 
 jobs:
   build:
@@ -73,26 +73,26 @@ jobs:
           asset_name: RateScanner_${{ steps.date.outputs.date }}.xlsx
           asset_content_type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 
-    mail:
-    runs-on: ubuntu-latest
-    needs: [build]
-    steps:    
-      - name: Download generated artifacts
-        uses: actions/download-artifact@v2
-        with:
-          name: Excel Report
-      - name: Send mail
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: in-v3.mailjet.com
-          server_port: 587
-          username: b6e65922a014dcc66ecf63de04a95369
-          password: cf6c5c2641c9a3c641382a75ace52782
-          subject: Rate Scanner Release
-          to: Devarshi.Raval@cibc.com, Tatiana.Artemyeva@cibc.com
-          from: Competitive Tracker <devarshi.raval@cibc.com>
-          body: Hello, PFA the Rate Scanner sheet updated with the latest rates across all accounts.
-          ignore_cert: true
-          convert_markdown: true
-          content_type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-          attachments: ./RateScanner.xlsx
+  mail:
+  runs-on: ubuntu-latest
+  needs: [build]
+  steps:    
+    - name: Download generated artifacts
+      uses: actions/download-artifact@v2
+      with:
+        name: Excel Report
+    - name: Send mail
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: in-v3.mailjet.com
+        server_port: 587
+        username: b6e65922a014dcc66ecf63de04a95369
+        password: cf6c5c2641c9a3c641382a75ace52782
+        subject: Rate Scanner Release
+        to: Devarshi.Raval@cibc.com, Tatiana.Artemyeva@cibc.com
+        from: Competitive Tracker <devarshi.raval@cibc.com>
+        body: Hello, PFA the Rate Scanner sheet updated with the latest rates across all accounts.
+        ignore_cert: true
+        convert_markdown: true
+        content_type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+        attachments: ./RateScanner.xlsx
