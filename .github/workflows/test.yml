@@ -36,57 +36,24 @@ jobs:
           name: Excel Report
           path: |
             RateScanner.xlsx
-
-  # release:
-  #   runs-on: ubuntu-latest
-  #   needs: [build]
-  #   steps:
-  #     - name: Download generated artifacts
-  #       uses: actions/download-artifact@v2
-  #       with:
-  #         name: Excel Report
-
-  #     - name: Get current date
-  #       id: date
-  #       run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
-
-  #     - name: Create GitHub Release
-  #       id: create-new-release
-  #       uses: actions/create-release@v1
-  #       env: 
-  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #       with:
-  #         tag_name: ${{ steps.date.outputs.date }}
-  #         release_name: Release ${{ steps.date.outputs.date }}
-
-  #     - name: Upload asset to Github Release
-  #       uses: actions/upload-release-asset@v1
-  #       env: 
-  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #       with:
-  #         upload_url: ${{ steps.create-new-release.outputs.upload_url }}
-  #         asset_path: ./RateScanner.xlsx
-  #         asset_name: RateScanner_${{ steps.date.outputs.date }}.xlsx
-  #         asset_content_type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-
   mail:
-  runs-on: ubuntu-latest
-  steps:    
-    - name: Download generated artifacts
-      uses: actions/download-artifact@v2
-      with:
-        name: Excel Report
-    - name: Send mail
-      uses: dawidd6/action-send-mail@v3
-      with:
-        server_address: in-v3.mailjet.com
-        server_port: 587
-        username: b6e65922a014dcc66ecf63de04a95369
-        password: cf6c5c2641c9a3c641382a75ace52782
-        subject: Rate Scanner Release
-        to: devarshi.j.raval@gmail.com, rishish98@gmail.com
-        from: Competitive Tracker <devarshi.j.raval@gmail.com>
-        body: Hello, PFA the latest Rate Scanner sheet.'
-        ignore_cert: true
-        convert_markdown: true
-        attachments: ./RateScanner.xlsx
+    runs-on: ubuntu-latest
+    steps:    
+      - name: Download generated artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: Excel Report
+      - name: Send mail
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: in-v3.mailjet.com
+          server_port: 587
+          username: b6e65922a014dcc66ecf63de04a95369
+          password: cf6c5c2641c9a3c641382a75ace52782
+          subject: Rate Scanner Release
+          to: devarshi.j.raval@gmail.com, rishish98@gmail.com
+          from: Competitive Tracker <devarshi.j.raval@gmail.com>
+          body: Hello, PFA the latest Rate Scanner sheet.'
+          ignore_cert: true
+          convert_markdown: true
+          attachments: ./RateScanner.xlsx
