@@ -455,10 +455,10 @@ def meridian_retail():
 
 
 def eqbank_retail():
-    url = "https://www.eqbank.ca/personal-banking/features-rates"
+    url = "https://www.eqbank.ca/personal-banking/savings-plus-account"
     response = requests.request("GET", url)
     soup = BeautifulSoup(response.text, features="html.parser")
-    raw_data = soup.findAll("div", {"class": "copy"})[0].find_all("li")
+    raw_data = soup.findAll("ul", {"class": "arrow-list"})[1].find_all("li")
     rates = {"EQSPA": [0] * 14}
     for data in raw_data:
         if "%" in data.text:
