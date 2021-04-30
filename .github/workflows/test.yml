@@ -83,13 +83,8 @@ jobs:
           server_port: 587
           username: b6e65922a014dcc66ecf63de04a95369
           password: cf6c5c2641c9a3c641382a75ace52782
-<<<<<<< HEAD
           subject: Rate Scanner Release
           to: devarshi.j.raval@gmail.com, rishish98@gmail.com
-=======
-          subject: Github Actions job result
-          to: devarshi.j.raval@gmail.com
->>>>>>> 9d4bc166b60a2d2c9efb3e90a6d737236d4ec59c
           from: Competitive Tracker <devarshi.j.raval@gmail.com>
           body: Hello, PFA the latest Rate Scanner sheet.'
           ignore_cert: true
