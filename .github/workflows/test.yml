@@ -11,10 +11,10 @@ jobs:
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
         with:
-          server_address: smtp.sendgrid.net
+          server_address: in-v3.mailjet.com
           server_port: 587
-          username: apikey
-          password: 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
+          username: b6e65922a014dcc66ecf63de04a95369
+          password: cf6c5c2641c9a3c641382a75ace52782
           subject: Github Actions job result
           to: devarshi.j.raval@gmail.com
           from: Competitive Tracker <devarshi.j.raval@gmail.com>
