@@ -1,8 +1,6 @@
-name: Daily Build 
+name: Test Build 
 
-on:
-  schedule:
-  - cron: "00 06 * * *"
+on: workflow_dispatch
 
 jobs:
   build:
