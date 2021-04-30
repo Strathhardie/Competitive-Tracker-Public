@@ -1,6 +1,6 @@
 name: Test Build 
 
-on: workflow_dispatch
+on: push
 
 jobs:
   mail:
@@ -8,7 +8,21 @@ jobs:
     steps:    
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: SendGrid
-        uses: peter-evans/sendgrid-action@v1
-        env:
-          SENDGRID_API_KEY: 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 
+      - name: Send mail
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.sendgrid.net
+          server_port: 465
+          username: apikey
+          password: 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
+          subject: Github Actions job result
+          to: devarshi.j.raval@gmail.com
+          from: Competitive Tracker <devarshi.j.raval@gmail.com>
+          # Optional plain body:
+          body: Build job of ${{github.repository}} completed successfully!
+          # Optional unsigned/invalid certificates allowance:
+          ignore_cert: true
+          # Optional converting Markdown to HTML (set content_type to text/html too):
+          convert_markdown: true
+          # Optional attachments:
+          attachments: ./README.md
