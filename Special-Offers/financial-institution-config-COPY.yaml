@@ -139,4 +139,4 @@ financial_institution:
       account_name: 'div[class='M-CONTMAST-RW-RBWM O-SMARTSPCGEN-DEV'] > h2'
       fee: 'N/A'
       details: 'ul[class='A-LSTU-RW-ALL'] > li'
-      special_offer: 'h1'
+      specialoffers: 'h1'
