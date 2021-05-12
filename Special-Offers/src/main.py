@@ -38,7 +38,7 @@ def writeWorkbook(overall_dict):
     workbook.close()
 
 def main():
-    banks = YAMLUtils.readYAML("../xpath-"+YAMLUtils.FILE_NAME)
+    banks = YAMLUtils.readYAML("Special-Offers\financial-institution-config-COPY.yaml")
 
     # Create a progress bar
     t = tqdm(banks, desc="Auditing Changes", leave=True, ncols=100, position=0)

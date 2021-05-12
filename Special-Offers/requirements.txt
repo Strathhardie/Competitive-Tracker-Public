@@ -10,3 +10,5 @@ pandas
 xlrd
 webdriver-manager
 tqdm
+scrapy
+styleframe
