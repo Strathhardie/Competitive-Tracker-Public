@@ -5,6 +5,7 @@ import json
 from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 # import chromedriver_binary  # Adds chromedriver binary to path
 from webdriver_manager.chrome import ChromeDriverManager
 from tqdm import tqdm
