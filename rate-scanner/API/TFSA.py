@@ -10,7 +10,7 @@ def td_tfsa():
 
     # We can add one or multiple candidates here.
     # You can also put urls here to retrieve urls.
-    wanted_list = ["0.010%"]
+    wanted_list = ["0.050%"]
 
     scraper = AutoScraper()
     result = scraper.build(url, wanted_list)
@@ -109,7 +109,8 @@ def merged_tfsa_rates():
     result = list(map(lambda x: round(float(x.strip("%")), 2), merged_rates))
     return result
 
-
+def merged_tfsa_names(): 
+    return ["TD", "BMO", "ScotiaBank", "HSBC", "NBC", "Simplii", "EQ", "Motus", "DUCA", "Meridian", "Motive", "Manulife"]
 def main():
     print(merged_tfsa_rates())
 
