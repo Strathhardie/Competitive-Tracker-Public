@@ -23,7 +23,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 
         pip install -r ./rate-scanner/requirements.txt
-    - name: Genarate Report
+    - name: Generate Report
       run: |
         python ./rate-scanner/ExcelGenerator.py
     - name: Setup MSOffice Encrypt 
