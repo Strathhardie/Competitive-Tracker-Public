@@ -112,7 +112,7 @@ def merged_tfsa_rates():
 def merged_tfsa_names(): 
     return ["TD", "BMO", "ScotiaBank", "HSBC", "NBC", "Simplii", "EQ", "Motus", "DUCA", "Meridian", "Motive", "Manulife"]
 def main():
-    print(merged_tfsa_rates())
+    print(merged_tfsa_names(), merged_tfsa_rates())
 
 if __name__ == "__main__":
     main()
