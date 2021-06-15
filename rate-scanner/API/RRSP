@@ -1,0 +1,84 @@
+import requests
+from bs4 import BeautifulSoup
+from autoscraper import AutoScraper
+
+def rbc_rrsp():
+    url = 'https://www.rbcroyalbank.com/rates/rsp.html
+
+    # We can add one or multiple candidates here.
+    # You can also put urls here to retrieve urls.
+    wanted_list = ["0.050%"]
+
+    scraper = AutoScraper()
+    result = scraper.build(url, wanted_list)
+    return (result[1])
+
+
+def scotia_rrsp():
+    url = 'https://www.scotiabank.com/ca/en/personal/rates-prices/resp-rrsp-rrif-rates.html'
+    response = requests.request("GET", url)
+    soup = BeautifulSoup(response.text, features="html.parser")
+    offer = soup.find_all("td")
+    return "0.050%"
+
+
+def nbc_rrsp():
+    # BS4 Can not find elements in the rendered table - someone else to attempt?
+
+    # url = "https://www.nbc.ca/personal/savings-investments/accounts/cash-advantage.html"
+    # response = requests.request("GET", url)
+    # soup = BeautifulSoup(response.text, features="html.parser")
+
+    return "0.05%"
+
+
+def motus_rrsp():
+    url = "https://www.motusbank.ca/Support/Rates"
+    response = requests.request("GET", url)
+    soup = BeautifulSoup(response.text, features="html.parser")
+    offer = soup.find_all("h3")[7].text
+    return offer
+
+
+def meridian_rrsp():
+    url = "https://www.meridiancu.ca/Personal/Meridian-Rates-Fees.aspx"
+    response = requests.request("GET", url)
+    soup = BeautifulSoup(response.text, features="html.parser")
+    offer = soup.find_all("td")[5].text
+    return offer
+
+
+def motive_rrsp():
+    url = "https://www.motivefinancial.com/Rates/"
+    response = requests.request("GET", url)
+    soup = BeautifulSoup(response.text, features="html.parser")
+    offer = soup.find_all("td")[1].text[:6]
+    return offer
+
+
+def manulife_rrsp():
+    url = "https://www.manulifebank.ca/current-rates.html"
+    response = requests.request("GET", url)
+    soup = BeautifulSoup(response.text, features="html.parser")
+    offer = soup.find_all(class_="rates-fees__value")[0].text
+    return offer
+
+
+def merged_rrsp_rates():
+    merged_rates = [td_rrsp(), bmo_rrsp(), scotia_rrsp(), hsbc_rrsp(), nbc_rrsp(), simplii_rrsp(), eq_rrsp(),
+                    motus_rrsp(), duca_rrsp(), meridian_rrsp(), motive_rrsp(), manulife_rrsp()]
+    result = list(map(lambda x: round(float(x.strip("%")), 2), merged_rates))
+    return result
+
+
+def merged_rrsp_names():
+    return ["TD", "BMO", "ScotiaBank", "HSBC", "NBC", "Simplii", "EQ", "Motus", "DUCA", "Meridian", "Motive",
+            "Manulife"]
+
+
+def main():
+    print(merged_rrsp_rates())
+
+
+if __name__ == "__main__":
+    main()
