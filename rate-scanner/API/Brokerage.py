@@ -1,6 +1,6 @@
 import json
 import re
-
+import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
@@ -252,9 +252,12 @@ def merged_brokerage_rates():
     }
     return merged_rates
 
+def brokerage_df(): 
+    df = pd.DataFrame(data=merged_brokerage_rates())
+    return df
 
 def main():
-    print(merged_brokerage_rates())
+    print(brokerage_df())
 
 
 if __name__ == "__main__":

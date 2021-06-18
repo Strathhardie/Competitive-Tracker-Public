@@ -1,6 +1,6 @@
 import json
 import re
-
+import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
@@ -455,15 +455,16 @@ def meridian_retail():
 
 
 def eqbank_retail():
-    url = "https://www.eqbank.ca/personal-banking/features-rates"
+    # todo -- fix scraping here. This is really bad. 
+    url = "https://www.eqbank.ca/personal-banking/savings-plus-account"
     response = requests.request("GET", url)
     soup = BeautifulSoup(response.text, features="html.parser")
-    raw_data = soup.findAll("div", {"class": "copy"})[0].find_all("li")
-    rates = {"EQSPA": [0] * 14}
-    for data in raw_data:
-        if "%" in data.text:
-            rates["EQSPA"] = [float(re.findall('\d*\.?\d+', data.text)[0])] * 14
-            break
+    #raw_data = soup.findAll("div", {"class": "copy"})[0].find_all("li")
+    rates = {"EQSPA": [1.25, 1.25,1.25,1.25,1.25,1.25,1.25,1.25,1.25,1.25,1.25,1.25,1.25,1.25]}
+   # for data in raw_data:
+    #    if "%" in data.text:
+     #       rates["EQSPA"] = [1.25] * 14 ## THIS LINEpy
+     #      break
     return rates
 
 
@@ -731,9 +732,15 @@ def merged_retail_rates():
     }
     return merged_rates
 
+def retail_df(): 
+    df = pd.DataFrame(data=merged_retail_rates())
+    return df
+
 
 def main():
-    print(merged_retail_rates())
+    #print(merged_retail_rates())
+
+    print(retail_df())
 
 
 if __name__ == "__main__":

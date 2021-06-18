@@ -1,5 +1,6 @@
 import json
 import re
+import pandas as pd
 
 import requests
 from bs4 import BeautifulSoup
@@ -449,9 +450,13 @@ def merged_usd_rates():
 
     return merged_rates
 
+def usd_df(): 
+    df = pd.DataFrame(data=merged_usd_rates())
+    return df
 
 def main():
-    print(merged_usd_rates())
+    #print(merged_usd_rates())
+    print(usd_df())
 
 if __name__ == "__main__":
     main()

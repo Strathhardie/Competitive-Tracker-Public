@@ -1,12 +1,14 @@
 import requests
 from bs4 import BeautifulSoup
+import pandas as pd
 from autoscraper import AutoScraper
 
 def rbc_rrsp():
-    url = 'https://www.rbcroyalbank.com/rates/rsp.html
+    # Needs Refactoring
+    
+    url = 'https://www.rbcroyalbank.com/rates/rsp.html'
 
-    # We can add one or multiple candidates here.
-    # You can also put urls here to retrieve urls.
+   
     wanted_list = ["0.050%"]
 
     scraper = AutoScraper()
@@ -25,26 +27,32 @@ def scotia_rrsp():
 def nbc_rrsp():
     # BS4 Can not find elements in the rendered table - someone else to attempt?
 
-    # url = "https://www.nbc.ca/personal/savings-investments/accounts/cash-advantage.html"
-    # response = requests.request("GET", url)
+    url = "https://www.nbc.ca/personal/savings-investments/accounts/cash-advantage.html"
+    response = requests.request("GET", url)
     # soup = BeautifulSoup(response.text, features="html.parser")
 
     return "0.05%"
 
 
 def motus_rrsp():
+   # todo
     url = "https://www.motusbank.ca/Support/Rates"
     response = requests.request("GET", url)
-    soup = BeautifulSoup(response.text, features="html.parser")
-    offer = soup.find_all("h3")[7].text
+    #soup = BeautifulSoup(response.text, features="html.parser")
+    #offer = soup.find_all("h3")[7].text
+    offer = "0.05"
     return offer
 
 
 def meridian_rrsp():
+    #todo
+    
     url = "https://www.meridiancu.ca/Personal/Meridian-Rates-Fees.aspx"
-    response = requests.request("GET", url)
-    soup = BeautifulSoup(response.text, features="html.parser")
-    offer = soup.find_all("td")[5].text
+    #response = requests.request("GET", url)
+    #soup = BeautifulSoup(response.text, features="html.parser")
+    #offer = soup.find_all("td")[5].text
+
+    offer = "0.01%"
     return offer
 
 
@@ -57,27 +65,68 @@ def motive_rrsp():
 
 
 def manulife_rrsp():
+    # Todo
+    
     url = "https://www.manulifebank.ca/current-rates.html"
-    response = requests.request("GET", url)
-    soup = BeautifulSoup(response.text, features="html.parser")
-    offer = soup.find_all(class_="rates-fees__value")[0].text
+    
+    
+    #response = requests.request("GET", url)
+    #soup = BeautifulSoup(response.text, features="html.parser")
+    #offer = soup.find_all(class_="rates-fees__value")[0].text
+    
+    offer = "0.05%"
+
     return offer
+
+def td_rrsp(): 
+    # Todo
+    return "0.01%"
+
+def hsbc_rrsp(): 
+    # Todo
+    
+    return "0.01%"
+
+def simplii_rrsp(): 
+    # Todo
+    return "0.01%"
+
+
+def eq_rrsp(): 
+    # Todo 
+    return "0.01%"
+
+def bmo_rrsp(): 
+    # todo 
+    return "0.01%"
+
+def duca_rrsp(): 
+    # todo 
+    return "0.01%"
 
 
 def merged_rrsp_rates():
     merged_rates = [td_rrsp(), bmo_rrsp(), scotia_rrsp(), hsbc_rrsp(), nbc_rrsp(), simplii_rrsp(), eq_rrsp(),
                     motus_rrsp(), duca_rrsp(), meridian_rrsp(), motive_rrsp(), manulife_rrsp()]
     result = list(map(lambda x: round(float(x.strip("%")), 2), merged_rates))
-    return result
+    return merged_rates
 
 
 def merged_rrsp_names():
     return ["TD", "BMO", "ScotiaBank", "HSBC", "NBC", "Simplii", "EQ", "Motus", "DUCA", "Meridian", "Motive",
             "Manulife"]
 
+def rrsp_df(): 
+    accounts = merged_rrsp_names()
+    rates = merged_rrsp_rates()
+    res = dict(zip(accounts,rates))
+    
+    df = pd.DataFrame(data=res, index=[0])
+    
+    return df
 
 def main():
-    print(merged_rrsp_rates())
+    print(merged_rrsp_names(), merged_rrsp_rates())
 
 
 if __name__ == "__main__":
