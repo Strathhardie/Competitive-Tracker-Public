@@ -1,4 +1,4 @@
 pandas
 beautifulsoup4
-styleframe
+styleframe==3.0.6
 requests
