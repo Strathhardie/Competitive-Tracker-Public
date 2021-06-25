@@ -11,6 +11,13 @@ from selenium.webdriver.chrome.options import Options
 from tqdm import tqdm
 import time
 import xlsxwriter
+import pandas as pd
+from pandas import json_normalize
+from lxml import html
+from lxml.cssselect import CSSSelector
+
+
+## CSS Selector, 
 
 #Function to write to workbook using xlsxwriter library
 def writeWorkbook(overall_dict):
@@ -38,44 +45,28 @@ def writeWorkbook(overall_dict):
     workbook.close()
 
 def main():
-    banks = YAMLUtils.readYAML("Special-Offers\financial-institution-config-COPY.yaml")
+    banks = pd.read_csv('financial_institution_config.csv')
+    #with open('financial-institution-config-COPY.yaml') as yaml_file:
+     #   yaml_contents = load('financial-institution-config-COPY.yaml')
 
     # Create a progress bar
-    t = tqdm(banks, desc="Auditing Changes", leave=True, ncols=100, position=0)
+    #t = tqdm(banks, desc="Auditing Changes", leave=True, ncols=100, position=0)
 
     #Add headless option and open driver
-    chrome_options = Options()
-    chrome_options.add_argument("--headless")
-    driver = webdriver.Chrome(chrome_options=chrome_options)
+    #chrome_options = Options()
+    #chrome_options.add_argument("--headless")
+    
+    #driver = webdriver.Chrome(chrome_options=chrome_options)
 
 
     #Initialize dictionary where key:value is BankName-AccountName:Offer
     offersDict = {}
 
-    for bank in t:
-        #Change the description of the progress bar to the current bank's name
-        t.set_description("%-15s" % str(bank['name']))
-        t.update()
-
-        driver.get(bank['url'])
-        delay = 10
-        bankName = bank['name']
-
-        #Iterate through each account in the bank (Only 1 for now for testing purposes)
-        for account in bank['accounts']:
-            offer = ''
-            xis = account['xpath'].split(",")
-            accountName = account['account_name']
-            for xpath in xis:
-                try:
-                    element = WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.XPATH, xpath)))
-                    offer = offer + element.text
-                except TimeoutException:
-                    tqdm.write("Page took too long to load.")
-
-            offersDict[bankName+" - "+accountName] = offer
-
-    writeWorkbook(offersDict)
-
+    #for i in range (banks.shape[0]): 
+    page = requests.get('https://www.cibc.com/en/special-offers/fall-savings-promotion.html')
+    tree = html.fromstring(page.content)
+    rate_select = CSSSelector('//*[@id=""blq-content""]/div[5]')
+    print(rate_select)
+    
 
 main()

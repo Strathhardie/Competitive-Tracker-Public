@@ -5,7 +5,7 @@ import sys
 # This class contains all methods to handle YAML files
 class YAMLUtils(object):
     # File Name
-    FILE_NAME = 'financial-institution-config.yaml'
+    FILE_NAME = 'financial-institution-config-COPY.yaml'
 
     # Method reads YAML File
     @staticmethod

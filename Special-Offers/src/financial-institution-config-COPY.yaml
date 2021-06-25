@@ -1,0 +1,142 @@
+root:
+- financial_institution:
+  name: 'BMO'
+  accounts:
+  - account_category: 'Saving Accounts'
+    url: 'https://www.bmo.com/main/personal/bank-accounts/savings-accounts/savings-builder/'
+    elements : 
+      account_name:  'h1 > strong'
+      fee: 'div[class='design-language'] > span[class='font-size-medium']'
+      details: 'table[class='hide-for-small-only edb-table']'
+      special_offer: 'div#persCol-686[class='row']'
+  - account_category: 'Chequing Account'
+    url: 'https://www.bmo.com/main/personal/bank-accounts/chequing-accounts/performance/'
+    elements : 
+      account_name: 'h1'
+      fee: 'div[class='columns small-12 no-padding accordion-content accordion__content block accordion__content--display'] > div[class='padding-top--small padding-bottom--small'] > div[class='design-language'] > span[class='font-size-medium']'
+      details: 'table[cellspacing='0']'
+      special_offer: 'div[class='small-10 padding-right'] > div[class='design-language']'
+  - account_category: 'Chequing Account'
+    url: 'https://www.bmo.com/main/personal/bank-accounts/premium-chequing-account/'
+    elements : 
+      account_name: 'h1'
+      fee: 'div[class='columns small-12 no-padding accordion-content accordion__content block accordion__content--display'] > div > div > p'
+      details: 'div[data-region='compare table section']'
+      special_offer: 'div[class='small-10 padding-right'] > div[class='design-language']'
+- financial_institution:
+  name: 'RBC'
+  accounts:
+  - account_category: 'Chequing Account'
+    url: 'https://www.rbcroyalbank.com/accounts/signature-no-limit-banking.html'
+    elements : 
+      account_name: 'h1'
+      fee: 'p[class='mar-b-dbl']'
+      details: 'div[class="grid-wpr mar-t-dbl mar-b-0"]'
+      special_offer: 'h3'
+  - account_category: 'Chequing Account'
+    url: 'https://www.rbcroyalbank.com/accounts/vip-banking.html'
+    elements : 
+      account_name: 'h1'
+      fee: 'p[class='mar-b mob-mar-b-dbl']'
+      details: 'ul[class = 'check-list']'
+      special_offer: 'div[class = 'banner-text'] > h2'
+  - account_category: 'Saving Accounts'
+    url: 'https://www.rbcroyalbank.com/accounts/e-savings.html'
+    elements : 
+      account_name: 'h1'
+      fee: 'tbody'
+      details: 'ul[class = 'check-list']'
+      special_offer: 'h3'
+
+
+'No TD Special Offer Available Currently'
+- financial_institution:
+  name: 'TD'
+  accounts:
+  - account_category: 'Chequing Account'
+    url: 'https://www.td.com/ca/en/personal-banking/products/bank-accounts/chequing-accounts/unlimited-chequing-account/'
+    elements : 
+      account_name: "div[class='td-container'] > h1[id='ba_9002_title']"
+      fee: "div > ul > li > span[class='td-product-feature-text customText']"
+      details: "div[class='td-row'] > div > div > ul[class='td-rte-margin-top-none'] > li[class='td-rte-margin-bottom-medium']"
+      special_offer: "div[class='td-row'] > div > div[class='td-col-lg-10 heightAuto'] > p"
+  - account_category: 'Chequing Account'
+    url: 'https://www.td.com/ca/en/personal-banking/products/bank-accounts/chequing-accounts/all-inclusive-banking-plan/'
+    elements : 
+      account_name: "div[class='td-container'] > h1[id='ba_9001_title']"
+      fee: "div > ul > li > span[class='td-product-feature-text customText']"
+      details: "div[class='td-row'] > div > div > ul[class='td-rte-margin-top-none'] > li[class='td-rte-margin-bottom-medium']"
+      special_offer: 'div[class="rte ng-binding"] > p[class="compare-modal-only"] > a'
+- 
+
+financial_institution:
+  name: "Simplii"
+  accounts:
+  - account_category: 'Chequing Account'
+    url: 'https://www.simplii.com/en/bank-accounts/no-fee-chequing.html'
+    elements:
+      account_name: 'h1 > span[class='subheading-medium']'
+      fee: 'p[style='text-align: center;'] > span[class='subheading-medium-light']'   
+      details: 'p[style='text-align: left;'] > span[class='banner-body-copy']'
+      special_offer: 'p[style='text-align: center;'] > span[class='subheading-medium']'
+- financial_institution:
+  name: 'CIBC'
+  accounts:
+  - account_category: 'Saving Accounts'
+    url: 'https://www.cibc.com/en/personal-banking/bank-accounts/savings-accounts/eadvantage-high-interest-savings-account.html'
+    elements : 
+      account_name: 'h1 > span > span[class='headline-l']' 
+      fee: 'div[class='column large-6 medium-6 small-12         opacity-100 bg-cover '] > div[class='longformtext base parbase']'
+      details: h3[class='subhead-medium']
+      special_offer: 'p[class='text-center']'
+  - account_category: 'Chequing Account'
+    url: 'https://www.cibc.com/en/special-offers/smart-cash-offer.html'
+    elements : 
+      account_name: 'div[class='column margins-padding no-sides large-padding-top small-padding-bottom'] > div> div > div > div > h2 > span[class='subheading-large-light']' 
+      fee: 'div[class='column small-offset-2 medium-offset-4 large-11 medium-12 small-12 hide-for-large-up none none end opacity-100 bg-cover'] > div > p'
+      details: div[class='small-12 medium-12 large-12 columns'] > div[class='container-content'] > div[class='rte longformtext base parbase']
+      special_offer: 'div[class='rte longformtext base parbase'] > div > h1 > span'
+- financial_institution:
+  name: 'Tangerine'
+  accounts:
+  - account_category: 'Saving Accounts'
+    url: 'https://www.tangerine.ca/en/products/saving/savings-accounts/savings-account'
+    elements : 
+      account_name: 'h1'
+      fee: 'div[class='tngContent  tngCol-2'] > p'
+      details: 'div[class='tngKeyFeature'] > div > div[class='tngBodyBase-prx']'
+      special_offer: 'div[class='tngCard-ProdInsights'] > div[class='tngBodyBase-prx']'
+- financial_institution:
+  name: "Scotiabank"
+  accounts:
+  - account_category: 'Chequing Account'
+    url: 'https://www.scotiabank.com/ca/en/personal/bank-accounts/chequing-accounts/preferred.html'
+    elements:
+      account_name: 'h1'
+      fee: 'div[class='cmp-contentfragment'] > p'
+      details: 'div[class='description'] > ul > li'
+      special_offer: 'div[class='headline'] > p'
+  - account_category: 'Chequing Account'
+    url: 'https://www.scotiabank.com/ca/en/personal/bank-accounts/chequing-accounts/ultimate-package.html'
+    elements:
+      account_name: 'h1'
+      fee: 'div[class='cmp-contentfragment'] > p'
+      details: 'div > div[class="description"] > ul > li'
+      special_offer: 'div[class='headline'] > p'
+  - account_category: 'Saving Accounts'
+    url: 'https://www.scotiabank.com/ca/en/personal/bank-accounts/savings-accounts/momentum-plus-savings-account.html?cid=ps_ce66dcc43815eae8ce94650882090096e87fa67e&gclid=CjwKCAjwi_b3BRAGEiwAemPNU4g9PqUl4fV2aIIYt8eoLxcZxylnkR2Z6M6IO1qqFkOaaEkjCvfuLBoCmiMQAvD_BwE&gclsrc=aw.ds'
+    elements : 
+      account_name: 'h1'
+      fee: 'div[class='col-md-6 col-lg-3'] > div[class='cmp cmp-text'] > p:nth-child(2)'
+      details: 'div[class='bns--section  '] > div[class='section--container'] > div[class='section--content'] > div[class='_row'] > div[class='row '] > div[class='col-md-6']'  
+      special_offer: div[class='headline'] > p
+- financial_institution:
+  name: "HSBC"
+  accounts:
+  - account_category: 'Saving Account'
+    url: 'https://www.hsbc.ca/savings-accounts/savings-offer/'
+    elements:
+      account_name: 'div[class='M-CONTMAST-RW-RBWM O-SMARTSPCGEN-DEV'] > h2'
+      fee: 'N/A'
+      details: 'ul[class='A-LSTU-RW-ALL'] > li'
+      special_offer: 'h1'

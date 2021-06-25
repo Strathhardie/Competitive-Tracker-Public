@@ -1,6 +1,7 @@
 import json
 import re
 
+import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 from autoscraper import AutoScraper
@@ -111,8 +112,22 @@ def merged_tfsa_rates():
 
 def merged_tfsa_names(): 
     return ["TD", "BMO", "ScotiaBank", "HSBC", "NBC", "Simplii", "EQ", "Motus", "DUCA", "Meridian", "Motive", "Manulife"]
+
+def tfsa_df(): 
+    accounts = merged_tfsa_names()
+    rates = merged_tfsa_rates()
+    res = dict(zip(accounts,rates))
+    
+    df = pd.DataFrame(data=res, index=[0])
+    
+    return df
+
+
+
 def main():
-    print(merged_tfsa_names(), merged_tfsa_rates())
+    #print(merged_tfsa_names(), merged_tfsa_rates())
+    tfsa_df().to_csv("tfsa_rates")
+
 
 if __name__ == "__main__":
     main()
