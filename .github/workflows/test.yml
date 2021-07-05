@@ -54,8 +54,8 @@ jobs:
           password: cf6c5c2641c9a3c641382a75ace52782
           subject: Rate Scanner Release
           # Comma separated list of recepients
-          to: nila.viyasson@cibc.com,devarshi.raval@cibc.com,,tatiana.artemyeva@cibc.com
-          from: Competitive Tracker <devarshi.raval@cibc.com>
+          to: nila.viyasson@cibc.com,tatiana.artemyeva@cibc.com
+          from: Competitive Tracker <tatiana.artemyeva@cibc.com>
           body: Hello, PFA the latest Rate Scanner sheet.
           ignore_cert: true
           convert_markdown: true
