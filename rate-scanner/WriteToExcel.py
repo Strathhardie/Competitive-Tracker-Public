@@ -10,7 +10,7 @@ from API.RRSP import rrsp_df
 
 def main(): 
     # Create a Pandas Excel writer using XlsxWriter as the engine.
-    writer = pd.ExcelWriter('rates.xlsx', engine='xlsxwriter')
+    writer = pd.ExcelWriter('RateScanner.xlsx', engine='xlsxwriter')
 
     # Write each dataframe to a different worksheet.
     brokerage_df().to_excel(writer, sheet_name='Brokerage Accounts')
