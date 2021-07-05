@@ -36,13 +36,13 @@ jobs:
     # Not needed with email distribution
     # - name: Encrypt build file 
     #   run: |
-    #     ./msoffice/bin/msoffice-crypt.exe -e -p CompetitiveTracker ./RateScanner.xlsx ./RateScanner.xlsx
+    #     ./msoffice/bin/msoffice-crypt.exe -e -p CompetitiveTracker ./rates.xlsx ./rates.xlsx
     - name: Archive artifacts
       uses: actions/upload-artifact@v2
       with:
           name: Excel Report
           path: |
-            RateScanner.xlsx
+            rates.xlsx
 
   release:
     runs-on: ubuntu-latest
@@ -72,8 +72,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create-new-release.outputs.upload_url }}
-          asset_path: ./RateScanner.xlsx
-          asset_name: RateScanner_${{ steps.date.outputs.date }}.xlsx
+          asset_path: ./rates.xlsx
+          asset_name: rates_${{ steps.date.outputs.date }}.xlsx
           asset_content_type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 
   mail:
@@ -98,4 +98,4 @@ jobs:
           ignore_cert: true
           convert_markdown: true
           content_type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-          attachments: ./RateScanner.xlsx
+          attachments: ./rates.xlsx
