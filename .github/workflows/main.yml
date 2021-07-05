@@ -25,7 +25,7 @@ jobs:
         pip install -r ./rate-scanner/requirements.txt
     - name: Generate Report
       run: |
-        python ./rate-scanner/ExcelGenerator.py
+        python ./rate-scanner/WriteToExcel.py
     - name: Setup MSOffice Encrypt 
       run: |
         sudo apt install libssl-dev
