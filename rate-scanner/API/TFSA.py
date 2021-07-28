@@ -43,14 +43,11 @@ def hsbc_tfsa():
     return(result[1])
 
 def nbc_tfsa(): 
-    #BS4 Can not find elements in the rendered table - someone else to attempt? 
     
-    #url = "https://www.nbc.ca/personal/savings-investments/accounts/cash-advantage.html"
-    #response = requests.request("GET", url)
-    #soup = BeautifulSoup(response.text, features="html.parser")
-    
-
-    return "0.05%"
+    url = "view-source:https://www.nbc.ca/personal/savings-investments/accounts/cash-advantage.html"
+    response = requests.request("GET", url)
+    #print(response.text)
+    return "0.050%"
 
 
 def simplii_tfsa():
@@ -126,7 +123,7 @@ def tfsa_df():
 
 def main():
     #tfsa_df().to_csv("tfsa_rates")
-    bmo_tfsa()
+    nbc_tfsa()
 
 
 if __name__ == "__main__":
