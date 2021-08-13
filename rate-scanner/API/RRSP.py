@@ -17,11 +17,13 @@ def rbc_rrsp():
 
 
 def scotia_rrsp():
+    ## Rendered using JS, Colin to look at? 
     url = 'https://www.scotiabank.com/ca/en/personal/rates-prices/resp-rrsp-rrif-rates.html'
     response = requests.request("GET", url)
     soup = BeautifulSoup(response.text, features="html.parser")
-    offer = soup.find_all("td")
-    return "0.050%"
+    print(soup)
+
+    return "0.01%"
 
 
 def nbc_rrsp():
@@ -29,7 +31,8 @@ def nbc_rrsp():
 
     url = "https://www.nbc.ca/personal/savings-investments/accounts/cash-advantage.html"
     response = requests.request("GET", url)
-    # soup = BeautifulSoup(response.text, features="html.parser")
+    soup = BeautifulSoup(response.text, features="html.parser")
+    print(soup)
 
     return "0.05%"
 
@@ -38,10 +41,8 @@ def motus_rrsp():
    # todo
     url = "https://www.motusbank.ca/Support/Rates"
     response = requests.request("GET", url)
-    #soup = BeautifulSoup(response.text, features="html.parser")
-    #offer = soup.find_all("h3")[7].text
-    offer = "0.05"
-    return offer
+    soup = BeautifulSoup(response.text, features="html.parser")
+    return "1.00%"
 
 
 def meridian_rrsp():
@@ -67,16 +68,12 @@ def motive_rrsp():
 def manulife_rrsp():
     # Todo
     
-    url = "https://www.manulifebank.ca/current-rates.html"
-    
-    
-    #response = requests.request("GET", url)
-    #soup = BeautifulSoup(response.text, features="html.parser")
-    #offer = soup.find_all(class_="rates-fees__value")[0].text
-    
-    offer = "0.05%"
+    url = "https://www.manulifebank.ca/personal-banking/investments/rrsp.html#rates"
+    response = requests.request("GET", url)
+    soup = BeautifulSoup(response.text, features="html.parser")
+    offer = soup.find_all(class_="rates-fees__value")[0].text
 
-    return offer
+    return print(offer)
 
 def td_rrsp(): 
     # Todo
@@ -126,8 +123,8 @@ def rrsp_df():
     return df
 
 def main():
-    print(merged_rrsp_names(), merged_rrsp_rates())
-
+    #print(merged_rrsp_names(), merged_rrsp_rates())
+    manulife_rrsp()
 
 if __name__ == "__main__":
     main()

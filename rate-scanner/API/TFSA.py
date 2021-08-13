@@ -18,12 +18,12 @@ def td_tfsa():
     return(result[1])
 
 def bmo_tfsa(): 
-    url = 'https://www.bmo.com/main/personal/investments/rates/'
+    url = 'https://www.bmo.com/bmocda/templates/json_gic_include.jsp'
     response = requests.request("GET", url)
-    soup = BeautifulSoup(response.text, features="html.parser")
-    #print(soup)
-    ## Development needed 
-    return("0.05")
+    start_index = response.text.find("value") + 8
+    offer = response.text[start_index:start_index+5] + "%"
+    return offer
+
 
 def scotia_tfsa(): 
     url = 'https://www.scotiabank.com/ca/en/personal/rates-prices/savings-account-rates.html'
@@ -43,14 +43,11 @@ def hsbc_tfsa():
     return(result[1])
 
 def nbc_tfsa(): 
-    #BS4 Can not find elements in the rendered table - someone else to attempt? 
     
-    #url = "https://www.nbc.ca/personal/savings-investments/accounts/cash-advantage.html"
-    #response = requests.request("GET", url)
-    #soup = BeautifulSoup(response.text, features="html.parser")
-    
-
-    return "0.05%"
+    url = "view-source:https://www.nbc.ca/personal/savings-investments/accounts/cash-advantage.html"
+    response = requests.request("GET", url)
+    #print(response.text)
+    return "0.050%"
 
 
 def simplii_tfsa():
@@ -125,8 +122,8 @@ def tfsa_df():
 
 
 def main():
-    #print(merged_tfsa_names(), merged_tfsa_rates())
-    tfsa_df().to_csv("tfsa_rates")
+    #tfsa_df().to_csv("tfsa_rates")
+    nbc_tfsa()
 
 
 if __name__ == "__main__":
