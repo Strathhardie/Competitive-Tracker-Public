@@ -122,8 +122,8 @@ def tfsa_df():
 
 
 def main():
-    #tfsa_df().to_csv("tfsa_rates")
-    nbc_tfsa()
+    tfsa_df().to_csv("tfsa_rates")
+
 
 
 if __name__ == "__main__":
